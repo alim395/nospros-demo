@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://bjgdwhrsb7cdt"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_mft2y"]
+[ext_resource type="AudioStream" uid="uid://bqmik45apix8x" path="res://audio/music/Albums/009 Sound System/1,02-Space And Time.mp3" id="2_mft2y"]
+
+[resource]
+script = ExtResource("1_mft2y")
+name = "Space and Time"
+artist = "009 Sound System"
+track = ExtResource("2_mft2y")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"
