@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=6 format=3 uid="uid://bimj5fu4x7gh3"]
+
+[ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="1_himpo"]
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="2_h4nsa"]
+[ext_resource type="Resource" uid="uid://bmi65rld62jqb" path="res://MMSongs/XPIntro.tres" id="3_cc6lj"]
+[ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="4_qdh83"]
+[ext_resource type="Resource" uid="uid://do4lohr870std" path="res://MMSongs/XPShutdown.tres" id="5_jxwsf"]
+
+[resource]
+script = ExtResource("1_himpo")
+name = "eXPerience OST"
+tracks = Array[ExtResource("2_h4nsa")]([ExtResource("3_cc6lj"), ExtResource("4_qdh83"), ExtResource("5_jxwsf")])
+metadata/_custom_type_script = "uid://c8lu2riejct4e"
