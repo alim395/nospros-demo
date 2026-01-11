@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://bqmidaw5rrw3v"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_is76o"]
+[ext_resource type="AudioStream" uid="uid://df7desm6mc7og" path="res://audio/music/Albums/SAIKNEKY/Startup.wav" id="2_is76o"]
+
+[resource]
+script = ExtResource("1_is76o")
+name = "S t a r t u p"
+artist = "SAIKNEKY :3"
+track = ExtResource("2_is76o")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

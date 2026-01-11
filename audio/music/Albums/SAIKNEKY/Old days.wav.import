@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5x72os6k3ngd"
+path="res://.godot/imported/Old days.wav-f73adb4c42e8e6fab09d2e1c6213c000.sample"
+
+[deps]
+
+source_file="res://audio/music/Albums/SAIKNEKY/Old days.wav"
+dest_files=["res://.godot/imported/Old days.wav-f73adb4c42e8e6fab09d2e1c6213c000.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

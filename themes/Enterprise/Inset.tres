@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dp0i4t0310vbm"]
+
+[ext_resource type="FontFile" uid="uid://dcnec4vuiifsf" path="res://themes/Enterprise/SkySans4.fnt" id="1_37v0b"]
+[ext_resource type="StyleBox" uid="uid://bwb3mi6glyp60" path="res://themes/Enterprise/StyleBoxInset.tres" id="2_xq6as"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_37v0b")
+Panel/styles/panel = ExtResource("2_xq6as")

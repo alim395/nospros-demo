@@ -1,0 +1,283 @@
+[gd_scene load_steps=23 format=3 uid="uid://decf48acwjrm8"]
+
+[ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_dphei"]
+[ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
+[ext_resource type="Resource" uid="uid://du5a2mex75jul" path="res://MMSongs/Albums/7/SAIKNEKY.tres" id="3_dcwgm"]
+[ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="3_y1jbc"]
+[ext_resource type="Texture2D" uid="uid://h8eked3v42f7" path="res://sprites/albumArt/AlbumTEST.png" id="3_yj2aj"]
+[ext_resource type="Resource" uid="uid://kcfcelkt7aou" path="res://MMSongs/Albums/XP/009_Sound_System.tres" id="4_b2ner"]
+[ext_resource type="Resource" uid="uid://bimj5fu4x7gh3" path="res://MMSongs/Albums/XP/XP_OST.tres" id="5_yb2vk"]
+[ext_resource type="Script" uid="uid://plvrf5wtrq0r" path="res://scripts/audio_spectrum_visualizer.gd" id="6_py3vy"]
+[ext_resource type="AudioStream" uid="uid://cutqncerprk4u" path="res://audio/sfx/musicPlayerButtons/Play.mp3" id="7_y5g7r"]
+[ext_resource type="AudioStream" uid="uid://df5qn18iqai16" path="res://audio/sfx/musicPlayerButtons/Pause.mp3" id="8_b2ner"]
+[ext_resource type="AudioStream" uid="uid://c8vf0kvq86q50" path="res://audio/sfx/musicPlayerButtons/Stop.mp3" id="9_odikg"]
+[ext_resource type="AudioStream" uid="uid://u44b03skvtu8" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.mp3" id="10_jbysy"]
+[ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="13_8evac"]
+[ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="14_knkca"]
+[ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="15_2jk8m"]
+[ext_resource type="Texture2D" uid="uid://nw10fi27osmh" path="res://sprites/musicButtons/Loop.svg" id="16_t4c88"]
+[ext_resource type="Texture2D" uid="uid://b5oouud5yf3kc" path="res://sprites/musicButtons/TrackPrev.svg" id="17_a15ay"]
+[ext_resource type="Texture2D" uid="uid://bkqxyr333f8jj" path="res://sprites/musicButtons/SeekBack.svg" id="18_e4hja"]
+[ext_resource type="Texture2D" uid="uid://dlfdy5idatye6" path="res://sprites/musicButtons/SeekForward.svg" id="19_bnu85"]
+[ext_resource type="Texture2D" uid="uid://bqsgg1ap5dnf0" path="res://sprites/musicButtons/TrackNext.svg" id="20_66olg"]
+[ext_resource type="Texture2D" uid="uid://df2t2xxgtw503" path="res://sprites/musicButtons/Shuffle.svg" id="21_5nukk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcwgm"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MusicPlayer" type="Control" node_paths=PackedStringArray("trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dphei")
+script = ExtResource("1_gkd1q")
+albumList = Array[ExtResource("3_y1jbc")]([ExtResource("4_b2ner"), ExtResource("3_dcwgm"), ExtResource("5_yb2vk")])
+trackNumLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer/TrackNumLabel")
+playtimeLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer/playTimeLabel")
+albumOption = NodePath("Window/Panel/OptionsContainer/AlbumContainer/OptionButton")
+trackOption = NodePath("Window/Panel/OptionsContainer/TrackContainer/OptionButton")
+albumArt = NodePath("Window/Panel/HBoxContainer/VBoxContainer/TextureRect")
+defaultAlbumArt = ExtResource("3_yj2aj")
+artistLabel = NodePath("Window/Panel/HBoxContainer/VBoxContainer/Label")
+seekSlider = NodePath("Window/Panel/OptionsContainer/seekSlider")
+loopButton = NodePath("Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/LoopButton")
+shuffleButton = NodePath("Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/Shuffle")
+playSound = ExtResource("7_y5g7r")
+pauseSound = ExtResource("8_b2ner")
+stopSound = ExtResource("9_odikg")
+changeSound = ExtResource("10_jbysy")
+
+[node name="Window" type="Window" parent="."]
+snap_2d_vertices_to_pixel = true
+oversampling_override = 1.0
+title = "Music Player"
+initial_position = 1
+size = Vector2i(480, 224)
+min_size = Vector2i(480, 224)
+max_size = Vector2i(480, 240)
+content_scale_mode = 1
+content_scale_aspect = 1
+content_scale_stretch = 1
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 19.0
+offset_right = 464.0
+offset_bottom = 109.0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="DisplayPanel" type="PanelContainer" parent="Window/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(168, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dcwgm")
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/HBoxContainer/DisplayPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer"]
+layout_mode = 2
+script = ExtResource("6_py3vy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/DisplayPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="TrackNumLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "[00]"
+horizontal_alignment = 1
+
+[node name="playTimeLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PPSContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+icon = ExtResource("13_8evac")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PauseButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("14_knkca")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StopButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("15_2jk8m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="LoopButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource("16_t4c88")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PrevTrack" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("17_a15ay")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekBack" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+icon = ExtResource("18_e4hja")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekForward" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("19_bnu85")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NextTrack" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("20_66olg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Shuffle" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+icon = ExtResource("21_5nukk")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Window/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_yj2aj")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Window/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "ARTIST AB"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 116.0
+offset_right = 464.0
+offset_bottom = 212.0
+
+[node name="AlbumContainer" type="HBoxContainer" parent="Window/Panel/OptionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/Panel/OptionsContainer/AlbumContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+text = "Album :"
+
+[node name="OptionButton" type="OptionButton" parent="Window/Panel/OptionsContainer/AlbumContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TrackContainer" type="HBoxContainer" parent="Window/Panel/OptionsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/Panel/OptionsContainer/TrackContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+text = "Track   :"
+
+[node name="OptionButton" type="OptionButton" parent="Window/Panel/OptionsContainer/TrackContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="seekSlider" type="HSlider" parent="Window/Panel/OptionsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+step = 0.1
+scrollable = false
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="toggled" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/LoopButton" to="." method="_on_loop_button_toggled"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/PrevTrack" to="." method="_on_prev_track_pressed"]
+[connection signal="button_down" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekBack" to="." method="_on_seek_back_button_down"]
+[connection signal="button_up" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekBack" to="." method="_on_seek_back_button_up"]
+[connection signal="button_down" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_down"]
+[connection signal="button_up" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_up"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/NextTrack" to="." method="_on_next_track_pressed"]
+[connection signal="toggled" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/Shuffle" to="." method="_on_shuffle_toggled"]
+[connection signal="item_selected" from="Window/Panel/OptionsContainer/AlbumContainer/OptionButton" to="." method="_on_album_option_button_item_selected"]
+[connection signal="item_selected" from="Window/Panel/OptionsContainer/TrackContainer/OptionButton" to="." method="_on_track_option_button_item_selected"]
+[connection signal="drag_ended" from="Window/Panel/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_ended"]
+[connection signal="drag_started" from="Window/Panel/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_started"]

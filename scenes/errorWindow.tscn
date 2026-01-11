@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://o4a3sp1j7s4l"]
+
+[ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_0hu1h"]
+[ext_resource type="Script" uid="uid://dmr6x4l38loe4" path="res://scripts/error_window.gd" id="2_tmfn4"]
+[ext_resource type="Texture2D" uid="uid://du8ymh1g46mhr" path="res://sprites/UI/XP/panels/Critical.png" id="3_ddchl"]
+[ext_resource type="AudioStream" uid="uid://b3gevbkjrd6lg" path="res://audio/sfx/errorXP.mp3" id="3_twyg7"]
+[ext_resource type="AudioStream" uid="uid://bqt1t4il2igyp" path="res://audio/sfx/Exclamation.wav" id="4_x86av"]
+[ext_resource type="Texture2D" uid="uid://nrh53vvbcmk" path="res://sprites/UI/XP/panels/Alert.png" id="5_twyg7"]
+
+[node name="Window" type="Window" node_paths=PackedStringArray("error_button", "errorLabel")]
+oversampling_override = 1.0
+title = "Error"
+initial_position = 1
+size = Vector2i(400, 128)
+unresizable = true
+theme = ExtResource("1_0hu1h")
+script = ExtResource("2_tmfn4")
+titleBarName = "Error"
+error_button = NodePath("Panel/VBoxContainer/ErrorMSG/ErrorButton")
+errorLabel = NodePath("Panel/VBoxContainer/ErrorMSG/ErrorLabel")
+error_msg = "Undefined."
+error_sound = ExtResource("3_twyg7")
+note_sound = ExtResource("4_x86av")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -17.5
+offset_right = 15.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ErrorMSG" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="ErrorButton" type="TextureButton" parent="Panel/VBoxContainer/ErrorMSG"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_ddchl")
+texture_disabled = ExtResource("5_twyg7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ErrorLabel" type="Label" parent="Panel/VBoxContainer/ErrorMSG"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "This Feature is not available in the web build."
+
+[node name="OK" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OK"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Panel/VBoxContainer/ErrorMSG/ErrorButton" to="." method="_on_error_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]
