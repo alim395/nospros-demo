@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://byvvcpra4ixcm"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_c70i2"]
+[ext_resource type="AudioStream" uid="uid://bwj1jloayme0o" path="res://audio/music/Albums/009 Sound System/1,10-With A Spirit.mp3" id="2_c70i2"]
+
+[resource]
+script = ExtResource("1_c70i2")
+name = "With a Spirit"
+artist = "009 Sound System"
+track = ExtResource("2_c70i2")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

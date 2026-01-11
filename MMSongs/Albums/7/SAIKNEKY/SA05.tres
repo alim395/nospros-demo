@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://c6x3xkwqo3pfj"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_msjca"]
+[ext_resource type="AudioStream" uid="uid://c5x72os6k3ngd" path="res://audio/music/Albums/SAIKNEKY/Old days.wav" id="2_msjca"]
+
+[resource]
+script = ExtResource("1_msjca")
+name = "Old days..."
+artist = "SAIKNEKY :3"
+track = ExtResource("2_msjca")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

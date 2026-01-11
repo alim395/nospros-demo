@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba0io60mkmkro"]
+
+[ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_q166p"]
+[ext_resource type="VideoStream" uid="uid://djvvyk0u5icam" path="res://video/WIP1.ogv" id="2_c76g1"]
+[ext_resource type="Script" uid="uid://b0qsuo8bt6knt" path="res://scripts/globe_trotter.gd" id="2_k8gp5"]
+[ext_resource type="Texture2D" uid="uid://blur3qarye2mc" path="res://sprites/UI/XP/panels/Home-icon.svg" id="2_qf2wf"]
+[ext_resource type="VideoStream" uid="uid://bv4p3lp1t01pn" path="res://video/WIP2.ogv" id="4_xyqr7"]
+[ext_resource type="VideoStream" uid="uid://dnnqbfbhxmjc5" path="res://video/WIP3.ogv" id="5_ormeo"]
+[ext_resource type="VideoStream" uid="uid://ds4o3bqu81jiq" path="res://video/WIP4.ogv" id="6_0njmi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyqr7"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="GlobeTrotter" type="Control" node_paths=PackedStringArray("webGIFPlayer", "addressInput")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q166p")
+script = ExtResource("2_k8gp5")
+gifVids = Array[VideoStream]([ExtResource("2_c76g1"), ExtResource("4_xyqr7"), ExtResource("5_ormeo"), ExtResource("6_0njmi")])
+webGIFPlayer = NodePath("Window/Panel/VContainer/PanelContainer/VideoStreamPlayer")
+addressInput = NodePath("Window/Panel/VContainer/AddressBarContainer/AddressBarInput")
+
+[node name="Window" type="Window" parent="."]
+snap_2d_vertices_to_pixel = true
+oversampling_override = 1.0
+title = "Globe Trotter"
+initial_position = 1
+size = Vector2i(480, 302)
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="AddressBarContainer" type="HBoxContainer" parent="Window/Panel/VContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Home" type="Button" parent="Window/Panel/VContainer/AddressBarContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+icon = ExtResource("2_qf2wf")
+icon_alignment = 2
+expand_icon = true
+
+[node name="AddressBarInput" type="LineEdit" parent="Window/Panel/VContainer/AddressBarContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "https://www.example.com/index.php"
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_xyqr7")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Window/Panel/VContainer/PanelContainer"]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 2
+size_flags_vertical = 3
+stream = ExtResource("2_c76g1")
+autoplay = true
+expand = true
+loop = true
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Panel/VContainer/AddressBarContainer/Home" to="." method="_on_home_pressed"]

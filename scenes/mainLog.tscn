@@ -1,0 +1,176 @@
+[gd_scene load_steps=20 format=3 uid="uid://bpb3lcfhbttjn"]
+
+[ext_resource type="Script" uid="uid://ysvx6tfrjahy" path="res://scripts/main_log.gd" id="1_b4ej1"]
+[ext_resource type="AudioStream" uid="uid://chaeam2xlkeqy" path="res://audio/sfx/logon.mp3" id="2_icvme"]
+[ext_resource type="Texture2D" uid="uid://kmrc5u8tchu5" path="res://textures/UserTextureXP.tres" id="3_a4nra"]
+[ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="3_icvme"]
+[ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="4_icvme"]
+[ext_resource type="Texture2D" uid="uid://bsvmx2fbyra7a" path="res://sprites/buttons/Settings.png" id="4_ti1w0"]
+[ext_resource type="Texture2D" uid="uid://dkjvu2x6gon81" path="res://sprites/buttons/Settings_Pressed.png" id="5_hin8t"]
+[ext_resource type="Texture2D" uid="uid://cdbp5fvk1bfe8" path="res://sprites/buttons/Settings_Hover.png" id="6_jb8uv"]
+[ext_resource type="Texture2D" uid="uid://uy5c3ng84ymj" path="res://sprites/buttons/Settings_Disabled.png" id="7_aqspi"]
+[ext_resource type="Texture2D" uid="uid://cvkppvgw27ijf" path="res://sprites/buttons/Shutdown.png" id="8_tc1es"]
+[ext_resource type="Texture2D" uid="uid://cdxbew7cfl0kc" path="res://sprites/buttons/Shutdown_Pressed.png" id="9_6lklk"]
+[ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="10_b4oi1"]
+[ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="11_tuanb"]
+[ext_resource type="FontFile" uid="uid://dx8bumt1hb7f7" path="res://fonts/tahomabd.ttf" id="12_xjby3"]
+[ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="13_j7xth"]
+[ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="16_icvme"]
+
+[sub_resource type="Gradient" id="Gradient_85g3d"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_tipki"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ti1w0"]
+texture = ExtResource("3_a4nra")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "crtNode")]
+script = ExtResource("1_b4ej1")
+logOnSound = ExtResource("2_icvme")
+buttonManager = NodePath("ButtonManager")
+shutdownButton = NodePath("ButtonManager/Quit")
+startButton = NodePath("ButtonManager/Start")
+startLabel = NodePath("ButtonManager/Start/StartLabel")
+crtNode = NodePath("CRT")
+
+[node name="XpWelcome" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(1, 0.75)
+texture = ExtResource("3_icvme")
+
+[node name="TOP" type="Line2D" parent="."]
+position = Vector2(0, 33.730087)
+scale = Vector2(1, 0.46460176)
+points = PackedVector2Array(320, 64, 319.99997, 291.15237)
+width = 1.0
+gradient = SubResource("Gradient_85g3d")
+
+[node name="BOTTOM" type="Line2D" parent="."]
+position = Vector2(0, 134.26991)
+scale = Vector2(1, 0.53539824)
+points = PackedVector2Array(320, 64, 320, 288)
+width = 1.0
+gradient = SubResource("Gradient_tipki")
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 154.0
+offset_right = 583.0
+offset_bottom = 218.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ti1w0")
+text = "Adam
+
+"
+icon = ExtResource("4_icvme")
+alignment = 0
+expand_icon = true
+
+[node name="StartLabel" type="Label" parent="ButtonManager/Start"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 31.0
+offset_right = 144.0
+offset_bottom = 53.333336
+theme_override_font_sizes/font_size = 8
+text = "Logged on"
+
+[node name="RichTextLabel" type="Label" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 208.0
+offset_right = 320.0
+offset_bottom = 257.0
+theme_override_fonts/font = ExtResource("13_j7xth")
+theme_override_font_sizes/font_size = 16
+text = "To begin, click user
+"
+
+[node name="Options" type="TextureButton" parent="ButtonManager"]
+visible = false
+layout_mode = 0
+offset_left = 433.0
+offset_top = 315.0
+offset_right = 989.0
+offset_bottom = 871.0
+scale = Vector2(0.08, 0.08)
+tooltip_text = "Not yet Implemented."
+disabled = true
+texture_normal = ExtResource("4_ti1w0")
+texture_pressed = ExtResource("5_hin8t")
+texture_hover = ExtResource("6_jb8uv")
+texture_disabled = ExtResource("7_aqspi")
+stretch_mode = 4
+
+[node name="SettingsLabel" type="RichTextLabel" parent="ButtonManager"]
+visible = false
+layout_mode = 0
+offset_left = 480.00003
+offset_top = 328.0
+offset_right = 624.0
+offset_bottom = 344.0
+theme_override_fonts/bold_font = ExtResource("12_xjby3")
+theme_override_font_sizes/normal_font_size = 12
+text = "Adjust user Settings"
+scroll_active = false
+
+[node name="Quit" type="TextureButton" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 315.0
+offset_right = 565.0
+offset_bottom = 871.0
+scale = Vector2(0.08, 0.08)
+texture_normal = ExtResource("8_tc1es")
+texture_pressed = ExtResource("9_6lklk")
+texture_hover = ExtResource("10_b4oi1")
+texture_disabled = ExtResource("11_tuanb")
+stretch_mode = 4
+
+[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 328.0
+offset_right = 200.0
+offset_bottom = 344.0
+theme_override_fonts/bold_font = ExtResource("12_xjby3")
+theme_override_font_sizes/normal_font_size = 12
+text = "Turn off your Computer"
+scroll_active = false
+
+[node name="WelcomeText" type="RichTextLabel" parent="."]
+offset_left = 160.0
+offset_top = 144.0
+offset_right = 320.0
+offset_bottom = 208.0
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("12_xjby3")
+theme_override_font_sizes/normal_font_size = 24
+text = "Nostalgia
+Process"
+
+[node name="CRT" type="CanvasLayer" parent="."]
+layer = 9001
+visible = false
+script = ExtResource("16_icvme")
+resolution = Vector2(640, 360)
+vignette_amount = 0.3
+roll_line_amount = 0.0
+metadata/_custom_type_script = "uid://bghaddibpt6f1"
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]

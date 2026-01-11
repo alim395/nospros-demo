@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://bmi65rld62jqb"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_1g8il"]
+[ext_resource type="AudioStream" uid="uid://xijmvqxdmum2" path="res://audio/music/OS/background/title.wav" id="2_lrgey"]
+
+[resource]
+script = ExtResource("1_1g8il")
+name = "Title"
+artist = "ZEN from ME"
+track = ExtResource("2_lrgey")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

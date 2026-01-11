@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8f3vxw3ct87o"
+path="res://.godot/imported/1,09-Speak To Angels.mp3-c4c81bf7492af71d783d8c9c8a188886.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/1,09-Speak To Angels.mp3"
+dest_files=["res://.godot/imported/1,09-Speak To Angels.mp3-c4c81bf7492af71d783d8c9c8a188886.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

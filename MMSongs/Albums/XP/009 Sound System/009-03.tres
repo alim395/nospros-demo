@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://dn2jo11yx1at0"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_rjn17"]
+[ext_resource type="AudioStream" uid="uid://bxelnn0jq2som" path="res://audio/music/Albums/009 Sound System/1,03-Shine Down.mp3" id="2_rjn17"]
+
+[resource]
+script = ExtResource("1_rjn17")
+name = "Shine Down"
+artist = "009 Sound System"
+track = ExtResource("2_rjn17")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

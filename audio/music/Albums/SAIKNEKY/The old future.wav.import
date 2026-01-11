@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwg2drhsk1bh2"
+path="res://.godot/imported/The old future.wav-19cb0c68833618fd889d8b2bc3d98c6d.sample"
+
+[deps]
+
+source_file="res://audio/music/Albums/SAIKNEKY/The old future.wav"
+dest_files=["res://.godot/imported/The old future.wav-19cb0c68833618fd889d8b2bc3d98c6d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

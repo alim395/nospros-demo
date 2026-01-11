@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://d21nssn2ftpjn"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_8cc0b"]
+[ext_resource type="AudioStream" uid="uid://b52n6251vi5xa" path="res://audio/music/Albums/SAIKNEKY/The place of your dreams.wav" id="2_8cc0b"]
+
+[resource]
+script = ExtResource("1_8cc0b")
+name = "The place of your dream."
+artist = "SAIKNEKY :3"
+track = ExtResource("2_8cc0b")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

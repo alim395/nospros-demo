@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://c6d3g8jx33kao"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_qvhmv"]
+[ext_resource type="AudioStream" uid="uid://c7obgoj64d4bp" path="res://audio/music/Albums/009 Sound System/1,06-Standing Stones.mp3" id="2_qvhmv"]
+
+[resource]
+script = ExtResource("1_qvhmv")
+name = "Standing Stones"
+artist = "009 Sound System"
+track = ExtResource("2_qvhmv")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qaddshyupt1w"
+path="res://.godot/imported/1,11-Born To Be Wasted.mp3-983b2150e303d1f05918d52ce852121b.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/1,11-Born To Be Wasted.mp3"
+dest_files=["res://.godot/imported/1,11-Born To Be Wasted.mp3-983b2150e303d1f05918d52ce852121b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

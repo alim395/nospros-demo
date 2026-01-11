@@ -1,0 +1,1375 @@
+[gd_scene load_steps=80 format=3 uid="uid://dwjvpdmcaiu8j"]
+
+[ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
+[ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
+[ext_resource type="Resource" uid="uid://do4lohr870std" path="res://MMSongs/XPShutdown.tres" id="3_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://bm8mi7ncs0iw2" path="res://audio/sfx/logoff.mp3" id="3_h3rex"]
+[ext_resource type="AudioStream" uid="uid://dik03g6tx87ba" path="res://audio/sfx/click.wav" id="4_gxtfn"]
+[ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/Bliss21.png" id="4_js0lu"]
+[ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="4_lbhrr"]
+[ext_resource type="Shader" uid="uid://dfq0esfuvf8kp" path="res://shaders/GaussianBlur.gdshader" id="4_p57ef"]
+[ext_resource type="Shader" uid="uid://bhfkobcbapg2l" path="res://shaders/GrayScale.gdshader" id="4_rysoc"]
+[ext_resource type="FontFile" uid="uid://dx8bumt1hb7f7" path="res://fonts/tahomabd.ttf" id="5_iywne"]
+[ext_resource type="Script" uid="uid://bno3gq2fqoxvd" path="res://scripts/taskbar.gd" id="5_trtic"]
+[ext_resource type="Texture2D" uid="uid://bhjphs1xp87im" path="res://sprites/UI/XP/taskbar/Luna.png" id="5_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://2wk6dc4rlqhh" path="res://sprites/icons/CD_Icon.png" id="5_v2yb1"]
+[ext_resource type="Script" uid="uid://uhika5t6thcm" path="res://scripts/app_manager.gd" id="5_wljb1"]
+[ext_resource type="Resource" uid="uid://cyqiyj3q3vhhw" path="res://sprites/UI/XP/startbuttons/startButtonTexturesXP.tres" id="6_ir15t"]
+[ext_resource type="Texture2D" uid="uid://dga1gs336dl6c" path="res://sprites/icons/FOCUSED_Icon.png" id="6_js0lu"]
+[ext_resource type="Script" uid="uid://vrxxuu2nbecn" path="res://scripts/icon_manager.gd" id="6_ms3bu"]
+[ext_resource type="Texture2D" uid="uid://1j06k3pqx8ia" path="res://sprites/UI/XP/taskbar/Olive Green.png" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://bapcibwurv47y" path="res://sprites/UI/XP/taskbar/Embedded.png" id="7_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://rc8ex2p3idio" path="res://sprites/icons/BrowserClassic.png" id="7_n8ral"]
+[ext_resource type="Texture2D" uid="uid://57flrm10dh4" path="res://sprites/UI/XP/taskbar/Zune-Royale Noir.png" id="8_dinhu"]
+[ext_resource type="Texture2D" uid="uid://b4qsqh3lgiy1v" path="res://sprites/icons/Settings.png" id="8_oaba0"]
+[ext_resource type="Texture2D" uid="uid://de3gegqqospn2" path="res://sprites/icons/CD_Icon2.png" id="8_q8j3a"]
+[ext_resource type="Texture2D" uid="uid://cttw1c8uaojtl" path="res://sprites/icons/Photo_Icon.png" id="9_7ixpq"]
+[ext_resource type="Texture2D" uid="uid://bcqg4e5o1i7qw" path="res://sprites/UI/XP/startbuttons/Luna000.png" id="9_kvuet"]
+[ext_resource type="Texture2D" uid="uid://ckng02ytlmywa" path="res://sprites/icons/Photo_Icon2.png" id="9_ms3bu"]
+[ext_resource type="Texture2D" uid="uid://ys7yfjhvjijo" path="res://sprites/icons/Browser_Icon.png" id="10_3hbvx"]
+[ext_resource type="Script" uid="uid://brbqxhnpbmlw8" path="res://scripts/picture_app.gd" id="10_7025r"]
+[ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="10_nepv3"]
+[ext_resource type="Texture2D" uid="uid://bm3qqoexuu6d1" path="res://sprites/UI/XP/startbuttons/Luna002.png" id="10_trtic"]
+[ext_resource type="Texture2D" uid="uid://0ys3kkg8i4hr" path="res://sprites/UI/XP/startbuttons/Luna001.png" id="11_ir15t"]
+[ext_resource type="Texture2D" uid="uid://bicu3e2gh5g0q" path="res://sprites/backgrounds/RedMoon.png" id="11_m4url"]
+[ext_resource type="Texture2D" uid="uid://bas22ukk7spqr" path="res://sprites/icons/Video_Icon.png" id="11_yd4ix"]
+[ext_resource type="Texture2D" uid="uid://chnlqg0h88pid" path="res://sprites/backgrounds/Ascent.png" id="12_8ool0"]
+[ext_resource type="Texture2D" uid="uid://bah5e3y6nrlin" path="res://sprites/backgrounds/Autumn.png" id="12_pr1ej"]
+[ext_resource type="Texture2D" uid="uid://6cglns3xdqmv" path="res://sprites/backgrounds/FollowMe.png" id="13_05nbr"]
+[ext_resource type="Texture2D" uid="uid://bvijjo1f4o1jr" path="res://sprites/icons/Settings_2.png" id="14_bk1p3"]
+[ext_resource type="Texture2D" uid="uid://dhxcccipnxit" path="res://sprites/backgrounds/VortecSpace.png" id="15_0sl42"]
+[ext_resource type="Texture2D" uid="uid://pragqk6we42s" path="res://sprites/icons/Video_Icon2.png" id="16_66xif"]
+[ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
+[ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/setting_app.gd" id="17_0sl42"]
+[ext_resource type="Texture2D" uid="uid://cvkppvgw27ijf" path="res://sprites/buttons/Shutdown.png" id="18_37s47"]
+[ext_resource type="Texture2D" uid="uid://cdxbew7cfl0kc" path="res://sprites/buttons/Shutdown_Pressed.png" id="19_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
+[ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/troll_app.gd" id="21_rm0al"]
+[ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
+[ext_resource type="VideoStream" uid="uid://frh01qmqesl2" path="res://video/rickroll-roll.ogv" id="22_i4re6"]
+[ext_resource type="Resource" uid="uid://bscghnkhns25y" path="res://MMSongs/trollMusic00.tres" id="22_pf7vy"]
+[ext_resource type="Texture2D" uid="uid://bu2hshr0cnal" path="res://sprites/buttons/Exit.png" id="23_qnb83"]
+[ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
+[ext_resource type="Texture2D" uid="uid://fj3m5kxctqtj" path="res://sprites/buttons/Exit_Pressed.png" id="24_sww3w"]
+[ext_resource type="Texture2D" uid="uid://clo0ox8ojcx4s" path="res://sprites/buttons/LogOff_Pressed.png" id="24_wljb1"]
+[ext_resource type="Script" uid="uid://vxft3ctsl8sd" path="res://scripts/taskbar_button.gd" id="25_458eo"]
+[ext_resource type="Texture2D" uid="uid://g5dw67vkxjr2" path="res://sprites/buttons/Exit_Hover.png" id="25_suyxu"]
+[ext_resource type="Texture2D" uid="uid://blra1sk2fgdnl" path="res://sprites/buttons/LogOff_Hover.png" id="25_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://def0owgc73j7q" path="res://sprites/buttons/LogOff_Disabled.png" id="26_js0lu"]
+[ext_resource type="Texture2D" uid="uid://c00p2rtoj0j27" path="res://sprites/buttons/Exit_Disabled.png" id="26_sgl2t"]
+[ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
+[ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
+[ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaba0"]
+bg_color = Color(0.19800001, 0.49050006, 0.9, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_458eo"]
+bg_color = Color(0.13725491, 0.35686275, 0.8509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3rex"]
+bg_color = Color(0.19607843, 0.49019608, 0.9019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fedci"]
+bg_color = Color(0.19607843, 0.49019608, 0.9019608, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5sy4"]
+shader = ExtResource("4_p57ef")
+shader_parameter/blur_radius = 8
+shader_parameter/Darkness = 0.05
+shader_parameter/R = 0.0
+shader_parameter/G = 0.0
+shader_parameter/B = 0.0
+shader_parameter/blur_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rysoc"]
+shader = ExtResource("4_rysoc")
+shader_parameter/weighted = true
+
+[sub_resource type="Gradient" id="Gradient_iywne"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_p57ef"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_iywne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
+_data = {
+&"RESET": SubResource("Animation_iywne"),
+&"fade_out": SubResource("Animation_lbhrr")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8j3a"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9882353, 0.8117647, 0.011764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id="Animation_e1j6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IconManager:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Taskbar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScreenFilters/BackBufferCopy2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScreenFilters:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ShutdownScreen:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AppManager:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bt5mj"]
+resource_name = "shutdown"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IconManager:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.33),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Taskbar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.66),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScreenFilters/BackBufferCopy2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScreenFilters:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ShutdownScreen:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pl11u"]
+_data = {
+&"RESET": SubResource("Animation_e1j6l"),
+&"shutdown": SubResource("Animation_bt5mj")
+}
+
+[sub_resource type="Animation" id="Animation_ssvqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ScreenFilters/BackBufferCopy2/GrayScale:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ScreenFilters/BackBufferCopy2/GrayScale:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rysoc"]
+resource_name = "becomeGray"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ScreenFilters/BackBufferCopy2/GrayScale:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ScreenFilters/BackBufferCopy2/GrayScale:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_264po"]
+_data = {
+&"RESET": SubResource("Animation_ssvqc"),
+&"becomeGray": SubResource("Animation_rysoc")
+}
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
+script = ExtResource("1_lnu2h")
+startSong = ExtResource("2_lbhrr")
+welcomeScreen = NodePath("WelcomeScreen")
+welcomeAnimation = NodePath("WelcomeScreen/welcomeAnimation")
+ScreenFilter = NodePath("ScreenFilters")
+softBlur = NodePath("ScreenFilters/BackBufferCopy1/SoftBlur")
+crtNode = NodePath("CRT")
+Task_Bar = NodePath("Taskbar")
+iconManager = NodePath("IconManager")
+appManager = NodePath("AppManager")
+loginDelay = NodePath("LoginDelay")
+logScreen = NodePath("LogScreen")
+logAnimation = NodePath("LogScreen/logAnimation")
+logOffSound = ExtResource("3_h3rex")
+shutdownSong = ExtResource("3_e1j6l")
+shutdownScreen = NodePath("ShutdownScreen")
+shutdownAnimation = NodePath("ShutdownScreen/shutdownAnimation")
+
+[node name="DesktopBackground" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper" type="Sprite2D" parent="DesktopBackground"]
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("4_js0lu")
+centered = false
+
+[node name="LoginDelay" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_ms3bu")
+browserAppButton = NodePath("DesktopColumns/First Column/BrowserApp/BrowserAppBox/AppButton")
+musicAppButton = NodePath("DesktopColumns/First Column/MusicApp/MusicAppBox/AppButton")
+pictureAppButton = NodePath("DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton")
+settingAppButton = NodePath("DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton")
+errorAppButton = NodePath("DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton")
+classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix")])
+YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif")])
+
+[node name="DesktopColumns" type="HBoxContainer" parent="IconManager"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="First Column" type="VBoxContainer" parent="IconManager/DesktopColumns"]
+layout_mode = 2
+
+[node name="BrowserApp" type="MarginContainer" parent="IconManager/DesktopColumns/First Column"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/First Column/BrowserApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/First Column/BrowserApp/BrowserAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_3hbvx")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/First Column/BrowserApp/BrowserAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Browser"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicApp" type="MarginContainer" parent="IconManager/DesktopColumns/First Column"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="MusicAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/First Column/MusicApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/First Column/MusicApp/MusicAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_q8j3a")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/First Column/MusicApp/MusicAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PicturesApp" type="MarginContainer" parent="IconManager/DesktopColumns/First Column"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PicturesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/First Column/PicturesApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_ms3bu")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Photos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondColumn" type="VBoxContainer" parent="IconManager/DesktopColumns"]
+layout_mode = 2
+
+[node name="SettingsApp" type="MarginContainer" parent="IconManager/DesktopColumns/SecondColumn"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SettingsAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SecondColumn/SettingsApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("14_bk1p3")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorApp" type="MarginContainer" parent="IconManager/DesktopColumns/SecondColumn"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ErrorAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SecondColumn/ErrorApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_66xif")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "untitled"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "trollIcon")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 336.0
+script = ExtResource("5_wljb1")
+clickSFX = ExtResource("4_gxtfn")
+pictureApp = NodePath("pictureApp")
+settingApp = NodePath("settingApp")
+trollApp = NodePath("trollApp")
+trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
+
+[node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_7025r")
+myWindow = NodePath("Window")
+desktopWallpaper = NodePath("../../DesktopBackground/Wallpaper")
+wallpapersCollection = Array[Texture2D]([ExtResource("4_js0lu"), ExtResource("12_8ool0"), ExtResource("12_pr1ej"), ExtResource("13_05nbr"), ExtResource("11_m4url"), ExtResource("15_0sl42")])
+wallpapersCollectionName = Array[String](["Bliss", "Ascent", "Autumn", "FollowMe", "Red Moon", "VortecSpace"])
+folderRows = NodePath("Window/Panel/FolderRows")
+
+[node name="Window" type="Window" parent="AppManager/pictureApp"]
+oversampling_override = 1.0
+title = "My Pictures"
+initial_position = 1
+size = Vector2i(480, 232)
+visible = false
+theme = ExtResource("10_nepv3")
+
+[node name="Panel" type="Panel" parent="AppManager/pictureApp/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FolderRows" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel"]
+layout_mode = 0
+offset_right = 478.0
+offset_bottom = 232.0
+
+[node name="Row0" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_js0lu")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Bliss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_8ool0")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Ascent"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_pr1ej")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Autumn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("13_05nbr")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Follow Me"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("11_m4url")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Red Moon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("15_0sl42")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Vortec Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "crtNode", "startMenuOptions", "iconStyleOptions")]
+custom_minimum_size = Vector2(640, 336)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_0sl42")
+myWindow = NodePath("Window")
+softBlur = NodePath("../../ScreenFilters/BackBufferCopy1/SoftBlur")
+highFidelity = NodePath("Window/Panel/settings/HFButton")
+crtFilter = NodePath("Window/Panel/settings/CRTButton")
+crtNode = NodePath("../../CRT")
+startMenuOptions = NodePath("Window/Panel/settings/ThemeOption/StartTheme")
+iconStyleOptions = NodePath("Window/Panel/settings/IconOption/IconStyle")
+
+[node name="Window" type="Window" parent="AppManager/settingApp"]
+oversampling_override = 1.0
+title = "Settings"
+initial_position = 1
+size = Vector2i(360, 198)
+visible = false
+theme = ExtResource("10_nepv3")
+
+[node name="Panel" type="Panel" parent="AppManager/settingApp/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="settings" type="VBoxContainer" parent="AppManager/settingApp/Window/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -24.5
+offset_right = 118.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+tooltip_text = "Default: False"
+text = "Disable Soft Filter"
+
+[node name="CRTButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+tooltip_text = "Default: False"
+text = "Enable CRT Filter"
+
+[node name="IconOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+tooltip_text = "Default: Classic"
+
+[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/IconOption"]
+layout_mode = 2
+text = "Icon Style : "
+
+[node name="IconStyle" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/IconOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ThemeOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+tooltip_text = "Default: Luna"
+
+[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
+layout_mode = 2
+text = "Theme : "
+
+[node name="StartTheme" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow")]
+custom_minimum_size = Vector2(640, 336)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("21_rm0al")
+myWindow = NodePath("Window")
+trollMusic = ExtResource("22_pf7vy")
+
+[node name="Window" type="Window" parent="AppManager/trollApp"]
+oversampling_override = 1.0
+title = "PRIZE"
+initial_position = 1
+size = Vector2i(198, 198)
+visible = false
+theme = ExtResource("10_nepv3")
+
+[node name="Panel" type="Panel" parent="AppManager/trollApp/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AppManager/trollApp/Window/Panel"]
+custom_minimum_size = Vector2(198, 198)
+layout_mode = 0
+stream = ExtResource("22_i4re6")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("barSprites", "StartButton", "startMenu")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 336.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("5_trtic")
+barSprites = [NodePath("Bar/Luna"), NodePath("Bar/OliveGreen"), NodePath("Bar/Embedded"), NodePath("Bar/ZuneRoyaleNoir")]
+StartButton = NodePath("Start/StartButton")
+startButtonTextures = ExtResource("6_ir15t")
+startMenu = NodePath("Start/StartMenu")
+
+[node name="Bar" type="Control" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(88, 336)
+
+[node name="Luna" type="Sprite2D" parent="Taskbar/Bar"]
+texture_repeat = 2
+position = Vector2(320.00003, 12)
+scale = Vector2(2.962963, 0.8571427)
+texture = ExtResource("5_u5sy4")
+
+[node name="OliveGreen" type="Sprite2D" parent="Taskbar/Bar"]
+visible = false
+texture_repeat = 2
+position = Vector2(320, 11.999994)
+scale = Vector2(1.6931217, 0.9230764)
+texture = ExtResource("6_vtaks")
+
+[node name="Embedded" type="Sprite2D" parent="Taskbar/Bar"]
+visible = false
+position = Vector2(320, 11.999994)
+scale = Vector2(1.081081, 0.55813926)
+texture = ExtResource("7_kvpfn")
+
+[node name="ZuneRoyaleNoir" type="Sprite2D" parent="Taskbar/Bar"]
+visible = false
+position = Vector2(320, 11.999994)
+scale = Vector2(1.8181819, 0.8275857)
+texture = ExtResource("8_dinhu")
+
+[node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
+visible = false
+layout_mode = 0
+offset_left = 98.0
+offset_right = 640.0
+offset_bottom = 24.0
+theme_override_constants/separation = 2
+
+[node name="TaskbarButton" type="Button" parent="Taskbar/Bar/BarButtonContainer"]
+custom_minimum_size = Vector2(90, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_oaba0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_458eo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3rex")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fedci")
+expand_icon = true
+script = ExtResource("25_458eo")
+taskIcon = ExtResource("5_v2yb1")
+taskName = "Music Player"
+
+[node name="Start" type="Control" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_right = 96.0
+grow_vertical = 0
+
+[node name="StartButton" type="TextureButton" parent="Taskbar/Start"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 33.0
+scale = Vector2(0.9912038, 0.8)
+texture_normal = ExtResource("9_kvuet")
+texture_pressed = ExtResource("10_trtic")
+texture_hover = ExtResource("11_ir15t")
+stretch_mode = 4
+
+[node name="StartText" type="RichTextLabel" parent="Taskbar/Start"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 96.0
+offset_bottom = 24.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_fonts/normal_font = ExtResource("5_iywne")
+theme_override_font_sizes/normal_font_size = 16
+text = "start"
+vertical_alignment = 1
+
+[node name="StartMenu" type="VBoxContainer" parent="Taskbar/Start"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -273.0
+offset_right = 193.0
+alignment = 2
+
+[node name="Button" type="Button" parent="Taskbar/Start/StartMenu"]
+layout_mode = 2
+text = "NOT YET IMPLEMENTED"
+
+[node name="PowerOptions" type="Button" parent="Taskbar/Start/StartMenu"]
+layout_mode = 2
+text = "POWER OPTIONS"
+
+[node name="ScreenFilters" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters"]
+copy_mode = 2
+rect = Rect2(0, 0, 200, 200)
+
+[node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1"]
+visible = false
+material = SubResource("ShaderMaterial_u5sy4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 440.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="ScreenFilters"]
+copy_mode = 2
+rect = Rect2(0, 0, 200, 200)
+
+[node name="GrayScale" type="ColorRect" parent="ScreenFilters/BackBufferCopy2"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_rysoc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 440.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WelcomeScreen" type="Control" parent="." node_paths=PackedStringArray("pfp", "nameLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("37_o8ni1")
+pfp = NodePath("Profile/PFP_Container/profilePicture")
+nameLabel = NodePath("Profile/VBoxContainer/NameLabel")
+
+[node name="XpWelcome" type="Sprite2D" parent="WelcomeScreen"]
+position = Vector2(320, 180)
+scale = Vector2(1, 0.75)
+texture = ExtResource("4_lbhrr")
+
+[node name="WelcomeText" type="RichTextLabel" parent="WelcomeScreen"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 168.0
+offset_right = 288.0
+offset_bottom = 208.0
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("5_iywne")
+theme_override_font_sizes/normal_font_size = 22
+text = "welcome"
+
+[node name="TOP" type="Line2D" parent="WelcomeScreen"]
+position = Vector2(0, 33.730087)
+scale = Vector2(1, 0.46460176)
+points = PackedVector2Array(320, 64, 319.99997, 291.15237)
+width = 1.0
+gradient = SubResource("Gradient_iywne")
+
+[node name="BOTTOM" type="Line2D" parent="WelcomeScreen"]
+position = Vector2(0, 134.26991)
+scale = Vector2(1, 0.53539824)
+points = PackedVector2Array(320, 64, 320, 288)
+width = 1.0
+gradient = SubResource("Gradient_p57ef")
+
+[node name="welcomeAnimation" type="AnimationPlayer" parent="WelcomeScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_p57ef")
+}
+
+[node name="Profile" type="HBoxContainer" parent="WelcomeScreen"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 156.0
+offset_right = 415.0
+offset_bottom = 216.0
+
+[node name="PFP_Container" type="PanelContainer" parent="WelcomeScreen/Profile"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
+
+[node name="profilePicture" type="TextureRect" parent="WelcomeScreen/Profile/PFP_Container"]
+layout_mode = 2
+texture = ExtResource("39_3hbvx")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/Profile"]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="WelcomeScreen/Profile/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+text = "Adam"
+
+[node name="StartLabel" type="Label" parent="WelcomeScreen/Profile/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0627451, 0.19607843, 0.6313726, 1)
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 8
+text = "Loading your personal settings..."
+
+[node name="ShutdownScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="XpWelcome" type="Sprite2D" parent="ShutdownScreen"]
+position = Vector2(320, 180)
+scale = Vector2(1, 0.75)
+texture = ExtResource("4_lbhrr")
+
+[node name="WelcomeText" type="RichTextLabel" parent="ShutdownScreen"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 168.0
+offset_right = 423.0
+offset_bottom = 208.0
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("5_iywne")
+theme_override_font_sizes/normal_font_size = 22
+text = "Goodbye"
+
+[node name="TOP" type="Line2D" parent="ShutdownScreen"]
+visible = false
+position = Vector2(0, 33.730087)
+scale = Vector2(1, 0.46460176)
+points = PackedVector2Array(320, 64, 319.99997, 291.15237)
+width = 1.0
+gradient = SubResource("Gradient_iywne")
+
+[node name="BOTTOM" type="Line2D" parent="ShutdownScreen"]
+visible = false
+position = Vector2(0, 134.26991)
+scale = Vector2(1, 0.53539824)
+points = PackedVector2Array(320, 64, 320, 288)
+width = 1.0
+gradient = SubResource("Gradient_p57ef")
+
+[node name="shutdownAnimation" type="AnimationPlayer" parent="ShutdownScreen"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_pl11u")
+}
+
+[node name="LogScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="LogPanel" type="Sprite2D" parent="LogScreen"]
+position = Vector2(320, 144)
+scale = Vector2(0.8522013, 0.8522013)
+texture = ExtResource("16_ca42v")
+
+[node name="LogButtons" type="HBoxContainer" parent="LogScreen"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 118.0
+offset_right = 1930.0
+offset_bottom = 674.0
+scale = Vector2(0.08, 0.08)
+alignment = 1
+
+[node name="ShutdownButton" type="TextureButton" parent="LogScreen/LogButtons"]
+layout_mode = 2
+texture_normal = ExtResource("18_37s47")
+texture_pressed = ExtResource("19_bt5mj")
+texture_hover = ExtResource("20_e1j6l")
+texture_disabled = ExtResource("21_pl11u")
+
+[node name="LogOff" type="TextureButton" parent="LogScreen/LogButtons"]
+layout_mode = 2
+texture_normal = ExtResource("23_qouja")
+texture_pressed = ExtResource("24_wljb1")
+texture_hover = ExtResource("25_v2yb1")
+texture_disabled = ExtResource("26_js0lu")
+
+[node name="ExitBack" type="TextureButton" parent="LogScreen/LogButtons"]
+layout_mode = 2
+texture_normal = ExtResource("23_qnb83")
+texture_pressed = ExtResource("24_sww3w")
+texture_hover = ExtResource("25_suyxu")
+texture_disabled = ExtResource("26_sgl2t")
+
+[node name="LogLabel" type="RichTextLabel" parent="LogScreen"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 77.0
+offset_right = 384.0
+offset_bottom = 105.0
+theme_override_fonts/normal_font = ExtResource("22_bhx41")
+theme_override_font_sizes/normal_font_size = 16
+text = "Turn off Computer"
+vertical_alignment = 1
+
+[node name="ShutdownLabel" type="RichTextLabel" parent="LogScreen"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 160.0
+offset_right = 315.0
+offset_bottom = 176.0
+theme_override_fonts/normal_font = ExtResource("22_bhx41")
+theme_override_font_sizes/normal_font_size = 12
+text = "Turn off"
+horizontal_alignment = 1
+
+[node name="LogOffLabel" type="RichTextLabel" parent="LogScreen"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 160.0
+offset_right = 361.0
+offset_bottom = 176.0
+theme_override_fonts/normal_font = ExtResource("22_bhx41")
+theme_override_font_sizes/normal_font_size = 12
+text = "Log off"
+horizontal_alignment = 1
+
+[node name="CancelLabel" type="RichTextLabel" parent="LogScreen"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 160.0
+offset_right = 405.0
+offset_bottom = 176.0
+theme_override_fonts/normal_font = ExtResource("22_bhx41")
+theme_override_font_sizes/normal_font_size = 12
+text = "Cancel"
+horizontal_alignment = 1
+
+[node name="logAnimation" type="AnimationPlayer" parent="LogScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_264po")
+}
+
+[node name="CRT" type="CanvasLayer" parent="."]
+layer = 9001
+script = ExtResource("44_66xif")
+resolution = Vector2(640, 360)
+vignette_amount = 0.3
+roll_line_amount = 0.0
+metadata/_custom_type_script = "uid://bghaddibpt6f1"
+
+[connection signal="timeout" from="LoginDelay" to="." method="_on_login_delay_timeout"]
+[connection signal="pressed" from="IconManager/DesktopColumns/First Column/BrowserApp/BrowserAppBox/AppButton" to="AppManager" method="_on_browser_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/First Column/MusicApp/MusicAppBox/AppButton" to="AppManager" method="_on_music_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
+[connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [0]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [1]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [2]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [3]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [4]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [5]]
+[connection signal="close_requested" from="AppManager/settingApp/Window" to="AppManager/settingApp" method="_on_window_close_requested"]
+[connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/HFButton" to="AppManager/settingApp" method="_on_check_button_toggled"]
+[connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/CRTButton" to="AppManager/settingApp" method="_on_crt_button_toggled"]
+[connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
+[connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
+[connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
+[connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartMenu/Button" to="." method="_on_untitled_button_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartMenu/PowerOptions" to="." method="_on_power_options_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartMenu/PowerOptions" to="Taskbar" method="_on_power_options_pressed"]
+[connection signal="animation_finished" from="WelcomeScreen/welcomeAnimation" to="." method="_on_welcome_animation_animation_finished"]
+[connection signal="animation_finished" from="ShutdownScreen/shutdownAnimation" to="." method="_on_shutdown_animation_animation_finished"]
+[connection signal="pressed" from="LogScreen/LogButtons/ShutdownButton" to="." method="_on_shutdown_button_pressed"]
+[connection signal="pressed" from="LogScreen/LogButtons/LogOff" to="." method="_on_log_off_pressed"]
+[connection signal="pressed" from="LogScreen/LogButtons/ExitBack" to="." method="_on_exit_back_pressed"]

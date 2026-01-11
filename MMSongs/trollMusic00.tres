@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://bscghnkhns25y"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_xm2ww"]
+[ext_resource type="AudioStream" uid="uid://bg5vn42cqh1wx" path="res://audio/music/Rickroll.wav" id="2_7d5bn"]
+
+[resource]
+script = ExtResource("1_xm2ww")
+name = "Rick Roll"
+artist = "Rick Astley"
+track = ExtResource("2_7d5bn")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

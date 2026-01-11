@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://di4js5df0o8sx"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_vol7n"]
+[ext_resource type="AudioStream" uid="uid://mquivw7b140i" path="res://audio/music/Albums/SAIKNEKY/Butterflies.wav" id="2_vol7n"]
+
+[resource]
+script = ExtResource("1_vol7n")
+name = "Butterflies"
+artist = "SAIKNEKY :3"
+track = ExtResource("2_vol7n")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

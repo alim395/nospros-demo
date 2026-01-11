@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=13 format=3 uid="uid://du5a2mex75jul"]
+
+[ext_resource type="Texture2D" uid="uid://r2onexbb7yjq" path="res://MMSongs/Albums/7/SAIKNEKY/SAIKNEKY.jpg" id="1_4cmip"]
+[ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="1_p1gpo"]
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="2_su53a"]
+[ext_resource type="Resource" uid="uid://c5oe1xlihjrsx" path="res://MMSongs/Albums/7/SAIKNEKY/SA01.tres" id="3_1g6es"]
+[ext_resource type="Resource" uid="uid://xgnu1pv5s612" path="res://MMSongs/Albums/7/SAIKNEKY/SA02.tres" id="4_6ey5o"]
+[ext_resource type="Resource" uid="uid://bswhs3pe10k8w" path="res://MMSongs/Albums/7/SAIKNEKY/SA03.tres" id="5_4cmip"]
+[ext_resource type="Resource" uid="uid://di4js5df0o8sx" path="res://MMSongs/Albums/7/SAIKNEKY/SA04.tres" id="6_1i5tr"]
+[ext_resource type="Resource" uid="uid://c6x3xkwqo3pfj" path="res://MMSongs/Albums/7/SAIKNEKY/SA05.tres" id="7_wuseh"]
+[ext_resource type="Resource" uid="uid://d21nssn2ftpjn" path="res://MMSongs/Albums/7/SAIKNEKY/SA06.tres" id="8_6yjos"]
+[ext_resource type="Resource" uid="uid://b8tyiafw7e3v6" path="res://MMSongs/Albums/7/SAIKNEKY/SA07.tres" id="9_n71hl"]
+[ext_resource type="Resource" uid="uid://mjukjdpi5xwd" path="res://MMSongs/Albums/7/SAIKNEKY/SA08.tres" id="10_lmcgp"]
+[ext_resource type="Resource" uid="uid://bqmidaw5rrw3v" path="res://MMSongs/Albums/7/SAIKNEKY/SA09.tres" id="11_4qwg7"]
+
+[resource]
+script = ExtResource("1_p1gpo")
+name = "SAIKNEKY :3"
+tracks = Array[ExtResource("2_su53a")]([ExtResource("3_1g6es"), ExtResource("4_6ey5o"), ExtResource("5_4cmip"), ExtResource("6_1i5tr"), ExtResource("7_wuseh"), ExtResource("8_6yjos"), ExtResource("9_n71hl"), ExtResource("10_lmcgp"), ExtResource("11_4qwg7")])
+art = ExtResource("1_4cmip")
+metadata/_custom_type_script = "uid://c8lu2riejct4e"
