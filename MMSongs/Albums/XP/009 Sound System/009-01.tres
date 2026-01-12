@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://by2ovwxdbf10d"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_vq6oy"]
-[ext_resource type="AudioStream" uid="uid://cw14nk5npo0ik" path="res://audio/music/Albums/009 Sound System/1,01-Dreamscape.mp3" id="2_kktha"]
+[ext_resource type="AudioStream" uid="uid://wg4wp1iue823" path="res://audio/music/Albums/009 Sound System/1,01-Dreamscape.ogg" id="2_kktha"]
 
 [resource]
 script = ExtResource("1_vq6oy")

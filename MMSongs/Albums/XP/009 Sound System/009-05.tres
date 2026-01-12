@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://dho8c6obb27nf"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_ld5j5"]
-[ext_resource type="AudioStream" uid="uid://dxm3q4x0j7700" path="res://audio/music/Albums/009 Sound System/1,05-Holy Ghost.mp3" id="2_il3yo"]
+[ext_resource type="AudioStream" uid="uid://cqhpfcyisxfer" path="res://audio/music/Albums/009 Sound System/1,05-Holy Ghost.ogg" id="2_ld5j5"]
 
 [resource]
 script = ExtResource("1_ld5j5")
 name = "Holy Ghost"
 artist = "009 Sound System"
-track = ExtResource("2_il3yo")
+track = ExtResource("2_ld5j5")
 metadata/_custom_type_script = "uid://b4gw7svnn4fxu"
