@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://cxvvu3x07n0ak"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_yflel"]
-[ext_resource type="AudioStream" uid="uid://dyac5e0ryidlp" path="res://audio/music/Albums/009 Sound System/1,08-Killer With A Thousand Faces.mp3" id="2_yflel"]
+[ext_resource type="AudioStream" uid="uid://0i8414wj2pbp" path="res://audio/music/Albums/009 Sound System/1,08-Killer With A Thousand Faces.ogg" id="2_yflel"]
 
 [resource]
 script = ExtResource("1_yflel")

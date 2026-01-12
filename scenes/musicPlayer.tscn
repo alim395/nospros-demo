@@ -8,10 +8,10 @@
 [ext_resource type="Resource" uid="uid://kcfcelkt7aou" path="res://MMSongs/Albums/XP/009_Sound_System.tres" id="4_b2ner"]
 [ext_resource type="Resource" uid="uid://bimj5fu4x7gh3" path="res://MMSongs/Albums/XP/XP_OST.tres" id="5_yb2vk"]
 [ext_resource type="Script" uid="uid://plvrf5wtrq0r" path="res://scripts/audio_spectrum_visualizer.gd" id="6_py3vy"]
-[ext_resource type="AudioStream" uid="uid://cutqncerprk4u" path="res://audio/sfx/musicPlayerButtons/Play.mp3" id="7_y5g7r"]
-[ext_resource type="AudioStream" uid="uid://df5qn18iqai16" path="res://audio/sfx/musicPlayerButtons/Pause.mp3" id="8_b2ner"]
-[ext_resource type="AudioStream" uid="uid://c8vf0kvq86q50" path="res://audio/sfx/musicPlayerButtons/Stop.mp3" id="9_odikg"]
-[ext_resource type="AudioStream" uid="uid://u44b03skvtu8" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.mp3" id="10_jbysy"]
+[ext_resource type="AudioStream" uid="uid://cfbtjk8h84bkd" path="res://audio/sfx/musicPlayerButtons/Play.ogg" id="8_8evac"]
+[ext_resource type="AudioStream" uid="uid://dtto4f6wn3g5p" path="res://audio/sfx/musicPlayerButtons/Pause.ogg" id="9_knkca"]
+[ext_resource type="AudioStream" uid="uid://y4w6jskccl0c" path="res://audio/sfx/musicPlayerButtons/Stop.ogg" id="10_2jk8m"]
+[ext_resource type="AudioStream" uid="uid://det7copv4y5rx" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.ogg" id="11_t4c88"]
 [ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="13_8evac"]
 [ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="14_knkca"]
 [ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="15_2jk8m"]
@@ -45,10 +45,10 @@ artistLabel = NodePath("Window/Panel/HBoxContainer/VBoxContainer/Label")
 seekSlider = NodePath("Window/Panel/OptionsContainer/seekSlider")
 loopButton = NodePath("Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/LoopButton")
 shuffleButton = NodePath("Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/Shuffle")
-playSound = ExtResource("7_y5g7r")
-pauseSound = ExtResource("8_b2ner")
-stopSound = ExtResource("9_odikg")
-changeSound = ExtResource("10_jbysy")
+playSound = ExtResource("8_8evac")
+pauseSound = ExtResource("9_knkca")
+stopSound = ExtResource("10_2jk8m")
+changeSound = ExtResource("11_t4c88")
 
 [node name="Window" type="Window" parent="."]
 snap_2d_vertices_to_pixel = true

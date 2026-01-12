@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://mjukjdpi5xwd"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_g44pp"]
-[ext_resource type="AudioStream" uid="uid://pf5h1sx87ny4" path="res://audio/music/Albums/SAIKNEKY/Landscape.wav" id="2_g44pp"]
+[ext_resource type="AudioStream" uid="uid://dql4iyd5kf52p" path="res://audio/music/Albums/SAIKNEKY/Landscape.ogg" id="2_g44pp"]
 
 [resource]
 script = ExtResource("1_g44pp")

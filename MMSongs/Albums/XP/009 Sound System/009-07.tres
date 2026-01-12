@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://bwdsbm563p628"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_yflel"]
-[ext_resource type="AudioStream" uid="uid://d1qo0g1jfly62" path="res://audio/music/Albums/009 Sound System/1,07-Trinity.mp3" id="2_vgi12"]
+[ext_resource type="AudioStream" uid="uid://urs60yn2q5bh" path="res://audio/music/Albums/009 Sound System/1,07-Trinity.ogg" id="2_12bkj"]
 
 [resource]
 script = ExtResource("1_yflel")
 name = "Trinity"
 artist = "009 Sound System"
-track = ExtResource("2_vgi12")
+track = ExtResource("2_12bkj")
 metadata/_custom_type_script = "uid://b4gw7svnn4fxu"
