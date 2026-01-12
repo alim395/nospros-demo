@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bpb3lcfhbttjn"]
 
 [ext_resource type="Script" uid="uid://ysvx6tfrjahy" path="res://scripts/main_log.gd" id="1_b4ej1"]
-[ext_resource type="AudioStream" uid="uid://chaeam2xlkeqy" path="res://audio/sfx/logon.mp3" id="2_icvme"]
+[ext_resource type="AudioStream" uid="uid://heft5rnta720" path="res://audio/sfx/logon.ogg" id="2_ti1w0"]
 [ext_resource type="Texture2D" uid="uid://kmrc5u8tchu5" path="res://textures/UserTextureXP.tres" id="3_a4nra"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="3_icvme"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="4_icvme"]
@@ -43,7 +43,7 @@ shader_parameter/blur_strength = 1.0
 
 [node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "softBlur", "crtNode")]
 script = ExtResource("1_b4ej1")
-logOnSound = ExtResource("2_icvme")
+logOnSound = ExtResource("2_ti1w0")
 buttonManager = NodePath("ButtonManager")
 shutdownButton = NodePath("ButtonManager/Quit")
 startButton = NodePath("ButtonManager/Start")
@@ -196,7 +196,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
-visible = false
 script = ExtResource("16_icvme")
 resolution = Vector2(640, 360)
 vignette_amount = 0.3

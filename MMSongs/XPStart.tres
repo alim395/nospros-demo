@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://cqkesdqmvfcu1"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_4ivy1"]
-[ext_resource type="AudioStream" uid="uid://blki3wijr7l2t" path="res://audio/music/OS/startup/XP_Me.wav" id="2_xhcld"]
+[ext_resource type="AudioStream" uid="uid://jlh0xleh6m1m" path="res://audio/music/OS/startup/XP_Me.ogg" id="2_xhcld"]
 
 [resource]
 script = ExtResource("1_4ivy1")
