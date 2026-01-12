@@ -28,4 +28,4 @@ jobs:
           itch_user: ZenkoZGames
           itch_game: nospros-demo
           version: ${{ github.ref_name }}
-          files: "${{ steps.export.outputs.archive_directory }}/test-web.zip"
+          files: "${{ steps.export.outputs.archive_directory }}/*"
