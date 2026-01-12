@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://dqgxaqyppjvab" path="res://audio/sfx/logoff.ogg" id="3_66xif"]
 [ext_resource type="Resource" uid="uid://do4lohr870std" path="res://MMSongs/XPShutdown.tres" id="3_e1j6l"]
-[ext_resource type="AudioStream" uid="uid://bm8mi7ncs0iw2" path="res://audio/sfx/logoff.mp3" id="3_h3rex"]
-[ext_resource type="AudioStream" uid="uid://dik03g6tx87ba" path="res://audio/sfx/click.wav" id="4_gxtfn"]
 [ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/Bliss21.png" id="4_js0lu"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="4_lbhrr"]
 [ext_resource type="Shader" uid="uid://dfq0esfuvf8kp" path="res://shaders/GaussianBlur.gdshader" id="4_p57ef"]
@@ -42,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/setting_app.gd" id="17_0sl42"]
 [ext_resource type="Texture2D" uid="uid://cvkppvgw27ijf" path="res://sprites/buttons/Shutdown.png" id="18_37s47"]
+[ext_resource type="AudioStream" uid="uid://d6kebytv1i7y" path="res://audio/sfx/click.ogg" id="19_bnuda"]
 [ext_resource type="Texture2D" uid="uid://cdxbew7cfl0kc" path="res://sprites/buttons/Shutdown_Pressed.png" id="19_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
@@ -410,7 +410,7 @@ appManager = NodePath("AppManager")
 loginDelay = NodePath("LoginDelay")
 logScreen = NodePath("LogScreen")
 logAnimation = NodePath("LogScreen/logAnimation")
-logOffSound = ExtResource("3_h3rex")
+logOffSound = ExtResource("3_66xif")
 shutdownSong = ExtResource("3_e1j6l")
 shutdownScreen = NodePath("ShutdownScreen")
 shutdownAnimation = NodePath("ShutdownScreen/shutdownAnimation")
@@ -614,16 +614,14 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 336.0
 script = ExtResource("5_wljb1")
-clickSFX = ExtResource("4_gxtfn")
-pictureApp = NodePath("CanvasGroup/pictureApp")
-settingApp = NodePath("CanvasGroup/settingApp")
-trollApp = NodePath("CanvasGroup/trollApp")
+clickSFX = ExtResource("19_bnuda")
+pictureApp = NodePath("pictureApp")
+settingApp = NodePath("settingApp")
+trollApp = NodePath("trollApp")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="AppManager"]
-
-[node name="pictureApp" type="Control" parent="AppManager/CanvasGroup" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
-layout_mode = 3
+[node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -631,12 +629,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_7025r")
 myWindow = NodePath("Window")
-desktopWallpaper = NodePath("../../../DesktopBackground/Wallpaper")
+desktopWallpaper = NodePath("../../DesktopBackground/Wallpaper")
 wallpapersCollection = Array[Texture2D]([ExtResource("4_js0lu"), ExtResource("12_8ool0"), ExtResource("12_pr1ej"), ExtResource("13_05nbr"), ExtResource("11_m4url"), ExtResource("15_0sl42")])
 wallpapersCollectionName = Array[String](["Bliss", "Ascent", "Autumn", "FollowMe", "Red Moon", "VortecSpace"])
 folderRows = NodePath("Window/Panel/FolderRows")
 
-[node name="Window" type="Window" parent="AppManager/CanvasGroup/pictureApp"]
+[node name="Window" type="Window" parent="AppManager/pictureApp"]
 oversampling_override = 1.0
 title = "My Pictures"
 initial_position = 1
@@ -644,22 +642,22 @@ size = Vector2i(480, 232)
 visible = false
 theme = ExtResource("10_nepv3")
 
-[node name="Panel" type="Panel" parent="AppManager/CanvasGroup/pictureApp/Window"]
+[node name="Panel" type="Panel" parent="AppManager/pictureApp/Window"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FolderRows" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel"]
+[node name="FolderRows" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel"]
 layout_mode = 0
 offset_right = 478.0
 offset_bottom = 232.0
 
-[node name="Row0" type="HBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows"]
+[node name="Row0" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows"]
 layout_mode = 2
 
-[node name="Photo0" type="MarginContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0"]
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -667,12 +665,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo0"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -682,14 +680,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Bliss"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo1" type="MarginContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0"]
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -697,12 +695,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo1"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -712,14 +710,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Ascent"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo2" type="MarginContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0"]
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -727,12 +725,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo2"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -742,17 +740,17 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Autumn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Row1" type="HBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows"]
+[node name="Row1" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows"]
 layout_mode = 2
 
-[node name="Photo0" type="MarginContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1"]
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -760,12 +758,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo0"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -775,14 +773,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Follow Me"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo1" type="MarginContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1"]
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -790,12 +788,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo1"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -805,14 +803,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Red Moon"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo2" type="MarginContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1"]
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -820,12 +818,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo2"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -835,16 +833,16 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Vortec Space"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="settingApp" type="Control" parent="AppManager/CanvasGroup" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "crtNode", "startMenuOptions", "iconStyleOptions")]
+[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "crtNode", "startMenuOptions", "iconStyleOptions")]
 custom_minimum_size = Vector2(640, 336)
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -854,14 +852,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_0sl42")
 myWindow = NodePath("Window")
-softBlur = NodePath("../../../ScreenFilters/BackBufferCopy1/CanvasLayer/SoftBlur")
+softBlur = NodePath("../../ScreenFilters/BackBufferCopy1/CanvasLayer/SoftBlur")
 highFidelity = NodePath("Window/Panel/settings/HFButton")
 crtFilter = NodePath("Window/Panel/settings/CRTButton")
-crtNode = NodePath("../../../CRT")
+crtNode = NodePath("../../CRT")
 startMenuOptions = NodePath("Window/Panel/settings/ThemeOption/StartTheme")
 iconStyleOptions = NodePath("Window/Panel/settings/IconOption/IconStyle")
 
-[node name="Window" type="Window" parent="AppManager/CanvasGroup/settingApp"]
+[node name="Window" type="Window" parent="AppManager/settingApp"]
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
@@ -869,14 +867,14 @@ size = Vector2i(360, 198)
 visible = false
 theme = ExtResource("10_nepv3")
 
-[node name="Panel" type="Panel" parent="AppManager/CanvasGroup/settingApp/Window"]
+[node name="Panel" type="Panel" parent="AppManager/settingApp/Window"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="settings" type="VBoxContainer" parent="AppManager/CanvasGroup/settingApp/Window/Panel"]
+[node name="settings" type="VBoxContainer" parent="AppManager/settingApp/Window/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -890,43 +888,43 @@ offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HFButton" type="CheckButton" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings"]
+[node name="HFButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Disable Soft Filter"
 
-[node name="CRTButton" type="CheckButton" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings"]
+[node name="CRTButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable CRT Filter"
 
-[node name="IconOption" type="HBoxContainer" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings"]
+[node name="IconOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
 layout_mode = 2
 tooltip_text = "Default: Classic"
 
-[node name="Label" type="Label" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings/IconOption"]
+[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/IconOption"]
 layout_mode = 2
 text = "Icon Style : "
 
-[node name="IconStyle" type="OptionButton" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings/IconOption"]
+[node name="IconStyle" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/IconOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ThemeOption" type="HBoxContainer" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings"]
+[node name="ThemeOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
 layout_mode = 2
 tooltip_text = "Default: Luna"
 
-[node name="Label" type="Label" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings/ThemeOption"]
+[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
 layout_mode = 2
 text = "Theme : "
 
-[node name="StartTheme" type="OptionButton" parent="AppManager/CanvasGroup/settingApp/Window/Panel/settings/ThemeOption"]
+[node name="StartTheme" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="trollApp" type="Control" parent="AppManager/CanvasGroup" node_paths=PackedStringArray("myWindow")]
+[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow")]
 custom_minimum_size = Vector2(640, 336)
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -938,7 +936,7 @@ script = ExtResource("21_rm0al")
 myWindow = NodePath("Window")
 trollMusic = ExtResource("22_pf7vy")
 
-[node name="Window" type="Window" parent="AppManager/CanvasGroup/trollApp"]
+[node name="Window" type="Window" parent="AppManager/trollApp"]
 oversampling_override = 1.0
 title = "PRIZE"
 initial_position = 1
@@ -946,14 +944,14 @@ size = Vector2i(198, 198)
 visible = false
 theme = ExtResource("10_nepv3")
 
-[node name="Panel" type="Panel" parent="AppManager/CanvasGroup/trollApp/Window"]
+[node name="Panel" type="Panel" parent="AppManager/trollApp/Window"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AppManager/CanvasGroup/trollApp/Window/Panel"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AppManager/trollApp/Window/Panel"]
 custom_minimum_size = Vector2(198, 198)
 layout_mode = 0
 stream = ExtResource("22_i4re6")
@@ -1348,7 +1346,6 @@ libraries = {
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
-visible = false
 script = ExtResource("44_66xif")
 resolution = Vector2(640, 360)
 vignette_amount = 0.3
@@ -1361,19 +1358,19 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
-[connection signal="close_requested" from="AppManager/CanvasGroup/pictureApp/Window" to="AppManager/CanvasGroup/pictureApp" method="_on_window_close_requested"]
-[connection signal="pressed" from="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/CanvasGroup/pictureApp" method="_on_photo_pressed" binds= [0]]
-[connection signal="pressed" from="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/CanvasGroup/pictureApp" method="_on_photo_pressed" binds= [1]]
-[connection signal="pressed" from="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer/AppButton" to="AppManager/CanvasGroup/pictureApp" method="_on_photo_pressed" binds= [2]]
-[connection signal="pressed" from="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer/AppButton" to="AppManager/CanvasGroup/pictureApp" method="_on_photo_pressed" binds= [3]]
-[connection signal="pressed" from="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer/AppButton" to="AppManager/CanvasGroup/pictureApp" method="_on_photo_pressed" binds= [4]]
-[connection signal="pressed" from="AppManager/CanvasGroup/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer/AppButton" to="AppManager/CanvasGroup/pictureApp" method="_on_photo_pressed" binds= [5]]
-[connection signal="close_requested" from="AppManager/CanvasGroup/settingApp/Window" to="AppManager/CanvasGroup/settingApp" method="_on_window_close_requested"]
-[connection signal="toggled" from="AppManager/CanvasGroup/settingApp/Window/Panel/settings/HFButton" to="AppManager/CanvasGroup/settingApp" method="_on_check_button_toggled"]
-[connection signal="toggled" from="AppManager/CanvasGroup/settingApp/Window/Panel/settings/CRTButton" to="AppManager/CanvasGroup/settingApp" method="_on_crt_button_toggled"]
-[connection signal="item_selected" from="AppManager/CanvasGroup/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/CanvasGroup/settingApp" method="_on_icon_style_item_selected"]
-[connection signal="item_selected" from="AppManager/CanvasGroup/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/CanvasGroup/settingApp" method="_on_start_menu_theme_item_selected"]
-[connection signal="close_requested" from="AppManager/CanvasGroup/trollApp/Window" to="AppManager/CanvasGroup/trollApp" method="_on_window_close_requested"]
+[connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [0]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [1]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [2]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [3]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [4]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [5]]
+[connection signal="close_requested" from="AppManager/settingApp/Window" to="AppManager/settingApp" method="_on_window_close_requested"]
+[connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/HFButton" to="AppManager/settingApp" method="_on_check_button_toggled"]
+[connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/CRTButton" to="AppManager/settingApp" method="_on_crt_button_toggled"]
+[connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
+[connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
+[connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
 [connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartMenu/Button" to="." method="_on_untitled_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartMenu/PowerOptions" to="." method="_on_power_options_pressed"]
