@@ -7,6 +7,7 @@ extends Node2D
 @export var startButton : Button
 @export var startLabel : Label
 
+@export var softBlur : Node2D
 @export var crtNode : CRT
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +23,7 @@ func _ready() -> void:
 		shutdownButton.tooltip_text = "Not available in web build."
 	#print(globalParameters.defaultTheme)
 	crtNode.visible = globalParameters.crtFilter
+	softBlur.visible = not globalParameters.highFidelity
 
 func _on_start_pressed() -> void:
 	buttonManager.visible = false

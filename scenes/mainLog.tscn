@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpb3lcfhbttjn"]
+[gd_scene load_steps=22 format=3 uid="uid://bpb3lcfhbttjn"]
 
 [ext_resource type="Script" uid="uid://ysvx6tfrjahy" path="res://scripts/main_log.gd" id="1_b4ej1"]
 [ext_resource type="AudioStream" uid="uid://chaeam2xlkeqy" path="res://audio/sfx/logon.mp3" id="2_icvme"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://dx8bumt1hb7f7" path="res://fonts/tahomabd.ttf" id="12_xjby3"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="13_j7xth"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="16_icvme"]
+[ext_resource type="Shader" uid="uid://dfq0esfuvf8kp" path="res://shaders/GaussianBlur.gdshader" id="16_ti1w0"]
 
 [sub_resource type="Gradient" id="Gradient_85g3d"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -31,13 +32,23 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
-[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "crtNode")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hin8t"]
+shader = ExtResource("16_ti1w0")
+shader_parameter/blur_radius = 8
+shader_parameter/Darkness = 0.05
+shader_parameter/R = 0.0
+shader_parameter/G = 0.0
+shader_parameter/B = 0.0
+shader_parameter/blur_strength = 1.0
+
+[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "softBlur", "crtNode")]
 script = ExtResource("1_b4ej1")
 logOnSound = ExtResource("2_icvme")
 buttonManager = NodePath("ButtonManager")
 shutdownButton = NodePath("ButtonManager/Quit")
 startButton = NodePath("ButtonManager/Start")
 startLabel = NodePath("ButtonManager/Start/StartLabel")
+softBlur = NodePath("ScreenFilters/BackBufferCopy1")
 crtNode = NodePath("CRT")
 
 [node name="XpWelcome" type="Sprite2D" parent="."]
@@ -161,6 +172,27 @@ theme_override_fonts/normal_font = ExtResource("12_xjby3")
 theme_override_font_sizes/normal_font_size = 24
 text = "Nostalgia
 Process"
+
+[node name="ScreenFilters" type="Node2D" parent="."]
+
+[node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters"]
+z_index = 1
+copy_mode = 2
+rect = Rect2(0, 0, 200, 200)
+
+[node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1"]
+material = SubResource("ShaderMaterial_hin8t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 440.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001

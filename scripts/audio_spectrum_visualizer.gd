@@ -63,7 +63,7 @@ func _ready():
 	#if OS.get_name() == "Web":
 		#queue_free()
 	# Fixed by forcing stream playback
-	spectrum = AudioServer.get_bus_effect_instance(0, 0)
+	spectrum = AudioServer.get_bus_effect_instance(1, 0)
 	min_values.resize(VU_COUNT)
 	max_values.resize(VU_COUNT)
 	min_values.fill(0.0)

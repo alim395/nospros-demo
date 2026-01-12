@@ -142,12 +142,13 @@ _data = {
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_bajgp")
-bus = "Master"
 
 [node name="MusicPlayer1" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
 playback_type = 1
 
 [node name="MusicPlayer2" type="AudioStreamPlayer" parent="."]
+max_polyphony = 8
 bus = &"SFX"
 
 [node name="SongTimer" type="Timer" parent="."]
