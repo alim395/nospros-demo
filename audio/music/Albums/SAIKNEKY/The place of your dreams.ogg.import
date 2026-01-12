@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brgyw5t4nskxa"
+path="res://.godot/imported/The place of your dreams.ogg-7d696f7914d3b893976087505eb04530.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/SAIKNEKY/The place of your dreams.ogg"
+dest_files=["res://.godot/imported/The place of your dreams.ogg-7d696f7914d3b893976087505eb04530.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

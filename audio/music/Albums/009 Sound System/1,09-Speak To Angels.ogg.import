@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://do2jkx7nqo4yi"
+path="res://.godot/imported/1,09-Speak To Angels.ogg-7131658565d6fa3110af6fbf8e2cd984.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/1,09-Speak To Angels.ogg"
+dest_files=["res://.godot/imported/1,09-Speak To Angels.ogg-7131658565d6fa3110af6fbf8e2cd984.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
