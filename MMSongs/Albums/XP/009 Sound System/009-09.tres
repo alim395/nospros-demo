@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://b7228c1oysd35"]
 
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_i512g"]
-[ext_resource type="AudioStream" uid="uid://c8f3vxw3ct87o" path="res://audio/music/Albums/009 Sound System/1,09-Speak To Angels.mp3" id="2_i512g"]
+[ext_resource type="AudioStream" uid="uid://do2jkx7nqo4yi" path="res://audio/music/Albums/009 Sound System/1,09-Speak To Angels.ogg" id="2_i512g"]
 
 [resource]
 script = ExtResource("1_i512g")
