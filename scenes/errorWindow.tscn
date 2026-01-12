@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_0hu1h"]
 [ext_resource type="Script" uid="uid://dmr6x4l38loe4" path="res://scripts/error_window.gd" id="2_tmfn4"]
 [ext_resource type="Texture2D" uid="uid://du8ymh1g46mhr" path="res://sprites/UI/XP/panels/Critical.png" id="3_ddchl"]
-[ext_resource type="AudioStream" uid="uid://b3gevbkjrd6lg" path="res://audio/sfx/errorXP.mp3" id="3_twyg7"]
-[ext_resource type="AudioStream" uid="uid://bqt1t4il2igyp" path="res://audio/sfx/Exclamation.wav" id="4_x86av"]
+[ext_resource type="AudioStream" uid="uid://djn8u6033xro0" path="res://audio/sfx/errorXP.ogg" id="3_x86av"]
+[ext_resource type="AudioStream" uid="uid://dy0gtefm6agqr" path="res://audio/sfx/Exclamation.ogg" id="4_2s133"]
 [ext_resource type="Texture2D" uid="uid://nrh53vvbcmk" path="res://sprites/UI/XP/panels/Alert.png" id="5_twyg7"]
 
 [node name="Window" type="Window" node_paths=PackedStringArray("error_button", "errorLabel")]
@@ -19,8 +19,8 @@ titleBarName = "Error"
 error_button = NodePath("Panel/VBoxContainer/ErrorMSG/ErrorButton")
 errorLabel = NodePath("Panel/VBoxContainer/ErrorMSG/ErrorLabel")
 error_msg = "Undefined."
-error_sound = ExtResource("3_twyg7")
-note_sound = ExtResource("4_x86av")
+error_sound = ExtResource("3_x86av")
+note_sound = ExtResource("4_2s133")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15

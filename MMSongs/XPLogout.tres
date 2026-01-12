@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://cm72m1my2mjmd"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_1rmrm"]
+[ext_resource type="AudioStream" uid="uid://dqgxaqyppjvab" path="res://audio/sfx/logoff.ogg" id="2_1rmrm"]
+
+[resource]
+script = ExtResource("1_1rmrm")
+name = "Logoff"
+artist = "ZEN from ME"
+track = ExtResource("2_1rmrm")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"
