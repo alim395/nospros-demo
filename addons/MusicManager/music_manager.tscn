@@ -148,7 +148,11 @@ bus = &"Music"
 playback_type = 1
 
 [node name="MusicPlayer2" type="AudioStreamPlayer" parent="."]
-max_polyphony = 8
+bus = &"Music"
+playback_type = 1
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 16
 bus = &"SFX"
 
 [node name="SongTimer" type="Timer" parent="."]
