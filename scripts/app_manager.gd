@@ -44,10 +44,6 @@ func closeCoreApps() -> void:
 	settingApp._on_window_close_requested()
 	trollApp._on_window_close_requested()
 
-func playSFX(sfx : AudioStream) -> void:
-	MusicManager.sfx_player.stream = sfx
-	MusicManager.sfx_player.play()
-
 func openMusicApp() -> void:
 	if activeInstance != null:
 		closeActiveInstance()
@@ -76,15 +72,15 @@ func openWebApp() -> void:
 	
 func _on_music_button_pressed() -> void:
 	openMusicApp()
-	playSFX(clickSFX)
+	globalParameters.playSFX(clickSFX)
 
 func _on_photo_button_pressed() -> void:
 	openPhotoApp()
-	playSFX(clickSFX)
+	globalParameters.playSFX(clickSFX)
 
 func _on_settings_button_pressed() -> void:
 	openSettingsApp()
-	playSFX(clickSFX)
+	globalParameters.playSFX(clickSFX)
 
 func openTrollApp() -> void:
 	if activeInstance != null:
@@ -94,7 +90,8 @@ func openTrollApp() -> void:
 
 func _on_troll_button_pressed() -> void:
 	openTrollApp()
+	globalParameters.playSFX(clickSFX)
 
 func _on_browser_button_pressed() -> void:
 	openWebApp()
-	playSFX(clickSFX)
+	globalParameters.playSFX(clickSFX)
