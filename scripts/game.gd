@@ -15,7 +15,8 @@ extends Node2D
 
 @export var logScreen : Control
 @export var logAnimation : AnimationPlayer
-@export var logOffSound : AudioStream
+#@export var logOffSound : AudioStream
+@export var logOffSong : MusicTrack
 
 @export var shutdownSong : MusicTrack
 @export var shutdownScreen : Control
@@ -92,8 +93,7 @@ func _on_log_off_pressed() -> void:
 	logAnimation.play("RESET")
 	get_tree().change_scene_to_file("res://scenes/mainLog.tscn")
 	MusicManager.stop_music.emit()
-	MusicManager.music_player_2.stream = logOffSound
-	MusicManager.music_player_2.play()
+	MusicManager.play_song.emit(logOffSong, false, false, 0)
 
 func _on_untitled_button_pressed() -> void:
 	%Taskbar._on_power_options_pressed()
