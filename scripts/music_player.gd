@@ -68,12 +68,6 @@ func _process(_delta: float) -> void:
 	if(isPlaying):
 		updateSeekSlider(seekSlider.value)
 
-func playSFX(sfx : AudioStream) -> void:
-	MusicManager.music_player_2.stream = sfx
-	MusicManager.music_player_2.play()
-	print("Playing SFX")
-	await get_tree().create_timer(sfx.get_length()).timeout
-
 func setTrackLabel() -> void:
 	var trackNumText = "[%02d]" % (currentTrackNum + 1)
 	trackNumLabel.text = trackNumText
@@ -92,15 +86,17 @@ func _on_play_button_pressed() -> void:
 			if(isSeeking):
 				MusicManager.current_player.play(seekSlider.value)
 				isSeeking = false
+			else:
+				globalParameters.playSFX(playSound)
 			isPaused = false
-		#playSFX(playSound)
 
 func _on_pause_button_pressed() -> void:
 	if isPlaying:
 		isPlaying = false
 		isPaused = true
 		MusicManager.pause_music.emit()
-		#playSFX(pauseSound)
+		if not isSeeking:
+			globalParameters.playSFX(pauseSound)
 
 func _on_stop_button_pressed() -> void:
 	isInitial = true
@@ -112,13 +108,13 @@ func _on_stop_button_pressed() -> void:
 	seekSlider.value = 0
 	updateTrackTime(0)
 	MusicManager.stop_music.emit()
-	#playSFX(stopSound)
+	globalParameters.playSFX(stopSound)
 
 func _on_track_option_button_item_selected(index: int) -> void:
 	seekSlider.editable = true
 	currentTrackNum = index
 	updateSong()
-	#playSFX(changeSound)
+	globalParameters.playSFX(changeSound)
 
 func _on_album_option_button_item_selected(index: int) -> void:
 	currentAlbumNum = index
@@ -170,13 +166,13 @@ func _on_prev_track_pressed() -> void:
 	currentTrackNum -= 1
 	updateSong()
 	trackOption.select(currentTrackNum)
-	#playSFX(changeSound)
+	globalParameters.playSFX(changeSound)
 
 func _on_next_track_pressed() -> void:
 	currentTrackNum += 1
 	updateSong()
 	trackOption.select(currentTrackNum)
-	#playSFX(changeSound)
+	globalParameters.playSFX(changeSound)
 
 func updateSeekSlider(songSeconds := 0.0) -> void:
 	if isSeeking:
@@ -232,6 +228,7 @@ func _on_loop_button_toggled(toggled_on: bool) -> void:
 	isLoop = toggled_on
 	if(isLoop):
 		print("LOOPING ON")
+		globalParameters.playSFX(stopSound)
 	if isLoop && isShuffle:
 		shuffleButton.button_pressed = false
 
@@ -239,12 +236,13 @@ func _on_shuffle_toggled(toggled_on: bool) -> void:
 	isShuffle = toggled_on
 	if(isShuffle):
 		print("SHUFFLE ON")
+		globalParameters.playSFX(stopSound)
 	if isLoop && isShuffle:
 		loopButton.button_pressed = false
 
 func _on_seek_slider_drag_started() -> void:
-	_on_pause_button_pressed()
 	isSeeking = true
+	_on_pause_button_pressed()
 
 func _on_seek_slider_drag_ended(value_changed: bool) -> void:
 	if value_changed:
@@ -260,8 +258,8 @@ func _on_seek_forward_button_up() -> void:
 
 
 func _on_seek_back_button_down() -> void:
-	_on_pause_button_pressed()
 	isSeeking = true
+	_on_pause_button_pressed()
 	seekSlider.value -= 10
 
 func _on_seek_back_button_up() -> void:
