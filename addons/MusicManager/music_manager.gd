@@ -50,6 +50,9 @@ var current_player: AudioStreamPlayer
 @onready var music_player: AudioStreamPlayer = $MusicPlayer1
 @onready var music_player_2: AudioStreamPlayer = $MusicPlayer2
 
+# AudioStreamPlayer for SFX.
+@onready var sfx_player: AudioStreamPlayer = $SFXPlayer
+
 # Timer that keeps track when a song has finished playing
 @onready var song_timer: Timer = $SongTimer
 
