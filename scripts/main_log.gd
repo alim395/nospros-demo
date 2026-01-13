@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var logOnSound : AudioStream
+#@export var logOnSound : AudioStream
+@export var logOnSong : MusicTrack
 @export var buttonManager : Control
 @export var shutdownButton : BaseButton
 
@@ -28,8 +29,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	buttonManager.visible = false
 	# MusicManager.stop_music.emit()
-	MusicManager.music_player_2.stream = logOnSound
-	MusicManager.music_player_2.play()
+	MusicManager.play_song.emit(logOnSong, false, false, 0.5)
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	print(globalParameters.defaultTheme)
 

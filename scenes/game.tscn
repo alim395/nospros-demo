@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://dqgxaqyppjvab" path="res://audio/sfx/logoff.ogg" id="3_66xif"]
+[ext_resource type="Resource" uid="uid://cm72m1my2mjmd" path="res://MMSongs/XPLogout.tres" id="3_66xif"]
 [ext_resource type="Resource" uid="uid://do4lohr870std" path="res://MMSongs/XPShutdown.tres" id="3_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/Bliss21.png" id="4_js0lu"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="4_lbhrr"]
@@ -410,7 +410,7 @@ appManager = NodePath("AppManager")
 loginDelay = NodePath("LoginDelay")
 logScreen = NodePath("LogScreen")
 logAnimation = NodePath("LogScreen/logAnimation")
-logOffSound = ExtResource("3_66xif")
+logOffSong = ExtResource("3_66xif")
 shutdownSong = ExtResource("3_e1j6l")
 shutdownScreen = NodePath("ShutdownScreen")
 shutdownAnimation = NodePath("ShutdownScreen/shutdownAnimation")
