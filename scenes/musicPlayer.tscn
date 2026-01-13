@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=29 format=3 uid="uid://decf48acwjrm8"]
 
 [ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_dphei"]
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://y4w6jskccl0c" path="res://audio/sfx/musicPlayerButtons/Stop.ogg" id="10_2jk8m"]
 [ext_resource type="AudioStream" uid="uid://det7copv4y5rx" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.ogg" id="11_t4c88"]
 [ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="13_8evac"]
+[ext_resource type="Script" uid="uid://p5i3fo41p05n" path="res://scripts/audio_wave_visualizer.gd" id="13_knkca"]
+[ext_resource type="Script" uid="uid://cskqibnc2af5p" path="res://scripts/music_panel_button.gd" id="14_2jk8m"]
 [ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="14_knkca"]
 [ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="15_2jk8m"]
 [ext_resource type="Texture2D" uid="uid://nw10fi27osmh" path="res://sprites/musicButtons/Loop.svg" id="16_t4c88"]
@@ -25,6 +27,30 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcwgm"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_2jk8m"]
+offsets = PackedFloat32Array(0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0.7411765, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t4c88"]
+gradient = SubResource("Gradient_2jk8m")
+width = 160
+height = 80
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_knkca"]
+offsets = PackedFloat32Array(0.3, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.75, 0.75, 0.75, 0.49803922)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2jk8m"]
+gradient = SubResource("Gradient_knkca")
+width = 160
+height = 80
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
 [node name="MusicPlayer" type="Control" node_paths=PackedStringArray("trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton")]
 layout_mode = 3
 anchors_preset = 15
@@ -35,8 +61,8 @@ grow_vertical = 2
 theme = ExtResource("1_dphei")
 script = ExtResource("1_gkd1q")
 albumList = Array[ExtResource("3_y1jbc")]([ExtResource("4_b2ner"), ExtResource("3_dcwgm"), ExtResource("5_yb2vk")])
-trackNumLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer/TrackNumLabel")
-playtimeLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer/playTimeLabel")
+trackNumLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/TrackNumLabel")
+playtimeLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/playTimeLabel")
 albumOption = NodePath("Window/Panel/OptionsContainer/AlbumContainer/OptionButton")
 trackOption = NodePath("Window/Panel/OptionsContainer/TrackContainer/OptionButton")
 albumArt = NodePath("Window/Panel/HBoxContainer/VBoxContainer/TextureRect")
@@ -93,14 +119,33 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("6_py3vy")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/DisplayPanel"]
+[node name="WaveContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer/WaveContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("13_knkca")
+
+[node name="Panel" type="Panel" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer/WaveContainer"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/HBoxContainer/DisplayPanel"]
 layout_mode = 2
 alignment = 1
 
-[node name="TrackNumLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer"]
+[node name="TrackNumLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -109,7 +154,7 @@ theme_override_font_sizes/font_size = 32
 text = "[00]"
 horizontal_alignment = 1
 
-[node name="playTimeLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/HBoxContainer"]
+[node name="playTimeLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
@@ -117,6 +162,15 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "00:00"
 horizontal_alignment = 1
+
+[node name="Panel Button" type="TextureButton" parent="Window/Panel/HBoxContainer/DisplayPanel" node_paths=PackedStringArray("panelVisuals")]
+layout_mode = 2
+texture_pressed = SubResource("GradientTexture2D_t4c88")
+texture_hover = SubResource("GradientTexture2D_2jk8m")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_2jk8m")
+panelVisuals = [NodePath("../PanelPlayTime"), NodePath("../MarginContainer/AudioSpectrumVisualizer"), NodePath("../MarginContainer/WaveContainer")]
 
 [node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
@@ -266,6 +320,7 @@ scrollable = false
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Panel/HBoxContainer/DisplayPanel/Panel Button" to="Window/Panel/HBoxContainer/DisplayPanel/Panel Button" method="_on_pressed"]
 [connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/StopButton" to="." method="_on_stop_button_pressed"]
