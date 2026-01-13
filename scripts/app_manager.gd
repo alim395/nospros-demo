@@ -45,9 +45,8 @@ func closeCoreApps() -> void:
 	trollApp._on_window_close_requested()
 
 func playSFX(sfx : AudioStream) -> void:
-	MusicManager.stop_music.emit()
-	MusicManager.music_player_2.stream = sfx
-	MusicManager.music_player_2.play()
+	MusicManager.sfx_player.stream = sfx
+	MusicManager.sfx_player.play()
 
 func openMusicApp() -> void:
 	if activeInstance != null:
