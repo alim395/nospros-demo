@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/
 
 [gui]
 
+common/snap_controls_to_pixels=false
 theme/default_font_hinting=2
 theme/default_font_multichannel_signed_distance_field=true
 theme/lcd_subpixel_layout=0
