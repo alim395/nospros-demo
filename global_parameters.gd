@@ -35,3 +35,7 @@ func _ready() -> void:
 
 func activateTroll() -> void:
 	GetTrolled.emit()
+
+func playSFX(sfx : AudioStream) -> void:
+	MusicManager.sfx_player.stream = sfx
+	MusicManager.sfx_player.play()
