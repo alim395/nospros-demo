@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=30 format=3 uid="uid://decf48acwjrm8"]
 
 [ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_dphei"]
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://cskqibnc2af5p" path="res://scripts/music_panel_button.gd" id="14_2jk8m"]
 [ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="14_knkca"]
 [ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="15_2jk8m"]
+[ext_resource type="AudioStream" uid="uid://dh8uqeyyrs684" path="res://audio/sfx/musicPlayerButtons/TapGlass.ogg" id="15_t4c88"]
 [ext_resource type="Texture2D" uid="uid://nw10fi27osmh" path="res://sprites/musicButtons/Loop.svg" id="16_t4c88"]
 [ext_resource type="Texture2D" uid="uid://b5oouud5yf3kc" path="res://sprites/musicButtons/TrackPrev.svg" id="17_a15ay"]
 [ext_resource type="Texture2D" uid="uid://bkqxyr333f8jj" path="res://sprites/musicButtons/SeekBack.svg" id="18_e4hja"]
@@ -170,6 +171,7 @@ texture_hover = SubResource("GradientTexture2D_2jk8m")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("14_2jk8m")
+glassTap = ExtResource("15_t4c88")
 panelVisuals = [NodePath("../PanelPlayTime"), NodePath("../MarginContainer/AudioSpectrumVisualizer"), NodePath("../MarginContainer/WaveContainer")]
 
 [node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer"]
