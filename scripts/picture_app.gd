@@ -50,6 +50,6 @@ func openWindow() -> void:
 			#photoName.text = wallpapersCollectionName[count]
 
 func _on_photo_pressed(photoNum: int) -> void:
-	globalParameters.playSFX(%AppManager.clickSFX)
+	MusicManager.sfx_player.play_SFX_from_library("click")
 	desktopWallpaper.texture = wallpapersCollection.get(photoNum)
 	globalParameters.defaultWallpaperIndex = photoNum
