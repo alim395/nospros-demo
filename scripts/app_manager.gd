@@ -72,15 +72,15 @@ func openWebApp() -> void:
 	
 func _on_music_button_pressed() -> void:
 	openMusicApp()
-	MusicManager.sfx_player.play_SFX_from_library("click")
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_photo_button_pressed() -> void:
 	openPhotoApp()
-	MusicManager.sfx_player.play_SFX_from_library("click")
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_settings_button_pressed() -> void:
 	openSettingsApp()
-	MusicManager.sfx_player.play_SFX_from_library("click")
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func openTrollApp() -> void:
 	if activeInstance != null:
@@ -90,8 +90,8 @@ func openTrollApp() -> void:
 
 func _on_troll_button_pressed() -> void:
 	openTrollApp()
-	MusicManager.sfx_player.play_SFX_from_library("click")
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_browser_button_pressed() -> void:
 	openWebApp()
-	MusicManager.sfx_player.play_SFX_from_library("click")
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")

@@ -8,7 +8,7 @@ func _ready() -> void:
 	stream = AudioStreamPolyphonic.new()
 	stream.polyphony = maxPolyphony
 
-func play_SFX_from_library(_tag: String) -> void:
+func play_SFX_from_library_poly(_tag: String) -> void:
 	if _tag:
 		var audioStream = audioLibrary._get_audio_stream(_tag)
 		if !playing: self.play()
@@ -18,6 +18,13 @@ func play_SFX_from_library(_tag: String) -> void:
 	else:
 		printerr("TAG INVALID OR NOT PROVIDED")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func play_SFX_from_library(_tag: String) -> void:
+	if _tag:
+		var audioStream = audioLibrary._get_audio_stream(_tag)
+		self.stop()
+		self.play()
+		
+		var polyphonicStreamPlayback := self.get_stream_playback()
+		polyphonicStreamPlayback.play_stream(audioStream)
+	else:
+		printerr("TAG INVALID OR NOT PROVIDED")

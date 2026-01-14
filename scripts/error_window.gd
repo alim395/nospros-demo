@@ -20,7 +20,7 @@ func _ready() -> void:
 		title = titleBarName
 		errorLabel.text = error_msg
 		error_button.disabled = false
-		MusicManager.sfx_player.play_SFX_from_library("error")
+		MusicManager.sfx_player.play_SFX_from_library_poly("error")
 		globalParameters.errorCount += 1
 	else:
 		title = "SECRET UNLOCKED!"
@@ -30,7 +30,7 @@ func _ready() -> void:
 
 func _on_error_button_pressed() -> void:
 	if not troll:
-		MusicManager.sfx_player.play_SFX_from_library("error")
+		MusicManager.sfx_player.play_SFX_from_library_poly("error")
 		globalParameters.errorCount += 1
 		print(globalParameters.errorCount)
 	else:
