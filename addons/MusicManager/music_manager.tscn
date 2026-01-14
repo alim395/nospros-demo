@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://klqktsr2spx7"]
+[gd_scene load_steps=8 format=3 uid="uid://klqktsr2spx7"]
 
 [ext_resource type="Script" uid="uid://bpuipg0015lmy" path="res://addons/MusicManager/music_manager.gd" id="1_bajgp"]
+[ext_resource type="Script" uid="uid://dsh74ho0r3ueg" path="res://addons/MusicManager/sfx_player.gd" id="2_53hd7"]
+[ext_resource type="Resource" uid="uid://dj4rikuf24amr" path="res://audio/sfx/XP_SFX.tres" id="3_qfn6u"]
 
 [sub_resource type="Animation" id="Animation_ugwku"]
 resource_name = "FADE_TO_1"
@@ -154,6 +156,8 @@ playback_type = 1
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 16
 bus = &"SFX"
+script = ExtResource("2_53hd7")
+audioLibrary = ExtResource("3_qfn6u")
 
 [node name="SongTimer" type="Timer" parent="."]
 
