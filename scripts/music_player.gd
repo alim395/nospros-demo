@@ -87,7 +87,7 @@ func _on_play_button_pressed() -> void:
 				MusicManager.current_player.play(seekSlider.value)
 				isSeeking = false
 			else:
-				globalParameters.playSFX(playSound)
+				MusicManager.sfx_player.play_SFX_from_library("mp_Play")
 			isPaused = false
 
 func _on_pause_button_pressed() -> void:
@@ -96,7 +96,7 @@ func _on_pause_button_pressed() -> void:
 		isPaused = true
 		MusicManager.pause_music.emit()
 		if not isSeeking:
-			globalParameters.playSFX(pauseSound)
+			MusicManager.sfx_player.play_SFX_from_library("mp_Pause")
 
 func _on_stop_button_pressed() -> void:
 	isInitial = true
@@ -108,13 +108,13 @@ func _on_stop_button_pressed() -> void:
 	seekSlider.value = 0
 	updateTrackTime(0)
 	MusicManager.stop_music.emit()
-	globalParameters.playSFX(stopSound)
+	MusicManager.sfx_player.play_SFX_from_library("mp_Stop")
 
 func _on_track_option_button_item_selected(index: int) -> void:
 	seekSlider.editable = true
 	currentTrackNum = index
 	updateSong()
-	globalParameters.playSFX(changeSound)
+	MusicManager.sfx_player.play_SFX_from_library("mp_Change")
 
 func _on_album_option_button_item_selected(index: int) -> void:
 	currentAlbumNum = index
@@ -166,13 +166,13 @@ func _on_prev_track_pressed() -> void:
 	currentTrackNum -= 1
 	updateSong()
 	trackOption.select(currentTrackNum)
-	globalParameters.playSFX(changeSound)
+	MusicManager.sfx_player.play_SFX_from_library("mp_Change")
 
 func _on_next_track_pressed() -> void:
 	currentTrackNum += 1
 	updateSong()
 	trackOption.select(currentTrackNum)
-	globalParameters.playSFX(changeSound)
+	MusicManager.sfx_player.play_SFX_from_library("mp_Change")
 
 func updateSeekSlider(songSeconds := 0.0) -> void:
 	if isSeeking:
@@ -228,7 +228,7 @@ func _on_loop_button_toggled(toggled_on: bool) -> void:
 	isLoop = toggled_on
 	if(isLoop):
 		print("LOOPING ON")
-		globalParameters.playSFX(stopSound)
+		MusicManager.sfx_player.play_SFX_from_library("mp_Stop")
 	if isLoop && isShuffle:
 		shuffleButton.button_pressed = false
 
@@ -236,7 +236,7 @@ func _on_shuffle_toggled(toggled_on: bool) -> void:
 	isShuffle = toggled_on
 	if(isShuffle):
 		print("SHUFFLE ON")
-		globalParameters.playSFX(stopSound)
+		MusicManager.sfx_player.play_SFX_from_library("mp_Stop")
 	if isLoop && isShuffle:
 		loopButton.button_pressed = false
 

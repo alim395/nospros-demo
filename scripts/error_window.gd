@@ -20,25 +20,21 @@ func _ready() -> void:
 		title = titleBarName
 		errorLabel.text = error_msg
 		error_button.disabled = false
-		MusicManager.sfx_player.stream = error_sound
-		MusicManager.sfx_player.play()
+		MusicManager.sfx_player.play_SFX_from_library("error")
 		globalParameters.errorCount += 1
 	else:
 		title = "SECRET UNLOCKED!"
 		errorLabel.text = "Click OK to recieve you prize :D"
 		error_button.disabled = true
-		MusicManager.sfx_player.stream = note_sound
-		MusicManager.sfx_player.play()
+		MusicManager.sfx_player.play_SFX_from_library("notify")
 
 func _on_error_button_pressed() -> void:
 	if not troll:
-		MusicManager.sfx_player.stream = error_sound
-		MusicManager.sfx_player.play()
+		MusicManager.sfx_player.play_SFX_from_library("error")
 		globalParameters.errorCount += 1
 		print(globalParameters.errorCount)
 	else:
-		MusicManager.sfx_player.stream = note_sound
-		MusicManager.sfx_player.play()
+		MusicManager.sfx_player.play_SFX_from_library("notify")
 		globalParameters.errorCount += 1
 		queue_free()
 	# Update TROLL

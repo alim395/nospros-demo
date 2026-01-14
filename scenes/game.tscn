@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=79 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -41,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/setting_app.gd" id="17_0sl42"]
 [ext_resource type="Texture2D" uid="uid://cvkppvgw27ijf" path="res://sprites/buttons/Shutdown.png" id="18_37s47"]
-[ext_resource type="AudioStream" uid="uid://d6kebytv1i7y" path="res://audio/sfx/click.ogg" id="19_bnuda"]
 [ext_resource type="Texture2D" uid="uid://cdxbew7cfl0kc" path="res://sprites/buttons/Shutdown_Pressed.png" id="19_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
@@ -614,7 +613,6 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 336.0
 script = ExtResource("5_wljb1")
-clickSFX = ExtResource("19_bnuda")
 pictureApp = NodePath("pictureApp")
 settingApp = NodePath("settingApp")
 trollApp = NodePath("trollApp")

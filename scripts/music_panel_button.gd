@@ -24,4 +24,4 @@ func _on_pressed() -> void:
 	for v in panelVisuals:
 		v.visible = false
 	panelVisuals[currentIndex].visible = true
-	globalParameters.playSFX(glassTap)
+	MusicManager.sfx_player.play_SFX_from_library("glassTap")
