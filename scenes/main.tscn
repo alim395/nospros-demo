@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://uploxbjvdbsw"]
+[gd_scene load_steps=34 format=3 uid="uid://c7pbugsh5ew6t"]
 
 [ext_resource type="Script" uid="uid://bcftsay7b1tfs" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="2_0wfyh"]
