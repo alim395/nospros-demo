@@ -5,7 +5,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MusicManager.play_song.emit(backgroundSong, true, true, 0.5)
+	if(globalParameters.firstBoot == true):
+		MusicManager.play_song.emit(backgroundSong, true, true, 0.5)
+		globalParameters.firstBoot = false
 	globalParameters.skipWelcome = false
 	if OS.get_name() == "Web":
 		shutdownButton.disabled = true
