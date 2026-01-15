@@ -3,6 +3,7 @@ extends Node
 enum TaskThemes {Luna, OliveGreen, Embedded, ZunaRoyaleNoir}
 enum buttonStyle {Classic, Y2K}
 
+@export var firstBoot : bool
 @export var skipWelcome : bool
 @export var highFidelity : bool
 @export var crtFilter : bool
@@ -20,6 +21,7 @@ signal GetTrolled
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	firstBoot = true
 	skipWelcome = false
 	highFidelity = false
 	crtFilter = false
