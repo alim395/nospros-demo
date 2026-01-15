@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://uploxbjvdbsw"]
+[gd_scene load_steps=34 format=3 uid="uid://c7pbugsh5ew6t"]
 
 [ext_resource type="Script" uid="uid://bcftsay7b1tfs" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="2_0wfyh"]
@@ -52,7 +52,7 @@ corner_radius_bottom_left = 4
 [node name="TitleScene" type="Node2D" node_paths=PackedStringArray("shutdownButton")]
 script = ExtResource("1_o5qli")
 backgroundSong = ExtResource("2_tipki")
-shutdownButton = NodePath("ButtonManager/Quit")
+shutdownButton = NodePath("ButtonManager/PowerContainer/Quit")
 
 [node name="XpWelcome" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
@@ -155,55 +155,69 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Options" type="TextureButton" parent="ButtonManager"]
-visible = false
-layout_mode = 0
-offset_left = 433.0
-offset_top = 315.0
-offset_right = 989.0
-offset_bottom = 871.0
-scale = Vector2(0.08, 0.08)
-tooltip_text = "Not yet Implemented."
-disabled = true
-texture_normal = ExtResource("4_eb6dy")
-texture_pressed = ExtResource("5_trceg")
-texture_hover = ExtResource("6_a8y0u")
-texture_disabled = ExtResource("7_trceg")
-stretch_mode = 4
+[node name="PowerContainer" type="HBoxContainer" parent="ButtonManager"]
+custom_minimum_size = Vector2(207, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 275.0
+offset_right = 207.0
+offset_bottom = 320.0
+grow_vertical = 0
 
-[node name="Quit" type="TextureButton" parent="ButtonManager"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 315.0
-offset_right = 565.0
-offset_bottom = 871.0
-scale = Vector2(0.08, 0.08)
+[node name="Quit" type="TextureButton" parent="ButtonManager/PowerContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
 texture_normal = ExtResource("7_o6xl0")
 texture_pressed = ExtResource("5_85g3d")
 texture_hover = ExtResource("6_85g3d")
 texture_disabled = ExtResource("11_a8y0u")
+ignore_texture_size = true
 stretch_mode = 4
 
-[node name="ShutdownLabel" type="RichTextLabel" parent="."]
-offset_left = 56.0
-offset_top = 328.0
-offset_right = 200.0
-offset_bottom = 344.0
+[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager/PowerContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/bold_font = ExtResource("8_tipki")
 theme_override_font_sizes/normal_font_size = 12
 text = "Turn off your Computer"
 scroll_active = false
+vertical_alignment = 1
 
-[node name="SettingsLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 480.00003
-offset_top = 328.0
-offset_right = 624.0
-offset_bottom = 344.0
+[node name="OptionsContainer" type="HBoxContainer" parent="ButtonManager"]
+custom_minimum_size = Vector2(207, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 393.0
+offset_top = 275.0
+offset_right = 600.0
+offset_bottom = 320.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Options" type="TextureButton" parent="ButtonManager/OptionsContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture_normal = ExtResource("4_eb6dy")
+texture_pressed = ExtResource("5_trceg")
+texture_hover = ExtResource("6_a8y0u")
+texture_disabled = ExtResource("7_trceg")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsLabel" type="RichTextLabel" parent="ButtonManager/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/bold_font = ExtResource("8_tipki")
 theme_override_font_sizes/normal_font_size = 12
 text = "Adjust user Settings"
 scroll_active = false
+vertical_alignment = 1
 
 [node name="RichTextLabel" type="Label" parent="."]
 offset_left = 160.0
@@ -231,5 +245,5 @@ Process
 [connection signal="pressed" from="User Form/FormContainer/PFP_Container/PFP_Next" to="User Form" method="_on_pfp_next_pressed"]
 [connection signal="pressed" from="User Form/FormContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="User Form/FormContainer/Start" to="User Form" method="_on_start_pressed"]
-[connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonManager/PowerContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonManager/OptionsContainer/Options" to="." method="_on_options_pressed"]

@@ -1,3 +1,171 @@
-[gd_scene format=3 uid="uid://cb0lj145achmt"]
+[gd_scene load_steps=9 format=3 uid="uid://cb0lj145achmt"]
+
+[ext_resource type="Script" uid="uid://ddf2u76pxmdy2" path="res://scripts/options.gd" id="1_1sggn"]
+[ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://dnas3f24bagh0" path="res://scripts/setting_screen.gd" id="2_kv8mn"]
+[ext_resource type="Shader" uid="uid://dfq0esfuvf8kp" path="res://shaders/GaussianBlur.gdshader" id="3_1sggn"]
+[ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="4_e6vpq"]
+[ext_resource type="Script" uid="uid://b4xe2sthx85xq" path="res://scripts/preview.gd" id="4_o7i7e"]
+[ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/Bliss21.png" id="5_uon5e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7i7e"]
+shader = ExtResource("3_1sggn")
+shader_parameter/blur_radius = 8
+shader_parameter/Darkness = 0.05
+shader_parameter/R = 0.0
+shader_parameter/G = 0.0
+shader_parameter/B = 0.0
+shader_parameter/blur_strength = 1.0
 
 [node name="Options" type="Node2D"]
+script = ExtResource("1_1sggn")
+
+[node name="XpWelcome" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_c2u1v")
+
+[node name="settingScreen" type="Control" parent="." node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kv8mn")
+softBlur = NodePath("../Preview/ScreenFilters/BackBufferCopy1/SoftBlur")
+highFidelity = NodePath("VBoxContainer/Panel/settings/HFButton")
+crtFilter = NodePath("VBoxContainer/Panel/settings/CRTButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="settingScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -52.0
+offset_right = 120.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Panel" type="Panel" parent="settingScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="settings" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -24.5
+offset_right = 118.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel/settings"]
+layout_mode = 2
+tooltip_text = "Default: False"
+text = "Disable Soft Filter"
+
+[node name="CRTButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel/settings"]
+layout_mode = 2
+tooltip_text = "Default: False"
+text = "Enable CRT Filter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="settingScreen/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PreviewButton" type="Button" parent="settingScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Preview"
+
+[node name="BackButton" type="Button" parent="settingScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back to Menu"
+
+[node name="Preview" type="Control" parent="." node_paths=PackedStringArray("crtNode", "softBlur")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("4_o7i7e")
+crtNode = NodePath("CRT")
+softBlur = NodePath("ScreenFilters/BackBufferCopy1/SoftBlur")
+
+[node name="TextureRect" type="TextureRect" parent="Preview"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uon5e")
+expand_mode = 1
+
+[node name="ExitPreview" type="Button" parent="Preview"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -15.5
+offset_right = 81.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to Exit Preview"
+
+[node name="ScreenFilters" type="Node2D" parent="Preview"]
+
+[node name="BackBufferCopy1" type="BackBufferCopy" parent="Preview/ScreenFilters"]
+z_index = 1
+scale = Vector2(3.2, 1.8)
+copy_mode = 2
+rect = Rect2(0, 0, 200, 200)
+
+[node name="SoftBlur" type="ColorRect" parent="Preview/ScreenFilters/BackBufferCopy1"]
+material = SubResource("ShaderMaterial_o7i7e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="CRT" type="CanvasLayer" parent="Preview"]
+layer = 9001
+visible = false
+script = ExtResource("4_e6vpq")
+resolution = Vector2(640, 360)
+vignette_amount = 0.3
+roll_line_amount = 0.0
+metadata/_custom_type_script = "uid://bghaddibpt6f1"
+
+[connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/HFButton" to="settingScreen" method="_on_check_button_toggled"]
+[connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/CRTButton" to="settingScreen" method="_on_crt_button_toggled"]
+[connection signal="pressed" from="settingScreen/VBoxContainer/HBoxContainer/PreviewButton" to="Preview" method="_on_preview_button_pressed"]
+[connection signal="pressed" from="settingScreen/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Preview/ExitPreview" to="Preview" method="_on_exit_preview_pressed"]

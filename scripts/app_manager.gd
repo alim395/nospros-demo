@@ -3,7 +3,7 @@ extends Control
 @export var activeInstance : Node
 #@export var webInstance : Node
 
-@export var clickSFX : AudioStream
+#@export var clickSFX : AudioStream
 @export var pictureApp : Control
 @export var settingApp : Control
 @export var trollApp : Control
@@ -72,15 +72,15 @@ func openWebApp() -> void:
 	
 func _on_music_button_pressed() -> void:
 	openMusicApp()
-	globalParameters.playSFX(clickSFX)
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_photo_button_pressed() -> void:
 	openPhotoApp()
-	globalParameters.playSFX(clickSFX)
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_settings_button_pressed() -> void:
 	openSettingsApp()
-	globalParameters.playSFX(clickSFX)
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func openTrollApp() -> void:
 	if activeInstance != null:
@@ -90,8 +90,8 @@ func openTrollApp() -> void:
 
 func _on_troll_button_pressed() -> void:
 	openTrollApp()
-	globalParameters.playSFX(clickSFX)
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_browser_button_pressed() -> void:
 	openWebApp()
-	globalParameters.playSFX(clickSFX)
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
