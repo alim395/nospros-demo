@@ -24,18 +24,28 @@ func _ready() -> void:
 func setButtonClassic() -> void:
 	print("CLASSIC STYLE!")
 	browserAppButton.texture_normal = classicIcons[0]
+	globalParameters.icon_dict.set("Browser", classicIcons[0])
 	musicAppButton.texture_normal = classicIcons[1]
+	globalParameters.icon_dict.set("Music", classicIcons[1])
 	pictureAppButton.texture_normal = classicIcons[2]
+	globalParameters.icon_dict.set("Picture", classicIcons[2])
 	settingAppButton.texture_normal = classicIcons[3]
+	globalParameters.icon_dict.set("Setting", classicIcons[3])
 	errorAppButton.texture_normal = classicIcons[4]
+	globalParameters.icon_dict.set("Troll", classicIcons[4])
 	
 func setButtonY2K() -> void:
 	print("Y2K STYLE!")
 	browserAppButton.texture_normal = YTKIcons[0]
+	globalParameters.icon_dict.set("Browser", YTKIcons[0])
 	musicAppButton.texture_normal = YTKIcons[1]
+	globalParameters.icon_dict.set("Music", YTKIcons[1])
 	pictureAppButton.texture_normal = YTKIcons[2]
+	globalParameters.icon_dict.set("Picture", YTKIcons[2])
 	settingAppButton.texture_normal = YTKIcons[3]
+	globalParameters.icon_dict.set("Setting", YTKIcons[3])
 	errorAppButton.texture_normal = YTKIcons[4]
+	globalParameters.icon_dict.set("Troll", YTKIcons[4])
 
 func changeStyle(styleIndex : globalParameters.buttonStyle) -> void:
 	print("Change Style to : ", styleIndex)

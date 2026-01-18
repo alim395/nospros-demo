@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=74 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -52,7 +52,6 @@
 [ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
 [ext_resource type="Texture2D" uid="uid://fj3m5kxctqtj" path="res://sprites/buttons/Exit_Pressed.png" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://clo0ox8ojcx4s" path="res://sprites/buttons/LogOff_Pressed.png" id="24_wljb1"]
-[ext_resource type="Script" uid="uid://vxft3ctsl8sd" path="res://scripts/taskbar_button.gd" id="25_458eo"]
 [ext_resource type="Texture2D" uid="uid://g5dw67vkxjr2" path="res://sprites/buttons/Exit_Hover.png" id="25_suyxu"]
 [ext_resource type="Texture2D" uid="uid://blra1sk2fgdnl" path="res://sprites/buttons/LogOff_Hover.png" id="25_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://def0owgc73j7q" path="res://sprites/buttons/LogOff_Disabled.png" id="26_js0lu"]
@@ -60,18 +59,6 @@
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaba0"]
-bg_color = Color(0.19800001, 0.49050006, 0.9, 0.49803922)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_458eo"]
-bg_color = Color(0.13725491, 0.35686275, 0.8509804, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3rex"]
-bg_color = Color(0.19607843, 0.49019608, 0.9019608, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fedci"]
-bg_color = Color(0.19607843, 0.49019608, 0.9019608, 1)
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -395,7 +382,7 @@ _data = {
 &"becomeGray": SubResource("Animation_rysoc")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
 script = ExtResource("1_lnu2h")
 startSong = ExtResource("2_lbhrr")
 welcomeScreen = NodePath("WelcomeScreen")
@@ -406,6 +393,7 @@ crtNode = NodePath("CRT")
 Task_Bar = NodePath("Taskbar")
 iconManager = NodePath("IconManager")
 appManager = NodePath("AppManager")
+taskBar = NodePath("Taskbar")
 loginDelay = NodePath("LoginDelay")
 logScreen = NodePath("LogScreen")
 logAnimation = NodePath("LogScreen/logAnimation")
@@ -605,7 +593,7 @@ text = "untitled"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "trollIcon")]
+[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "trollIcon", "taskBar")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -617,6 +605,7 @@ pictureApp = NodePath("pictureApp")
 settingApp = NodePath("settingApp")
 trollApp = NodePath("trollApp")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
+taskBar = NodePath("../Taskbar")
 
 [node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
 layout_mode = 1
@@ -838,7 +827,7 @@ text = "Vortec Space"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "crtNode", "startMenuOptions", "iconStyleOptions")]
+[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "crtNode", "startMenuOptions", "iconStyleOptions", "taskBar")]
 custom_minimum_size = Vector2(640, 336)
 layout_mode = 1
 anchors_preset = 15
@@ -856,6 +845,7 @@ crtFilter = NodePath("Window/Panel/settings/CRTButton")
 crtNode = NodePath("../../CRT")
 startMenuOptions = NodePath("Window/Panel/settings/ThemeOption/StartTheme")
 iconStyleOptions = NodePath("Window/Panel/settings/IconOption/IconStyle")
+taskBar = NodePath("../../Taskbar")
 
 [node name="Window" type="Window" parent="AppManager/settingApp"]
 oversampling_override = 1.0
@@ -957,8 +947,7 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("barSprites", "StartButton", "startMenu")]
-unique_name_in_owner = true
+[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("barTexture", "StartButton", "startMenu", "buttonContainer")]
 visible = false
 layout_mode = 3
 anchors_preset = 7
@@ -972,10 +961,12 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("5_trtic")
-barSprites = [NodePath("Bar/Luna"), NodePath("Bar/OliveGreen"), NodePath("Bar/Embedded"), NodePath("Bar/ZuneRoyaleNoir")]
+barTexture = NodePath("Bar/BarContainer/BarTexture")
+barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("8_dinhu")])
 StartButton = NodePath("Start/StartButton")
 startButtonTextures = ExtResource("6_ir15t")
 startMenu = NodePath("Start/StartMenu")
+buttonContainer = NodePath("Bar/BarButtonContainer")
 
 [node name="Bar" type="Control" parent="Taskbar"]
 layout_mode = 1
@@ -988,52 +979,27 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(88, 336)
 
-[node name="Luna" type="Sprite2D" parent="Taskbar/Bar"]
+[node name="BarContainer" type="HBoxContainer" parent="Taskbar/Bar"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 25.0
+
+[node name="BarTexture" type="TextureRect" parent="Taskbar/Bar/BarContainer"]
 texture_repeat = 2
-position = Vector2(320.00003, 12)
-scale = Vector2(2.962963, 0.8571427)
+custom_minimum_size = Vector2(640, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 texture = ExtResource("5_u5sy4")
-
-[node name="OliveGreen" type="Sprite2D" parent="Taskbar/Bar"]
-visible = false
-texture_repeat = 2
-position = Vector2(320, 11.999994)
-scale = Vector2(1.6931217, 0.9230764)
-texture = ExtResource("6_vtaks")
-
-[node name="Embedded" type="Sprite2D" parent="Taskbar/Bar"]
-visible = false
-position = Vector2(320, 11.999994)
-scale = Vector2(1.081081, 0.55813926)
-texture = ExtResource("7_kvpfn")
-
-[node name="ZuneRoyaleNoir" type="Sprite2D" parent="Taskbar/Bar"]
-visible = false
-position = Vector2(320, 11.999994)
-scale = Vector2(1.8181819, 0.8275857)
-texture = ExtResource("8_dinhu")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
-visible = false
 layout_mode = 0
 offset_left = 98.0
 offset_right = 640.0
 offset_bottom = 24.0
 theme_override_constants/separation = 2
-
-[node name="TaskbarButton" type="Button" parent="Taskbar/Bar/BarButtonContainer"]
-custom_minimum_size = Vector2(90, 20)
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_oaba0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_458eo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h3rex")
-theme_override_styles/focus = SubResource("StyleBoxFlat_fedci")
-expand_icon = true
-script = ExtResource("25_458eo")
-taskIcon = ExtResource("5_v2yb1")
-taskName = "Music Player"
 
 [node name="Start" type="Control" parent="Taskbar"]
 layout_mode = 1
@@ -1227,8 +1193,6 @@ material = SubResource("ShaderMaterial_u5sy4")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 440.0
-offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -1263,36 +1227,6 @@ position = Vector2(320, 144)
 scale = Vector2(0.8522013, 0.8522013)
 texture = ExtResource("16_ca42v")
 
-[node name="LogButtons" type="HBoxContainer" parent="LogScreen"]
-layout_mode = 0
-offset_left = 254.0
-offset_top = 118.0
-offset_right = 1930.0
-offset_bottom = 674.0
-scale = Vector2(0.08, 0.08)
-alignment = 1
-
-[node name="ShutdownButton" type="TextureButton" parent="LogScreen/LogButtons"]
-layout_mode = 2
-texture_normal = ExtResource("18_37s47")
-texture_pressed = ExtResource("19_bt5mj")
-texture_hover = ExtResource("20_e1j6l")
-texture_disabled = ExtResource("21_pl11u")
-
-[node name="LogOff" type="TextureButton" parent="LogScreen/LogButtons"]
-layout_mode = 2
-texture_normal = ExtResource("23_qouja")
-texture_pressed = ExtResource("24_wljb1")
-texture_hover = ExtResource("25_v2yb1")
-texture_disabled = ExtResource("26_js0lu")
-
-[node name="ExitBack" type="TextureButton" parent="LogScreen/LogButtons"]
-layout_mode = 2
-texture_normal = ExtResource("23_qnb83")
-texture_pressed = ExtResource("24_sww3w")
-texture_hover = ExtResource("25_suyxu")
-texture_disabled = ExtResource("26_sgl2t")
-
 [node name="LogLabel" type="RichTextLabel" parent="LogScreen"]
 layout_mode = 0
 offset_left = 216.0
@@ -1304,36 +1238,74 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Turn off Computer"
 vertical_alignment = 1
 
-[node name="ShutdownLabel" type="RichTextLabel" parent="LogScreen"]
+[node name="LogButtons" type="HBoxContainer" parent="LogScreen"]
 layout_mode = 0
-offset_left = 235.0
-offset_top = 160.0
-offset_right = 315.0
-offset_bottom = 176.0
-theme_override_fonts/normal_font = ExtResource("22_bhx41")
-theme_override_font_sizes/normal_font_size = 12
+offset_left = 245.0
+offset_top = 115.0
+offset_right = 394.0
+offset_bottom = 165.0
+alignment = 1
+
+[node name="ShutdownContainer" type="VBoxContainer" parent="LogScreen/LogButtons"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ShutdownButton" type="TextureButton" parent="LogScreen/LogButtons/ShutdownContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture_normal = ExtResource("18_37s47")
+texture_pressed = ExtResource("19_bt5mj")
+texture_hover = ExtResource("20_e1j6l")
+texture_disabled = ExtResource("21_pl11u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ShutdownLabel" type="Label" parent="LogScreen/LogButtons/ShutdownContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_bhx41")
+theme_override_font_sizes/font_size = 12
 text = "Turn off"
 horizontal_alignment = 1
 
-[node name="LogOffLabel" type="RichTextLabel" parent="LogScreen"]
-layout_mode = 0
-offset_left = 281.0
-offset_top = 160.0
-offset_right = 361.0
-offset_bottom = 176.0
-theme_override_fonts/normal_font = ExtResource("22_bhx41")
-theme_override_font_sizes/normal_font_size = 12
-text = "Log off"
+[node name="LogOffContainer" type="VBoxContainer" parent="LogScreen/LogButtons"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LogOff" type="TextureButton" parent="LogScreen/LogButtons/LogOffContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture_normal = ExtResource("23_qouja")
+texture_pressed = ExtResource("24_wljb1")
+texture_hover = ExtResource("25_v2yb1")
+texture_disabled = ExtResource("26_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LogOffLabel" type="Label" parent="LogScreen/LogButtons/LogOffContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_bhx41")
+theme_override_font_sizes/font_size = 12
+text = "Log Off"
 horizontal_alignment = 1
 
-[node name="CancelLabel" type="RichTextLabel" parent="LogScreen"]
-layout_mode = 0
-offset_left = 325.0
-offset_top = 160.0
-offset_right = 405.0
-offset_bottom = 176.0
-theme_override_fonts/normal_font = ExtResource("22_bhx41")
-theme_override_font_sizes/normal_font_size = 12
+[node name="ExitContainer" type="VBoxContainer" parent="LogScreen/LogButtons"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ExitBack" type="TextureButton" parent="LogScreen/LogButtons/ExitContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture_normal = ExtResource("23_qnb83")
+texture_pressed = ExtResource("24_sww3w")
+texture_hover = ExtResource("25_suyxu")
+texture_disabled = ExtResource("26_sgl2t")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ExitLabel" type="Label" parent="LogScreen/LogButtons/ExitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("22_bhx41")
+theme_override_font_sizes/font_size = 12
 text = "Cancel"
 horizontal_alignment = 1
 
@@ -1375,6 +1347,6 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="Taskbar/Start/StartMenu/PowerOptions" to="Taskbar" method="_on_power_options_pressed"]
 [connection signal="animation_finished" from="WelcomeScreen/welcomeAnimation" to="." method="_on_welcome_animation_animation_finished"]
 [connection signal="animation_finished" from="ShutdownScreen/shutdownAnimation" to="." method="_on_shutdown_animation_animation_finished"]
-[connection signal="pressed" from="LogScreen/LogButtons/ShutdownButton" to="." method="_on_shutdown_button_pressed"]
-[connection signal="pressed" from="LogScreen/LogButtons/LogOff" to="." method="_on_log_off_pressed"]
-[connection signal="pressed" from="LogScreen/LogButtons/ExitBack" to="." method="_on_exit_back_pressed"]
+[connection signal="pressed" from="LogScreen/LogButtons/ShutdownContainer/ShutdownButton" to="." method="_on_shutdown_button_pressed"]
+[connection signal="pressed" from="LogScreen/LogButtons/LogOffContainer/LogOff" to="." method="_on_log_off_pressed"]
+[connection signal="pressed" from="LogScreen/LogButtons/ExitContainer/ExitBack" to="." method="_on_exit_back_pressed"]

@@ -1,5 +1,9 @@
 extends Control
 
+@export var myWindow : Window
+@export var myTaskButton : taskbarButton
+var isMinimize : bool = false
+
 @export var gifVids : Array[VideoStream]
 @export var webGIFPlayer : VideoStreamPlayer
 @export var addressInput : LineEdit
@@ -27,9 +31,18 @@ func randomPageGIF() -> void:
 
 func _on_window_close_requested() -> void:
 	#MusicManager.stop_music.emit()
+	globalParameters.closeApp("Browser")
 	queue_free()
 
 
 func _on_home_pressed() -> void:
 	addressInput.text = "https://www.example.com/index.php"
 	randomPageGIF()
+
+func setTaskButton(tB : taskbarButton) -> void:
+	myTaskButton = tB
+	myTaskButton.pressed.connect(minimizeWindow)
+
+func minimizeWindow() -> void:
+	isMinimize = not isMinimize
+	myWindow.visible = not isMinimize

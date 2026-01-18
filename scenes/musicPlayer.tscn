@@ -52,7 +52,7 @@ height = 80
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 
-[node name="MusicPlayer" type="Control" node_paths=PackedStringArray("trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton")]
+[node name="MusicPlayer" type="Control" node_paths=PackedStringArray("myWindow", "trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,6 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_dphei")
 script = ExtResource("1_gkd1q")
+myWindow = NodePath("Window")
 albumList = Array[ExtResource("3_y1jbc")]([ExtResource("4_b2ner"), ExtResource("3_dcwgm"), ExtResource("5_yb2vk")])
 trackNumLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/TrackNumLabel")
 playtimeLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/playTimeLabel")

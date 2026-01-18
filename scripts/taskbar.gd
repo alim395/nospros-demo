@@ -1,12 +1,18 @@
 extends Control
 
+class_name Taskbar
+
 var defaultTheme = globalParameters.defaultTheme
 var currentTheme = defaultTheme
 
-@export var barSprites : Array[Sprite2D]
+#@export var barSprites : Array[Sprite2D]
+@export var barTexture : TextureRect
+@export var barTextureArray : Array[Texture2D]
 @export var StartButton : TextureButton
 @export var startButtonTextures : Resource
 @export var startMenu : Control
+
+@export var buttonContainer : HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,10 +25,13 @@ func _process(_delta: float) -> void:
 	pass
 
 func changeTheme(themeIndex : globalParameters.TaskThemes, themeName := "Luna") -> void:
-	# Switch barSprite
-	for s in barSprites:
-		s.visible = false
-	barSprites[int(themeIndex)].visible = true
+	## Switch barSprite
+	#for s in barSprites:
+		#s.visible = false
+	#barSprites[int(themeIndex)].visible = true
+	
+	# Switch barTexture
+	barTexture.texture = barTextureArray[int(themeIndex)]
 	
 	# Switch Start Button Textures
 	match themeIndex :
@@ -54,3 +63,15 @@ func _on_start_button_pressed() -> void:
 
 func _on_power_options_pressed() -> void:
 	startMenu.visible = false
+
+func openTask(task : String) -> taskbarButton:
+	var tB = taskbarButton.new(task)
+	tB.set_task(task)
+	buttonContainer.add_child(tB)
+	return tB
+
+func closeTask(task: String) -> void:
+	if buttonContainer.get_children():
+		for tB in buttonContainer.get_children():
+			if tB.text == task:
+				tB.queue_free()
