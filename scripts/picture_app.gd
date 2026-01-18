@@ -1,6 +1,9 @@
 extends Control
 
 @export var myWindow : Window
+@export var myTaskButton : taskbarButton
+var isMinimize : bool = false
+
 @export var desktopWallpaper : Sprite2D
 @export var wallpapersCollection : Array[Texture2D]
 @export var wallpapersCollectionName : Array[String]
@@ -18,6 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_window_close_requested() -> void:
 	myWindow.visible = false
+	%AppManager.taskBar.closeTask("Picture")
 
 func openWindow() -> void:
 	myWindow.visible = true
@@ -53,3 +57,11 @@ func _on_photo_pressed(photoNum: int) -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	desktopWallpaper.texture = wallpapersCollection.get(photoNum)
 	globalParameters.defaultWallpaperIndex = photoNum
+
+func setTaskButton(tB : taskbarButton) -> void:
+	myTaskButton = tB
+	myTaskButton.pressed.connect(minimizeWindow)
+
+func minimizeWindow() -> void:
+	isMinimize = not isMinimize
+	myWindow.visible = not isMinimize

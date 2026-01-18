@@ -1,6 +1,7 @@
 extends Control
 
 @export var activeInstance : Node
+var activeTaskName : String
 #@export var webInstance : Node
 
 #@export var clickSFX : AudioStream
@@ -8,6 +9,7 @@ extends Control
 @export var settingApp : Control
 @export var trollApp : Control
 @export var trollIcon : Control
+@export var taskBar : Taskbar
 
 # Apps
 @onready var musicPlayerApp = preload("res://scenes/musicPlayer.tscn")
@@ -34,6 +36,7 @@ func _process(delta: float) -> void:
 	
 
 func closeActiveInstance() -> void:
+	taskBar.closeTask(activeTaskName)
 	activeInstance.queue_free()
 
 #func closeWebInstance() -> void:
@@ -41,8 +44,11 @@ func closeActiveInstance() -> void:
 
 func closeCoreApps() -> void:
 	pictureApp._on_window_close_requested()
+	taskBar.closeTask("Picture")
 	settingApp._on_window_close_requested()
+	taskBar.closeTask("Setting")
 	trollApp._on_window_close_requested()
+	taskBar.closeTask("Troll")
 
 func openMusicApp() -> void:
 	if activeInstance != null:
@@ -50,18 +56,27 @@ func openMusicApp() -> void:
 	closeCoreApps()
 	activeInstance = musicPlayerApp.instantiate()
 	add_child(activeInstance)
+	activeTaskName = "Music"
+	var tB = taskBar.openTask(activeTaskName)
+	activeInstance.setTaskButton(tB)
 
 func openPhotoApp() -> void:
 	if activeInstance != null:
 		closeActiveInstance()
 	closeCoreApps()
 	pictureApp.openWindow()
+	activeTaskName = "Picture"
+	var tB = taskBar.openTask(activeTaskName)
+	pictureApp.setTaskButton(tB)
 
 func openSettingsApp() -> void:
 	if activeInstance != null:
 		closeActiveInstance()
 	closeCoreApps()
 	settingApp.openWindow()
+	activeTaskName = "Setting"
+	var tB = taskBar.openTask(activeTaskName)
+	settingApp.setTaskButton(tB)
 	
 func openWebApp() -> void:
 	if activeInstance != null:
@@ -69,6 +84,9 @@ func openWebApp() -> void:
 	closeCoreApps()
 	activeInstance = browserApp.instantiate()
 	add_child(activeInstance)
+	activeTaskName = "Browser"
+	var tB = taskBar.openTask(activeTaskName)
+	activeInstance.setTaskButton(tB)
 	
 func _on_music_button_pressed() -> void:
 	openMusicApp()
@@ -87,6 +105,9 @@ func openTrollApp() -> void:
 		closeActiveInstance()
 	closeCoreApps()
 	trollApp.openWindow()
+	activeTaskName = "Troll"
+	var tB = taskBar.openTask(activeTaskName)
+	trollApp.setTaskButton(tB)
 
 func _on_troll_button_pressed() -> void:
 	openTrollApp()
@@ -95,3 +116,7 @@ func _on_troll_button_pressed() -> void:
 func _on_browser_button_pressed() -> void:
 	openWebApp()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
+
+func closeAllTasks() -> void:
+	closeActiveInstance()
+	closeCoreApps()
