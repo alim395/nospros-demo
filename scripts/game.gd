@@ -10,6 +10,7 @@ extends Node2D
 @export var Task_Bar : Control
 @export var iconManager : Control
 @export var appManager : Control
+@export var taskBar : Taskbar
 
 @export var loginDelay : Timer
 
@@ -28,6 +29,9 @@ var currentError : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Connect Signal
+	globalParameters.CloseAppSignal.connect(closeApp)
+	
 	ScreenFilter.visible = true;
 	softBlur.visible = not globalParameters.highFidelity
 	crtNode.visible = globalParameters.crtFilter
@@ -63,7 +67,7 @@ func _on_welcome_animation_animation_finished(_anim_name: StringName) -> void:
 func _on_power_options_pressed() -> void:
 	print("POWER OPTIONS SELECTED")
 	if appManager.activeInstance != null:
-		appManager.activeInstance.queue_free()
+		appManager.closeActiveInstance()
 	appManager.closeCoreApps()
 	logScreen.visible = true;
 	logAnimation.play("becomeGray")
@@ -96,9 +100,12 @@ func _on_log_off_pressed() -> void:
 	MusicManager.play_song.emit(logOffSong, false, false, 0)
 
 func _on_untitled_button_pressed() -> void:
-	%Taskbar._on_power_options_pressed()
+	taskBar._on_power_options_pressed()
 	if(currentError == null) :
 		currentError = errorWindow.instantiate()
 		add_child(currentError)
 	if(globalParameters.errorCount < 10):
 		currentError.setMessage("This feature is not yet available.")
+
+func closeApp(taskApp : String) -> void:
+	appManager.taskBar.closeTask(taskApp)
