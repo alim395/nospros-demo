@@ -69,6 +69,7 @@ func _on_welcome_animation_animation_finished(_anim_name: StringName) -> void:
 func _on_power_options_pressed() -> void:
 	print("POWER OPTIONS SELECTED")
 	appManager.closeAllTasks()
+	currentError.queue_free()
 	logScreen.visible = true;
 	logAnimation.play("becomeGray")
 

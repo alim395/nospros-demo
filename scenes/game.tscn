@@ -961,20 +961,16 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("5_trtic")
-myCanvas = NodePath("TaskbarLayer")
-barTexture = NodePath("TaskbarLayer/Bar/BarContainer/BarTexture")
+myCanvas = NodePath("Start/StartLayer")
+barTexture = NodePath("Bar/BarContainer/BarTexture")
 barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("8_dinhu")])
-StartButton = NodePath("TaskbarLayer/Start/StartButton")
+StartButton = NodePath("Start/StartButton")
 startButtonTextures = ExtResource("6_ir15t")
-startMenu = NodePath("TaskbarLayer/Start/StartMenu")
-buttonContainer = NodePath("TaskbarLayer/Bar/BarButtonContainer")
+startMenu = NodePath("Start/StartLayer/StartMenu")
+buttonContainer = NodePath("Bar/BarButtonContainer")
 
-[node name="TaskbarLayer" type="CanvasLayer" parent="Taskbar"]
-layer = 1025
-visible = false
-
-[node name="Bar" type="Control" parent="Taskbar/TaskbarLayer"]
-layout_mode = 3
+[node name="Bar" type="Control" parent="Taskbar"]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -984,12 +980,12 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(88, 336)
 
-[node name="BarContainer" type="HBoxContainer" parent="Taskbar/TaskbarLayer/Bar"]
+[node name="BarContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 25.0
 
-[node name="BarTexture" type="TextureRect" parent="Taskbar/TaskbarLayer/Bar/BarContainer"]
+[node name="BarTexture" type="TextureRect" parent="Taskbar/Bar/BarContainer"]
 texture_repeat = 2
 custom_minimum_size = Vector2(640, 24)
 layout_mode = 2
@@ -999,15 +995,15 @@ texture = ExtResource("5_u5sy4")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/TaskbarLayer/Bar"]
+[node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
 offset_left = 98.0
 offset_right = 640.0
 offset_bottom = 24.0
 theme_override_constants/separation = 2
 
-[node name="Start" type="Control" parent="Taskbar/TaskbarLayer"]
-layout_mode = 3
+[node name="Start" type="Control" parent="Taskbar"]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -1015,7 +1011,7 @@ offset_top = -24.0
 offset_right = 96.0
 grow_vertical = 0
 
-[node name="StartButton" type="TextureButton" parent="Taskbar/TaskbarLayer/Start"]
+[node name="StartButton" type="TextureButton" parent="Taskbar/Start"]
 layout_mode = 0
 offset_right = 99.0
 offset_bottom = 33.0
@@ -1025,7 +1021,7 @@ texture_pressed = ExtResource("10_trtic")
 texture_hover = ExtResource("11_ir15t")
 stretch_mode = 4
 
-[node name="StartText" type="RichTextLabel" parent="Taskbar/TaskbarLayer/Start"]
+[node name="StartText" type="RichTextLabel" parent="Taskbar/Start"]
 layout_mode = 0
 offset_left = 32.0
 offset_right = 96.0
@@ -1037,19 +1033,23 @@ theme_override_font_sizes/normal_font_size = 16
 text = "start"
 vertical_alignment = 1
 
-[node name="StartMenu" type="VBoxContainer" parent="Taskbar/TaskbarLayer/Start"]
+[node name="StartLayer" type="CanvasLayer" parent="Taskbar/Start"]
+layer = 1024
 visible = false
-layout_mode = 0
+
+[node name="StartMenu" type="VBoxContainer" parent="Taskbar/Start/StartLayer"]
+visible = false
 offset_left = 1.0
-offset_top = -273.0
+offset_top = 63.0
 offset_right = 193.0
+offset_bottom = 336.0
 alignment = 2
 
-[node name="Button" type="Button" parent="Taskbar/TaskbarLayer/Start/StartMenu"]
+[node name="Button" type="Button" parent="Taskbar/Start/StartLayer/StartMenu"]
 layout_mode = 2
 text = "NOT YET IMPLEMENTED"
 
-[node name="PowerOptions" type="Button" parent="Taskbar/TaskbarLayer/Start/StartMenu"]
+[node name="PowerOptions" type="Button" parent="Taskbar/Start/StartLayer/StartMenu"]
 layout_mode = 2
 text = "POWER OPTIONS"
 
@@ -1321,7 +1321,6 @@ libraries = {
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
-visible = false
 script = ExtResource("44_66xif")
 resolution = Vector2(640, 360)
 vignette_amount = 0.3
@@ -1348,10 +1347,10 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
 [connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
 [connection signal="visibility_changed" from="Taskbar" to="Taskbar" method="_on_visibility_changed"]
-[connection signal="pressed" from="Taskbar/TaskbarLayer/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarLayer/Start/StartMenu/Button" to="." method="_on_untitled_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarLayer/Start/StartMenu/PowerOptions" to="." method="_on_power_options_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarLayer/Start/StartMenu/PowerOptions" to="Taskbar" method="_on_power_options_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/Button" to="." method="_on_untitled_button_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/PowerOptions" to="." method="_on_power_options_pressed"]
+[connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/PowerOptions" to="Taskbar" method="_on_power_options_pressed"]
 [connection signal="animation_finished" from="WelcomeScreen/welcomeAnimation" to="." method="_on_welcome_animation_animation_finished"]
 [connection signal="animation_finished" from="ShutdownScreen/shutdownAnimation" to="." method="_on_shutdown_animation_animation_finished"]
 [connection signal="pressed" from="LogScreen/LogButtons/ShutdownContainer/ShutdownButton" to="." method="_on_shutdown_button_pressed"]
