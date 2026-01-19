@@ -3,6 +3,9 @@ extends Node
 enum TaskThemes {Luna, OliveGreen, Embedded, ZunaRoyaleNoir}
 enum buttonStyle {Classic, Y2K}
 
+# Icon Store
+var icon_dict : Dictionary[String, Texture2D]
+
 @export var firstBoot : bool
 @export var skipWelcome : bool
 @export var highFidelity : bool
@@ -18,6 +21,7 @@ var trollMode := false
 @export var playerPFP : Texture2D
 
 signal GetTrolled
+signal CloseAppSignal(taskApp:String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,3 +45,6 @@ func activateTroll() -> void:
 #func playSFX(sfx : AudioStream) -> void:
 	#MusicManager.sfx_player.stream = sfx
 	#MusicManager.sfx_player.play()
+
+func closeApp(taskApp : String) -> void:
+	CloseAppSignal.emit(taskApp)

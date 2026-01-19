@@ -11,7 +11,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyqr7"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="GlobeTrotter" type="Control" node_paths=PackedStringArray("webGIFPlayer", "addressInput")]
+[node name="GlobeTrotter" type="Control" node_paths=PackedStringArray("myWindow", "webGIFPlayer", "addressInput")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_q166p")
 script = ExtResource("2_k8gp5")
+myWindow = NodePath("Window")
 gifVids = Array[VideoStream]([ExtResource("2_c76g1"), ExtResource("4_xyqr7"), ExtResource("5_ormeo"), ExtResource("6_0njmi")])
 webGIFPlayer = NodePath("Window/Panel/VContainer/PanelContainer/VideoStreamPlayer")
 addressInput = NodePath("Window/Panel/VContainer/AddressBarContainer/AddressBarInput")
