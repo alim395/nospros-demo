@@ -41,11 +41,13 @@ func _ready() -> void:
 		loginDelay.autostart = true
 		welcomeScreen.visible = true;
 		Task_Bar.visible = false;
+		Task_Bar.visibility_changed.emit()
 		iconManager.visible = false;
 	else:
 		loginDelay.queue_free()
 		welcomeScreen.visible = false;
 		Task_Bar.visible = true;
+		Task_Bar.visibility_changed.emit()
 		iconManager.visible = true;
 		
 
@@ -66,9 +68,7 @@ func _on_welcome_animation_animation_finished(_anim_name: StringName) -> void:
 
 func _on_power_options_pressed() -> void:
 	print("POWER OPTIONS SELECTED")
-	if appManager.activeInstance != null:
-		appManager.closeActiveInstance()
-	appManager.closeCoreApps()
+	appManager.closeAllTasks()
 	logScreen.visible = true;
 	logAnimation.play("becomeGray")
 

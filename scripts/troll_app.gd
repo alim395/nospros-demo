@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 func openWindow() -> void:
 	myWindow.visible = true
+	MusicManager.stop_music.emit()
 	MusicManager.play_song.emit(trollMusic, true, true, 0.5)
 
 func _on_window_close_requested() -> void:
