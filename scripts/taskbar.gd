@@ -5,6 +5,8 @@ class_name Taskbar
 var defaultTheme = globalParameters.defaultTheme
 var currentTheme = defaultTheme
 
+@export var myCanvas : CanvasLayer
+
 #@export var barSprites : Array[Sprite2D]
 @export var barTexture : TextureRect
 @export var barTextureArray : Array[Texture2D]
@@ -75,3 +77,7 @@ func closeTask(task: String) -> void:
 		for tB in buttonContainer.get_children():
 			if tB.text == task:
 				tB.queue_free()
+
+func _on_visibility_changed() -> void:
+	if myCanvas != null:
+		myCanvas.visible = self.visible
