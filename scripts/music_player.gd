@@ -1,5 +1,9 @@
 extends Control
 
+@export var myWindow : Window
+@export var myTaskButton : taskbarButton
+var isMinimize : bool = false
+
 @export var isShuffle := false
 @export var isLoop := false
 @export var isPaused := false
@@ -197,6 +201,7 @@ func updateTrackTime(s : int) -> void:
 
 func _on_window_close_requested() -> void:
 	#MusicManager.stop_music.emit()
+	globalParameters.closeApp("Music")
 	queue_free()
 
 func _on_tree_exiting() -> void:
@@ -256,7 +261,6 @@ func _on_seek_forward_button_down() -> void:
 func _on_seek_forward_button_up() -> void:
 	MusicManager.current_player.pitch_scale = 1.0
 
-
 func _on_seek_back_button_down() -> void:
 	isSeeking = true
 	_on_pause_button_pressed()
@@ -265,3 +269,11 @@ func _on_seek_back_button_down() -> void:
 func _on_seek_back_button_up() -> void:
 	MusicManager.current_player.seek(seekSlider.value)
 	_on_play_button_pressed()
+
+func setTaskButton(tB : taskbarButton) -> void:
+	myTaskButton = tB
+	myTaskButton.pressed.connect(minimizeWindow)
+
+func minimizeWindow() -> void:
+	isMinimize = not isMinimize
+	myWindow.visible = not isMinimize
