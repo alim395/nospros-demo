@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dh7ho141xm681"]
+
+[ext_resource type="FontFile" uid="uid://dcnec4vuiifsf" path="res://themes/Enterprise/SkySans4.fnt" id="1_t3pvl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbp34"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8d4dp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqhbg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50qjg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v04oh"]
+bg_color = Color(0.000648032, 0.267493, 0.873814, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_t3pvl")
+Button/styles/disabled = SubResource("StyleBoxEmpty_xbp34")
+Button/styles/focus = SubResource("StyleBoxEmpty_8d4dp")
+Button/styles/hover = SubResource("StyleBoxEmpty_dqhbg")
+Button/styles/normal = SubResource("StyleBoxEmpty_50qjg")
+Button/styles/pressed = SubResource("StyleBoxFlat_v04oh")

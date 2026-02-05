@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=14 format=3 uid="uid://kcfcelkt7aou"]
+
+[ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="1_14pr2"]
+[ext_resource type="Texture2D" uid="uid://d4dh7x5bfpeie" path="res://MMSongs/Albums/XP/009 Sound System/front.png" id="1_rxl12"]
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="2_bngwr"]
+[ext_resource type="Resource" uid="uid://by2ovwxdbf10d" path="res://MMSongs/Albums/XP/009 Sound System/009-01.tres" id="4_aqjj2"]
+[ext_resource type="Resource" uid="uid://bjgdwhrsb7cdt" path="res://MMSongs/Albums/XP/009 Sound System/009-02.tres" id="5_opmh7"]
+[ext_resource type="Resource" uid="uid://dn2jo11yx1at0" path="res://MMSongs/Albums/XP/009 Sound System/009-03.tres" id="6_05eup"]
+[ext_resource type="Resource" uid="uid://dho8c6obb27nf" path="res://MMSongs/Albums/XP/009 Sound System/009-05.tres" id="7_1s2ea"]
+[ext_resource type="Resource" uid="uid://c6d3g8jx33kao" path="res://MMSongs/Albums/XP/009 Sound System/009-06.tres" id="8_3cavx"]
+[ext_resource type="Resource" uid="uid://bwdsbm563p628" path="res://MMSongs/Albums/XP/009 Sound System/009-07.tres" id="9_rxl12"]
+[ext_resource type="Resource" uid="uid://cxvvu3x07n0ak" path="res://MMSongs/Albums/XP/009 Sound System/009-08.tres" id="10_0b5f2"]
+[ext_resource type="Resource" uid="uid://b7228c1oysd35" path="res://MMSongs/Albums/XP/009 Sound System/009-09.tres" id="11_an0e0"]
+[ext_resource type="Resource" uid="uid://byvvcpra4ixcm" path="res://MMSongs/Albums/XP/009 Sound System/009-10.tres" id="12_ii2bq"]
+[ext_resource type="Resource" uid="uid://4ep6cp2egvxd" path="res://MMSongs/Albums/XP/009 Sound System/009-11.tres" id="13_k0576"]
+
+[resource]
+script = ExtResource("1_14pr2")
+name = "009 Sound System"
+tracks = Array[ExtResource("2_bngwr")]([ExtResource("4_aqjj2"), ExtResource("5_opmh7"), ExtResource("6_05eup"), ExtResource("7_1s2ea"), ExtResource("8_3cavx"), ExtResource("9_rxl12"), ExtResource("10_0b5f2"), ExtResource("11_an0e0"), ExtResource("12_ii2bq"), ExtResource("13_k0576")])
+art = ExtResource("1_rxl12")
+metadata/_custom_type_script = "uid://c8lu2riejct4e"

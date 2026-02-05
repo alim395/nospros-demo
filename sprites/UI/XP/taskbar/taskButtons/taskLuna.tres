@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://copckfhoj558p"]
+
+[ext_resource type="Texture2D" uid="uid://dcucdrkp8l3wm" path="res://sprites/UI/XP/taskbar/taskButtons/Luna/hover.png" id="1_6cb5t"]
+[ext_resource type="Texture2D" uid="uid://m1eymy51mji6" path="res://sprites/UI/XP/taskbar/taskButtons/Luna/active-hover.png" id="2_o1rad"]
+[ext_resource type="Texture2D" uid="uid://cfsdticdael7i" path="res://sprites/UI/XP/taskbar/taskButtons/Luna/normal.png" id="3_x6bnl"]
+[ext_resource type="Texture2D" uid="uid://b8tcm2tp7n7qg" path="res://sprites/UI/XP/taskbar/taskButtons/Luna/active.png" id="4_yo0xx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cb5t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dm3q"]
+texture = ExtResource("1_6cb5t")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 160, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxnw4"]
+texture = ExtResource("2_o1rad")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 160, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd8nx"]
+texture = ExtResource("3_x6bnl")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 160, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq6bq"]
+texture = ExtResource("4_yo0xx")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 160, 25)
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_6cb5t")
+Button/styles/hover = SubResource("StyleBoxTexture_0dm3q")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_uxnw4")
+Button/styles/normal = SubResource("StyleBoxTexture_cd8nx")
+Button/styles/pressed = SubResource("StyleBoxTexture_aq6bq")
