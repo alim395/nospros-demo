@@ -66,5 +66,9 @@ func setTaskButton(tB : taskbarButton) -> void:
 	myTaskButton.pressed.connect(minimizeWindow)
 
 func minimizeWindow() -> void:
-	isMinimize = not isMinimize
+	isMinimize = true
 	myWindow.visible = not isMinimize
+	if myTaskButton.button_pressed:
+		isMinimize = false
+		myWindow.visible = not isMinimize
+		myWindow.grab_focus()

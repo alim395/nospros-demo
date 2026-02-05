@@ -41,7 +41,9 @@ func _ready() -> void:
 	# Signals
 	if !MusicManager.is_connected("all_music_finished", _on_all_music_finished):
 		MusicManager.all_music_finished.connect(_on_all_music_finished)
-		
+	
+	theme = globalParameters.defaultWindowTheme
+	
 	defaultAlbum = albumList[0]
 	currentTrackNum = 0
 	currentAlbumNum = 0
@@ -275,5 +277,9 @@ func setTaskButton(tB : taskbarButton) -> void:
 	myTaskButton.pressed.connect(minimizeWindow)
 
 func minimizeWindow() -> void:
-	isMinimize = not isMinimize
+	isMinimize = true
 	myWindow.visible = not isMinimize
+	if myTaskButton.button_pressed:
+		isMinimize = false
+		myWindow.visible = not isMinimize
+		myWindow.grab_focus()

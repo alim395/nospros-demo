@@ -1,7 +1,23 @@
 extends Node
 
-enum TaskThemes {Luna, OliveGreen, Embedded, ZunaRoyaleNoir}
+enum TaskThemes {Luna, OliveGreen, Embedded, Metallic, Royale, ZunaRoyaleNoir}
 enum buttonStyle {Classic, Y2K}
+
+# Window Themes
+var LunaTheme : Theme = load("res://themes/eXP/eXP_Luna.tres")
+var OliveTheme : Theme = load("res://themes/eXP/eXP_Olive.tres")
+var EmbeddedTheme : Theme = load("res://themes/eXP/eXP_Embedded.tres")
+var MetallicTheme : Theme = load("res://themes/eXP/eXP_Metallic.tres")
+var RoyaleTheme : Theme = load("res://themes/eXP/eXP_Royale.tres")
+var ZuneTheme : Theme = load("res://themes/eXP/eXP_Zune.tres")
+
+# Task Themes
+var LunaTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskLuna.tres")
+var OliveTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskOlive.tres")
+var EmbeddedTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskEmbedded.tres")
+var MetallicTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskMetallic.tres")
+var RoyaleTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskRoyale.tres")
+var ZuneTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskZune.tres")
 
 # Icon Store
 var icon_dict : Dictionary[String, Texture2D]
@@ -11,7 +27,7 @@ var icon_dict : Dictionary[String, Texture2D]
 @export var highFidelity : bool
 @export var crtFilter : bool
 @export var defaultTheme : TaskThemes
-@export var defaultWallpaperIndex : int
+@export var defaultWindowTheme : Theme
 @export var defaultButtonStyle : buttonStyle
 var errorCount : int
 var trollMode := false
@@ -30,8 +46,8 @@ func _ready() -> void:
 	highFidelity = false
 	crtFilter = false
 	defaultTheme = TaskThemes.Luna
+	defaultWindowTheme = LunaTheme
 	defaultButtonStyle = buttonStyle.Classic
-	defaultWallpaperIndex = 0
 	errorCount = 0
 	
 	# Resources

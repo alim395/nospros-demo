@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cyxlpvgrvv452"]
+
+[ext_resource type="Texture2D" uid="uid://bg3wi72c13405" path="res://sprites/UI/XP/taskbar/taskButtons/Zune/hover.png" id="1_f4kq8"]
+[ext_resource type="Texture2D" uid="uid://cpyromiwoe17t" path="res://sprites/UI/XP/taskbar/taskButtons/Zune/active-hover.png" id="2_iy0w2"]
+[ext_resource type="Texture2D" uid="uid://dt6tj4b7tpcbl" path="res://sprites/UI/XP/taskbar/taskButtons/Zune/normal.png" id="3_w1apt"]
+[ext_resource type="Texture2D" uid="uid://yh5ktvmjsdah" path="res://sprites/UI/XP/taskbar/taskButtons/Zune/active.png" id="4_t7gla"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nee24"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dm3q"]
+texture = ExtResource("1_f4kq8")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 1, 158, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxnw4"]
+texture = ExtResource("2_iy0w2")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 1, 158, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd8nx"]
+texture = ExtResource("3_w1apt")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 1, 158, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq6bq"]
+texture = ExtResource("4_t7gla")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 1, 158, 24)
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_nee24")
+Button/styles/hover = SubResource("StyleBoxTexture_0dm3q")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_uxnw4")
+Button/styles/normal = SubResource("StyleBoxTexture_cd8nx")
+Button/styles/pressed = SubResource("StyleBoxTexture_aq6bq")

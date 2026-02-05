@@ -12,6 +12,7 @@ var troll := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	theme = globalParameters.defaultWindowTheme
 	if(globalParameters.errorCount >= 10):
 		print("ACTIVATE TROLL MODE")
 		troll = true
