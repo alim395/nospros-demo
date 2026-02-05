@@ -25,11 +25,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_oaba0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_458eo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h3rex")
 theme_override_styles/focus = SubResource("StyleBoxFlat_fedci")
+toggle_mode = true
+button_pressed = true
 text = "Untitled"
 icon = ExtResource("2_s7t15")
 expand_icon = true
 script = ExtResource("1_13dkl")
 taskIcon = ExtResource("2_s7t15")
 taskName = "Untitled"
-
-[connection signal="pressed" from="." to="." method="_on_pressed" flags=18]

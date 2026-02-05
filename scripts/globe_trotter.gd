@@ -12,6 +12,7 @@ var currentIndex := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	theme = globalParameters.defaultWindowTheme
 	if gifVids != null:
 		randomPageGIF()
 
@@ -44,5 +45,8 @@ func setTaskButton(tB : taskbarButton) -> void:
 	myTaskButton.pressed.connect(minimizeWindow)
 
 func minimizeWindow() -> void:
-	isMinimize = not isMinimize
+	isMinimize = true
 	myWindow.visible = not isMinimize
+	if myTaskButton.button_pressed:
+		isMinimize = false
+		myWindow.visible = not isMinimize
