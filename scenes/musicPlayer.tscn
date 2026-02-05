@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=37 format=3 uid="uid://decf48acwjrm8"]
 
-[ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="1_dphei"]
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_t4c88"]
 [ext_resource type="Resource" uid="uid://du5a2mex75jul" path="res://MMSongs/Albums/7/SAIKNEKY.tres" id="3_dcwgm"]
 [ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="3_y1jbc"]
 [ext_resource type="Texture2D" uid="uid://h8eked3v42f7" path="res://sprites/albumArt/AlbumTEST.png" id="3_yj2aj"]
@@ -24,6 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://dlfdy5idatye6" path="res://sprites/musicButtons/SeekForward.svg" id="19_bnu85"]
 [ext_resource type="Texture2D" uid="uid://bqsgg1ap5dnf0" path="res://sprites/musicButtons/TrackNext.svg" id="20_66olg"]
 [ext_resource type="Texture2D" uid="uid://df2t2xxgtw503" path="res://sprites/musicButtons/Shuffle.svg" id="21_5nukk"]
+[ext_resource type="Texture2D" uid="uid://c6syusnipt7s2" path="res://sprites/musicButtons/musicGrabber.png" id="25_a15ay"]
+[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="26_66olg"]
+[ext_resource type="StyleBox" uid="uid://lp4h43qlge6c" path="res://themes/eXP/styles/button/slider.tres" id="27_5nukk"]
+[ext_resource type="StyleBox" uid="uid://de4px7ryyccf" path="res://themes/eXP/styles/button/slider_HTrack.tres" id="28_rmxtt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcwgm"]
 bg_color = Color(0, 0, 0, 1)
@@ -52,6 +56,29 @@ height = 80
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="StyleBox" id="StyleBox_np205"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("26_66olg")
+style_boxes = Array[StyleBox]([ExtResource("27_5nukk"), ExtResource("28_rmxtt")])
+metadata/_custom_type_script = "uid://bpobhv17fo8i"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4c88"]
+bg_color = Color(0, 0, 0.8, 1)
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a15ay"]
+bg_color = Color(0, 0, 0.8, 1)
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
 [node name="MusicPlayer" type="Control" node_paths=PackedStringArray("myWindow", "trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton")]
 layout_mode = 3
 anchors_preset = 15
@@ -59,7 +86,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_dphei")
+theme = ExtResource("1_t4c88")
 script = ExtResource("1_gkd1q")
 myWindow = NodePath("Window")
 albumList = Array[ExtResource("3_y1jbc")]([ExtResource("4_b2ner"), ExtResource("3_dcwgm"), ExtResource("5_yb2vk")])
@@ -179,6 +206,7 @@ panelVisuals = [NodePath("../PanelPlayTime"), NodePath("../MarginContainer/Audio
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 2
 alignment = 1
 
 [node name="PPSContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/ButtonContainer"]
@@ -318,6 +346,12 @@ size_flags_horizontal = 3
 [node name="seekSlider" type="HSlider" parent="Window/Panel/OptionsContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("25_a15ay")
+theme_override_icons/grabber_highlight = ExtResource("25_a15ay")
+theme_override_icons/grabber_disabled = ExtResource("25_a15ay")
+theme_override_styles/slider = SubResource("StyleBox_np205")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t4c88")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_a15ay")
 step = 0.1
 scrollable = false
 

@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cghif0yii4so6"]
+
+[ext_resource type="Texture2D" uid="uid://dbno17s8r1vie" path="res://sprites/UI/XP/taskbar/taskButtons/Royale/hover.png" id="1_f6pcs"]
+[ext_resource type="Texture2D" uid="uid://bfyj1jlsooc8q" path="res://sprites/UI/XP/taskbar/taskButtons/Royale/active-hover.png" id="2_jec8q"]
+[ext_resource type="Texture2D" uid="uid://w2lx8lk4gktm" path="res://sprites/UI/XP/taskbar/taskButtons/Royale/normal.png" id="3_p1e4x"]
+[ext_resource type="Texture2D" uid="uid://d00pmhltl6ftu" path="res://sprites/UI/XP/taskbar/taskButtons/Royale/active.png" id="4_w3qwy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nee24"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dm3q"]
+texture = ExtResource("1_f6pcs")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 144, 23)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxnw4"]
+texture = ExtResource("2_jec8q")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 144, 23)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd8nx"]
+texture = ExtResource("3_p1e4x")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 144, 23)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq6bq"]
+texture = ExtResource("4_w3qwy")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 3, 144, 23)
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_nee24")
+Button/styles/hover = SubResource("StyleBoxTexture_0dm3q")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_uxnw4")
+Button/styles/normal = SubResource("StyleBoxTexture_cd8nx")
+Button/styles/pressed = SubResource("StyleBoxTexture_aq6bq")

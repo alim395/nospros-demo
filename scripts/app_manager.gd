@@ -28,6 +28,7 @@ func _ready() -> void:
 	musicInstance = null
 	#closeCoreApps()
 	globalParameters.GetTrolled.connect(_on_troll_button_pressed)
+	theme = globalParameters.defaultWindowTheme
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -183,3 +184,12 @@ func updateTaskCount() -> void:
 		taskCount +=1
 	if musicInstance != null:
 		taskCount +=1
+
+func updateTheme() -> void:
+	theme = globalParameters.defaultWindowTheme
+	if webInstance != null:
+		webInstance.theme = globalParameters.defaultWindowTheme
+	if musicInstance != null:
+		musicInstance.theme = globalParameters.defaultWindowTheme
+	if activeInstance != null:
+		activeInstance.theme = globalParameters.defaultWindowTheme

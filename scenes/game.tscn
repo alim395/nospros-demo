@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=88 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://ckng02ytlmywa" path="res://sprites/icons/Photo_Icon2.png" id="9_ms3bu"]
 [ext_resource type="Texture2D" uid="uid://ys7yfjhvjijo" path="res://sprites/icons/Browser_Icon.png" id="10_3hbvx"]
 [ext_resource type="Script" uid="uid://brbqxhnpbmlw8" path="res://scripts/picture_app.gd" id="10_7025r"]
-[ext_resource type="Theme" uid="uid://bi54ign8ggomc" path="res://themes/Classic95/Classic95.tres" id="10_nepv3"]
 [ext_resource type="Texture2D" uid="uid://bm3qqoexuu6d1" path="res://sprites/UI/XP/startbuttons/Luna002.png" id="10_trtic"]
 [ext_resource type="Texture2D" uid="uid://0ys3kkg8i4hr" path="res://sprites/UI/XP/startbuttons/Luna001.png" id="11_ir15t"]
 [ext_resource type="Texture2D" uid="uid://bicu3e2gh5g0q" path="res://sprites/backgrounds/RedMoon.png" id="11_m4url"]
@@ -45,17 +44,32 @@
 [ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
 [ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/troll_app.gd" id="21_rm0al"]
+[ext_resource type="Texture2D" uid="uid://dpt52ws8f7tmr" path="res://sprites/backgrounds/Azul.png" id="22_2iuns"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
 [ext_resource type="VideoStream" uid="uid://frh01qmqesl2" path="res://video/rickroll-roll.ogv" id="22_i4re6"]
 [ext_resource type="Resource" uid="uid://bscghnkhns25y" path="res://MMSongs/trollMusic00.tres" id="22_pf7vy"]
+[ext_resource type="Texture2D" uid="uid://dwbuqjcjq0g2l" path="res://sprites/backgrounds/Crystal.png" id="23_7gkqi"]
 [ext_resource type="Texture2D" uid="uid://bu2hshr0cnal" path="res://sprites/buttons/Exit.png" id="23_qnb83"]
 [ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
 [ext_resource type="Texture2D" uid="uid://fj3m5kxctqtj" path="res://sprites/buttons/Exit_Pressed.png" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://clo0ox8ojcx4s" path="res://sprites/buttons/LogOff_Pressed.png" id="24_wljb1"]
+[ext_resource type="Texture2D" uid="uid://dsb1ivygm5c61" path="res://sprites/backgrounds/Friend.png" id="25_753oq"]
 [ext_resource type="Texture2D" uid="uid://g5dw67vkxjr2" path="res://sprites/buttons/Exit_Hover.png" id="25_suyxu"]
 [ext_resource type="Texture2D" uid="uid://blra1sk2fgdnl" path="res://sprites/buttons/LogOff_Hover.png" id="25_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://cyj2qdutkalvw" path="res://sprites/backgrounds/Home.png" id="26_3x338"]
 [ext_resource type="Texture2D" uid="uid://def0owgc73j7q" path="res://sprites/buttons/LogOff_Disabled.png" id="26_js0lu"]
 [ext_resource type="Texture2D" uid="uid://c00p2rtoj0j27" path="res://sprites/buttons/Exit_Disabled.png" id="26_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://ds1jftn4yeq87" path="res://sprites/backgrounds/Moon_flower.png" id="27_1yg85"]
+[ext_resource type="Texture2D" uid="uid://dvxej6ivfpqqv" path="res://sprites/backgrounds/Peace.png" id="28_s0g06"]
+[ext_resource type="Texture2D" uid="uid://cy066y08f03a1" path="res://sprites/backgrounds/Power.png" id="29_2gnni"]
+[ext_resource type="Texture2D" uid="uid://4kdx7gsuh2fg" path="res://sprites/backgrounds/Purple_flower.png" id="30_vgxg3"]
+[ext_resource type="Texture2D" uid="uid://dtxwwweo1vtnw" path="res://sprites/backgrounds/Radiance.png" id="31_4nbsr"]
+[ext_resource type="Texture2D" uid="uid://boxgwdq3s6bad" path="res://sprites/backgrounds/Ripple.png" id="33_fkywm"]
+[ext_resource type="Texture2D" uid="uid://ds1j72y56u6d5" path="res://sprites/UI/XP/taskbar/Metallic.png" id="33_yd4ix"]
+[ext_resource type="Texture2D" uid="uid://bivghtadqisk5" path="res://sprites/UI/XP/taskbar/Royale.png" id="34_66xif"]
+[ext_resource type="Texture2D" uid="uid://cg0tb78dqyyr8" path="res://sprites/backgrounds/Stonehenge.png" id="34_dku7i"]
+[ext_resource type="Texture2D" uid="uid://bk7pifovvm4dq" path="res://sprites/backgrounds/Tulips.png" id="35_veaf0"]
+[ext_resource type="Texture2D" uid="uid://dd1ienotdtqjm" path="res://sprites/backgrounds/Wind.png" id="37_flw08"]
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
@@ -412,10 +426,15 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Wallpaper" type="Sprite2D" parent="DesktopBackground"]
-scale = Vector2(0.34, 0.34)
+[node name="Wallpaper" type="TextureRect" parent="DesktopBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_js0lu")
-centered = false
+expand_mode = 3
 
 [node name="LoginDelay" type="Timer" parent="."]
 one_shot = true
@@ -617,9 +636,8 @@ grow_vertical = 2
 script = ExtResource("10_7025r")
 myWindow = NodePath("Window")
 desktopWallpaper = NodePath("../../DesktopBackground/Wallpaper")
-wallpapersCollection = Array[Texture2D]([ExtResource("4_js0lu"), ExtResource("12_8ool0"), ExtResource("12_pr1ej"), ExtResource("13_05nbr"), ExtResource("11_m4url"), ExtResource("15_0sl42")])
-wallpapersCollectionName = Array[String](["Bliss", "Ascent", "Autumn", "FollowMe", "Red Moon", "VortecSpace"])
-folderRows = NodePath("Window/Panel/FolderRows")
+defaultWallpaper = ExtResource("4_js0lu")
+folderRows = NodePath("Window/Panel/ScrollContainer/FolderRows")
 
 [node name="Window" type="Window" parent="AppManager/pictureApp"]
 oversampling_override = 1.0
@@ -627,7 +645,6 @@ title = "My Pictures"
 initial_position = 1
 size = Vector2i(480, 232)
 visible = false
-theme = ExtResource("10_nepv3")
 
 [node name="Panel" type="Panel" parent="AppManager/pictureApp/Window"]
 anchors_preset = 15
@@ -636,15 +653,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FolderRows" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel"]
-layout_mode = 0
-offset_right = 478.0
-offset_bottom = 232.0
+[node name="ScrollContainer" type="ScrollContainer" parent="AppManager/pictureApp/Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Row0" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows"]
+[node name="FolderRows" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Row0" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
 layout_mode = 2
 
-[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -652,12 +677,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo0"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -667,14 +692,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Bliss"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -682,12 +707,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo1"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -697,14 +722,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Ascent"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0"]
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -712,12 +737,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo2"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo2/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -727,17 +752,17 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo2/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Autumn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Row1" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows"]
+[node name="Row1" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
 layout_mode = 2
 
-[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -745,12 +770,72 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo0"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("22_2iuns")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Azul"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("23_7gkqi")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Crystal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo2"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo2/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -760,14 +845,17 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo2/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Follow Me"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
+[node name="Row2" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -775,12 +863,228 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo0"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("25_753oq")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Friend"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("26_3x338")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Home"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo2"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("27_1yg85")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Moon Flower"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row3" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo0"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("28_s0g06")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Peace"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("29_2gnni")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Power"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo2"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("30_vgxg3")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Purple Flower"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row4" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo0"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_4nbsr")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Radiance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo1/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -790,14 +1094,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo1/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Red Moon"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1"]
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 8
@@ -805,12 +1109,105 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2"]
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo2"]
 custom_minimum_size = Vector2(32, 24)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("33_fkywm")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Ripple"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row5" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo0"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("34_dku7i")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Stonehenge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo1"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("35_veaf0")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Tulips"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo2"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo2/IconContainer"]
 custom_minimum_size = Vector2(136, 76.5)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -820,10 +1217,43 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer"]
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo2/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Vortec Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row6" type="HBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row6/Photo0"]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row6/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("37_flw08")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row6/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Wind"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -851,9 +1281,8 @@ taskBar = NodePath("../../Taskbar")
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
-size = Vector2i(360, 198)
+size = Vector2i(260, 120)
 visible = false
-theme = ExtResource("10_nepv3")
 
 [node name="Panel" type="Panel" parent="AppManager/settingApp/Window"]
 anchors_preset = 15
@@ -930,7 +1359,6 @@ title = "PRIZE"
 initial_position = 1
 size = Vector2i(198, 198)
 visible = false
-theme = ExtResource("10_nepv3")
 
 [node name="Panel" type="Panel" parent="AppManager/trollApp/Window"]
 anchors_preset = 15
@@ -963,7 +1391,7 @@ grow_vertical = 0
 script = ExtResource("5_trtic")
 myCanvas = NodePath("Start/StartLayer")
 barTexture = NodePath("Bar/BarContainer/BarTexture")
-barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("8_dinhu")])
+barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("33_yd4ix"), ExtResource("34_66xif"), ExtResource("8_dinhu")])
 StartButton = NodePath("Start/StartButton")
 startButtonTextures = ExtResource("6_ir15t")
 startMenu = NodePath("Start/StartLayer/StartMenu")
@@ -1000,7 +1428,7 @@ layout_mode = 0
 offset_left = 98.0
 offset_right = 640.0
 offset_bottom = 24.0
-theme_override_constants/separation = 2
+theme_override_constants/separation = 0
 
 [node name="Start" type="Control" parent="Taskbar"]
 layout_mode = 1
@@ -1038,7 +1466,6 @@ layer = 1024
 visible = false
 
 [node name="StartMenu" type="VBoxContainer" parent="Taskbar/Start/StartLayer"]
-visible = false
 offset_left = 1.0
 offset_top = 63.0
 offset_right = 193.0
@@ -1321,6 +1748,7 @@ libraries = {
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
+visible = false
 script = ExtResource("44_66xif")
 resolution = Vector2(640, 360)
 vignette_amount = 0.3
@@ -1334,12 +1762,25 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
 [connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
-[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [0]]
-[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [1]]
-[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row0/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [2]]
-[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [3]]
-[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [4]]
-[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/FolderRows/Row1/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_pressed" binds= [5]]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row1/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row2/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row3/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row4/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row5/Photo2/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row6/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
 [connection signal="close_requested" from="AppManager/settingApp/Window" to="AppManager/settingApp" method="_on_window_close_requested"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/HFButton" to="AppManager/settingApp" method="_on_check_button_toggled"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/CRTButton" to="AppManager/settingApp" method="_on_crt_button_toggled"]
