@@ -396,10 +396,11 @@ _data = {
 &"becomeGray": SubResource("Animation_rysoc")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
 script = ExtResource("1_lnu2h")
 startSong = ExtResource("2_lbhrr")
 welcomeScreen = NodePath("WelcomeScreen")
+welcomeName = NodePath("WelcomeScreen/Profile/VBoxContainer/NameLabel")
 welcomeAnimation = NodePath("WelcomeScreen/welcomeAnimation")
 ScreenFilter = NodePath("ScreenFilters")
 softBlur = NodePath("ScreenFilters/BackBufferCopy1/CanvasLayer/SoftBlur")

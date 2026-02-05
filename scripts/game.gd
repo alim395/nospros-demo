@@ -2,6 +2,7 @@ extends Node2D
 
 @export var startSong : MusicTrack
 @export var welcomeScreen : Control
+@export var welcomeName : Label
 @export var welcomeAnimation : AnimationPlayer
 
 @export var ScreenFilter : Node2D
@@ -31,7 +32,7 @@ var currentError : Node
 func _ready() -> void:
 	# Connect Signal
 	globalParameters.CloseAppSignal.connect(closeApp)
-	
+	welcomeName.text = globalParameters.playerName
 	ScreenFilter.visible = true;
 	softBlur.visible = not globalParameters.highFidelity
 	crtNode.visible = globalParameters.crtFilter
