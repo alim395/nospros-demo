@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccgdg2jgigshw"
-path="res://.godot/imported/red flower.JPG-85318f37fef068b1d516e57efe422299.ctex"
+path="res://.godot/imported/red flower.jpg-8bebfa9da6a6e3022c49900ffd8d4889.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/userIcons/red flower.JPG"
-dest_files=["res://.godot/imported/red flower.JPG-85318f37fef068b1d516e57efe422299.ctex"]
+source_file="res://sprites/userIcons/red flower.jpg"
+dest_files=["res://.godot/imported/red flower.jpg-8bebfa9da6a6e3022c49900ffd8d4889.ctex"]
 
 [params]
 
