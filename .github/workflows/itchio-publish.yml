@@ -9,7 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0   # safer after history rewrites with git lfs migrate
+
+      - name: Ensure Git LFS files are present
+        run: |
+          git lfs install --local
+          git lfs pull
 
       - name: Godot Export
         id: export
@@ -20,11 +28,12 @@ jobs:
           relative_project_path: ./
           archive_output: true
         env:
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
       - name: Publish to Itch
         uses: Ayowel/butler-to-itch@v1.2.0
         with:
-          butler_key: ${{secrets.ITCHIO_TOKEN}}
+          butler_key: ${{ secrets.ITCHIO_TOKEN }}
           itch_user: ZenkoZGames
           itch_game: nospros-demo
           version: ${{ github.ref_name }}
