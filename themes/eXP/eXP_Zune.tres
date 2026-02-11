@@ -1,11 +1,11 @@
-[gd_resource type="Theme" load_steps=98 format=3 uid="uid://ck3kfrt4rx6dn"]
+[gd_resource type="Theme" load_steps=99 format=3 uid="uid://ck3kfrt4rx6dn"]
 
 [ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_m1611"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_3pphv"]
+[ext_resource type="StyleBox" uid="uid://bibr1bpmpriui" path="res://themes/eXP/styles/button/buttonStack-focus.tres" id="3_b3cla"]
 [ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="3_m1g0s"]
 [ext_resource type="StyleBox" uid="uid://dt5hr60b1dhkd" path="res://themes/eXP/styles/button/button-border.tres" id="4_vl8ly"]
 [ext_resource type="StyleBox" uid="uid://b1pqq85k5u6r5" path="res://themes/eXP/styles/button/button-active.tres" id="5_b3cla"]
-[ext_resource type="StyleBox" uid="uid://c2x6j1od2107i" path="res://themes/eXP/styles/button/button-focus.tres" id="6_aqrty"]
 [ext_resource type="StyleBox" uid="uid://cw2xsb62k3uuu" path="res://themes/eXP/styles/button/button-hover.tres" id="7_ojbg3"]
 [ext_resource type="StyleBox" uid="uid://c8o071y735fk3" path="res://themes/eXP/styles/button/button-pressed.tres" id="8_3xyq0"]
 [ext_resource type="StyleBox" uid="uid://pt0yjtg34cdu" path="res://themes/eXP/styles/button/buttonStack-normal.tres" id="9_4a6c3"]
@@ -43,9 +43,11 @@
 [ext_resource type="Texture2D" uid="uid://bopcbmv4mci08" path="res://themes/eXP/styles/progressBar/ProgressFill.png" id="41_doecm"]
 [ext_resource type="StyleBox" uid="uid://bju6svei8tqxe" path="res://themes/eXP/styles/tab/tabPanel.tres" id="42_7e0ep"]
 [ext_resource type="StyleBox" uid="uid://c26opnmlf6qyq" path="res://themes/eXP/styles/tab/tabButtonStack.tres" id="43_a3pfc"]
+[ext_resource type="StyleBox" uid="uid://brsphd6ta6wni" path="res://themes/eXP/styles/tab/tabFocused.tres" id="44_aqrty"]
 [ext_resource type="StyleBox" uid="uid://bipqob58lv82q" path="res://themes/eXP/styles/tab/tabButtonUnselectedStack.tres" id="44_iyv1f"]
 [ext_resource type="Texture2D" uid="uid://cdatmybntrnw4" path="res://themes/eXP/styles/scroll/embedded/top-stepper.png" id="45_b6hsy"]
 [ext_resource type="Texture2D" uid="uid://c0a2xe1wad2eu" path="res://themes/eXP/styles/scroll/embedded/top-stepper-prelight.png" id="46_32u10"]
+[ext_resource type="StyleBox" uid="uid://ci8ik5ib32llv" path="res://themes/eXP/styles/tab/tabButtonSelectedStack.tres" id="46_ojbg3"]
 [ext_resource type="Texture2D" uid="uid://c024xpf0448i7" path="res://themes/eXP/styles/scroll/embedded/top-stepper-active.png" id="47_4te76"]
 [ext_resource type="Texture2D" uid="uid://dgi50v2yb6q3r" path="res://themes/eXP/styles/scroll/embedded/bottom-stepper-prelight.png" id="48_8k8et"]
 [ext_resource type="Texture2D" uid="uid://5pnhlngqq2p3" path="res://themes/eXP/styles/scroll/embedded/bottom-stepper-active.png" id="49_03pvk"]
@@ -64,17 +66,6 @@
 [ext_resource type="Texture2D" uid="uid://bfdgmwiqa50fh" path="res://themes/eXP/styles/window/ZuneBorder.png" id="62_vl8ly"]
 [ext_resource type="Texture2D" uid="uid://2wog2tatyo43" path="res://themes/eXP/styles/window/WindowsTitleZuneUnfocused.png" id="63_b3cla"]
 [ext_resource type="Texture2D" uid="uid://b2q6dp3iursj6" path="res://themes/eXP/styles/window/ZuneBorderUnfocused.png" id="64_aqrty"]
-
-[sub_resource type="StyleBox" id="StyleBox_xxfgw"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_m1g0s")
-style_boxes = Array[StyleBox]([ExtResource("4_vl8ly"), ExtResource("5_b3cla"), ExtResource("6_aqrty")])
-metadata/_custom_type_script = "uid://bpobhv17fo8i"
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -276,7 +267,7 @@ metadata/_custom_type_script = "uid://bpobhv17fo8i"
 [resource]
 resource_name = "Zune"
 Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0.06100855, 0.06100855, 0.06100855, 0.3)
+Button/colors/font_disabled_color = Color(0.5137255, 0.5137255, 0.5137255, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -284,7 +275,7 @@ Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 11
 Button/fonts/font = ExtResource("1_m1611")
 Button/styles/disabled = ExtResource("2_3pphv")
-Button/styles/focus = SubResource("StyleBox_xxfgw")
+Button/styles/focus = ExtResource("3_b3cla")
 Button/styles/hover = SubResource("StyleBox_f2ya5")
 Button/styles/hover_pressed = SubResource("StyleBox_tiy84")
 Button/styles/normal = ExtResource("9_4a6c3")
@@ -372,8 +363,9 @@ TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
 TabContainer/font_sizes/font_size = 11
 TabContainer/fonts/font = ExtResource("1_m1611")
 TabContainer/styles/panel = ExtResource("42_7e0ep")
+TabContainer/styles/tab_focus = ExtResource("44_aqrty")
 TabContainer/styles/tab_hovered = ExtResource("43_a3pfc")
-TabContainer/styles/tab_selected = ExtResource("43_a3pfc")
+TabContainer/styles/tab_selected = ExtResource("46_ojbg3")
 TabContainer/styles/tab_unselected = ExtResource("44_iyv1f")
 TextEdit/colors/font_color = Color(0, 0, 0, 1)
 TextEdit/font_sizes/font_size = 11
