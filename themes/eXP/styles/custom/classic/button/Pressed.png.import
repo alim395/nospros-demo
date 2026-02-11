@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uphwb2xh3vo5"
-path="res://.godot/imported/Disabled.png-1deff8565b8e809bcfba00841691be3d.ctex"
+uid="uid://cq0xh4ynvo4ua"
+path="res://.godot/imported/Pressed.png-21effd248f03ebda49c0b298d0b5f8ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://custom_styles/buttonClassic/Disabled.png"
-dest_files=["res://.godot/imported/Disabled.png-1deff8565b8e809bcfba00841691be3d.ctex"]
+source_file="res://themes/eXP/styles/custom/classic/button/Pressed.png"
+dest_files=["res://.godot/imported/Pressed.png-21effd248f03ebda49c0b298d0b5f8ef.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
