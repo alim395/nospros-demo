@@ -21,6 +21,9 @@ var taskCount : int = 0
 @onready var musicPlayerApp = preload("res://scenes/musicPlayer.tscn")
 @onready var browserApp = preload("res://scenes/globeTrotter.tscn")
 
+# Others
+@export var dWins : Control
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	activeInstance = null
@@ -69,7 +72,7 @@ func closeCoreApps() -> void:
 	taskBar.closeTask("Picture")
 	settingApp._on_window_close_requested()
 	taskBar.closeTask("Setting")
-	closeTroll()
+	#closeTroll()
 
 func openMusicApp() -> void:
 	#if activeInstance != null:
@@ -82,7 +85,6 @@ func openMusicApp() -> void:
 	#activeInstance.setTaskButton(tB)
 	
 	if musicInstance == null:
-		closeTroll()
 		musicInstance = musicPlayerApp.instantiate()
 		add_child(musicInstance)
 		if taskCount > 0:
@@ -124,7 +126,6 @@ func openWebApp() -> void:
 	#activeInstance.setTaskButton(tB)
 	
 	if webInstance == null:
-		closeTroll()
 		webInstance = browserApp.instantiate()
 		add_child(webInstance)
 		if taskCount > 0:
@@ -134,7 +135,6 @@ func openWebApp() -> void:
 		updateTaskCount()
 	
 func _on_music_button_pressed() -> void:
-	closeTroll()
 	openMusicApp()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
@@ -147,9 +147,6 @@ func _on_settings_button_pressed() -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func openTrollApp() -> void:
-	closeAllTasks()
-	# Added Delay to allow music to be played
-	await get_tree().create_timer(0.1).timeout
 	trollApp.openWindow()
 	isTrolling = true
 	activeTaskName = "Troll"
@@ -193,3 +190,9 @@ func updateTheme() -> void:
 		musicInstance.theme = globalParameters.defaultWindowTheme
 	if activeInstance != null:
 		activeInstance.theme = globalParameters.defaultWindowTheme
+	trollApp.myWindow.theme = globalParameters.defaultWindowTheme
+	
+	# Dialog Windows
+	if dWins.get_children():
+		for d in dWins.get_children():
+			d.myWindow.theme = globalParameters.defaultWindowTheme

@@ -25,8 +25,9 @@ extends Node2D
 @export var shutdownAnimation : AnimationPlayer
 
 # Error Window
+@export var dialogueWindowNode : Control
 @onready var errorWindow = preload("res://scenes/errorWindow.tscn")
-var currentError : Node
+#var currentError : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -70,8 +71,8 @@ func _on_welcome_animation_animation_finished(_anim_name: StringName) -> void:
 func _on_power_options_pressed() -> void:
 	print("POWER OPTIONS SELECTED")
 	appManager.closeAllTasks()
-	if currentError != null:
-		currentError.queue_free()
+	#if currentError != null:
+		#currentError.queue_free()
 	logScreen.visible = true;
 	logAnimation.play("becomeGray")
 
@@ -81,10 +82,7 @@ func _on_shutdown_button_pressed() -> void:
 		shutdownAnimation.play("shutdown")
 	else:
 		_on_exit_back_pressed()
-		currentError = errorWindow.instantiate()
-		add_child(currentError)
-		if(globalParameters.errorCount < 10):
-			currentError.setMessage("This feature is unavailable in the Web Build.")
+		spawnError("This feature is unavailable in the Web Build.")
 	
 func _on_shutdown_animation_animation_finished(_anim_name: StringName) -> void:
 	MusicManager.play_song.emit(shutdownSong, false, false, 0)
@@ -104,11 +102,16 @@ func _on_log_off_pressed() -> void:
 
 func _on_untitled_button_pressed() -> void:
 	taskBar._on_power_options_pressed()
-	if(currentError == null) :
-		currentError = errorWindow.instantiate()
-		add_child(currentError)
-	if(globalParameters.errorCount < 10):
-		currentError.setMessage("This feature is not yet available.")
+	spawnError()
 
 func closeApp(taskApp : String) -> void:
 	appManager.taskBar.closeTask(taskApp)
+
+func spawnError(msg : String = "This feature is not available yet.", eType : int = globalParameters.errorType.critical) -> void:
+	var d = errorWindow.instantiate()
+	d.setErrorType(eType)
+	d.setErrorMessage(msg)
+	dialogueWindowNode.add_child(d)
+	if dialogueWindowNode.get_children():
+		if dialogueWindowNode.get_child_count() > 1:
+			d.myWindow.position += Vector2i(randi_range(10,40), randi_range(10,40))

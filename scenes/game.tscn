@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=89 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -46,8 +46,6 @@
 [ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/troll_app.gd" id="21_rm0al"]
 [ext_resource type="Texture2D" uid="uid://dpt52ws8f7tmr" path="res://sprites/backgrounds/Azul.png" id="22_2iuns"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
-[ext_resource type="VideoStream" uid="uid://frh01qmqesl2" path="res://video/rickroll-roll.ogv" id="22_i4re6"]
-[ext_resource type="Resource" uid="uid://bscghnkhns25y" path="res://MMSongs/trollMusic00.tres" id="22_pf7vy"]
 [ext_resource type="Texture2D" uid="uid://dwbuqjcjq0g2l" path="res://sprites/backgrounds/Crystal.png" id="23_7gkqi"]
 [ext_resource type="Texture2D" uid="uid://bu2hshr0cnal" path="res://sprites/buttons/Exit.png" id="23_qnb83"]
 [ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
@@ -72,7 +70,10 @@
 [ext_resource type="Texture2D" uid="uid://dd1ienotdtqjm" path="res://sprites/backgrounds/Wind.png" id="37_flw08"]
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
+[ext_resource type="VideoStream" uid="uid://c6lwokljsn4m6" path="res://video/joke/Photograph.ogv" id="41_2iuns"]
+[ext_resource type="VideoStream" uid="uid://del701b226cja" path="res://video/joke/RickRoll.ogv" id="41_7gkqi"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
+[ext_resource type="Script" uid="uid://cuyhf0go5bavo" path="res://scripts/dialogue_windows.gd" id="53_2iuns"]
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -396,7 +397,7 @@ _data = {
 &"becomeGray": SubResource("Animation_rysoc")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation", "dialogueWindowNode")]
 script = ExtResource("1_lnu2h")
 startSong = ExtResource("2_lbhrr")
 welcomeScreen = NodePath("WelcomeScreen")
@@ -416,6 +417,7 @@ logOffSong = ExtResource("3_66xif")
 shutdownSong = ExtResource("3_e1j6l")
 shutdownScreen = NodePath("ShutdownScreen")
 shutdownAnimation = NodePath("ShutdownScreen/shutdownAnimation")
+dialogueWindowNode = NodePath("AppManager/DialogueWindows")
 
 [node name="DesktopBackground" type="Control" parent="."]
 layout_mode = 3
@@ -613,7 +615,7 @@ text = "untitled"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "trollIcon", "taskBar")]
+[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "trollIcon", "taskBar", "dWins")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -626,6 +628,7 @@ settingApp = NodePath("settingApp")
 trollApp = NodePath("trollApp")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
 taskBar = NodePath("../Taskbar")
+dWins = NodePath("DialogueWindows")
 
 [node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
 layout_mode = 1
@@ -1340,7 +1343,7 @@ text = "Theme : "
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow")]
+[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "videoPlayer")]
 custom_minimum_size = Vector2(640, 336)
 layout_mode = 1
 anchors_preset = 15
@@ -1352,14 +1355,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("21_rm0al")
 myWindow = NodePath("Window")
-trollMusic = ExtResource("22_pf7vy")
+trollVideos = Array[VideoStreamTheora]([ExtResource("41_2iuns"), ExtResource("41_7gkqi")])
+videoPlayer = NodePath("Window/Panel/VideoStreamPlayer")
 
 [node name="Window" type="Window" parent="AppManager/trollApp"]
 oversampling_override = 1.0
 title = "PRIZE"
 initial_position = 1
-size = Vector2i(198, 198)
+size = Vector2i(320, 240)
 visible = false
+content_scale_mode = 1
+content_scale_aspect = 4
 
 [node name="Panel" type="Panel" parent="AppManager/trollApp/Window"]
 anchors_preset = 15
@@ -1369,12 +1375,21 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AppManager/trollApp/Window/Panel"]
-custom_minimum_size = Vector2(198, 198)
-layout_mode = 0
-stream = ExtResource("22_i4re6")
-autoplay = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("41_2iuns")
 expand = true
 loop = true
+
+[node name="DialogueWindows" type="Control" parent="AppManager"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("53_2iuns")
 
 [node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "StartButton", "startMenu", "buttonContainer")]
 visible = false
@@ -1761,6 +1776,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
+[connection signal="theme_changed" from="AppManager/pictureApp" to="AppManager/pictureApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
@@ -1787,6 +1803,8 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
 [connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
+[connection signal="child_entered_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_exiting_tree"]
 [connection signal="visibility_changed" from="Taskbar" to="Taskbar" method="_on_visibility_changed"]
 [connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/Button" to="." method="_on_untitled_button_pressed"]

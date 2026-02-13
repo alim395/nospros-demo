@@ -29,9 +29,13 @@ var icon_dict : Dictionary[String, Texture2D]
 @export var defaultTheme : TaskThemes
 @export var defaultWindowTheme : Theme
 @export var defaultButtonStyle : buttonStyle
+
+# Error Stats
+enum errorType {critical, alert}
 var errorCount : int
 var trollMode := false
 
+# Player Stats
 @export var playerName := "Adam"
 @export var playerUser := "AdamZT395"
 @export var playerPFP : Texture2D
