@@ -247,3 +247,4 @@ Process
 [connection signal="pressed" from="User Form/FormContainer/Start" to="User Form" method="_on_start_pressed"]
 [connection signal="pressed" from="ButtonManager/PowerContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ButtonManager/OptionsContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonManager/OptionsContainer/Options" to="User Form" method="_on_options_pressed"]

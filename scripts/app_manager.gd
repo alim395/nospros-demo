@@ -166,6 +166,7 @@ func closeAllTasks() -> void:
 	closeWebInstance()
 	closeMusicInstance()
 	closeCoreApps()
+	closeTroll()
 
 func closeTroll() -> void:
 	if isTrolling:

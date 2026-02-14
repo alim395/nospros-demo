@@ -39,6 +39,7 @@ var trollMode := false
 @export var playerName := "Adam"
 @export var playerUser := "AdamZT395"
 @export var playerPFP : Texture2D
+var pfpIndex = 0
 
 signal GetTrolled
 signal CloseAppSignal(taskApp:String)

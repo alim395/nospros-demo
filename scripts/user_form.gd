@@ -5,7 +5,7 @@ extends Control
 @export var playerNameInput : LineEdit
 @export var userNameInput : LineEdit
 
-var pfpIndex = 0
+var pfpIndex = globalParameters.pfpIndex
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +13,9 @@ func _ready() -> void:
 		PFP.texture = userProfilePics[0]
 	playerNameInput.text = globalParameters.playerName
 	userNameInput.text = globalParameters.playerUser
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	if globalParameters.playerPFP != null:
+		PFP.texture = globalParameters.playerPFP
+		pfpIndex = globalParameters.pfpIndex
 
 func _on_pfp_prev_pressed() -> void:
 	if pfpIndex > 0:
@@ -35,3 +34,13 @@ func _on_start_pressed() -> void:
 	if not userNameInput.text.is_empty():
 		globalParameters.playerUser = userNameInput.text
 	globalParameters.playerPFP = PFP.texture
+	globalParameters.pfpIndex = pfpIndex
+
+func _on_options_pressed() -> void:
+	# Update Global Parameters
+	if not playerNameInput.text.is_empty():
+		globalParameters.playerName = playerNameInput.text
+	if not userNameInput.text.is_empty():
+		globalParameters.playerUser = userNameInput.text
+	globalParameters.playerPFP = PFP.texture
+	globalParameters.pfpIndex = pfpIndex
