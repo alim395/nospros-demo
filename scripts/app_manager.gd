@@ -167,6 +167,7 @@ func closeAllTasks() -> void:
 	closeMusicInstance()
 	closeCoreApps()
 	closeTroll()
+	dWins.closeAllDialogues()
 
 func closeTroll() -> void:
 	if isTrolling:
