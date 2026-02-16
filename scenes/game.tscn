@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=96 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -70,10 +70,17 @@
 [ext_resource type="Texture2D" uid="uid://dd1ienotdtqjm" path="res://sprites/backgrounds/Wind.png" id="37_flw08"]
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
-[ext_resource type="VideoStream" uid="uid://c6lwokljsn4m6" path="res://video/joke/Photograph.ogv" id="41_2iuns"]
+[ext_resource type="VideoStream" uid="uid://dfj2oofn0fmol" path="res://video/joke/Photograph.ogv" id="41_2iuns"]
 [ext_resource type="VideoStream" uid="uid://del701b226cja" path="res://video/joke/RickRoll.ogv" id="41_7gkqi"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
+[ext_resource type="Texture2D" uid="uid://cyx0102unan36" path="res://sprites/UI/XP/taskbar/Panel/Luna.png" id="50_3x338"]
+[ext_resource type="Texture2D" uid="uid://dojwpn6t2f08h" path="res://sprites/UI/XP/taskbar/Panel/Olive.png" id="51_s0g06"]
+[ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="52_1yg85"]
+[ext_resource type="Texture2D" uid="uid://doi4gt48rav3r" path="res://sprites/UI/XP/taskbar/Panel/Embedded.png" id="52_2gnni"]
 [ext_resource type="Script" uid="uid://cuyhf0go5bavo" path="res://scripts/dialogue_windows.gd" id="53_2iuns"]
+[ext_resource type="Texture2D" uid="uid://cvtdxeg0lpgov" path="res://sprites/UI/XP/taskbar/Panel/Metallic.png" id="53_4nbsr"]
+[ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
+[ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -1391,7 +1398,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("53_2iuns")
 
-[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "StartButton", "startMenu", "buttonContainer")]
+[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer")]
 visible = false
 layout_mode = 3
 anchors_preset = 7
@@ -1408,6 +1415,8 @@ script = ExtResource("5_trtic")
 myCanvas = NodePath("Start/StartLayer")
 barTexture = NodePath("Bar/BarContainer/BarTexture")
 barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("33_yd4ix"), ExtResource("34_66xif"), ExtResource("8_dinhu")])
+barPanel = NodePath("Bar/BarContainer/BarPanel")
+barPanelTextureArray = Array[Texture2D]([ExtResource("50_3x338"), ExtResource("51_s0g06"), ExtResource("52_2gnni"), ExtResource("53_4nbsr"), ExtResource("54_fkywm"), ExtResource("55_dku7i")])
 StartButton = NodePath("Start/StartButton")
 startButtonTextures = ExtResource("6_ir15t")
 startMenu = NodePath("Start/StartLayer/StartMenu")
@@ -1427,17 +1436,47 @@ pivot_offset = Vector2(88, 336)
 [node name="BarContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
 offset_right = 640.0
-offset_bottom = 25.0
+offset_bottom = 24.0
+theme_override_constants/separation = 0
 
 [node name="BarTexture" type="TextureRect" parent="Taskbar/Bar/BarContainer"]
 texture_repeat = 2
-custom_minimum_size = Vector2(640, 24)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_stretch_ratio = 7.0
 texture = ExtResource("5_u5sy4")
 expand_mode = 1
 stretch_mode = 1
+
+[node name="BarPanel" type="NinePatchRect" parent="Taskbar/Bar/BarContainer"]
+visible = false
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("50_3x338")
+region_rect = Rect2(0, 0, 60, 28)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Time" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("52_1yg85")
+theme_override_font_sizes/font_size = 12
+text = "12:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
@@ -1764,6 +1803,7 @@ libraries = {
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
+visible = false
 script = ExtResource("44_66xif")
 resolution = Vector2(640, 360)
 vignette_amount = 0.3

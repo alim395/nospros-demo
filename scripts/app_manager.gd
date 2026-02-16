@@ -147,6 +147,7 @@ func _on_settings_button_pressed() -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func openTrollApp() -> void:
+	trollApp._on_window_close_requested()
 	trollApp.openWindow()
 	isTrolling = true
 	activeTaskName = "Troll"

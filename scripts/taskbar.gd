@@ -10,6 +10,8 @@ var currentTheme = defaultTheme
 #@export var barSprites : Array[Sprite2D]
 @export var barTexture : TextureRect
 @export var barTextureArray : Array[Texture2D]
+@export var barPanel : NinePatchRect
+@export var barPanelTextureArray : Array[Texture2D]
 @export var StartButton : TextureButton
 @export var startButtonTextures : Resource
 @export var startMenu : Control
@@ -35,6 +37,9 @@ func changeTheme(themeIndex : globalParameters.TaskThemes, themeName := "Luna") 
 	# Switch barTexture
 	barTexture.texture = barTextureArray[int(themeIndex)]
 	
+	# Switch barPanel Texture
+	barPanel.texture = barPanelTextureArray[int(themeIndex)]
+	
 	# Switch Start Button Textures
 	match themeIndex :
 		globalParameters.TaskThemes.Luna:
@@ -42,36 +47,42 @@ func changeTheme(themeIndex : globalParameters.TaskThemes, themeName := "Luna") 
 			StartButton.texture_pressed = startButtonTextures.LunaTextures[2]
 			StartButton.texture_hover = startButtonTextures.LunaTextures[1]
 			buttonContainer.theme = globalParameters.LunaTask
+			barPanel.theme = globalParameters.LunaTask
 			globalParameters.defaultWindowTheme = globalParameters.LunaTheme
 		globalParameters.TaskThemes.OliveGreen:
 			StartButton.texture_normal = startButtonTextures.OliveGreenTextures[0]
 			StartButton.texture_pressed = startButtonTextures.OliveGreenTextures[2]
 			StartButton.texture_hover = startButtonTextures.OliveGreenTextures[1]
 			buttonContainer.theme = globalParameters.OliveTask
+			barPanel.theme = globalParameters.OliveTask
 			globalParameters.defaultWindowTheme = globalParameters.OliveTheme
 		globalParameters.TaskThemes.Embedded:
 			StartButton.texture_normal = startButtonTextures.EmbeddedTextures[0]
 			StartButton.texture_pressed = startButtonTextures.EmbeddedTextures[2]
 			StartButton.texture_hover = startButtonTextures.EmbeddedTextures[1]
 			buttonContainer.theme = globalParameters.EmbeddedTask
+			barPanel.theme = globalParameters.EmbeddedTask
 			globalParameters.defaultWindowTheme = globalParameters.EmbeddedTheme
 		globalParameters.TaskThemes.Metallic:
 			StartButton.texture_normal = startButtonTextures.MetallicTextures[0]
 			StartButton.texture_pressed = startButtonTextures.MetallicTextures[2]
 			StartButton.texture_hover = startButtonTextures.MetallicTextures[1]
 			buttonContainer.theme = globalParameters.MetallicTask
+			barPanel.theme = globalParameters.MetallicTask
 			globalParameters.defaultWindowTheme = globalParameters.MetallicTheme
 		globalParameters.TaskThemes.Royale:
 			StartButton.texture_normal = startButtonTextures.RoyaleTextures[0]
 			StartButton.texture_pressed = startButtonTextures.RoyaleTextures[2]
 			StartButton.texture_hover = startButtonTextures.RoyaleTextures[1]
 			buttonContainer.theme = globalParameters.RoyaleTask
+			barPanel.theme = globalParameters.RoyaleTask
 			globalParameters.defaultWindowTheme = globalParameters.RoyaleTheme
 		globalParameters.TaskThemes.ZunaRoyaleNoir:
 			StartButton.texture_normal = startButtonTextures.RoyaleNoirTextures[0]
 			StartButton.texture_pressed = startButtonTextures.RoyaleNoirTextures[2]
 			StartButton.texture_hover = startButtonTextures.RoyaleNoirTextures[1]
 			buttonContainer.theme = globalParameters.ZuneTask
+			barPanel.theme = globalParameters.ZuneTask
 			globalParameters.defaultWindowTheme = globalParameters.ZuneTheme
 	
 	# Update Current Sprite
