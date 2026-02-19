@@ -29,15 +29,22 @@ var icon_dict : Dictionary[String, Texture2D]
 @export var defaultTheme : TaskThemes
 @export var defaultWindowTheme : Theme
 @export var defaultButtonStyle : buttonStyle
+
+# Error Stats
+enum errorType {critical, alert}
 var errorCount : int
 var trollMode := false
 
+# Player Stats
 @export var playerName := "Adam"
 @export var playerUser := "AdamZT395"
 @export var playerPFP : Texture2D
+var pfpIndex = 0
 
 signal GetTrolled
 signal CloseAppSignal(taskApp:String)
+
+@export var secret2 : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

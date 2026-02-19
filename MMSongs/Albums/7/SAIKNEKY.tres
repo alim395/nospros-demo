@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=13 format=3 uid="uid://du5a2mex75jul"]
+[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=14 format=3 uid="uid://du5a2mex75jul"]
 
 [ext_resource type="Texture2D" uid="uid://r2onexbb7yjq" path="res://MMSongs/Albums/7/SAIKNEKY/SAIKNEKY.jpg" id="1_4cmip"]
 [ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="1_p1gpo"]
@@ -12,10 +12,11 @@
 [ext_resource type="Resource" uid="uid://b8tyiafw7e3v6" path="res://MMSongs/Albums/7/SAIKNEKY/SA07.tres" id="9_n71hl"]
 [ext_resource type="Resource" uid="uid://mjukjdpi5xwd" path="res://MMSongs/Albums/7/SAIKNEKY/SA08.tres" id="10_lmcgp"]
 [ext_resource type="Resource" uid="uid://bqmidaw5rrw3v" path="res://MMSongs/Albums/7/SAIKNEKY/SA09.tres" id="11_4qwg7"]
+[ext_resource type="Resource" uid="uid://5d7y182ualbs" path="res://MMSongs/Albums/7/SAIKNEKY/SA10.tres" id="13_1i5tr"]
 
 [resource]
 script = ExtResource("1_p1gpo")
 name = "SAIKNEKY :3"
-tracks = Array[ExtResource("2_su53a")]([ExtResource("3_1g6es"), ExtResource("4_6ey5o"), ExtResource("5_4cmip"), ExtResource("6_1i5tr"), ExtResource("7_wuseh"), ExtResource("8_6yjos"), ExtResource("9_n71hl"), ExtResource("10_lmcgp"), ExtResource("11_4qwg7")])
+tracks = Array[ExtResource("2_su53a")]([ExtResource("3_1g6es"), ExtResource("4_6ey5o"), ExtResource("5_4cmip"), ExtResource("6_1i5tr"), ExtResource("7_wuseh"), ExtResource("8_6yjos"), ExtResource("9_n71hl"), ExtResource("10_lmcgp"), ExtResource("11_4qwg7"), ExtResource("13_1i5tr")])
 art = ExtResource("1_4cmip")
 metadata/_custom_type_script = "uid://c8lu2riejct4e"

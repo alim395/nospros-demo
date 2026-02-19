@@ -20,12 +20,17 @@ config/icon="res://icon.svg"
 MusicManager="*res://addons/MusicManager/music_manager.tscn"
 globalParameters="*res://global_parameters.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/mode=3
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=2
 
 [dotnet]
 
@@ -62,7 +67,6 @@ DEBUG_ActivateTrollMode={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true

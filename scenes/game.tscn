@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=110 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bas22ukk7spqr" path="res://sprites/icons/Video_Icon.png" id="11_yd4ix"]
 [ext_resource type="Texture2D" uid="uid://chnlqg0h88pid" path="res://sprites/backgrounds/Ascent.png" id="12_8ool0"]
 [ext_resource type="Texture2D" uid="uid://bah5e3y6nrlin" path="res://sprites/backgrounds/Autumn.png" id="12_pr1ej"]
+[ext_resource type="Texture2D" uid="uid://cpvflbs5q2b5o" path="res://sprites/icons/Folder_Icon.png" id="12_veaf0"]
 [ext_resource type="Texture2D" uid="uid://6cglns3xdqmv" path="res://sprites/backgrounds/FollowMe.png" id="13_05nbr"]
 [ext_resource type="Texture2D" uid="uid://bvijjo1f4o1jr" path="res://sprites/icons/Settings_2.png" id="14_bk1p3"]
 [ext_resource type="Texture2D" uid="uid://dhxcccipnxit" path="res://sprites/backgrounds/VortecSpace.png" id="15_0sl42"]
@@ -40,14 +41,13 @@
 [ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/setting_app.gd" id="17_0sl42"]
 [ext_resource type="Texture2D" uid="uid://cvkppvgw27ijf" path="res://sprites/buttons/Shutdown.png" id="18_37s47"]
+[ext_resource type="Texture2D" uid="uid://bvilf1qjfxqgb" path="res://sprites/icons/Folder_Icon2.png" id="18_flw08"]
 [ext_resource type="Texture2D" uid="uid://cdxbew7cfl0kc" path="res://sprites/buttons/Shutdown_Pressed.png" id="19_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
 [ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/troll_app.gd" id="21_rm0al"]
 [ext_resource type="Texture2D" uid="uid://dpt52ws8f7tmr" path="res://sprites/backgrounds/Azul.png" id="22_2iuns"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
-[ext_resource type="VideoStream" uid="uid://frh01qmqesl2" path="res://video/rickroll-roll.ogv" id="22_i4re6"]
-[ext_resource type="Resource" uid="uid://bscghnkhns25y" path="res://MMSongs/trollMusic00.tres" id="22_pf7vy"]
 [ext_resource type="Texture2D" uid="uid://dwbuqjcjq0g2l" path="res://sprites/backgrounds/Crystal.png" id="23_7gkqi"]
 [ext_resource type="Texture2D" uid="uid://bu2hshr0cnal" path="res://sprites/buttons/Exit.png" id="23_qnb83"]
 [ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
@@ -72,7 +72,29 @@
 [ext_resource type="Texture2D" uid="uid://dd1ienotdtqjm" path="res://sprites/backgrounds/Wind.png" id="37_flw08"]
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
+[ext_resource type="VideoStream" uid="uid://dfj2oofn0fmol" path="res://video/joke/Photograph.ogv" id="41_2iuns"]
+[ext_resource type="VideoStream" uid="uid://del701b226cja" path="res://video/joke/RickRoll.ogv" id="41_7gkqi"]
+[ext_resource type="Script" uid="uid://cs1m16ct1tap4" path="res://scripts/meme_folder.gd" id="41_15b3c"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="41_p4npv"]
+[ext_resource type="Texture2D" uid="uid://ke5w3s7ijiqo" path="res://sprites/memes/Courage_Wolf.jpg" id="43_xjcjm"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
+[ext_resource type="Texture2D" uid="uid://yqragrtffyd1" path="res://sprites/memes/calmpanic.jpg" id="44_tc8uq"]
+[ext_resource type="VideoStream" uid="uid://b74aqqw5qjwyv" path="res://video/joke/PBJ.ogv" id="45_84hbc"]
+[ext_resource type="VideoStream" uid="uid://qmb02i1epspt" path="res://video/joke/Photograph2.ogv" id="45_flw08"]
+[ext_resource type="Texture2D" uid="uid://cmwhnparokkeo" path="res://sprites/memes/philosoraptor-fly.jpg" id="45_h5tdf"]
+[ext_resource type="VideoStream" uid="uid://bmv2ybevrlgar" path="res://video/joke/HamsterDance.ogv" id="46_15b3c"]
+[ext_resource type="Texture2D" uid="uid://dy8d2t8biurgo" path="res://sprites/memes/RickRoll.jpg" id="46_xbifu"]
+[ext_resource type="Texture2D" uid="uid://xdk2q42wbtkk" path="res://sprites/memes/HamsterDance.png" id="47_gdf8r"]
+[ext_resource type="Texture2D" uid="uid://sabfs3xhdvgm" path="res://sprites/memes/PBJ.jpg" id="48_x8trd"]
+[ext_resource type="Texture2D" uid="uid://bwevjhe726qyr" path="res://sprites/memes/Photograph.jpg" id="49_s33c4"]
+[ext_resource type="Texture2D" uid="uid://cyx0102unan36" path="res://sprites/UI/XP/taskbar/Panel/Luna.png" id="50_3x338"]
+[ext_resource type="Texture2D" uid="uid://dojwpn6t2f08h" path="res://sprites/UI/XP/taskbar/Panel/Olive.png" id="51_s0g06"]
+[ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="52_1yg85"]
+[ext_resource type="Texture2D" uid="uid://doi4gt48rav3r" path="res://sprites/UI/XP/taskbar/Panel/Embedded.png" id="52_2gnni"]
+[ext_resource type="Script" uid="uid://cuyhf0go5bavo" path="res://scripts/dialogue_windows.gd" id="53_2iuns"]
+[ext_resource type="Texture2D" uid="uid://cvtdxeg0lpgov" path="res://sprites/UI/XP/taskbar/Panel/Metallic.png" id="53_4nbsr"]
+[ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
+[ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -396,7 +418,7 @@ _data = {
 &"becomeGray": SubResource("Animation_rysoc")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation", "dialogueWindowNode")]
 script = ExtResource("1_lnu2h")
 startSong = ExtResource("2_lbhrr")
 welcomeScreen = NodePath("WelcomeScreen")
@@ -416,6 +438,7 @@ logOffSong = ExtResource("3_66xif")
 shutdownSong = ExtResource("3_e1j6l")
 shutdownScreen = NodePath("ShutdownScreen")
 shutdownAnimation = NodePath("ShutdownScreen/shutdownAnimation")
+dialogueWindowNode = NodePath("AppManager/DialogueWindows")
 
 [node name="DesktopBackground" type="Control" parent="."]
 layout_mode = 3
@@ -441,7 +464,7 @@ expand_mode = 3
 one_shot = true
 autostart = true
 
-[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton")]
+[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "memeFolder")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -452,8 +475,10 @@ musicAppButton = NodePath("DesktopColumns/First Column/MusicApp/MusicAppBox/AppB
 pictureAppButton = NodePath("DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton")
 settingAppButton = NodePath("DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton")
 errorAppButton = NodePath("DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton")
-classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix")])
-YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif")])
+memeFolderButton = NodePath("DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox/AppButton")
+memeFolder = NodePath("DesktopColumns/SecondColumn/MemeFolder")
+classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0")])
+YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08")])
 
 [node name="DesktopColumns" type="HBoxContainer" parent="IconManager"]
 layout_mode = 0
@@ -613,7 +638,37 @@ text = "untitled"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "trollIcon", "taskBar")]
+[node name="MemeFolder" type="MarginContainer" parent="IconManager/DesktopColumns/SecondColumn"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="MemeFolderBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SecondColumn/MemeFolder"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "memes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "memeFolder", "trollIcon", "taskBar", "dWins")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -624,8 +679,10 @@ script = ExtResource("5_wljb1")
 pictureApp = NodePath("pictureApp")
 settingApp = NodePath("settingApp")
 trollApp = NodePath("trollApp")
+memeFolder = NodePath("memeFolder")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
 taskBar = NodePath("../Taskbar")
+dWins = NodePath("DialogueWindows")
 
 [node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
 layout_mode = 1
@@ -1340,7 +1397,312 @@ text = "Theme : "
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow")]
+[node name="memeFolder" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "subWindow", "imageDisplay", "videoPlayer")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("41_p4npv")
+script = ExtResource("41_15b3c")
+myWindow = NodePath("mainWindow")
+subWindow = NodePath("subWindow")
+imageDisplay = NodePath("subWindow/Panel/Image")
+videoPlayer = NodePath("subWindow/Panel/VideoPlayer")
+mediaDict = Dictionary[String, Resource]({
+"PBJ": ExtResource("45_84hbc"),
+"courage": ExtResource("43_xjcjm"),
+"hamster": ExtResource("46_15b3c"),
+"keepcalm": ExtResource("44_tc8uq"),
+"philosoraptor": ExtResource("45_h5tdf"),
+"photograph": ExtResource("41_2iuns"),
+"rickroll": ExtResource("41_7gkqi")
+})
+
+[node name="mainWindow" type="Window" parent="AppManager/memeFolder"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(480, 232)
+visible = false
+
+[node name="Panel" type="Panel" parent="AppManager/memeFolder/mainWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AppManager/memeFolder/mainWindow/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FolderRows" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Row0" type="HBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("43_xjcjm")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "courage.jpg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("44_tc8uq")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "keepcalm.jpg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("45_h5tdf")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Philosoraptor.jpg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("46_xbifu")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "RickRoll.wma"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo1" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo1/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("47_gdf8r")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo1/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "HamsterDance.wma"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo2/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("48_x8trd")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo2/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "PBJ_Time.wma"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2" type="HBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows"]
+layout_mode = 2
+
+[node name="Photo0" type="MarginContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconContainer" type="VBoxContainer" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row2/Photo0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row2/Photo0/IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("49_s33c4")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row2/Photo0/IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Photograph.wma"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="subWindow" type="Window" parent="AppManager/memeFolder"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(320, 240)
+visible = false
+theme = ExtResource("41_p4npv")
+
+[node name="Panel" type="Panel" parent="AppManager/memeFolder/subWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureRect" parent="AppManager/memeFolder/subWindow/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("43_xjcjm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="AppManager/memeFolder/subWindow/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("41_2iuns")
+expand = true
+loop = true
+
+[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "videoPlayer", "trollButton")]
 custom_minimum_size = Vector2(640, 336)
 layout_mode = 1
 anchors_preset = 15
@@ -1352,14 +1714,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("21_rm0al")
 myWindow = NodePath("Window")
-trollMusic = ExtResource("22_pf7vy")
+trollVideos = Array[VideoStreamTheora]([ExtResource("41_2iuns"), ExtResource("41_7gkqi"), ExtResource("45_flw08"), ExtResource("45_84hbc"), ExtResource("46_15b3c")])
+videoPlayer = NodePath("Window/Panel/VideoStreamPlayer")
+trollButton = NodePath("Window/Panel/VideoStreamPlayer/Secret2Button")
 
 [node name="Window" type="Window" parent="AppManager/trollApp"]
 oversampling_override = 1.0
 title = "PRIZE"
 initial_position = 1
-size = Vector2i(198, 198)
+size = Vector2i(320, 240)
 visible = false
+content_scale_mode = 1
+content_scale_aspect = 4
 
 [node name="Panel" type="Panel" parent="AppManager/trollApp/Window"]
 anchors_preset = 15
@@ -1369,14 +1735,32 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AppManager/trollApp/Window/Panel"]
-custom_minimum_size = Vector2(198, 198)
-layout_mode = 0
-stream = ExtResource("22_i4re6")
-autoplay = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("41_2iuns")
 expand = true
 loop = true
 
-[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "StartButton", "startMenu", "buttonContainer")]
+[node name="Secret2Button" type="TextureButton" parent="AppManager/trollApp/Window/Panel/VideoStreamPlayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+
+[node name="DialogueWindows" type="Control" parent="AppManager"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("53_2iuns")
+
+[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer")]
 visible = false
 layout_mode = 3
 anchors_preset = 7
@@ -1393,6 +1777,8 @@ script = ExtResource("5_trtic")
 myCanvas = NodePath("Start/StartLayer")
 barTexture = NodePath("Bar/BarContainer/BarTexture")
 barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("33_yd4ix"), ExtResource("34_66xif"), ExtResource("8_dinhu")])
+barPanel = NodePath("Bar/BarContainer/BarPanel")
+barPanelTextureArray = Array[Texture2D]([ExtResource("50_3x338"), ExtResource("51_s0g06"), ExtResource("52_2gnni"), ExtResource("53_4nbsr"), ExtResource("54_fkywm"), ExtResource("55_dku7i")])
 StartButton = NodePath("Start/StartButton")
 startButtonTextures = ExtResource("6_ir15t")
 startMenu = NodePath("Start/StartLayer/StartMenu")
@@ -1412,17 +1798,47 @@ pivot_offset = Vector2(88, 336)
 [node name="BarContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
 offset_right = 640.0
-offset_bottom = 25.0
+offset_bottom = 24.0
+theme_override_constants/separation = 0
 
 [node name="BarTexture" type="TextureRect" parent="Taskbar/Bar/BarContainer"]
 texture_repeat = 2
-custom_minimum_size = Vector2(640, 24)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_stretch_ratio = 7.0
 texture = ExtResource("5_u5sy4")
 expand_mode = 1
 stretch_mode = 1
+
+[node name="BarPanel" type="NinePatchRect" parent="Taskbar/Bar/BarContainer"]
+visible = false
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("50_3x338")
+region_rect = Rect2(0, 0, 60, 28)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Time" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("52_1yg85")
+theme_override_font_sizes/font_size = 12
+text = "12:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
@@ -1749,7 +2165,9 @@ libraries = {
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
+visible = false
 script = ExtResource("44_66xif")
+update_in_editor = false
 resolution = Vector2(640, 360)
 vignette_amount = 0.3
 roll_line_amount = 0.0
@@ -1761,6 +2179,8 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
+[connection signal="theme_changed" from="AppManager/pictureApp" to="AppManager/pictureApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
@@ -1786,7 +2206,20 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/CRTButton" to="AppManager/settingApp" method="_on_crt_button_toggled"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
+[connection signal="close_requested" from="AppManager/memeFolder/mainWindow" to="AppManager/memeFolder" method="_on_window_close_requested"]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo0/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["courage"]]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo1/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["keepcalm"]]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row0/Photo2/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["philosoraptor"]]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo0/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_video_button_pressed" binds= ["rickroll"]]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo1/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_video_button_pressed" binds= ["hamster"]]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row1/Photo2/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_video_button_pressed" binds= ["PBJ"]]
+[connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/Row2/Photo0/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_video_button_pressed" binds= ["photograph"]]
+[connection signal="close_requested" from="AppManager/memeFolder/subWindow" to="AppManager/memeFolder" method="_on_sub_window_close_requested"]
 [connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
+[connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="." method="_on_secret_2_button_pressed"]
+[connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="IconManager" method="_on_secret_2_button_pressed"]
+[connection signal="child_entered_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_exiting_tree"]
 [connection signal="visibility_changed" from="Taskbar" to="Taskbar" method="_on_visibility_changed"]
 [connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/Button" to="." method="_on_untitled_button_pressed"]

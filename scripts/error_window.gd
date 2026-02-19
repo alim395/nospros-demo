@@ -1,60 +1,50 @@
-extends Window
+extends Control
 
-@export var titleBarName : String
-@export var error_button : BaseButton
+@export var myWindow : Window
+@export var errorButton : TextureButton
 @export var errorLabel : Label
-@export var error_msg : String
-@export var error_sound : AudioStream
-@export var note_sound : AudioStream
+@export var errorTextures : Array[Texture2D]
 
-var localErrorCount := 0
-var troll := false
+var secret1 : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	theme = globalParameters.defaultWindowTheme
-	if(globalParameters.errorCount >= 10):
-		print("ACTIVATE TROLL MODE")
-		troll = true
-		globalParameters.trollMode = true
-	if not troll:
-		title = titleBarName
-		errorLabel.text = error_msg
-		error_button.disabled = false
-		MusicManager.sfx_player.play_SFX_from_library_poly("error")
-		globalParameters.errorCount += 1
+	myWindow.theme = globalParameters.defaultWindowTheme
+	if globalParameters.errorCount == 10:
+		MusicManager.sfx_player.play_SFX_from_library_poly("notify")
+		unlockSecret()
 	else:
-		title = "SECRET UNLOCKED!"
-		errorLabel.text = "Click OK to recieve you prize :D"
-		error_button.disabled = true
-		MusicManager.sfx_player.play_SFX_from_library("notify")
-
-func _on_error_button_pressed() -> void:
-	if not troll:
 		MusicManager.sfx_player.play_SFX_from_library_poly("error")
-		globalParameters.errorCount += 1
-		print(globalParameters.errorCount)
-	else:
-		MusicManager.sfx_player.play_SFX_from_library("notify")
-		globalParameters.errorCount += 1
-		queue_free()
-	# Update TROLL
-	if globalParameters.errorCount >= 10:
-		troll = true
-		globalParameters.trollMode = true
+	globalParameters.errorCount += 1
 
-func setMessage(msg : String) -> void:
+func setErrorType(eType : int) -> void:
+	if eType == globalParameters.errorType.critical:
+		errorButton.disabled = false
+	if eType == globalParameters.errorType.alert:
+		errorButton.disabled = true
+
+func setErrorMessage(msg : String) -> void:
 	errorLabel.text = msg
 
-func setButtonTexture(tex : Texture2D, clickable := false) -> void:
-	error_button.texture_normal = tex
-	error_button.disabled = not clickable
+func _on_window_close_requested() -> void:
+	queue_free()
 
 func _on_ok_pressed() -> void:
-	if troll:
+	if(secret1):
 		globalParameters.activateTroll()
-	print("GET TROLLED")
+		secret1 = false
 	queue_free()
 
-func _on_close_requested() -> void:
-	queue_free()
+func _on_error_button_pressed() -> void:
+	if globalParameters.errorCount == 10:
+		MusicManager.sfx_player.play_SFX_from_library_poly("notify")
+		unlockSecret()
+	else:
+		MusicManager.sfx_player.play_SFX_from_library_poly("error")
+	globalParameters.errorCount += 1
+
+func unlockSecret() -> void:
+	setErrorType(globalParameters.errorType.alert)
+	setErrorMessage("SECRET UNLOCKED!")
+	secret1 = true
+	globalParameters.trollMode = true

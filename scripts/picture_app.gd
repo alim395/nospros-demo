@@ -37,3 +37,6 @@ func minimizeWindow() -> void:
 func _on_photo_button_pressed(source: TextureButton) -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	desktopWallpaper.texture = source.texture_normal
+
+func _on_theme_changed() -> void:
+	myWindow.theme = globalParameters.defaultWindowTheme

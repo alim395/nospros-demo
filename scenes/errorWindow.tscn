@@ -1,35 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://o4a3sp1j7s4l"]
+[gd_scene load_steps=5 format=3 uid="uid://o4a3sp1j7s4l"]
 
-[ext_resource type="Theme" path="res://themes/eXP/eXP_Luna.tres" id="1_x86av"]
-[ext_resource type="Script" uid="uid://dmr6x4l38loe4" path="res://scripts/error_window.gd" id="2_tmfn4"]
+[ext_resource type="Script" uid="uid://qwxtnjxleg6r" path="res://scripts/error_window.gd" id="1_ddchl"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_x86av"]
 [ext_resource type="Texture2D" uid="uid://du8ymh1g46mhr" path="res://sprites/UI/XP/panels/Critical.png" id="3_ddchl"]
-[ext_resource type="AudioStream" uid="uid://djn8u6033xro0" path="res://audio/sfx/errorXP.ogg" id="3_x86av"]
-[ext_resource type="AudioStream" uid="uid://dy0gtefm6agqr" path="res://audio/sfx/Exclamation.ogg" id="4_2s133"]
 [ext_resource type="Texture2D" uid="uid://nrh53vvbcmk" path="res://sprites/UI/XP/panels/Alert.png" id="5_twyg7"]
 
-[node name="Window" type="Window" node_paths=PackedStringArray("error_button", "errorLabel")]
+[node name="ErrorWindow" type="Control" node_paths=PackedStringArray("myWindow", "errorButton", "errorLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_x86av")
+script = ExtResource("1_ddchl")
+myWindow = NodePath("Window")
+errorButton = NodePath("Window/Panel/VBoxContainer/ErrorMSG/ErrorButton")
+errorLabel = NodePath("Window/Panel/VBoxContainer/ErrorMSG/ErrorLabel")
+errorTextures = Array[Texture2D]([ExtResource("3_ddchl"), ExtResource("5_twyg7")])
+
+[node name="Window" type="Window" parent="."]
 oversampling_override = 1.0
 title = "Error"
 initial_position = 1
 size = Vector2i(260, 90)
 unresizable = true
-theme = ExtResource("1_x86av")
-script = ExtResource("2_tmfn4")
-titleBarName = "Error"
-error_button = NodePath("Panel/VBoxContainer/ErrorMSG/ErrorButton")
-errorLabel = NodePath("Panel/VBoxContainer/ErrorMSG/ErrorLabel")
-error_msg = "Undefined."
-error_sound = ExtResource("3_x86av")
-note_sound = ExtResource("4_2s133")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="Window"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,12 +48,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="ErrorMSG" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="ErrorMSG" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
 alignment = 1
 
-[node name="ErrorButton" type="TextureButton" parent="Panel/VBoxContainer/ErrorMSG"]
+[node name="ErrorButton" type="TextureButton" parent="Window/Panel/VBoxContainer/ErrorMSG"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 texture_normal = ExtResource("3_ddchl")
@@ -57,17 +61,21 @@ texture_disabled = ExtResource("5_twyg7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ErrorLabel" type="Label" parent="Panel/VBoxContainer/ErrorMSG"]
+[node name="ErrorLabel" type="Label" parent="Window/Panel/VBoxContainer/ErrorMSG"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "This Feature is not available in the web build."
 
-[node name="OK" type="Button" parent="Panel/VBoxContainer"]
+[node name="ButtonContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="OK" type="Button" parent="Window/Panel/VBoxContainer/ButtonContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "OK"
 
-[connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="pressed" from="Panel/VBoxContainer/ErrorMSG/ErrorButton" to="." method="_on_error_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Panel/VBoxContainer/ErrorMSG/ErrorButton" to="." method="_on_error_button_pressed"]
+[connection signal="pressed" from="Window/Panel/VBoxContainer/ButtonContainer/OK" to="." method="_on_ok_pressed"]
