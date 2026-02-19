@@ -14,6 +14,7 @@ var taskCount : int = 0
 @export var pictureApp : Control
 @export var settingApp : Control
 @export var trollApp : Control
+@export var memeFolder : Control
 @export var trollIcon : Control
 @export var taskBar : Taskbar
 
@@ -194,8 +195,21 @@ func updateTheme() -> void:
 	if activeInstance != null:
 		activeInstance.theme = globalParameters.defaultWindowTheme
 	trollApp.myWindow.theme = globalParameters.defaultWindowTheme
+	memeFolder.changeTheme(globalParameters.defaultWindowTheme)
 	
 	# Dialog Windows
 	if dWins.get_children():
 		for d in dWins.get_children():
 			d.myWindow.theme = globalParameters.defaultWindowTheme
+
+
+func _on_meme_button_pressed() -> void:
+	openMemeFolder()
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
+
+func openMemeFolder() -> void:
+	memeFolder._on_window_close_requested()
+	memeFolder.openWindow()
+	activeTaskName = "memes"
+	var tB = taskBar.openTask(activeTaskName)
+	memeFolder.setTaskButton(tB)

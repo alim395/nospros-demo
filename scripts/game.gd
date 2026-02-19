@@ -115,3 +115,8 @@ func spawnError(msg : String = "This feature is not available yet.", eType : int
 	if dialogueWindowNode.get_children():
 		if dialogueWindowNode.get_child_count() > 1:
 			d.myWindow.position += Vector2i(randi_range(10,40), randi_range(10,40))
+
+func _on_secret_2_button_pressed() -> void:
+	if globalParameters.secret2 == false:
+		globalParameters.secret2 = true
+		spawnError("SECRET 2 UNLOCKED!", globalParameters.errorType.alert)

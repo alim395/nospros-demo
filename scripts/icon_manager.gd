@@ -5,6 +5,10 @@ extends Control
 @export var pictureAppButton := TextureButton
 @export var settingAppButton := TextureButton
 @export var errorAppButton := TextureButton
+@export var memeFolderButton := TextureButton
+
+# App Icon Refrences
+@export var memeFolder := Control
 
 # Icons
 @export var classicIcons : Array[Texture2D]
@@ -33,6 +37,8 @@ func setButtonClassic() -> void:
 	globalParameters.icon_dict.set("Setting", classicIcons[3])
 	errorAppButton.texture_normal = classicIcons[4]
 	globalParameters.icon_dict.set("Troll", classicIcons[4])
+	memeFolderButton.texture_normal = classicIcons[5]
+	globalParameters.icon_dict.set("memes", classicIcons[5])
 	
 func setButtonY2K() -> void:
 	print("Y2K STYLE!")
@@ -46,6 +52,8 @@ func setButtonY2K() -> void:
 	globalParameters.icon_dict.set("Setting", YTKIcons[3])
 	errorAppButton.texture_normal = YTKIcons[4]
 	globalParameters.icon_dict.set("Troll", YTKIcons[4])
+	memeFolderButton.texture_normal = YTKIcons[5]
+	globalParameters.icon_dict.set("memes", YTKIcons[5])
 
 func changeStyle(styleIndex : globalParameters.buttonStyle) -> void:
 	print("Change Style to : ", styleIndex)
@@ -64,3 +72,6 @@ func changeStyle(styleIndex : globalParameters.buttonStyle) -> void:
 	# Update Global Parameters
 	globalParameters.defaultButtonStyle = styleIndex
 	currentStyle = globalParameters.defaultButtonStyle
+
+func _on_secret_2_button_pressed() -> void:
+	memeFolder.visible = true
