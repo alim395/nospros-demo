@@ -21,6 +21,8 @@ func openWindow() -> void:
 func displayImage(mediaKey : String) -> void:
 	imageDisplay.visible = true
 	videoPlayer.visible = false
+	if videoPlayer.is_playing():
+		videoPlayer.stop()
 	if mediaDict.get(mediaKey):
 		imageDisplay.texture = mediaDict.get(mediaKey)
 
@@ -58,11 +60,13 @@ func _on_sub_window_close_requested() -> void:
 	videoPlayer.stop()
 
 func _on_meme_image_button_pressed(imageKey: String) -> void:
+	subWindow.visible = false
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	displayImage(imageKey)
 	subWindow.visible = true
 
 func _on_meme_video_button_pressed(videoKey: String) -> void:
+	subWindow.visible = false
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	playVideo(videoKey)
 	subWindow.visible = true
