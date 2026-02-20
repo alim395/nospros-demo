@@ -29,6 +29,7 @@ var icon_dict : Dictionary[String, Texture2D]
 @export var defaultTheme : TaskThemes
 @export var defaultWindowTheme : Theme
 @export var defaultButtonStyle : buttonStyle
+@export var defaultWallpaper : Texture2D
 
 # Error Stats
 enum errorType {critical, alert}

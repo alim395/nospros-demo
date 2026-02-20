@@ -13,7 +13,10 @@ const ROWLIMIT = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	desktopWallpaper.texture = defaultWallpaper
+	if globalParameters.defaultWallpaper:
+		desktopWallpaper.texture = globalParameters.defaultWallpaper
+	else:
+		desktopWallpaper.texture = defaultWallpaper
 
 func _on_window_close_requested() -> void:
 	myWindow.visible = false
@@ -36,7 +39,8 @@ func minimizeWindow() -> void:
 
 func _on_photo_button_pressed(source: TextureButton) -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
-	desktopWallpaper.texture = source.texture_normal
+	globalParameters.defaultWallpaper = source.texture_normal
+	desktopWallpaper.texture = globalParameters.defaultWallpaper
 
 func _on_theme_changed() -> void:
 	myWindow.theme = globalParameters.defaultWindowTheme
