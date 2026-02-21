@@ -9,6 +9,7 @@ var isMinimize : bool = false
 
 @export var trollButton : TextureButton
 var defaultVideo : VideoStream
+var currentIndex : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,10 @@ func openWindow(isRandom : bool = true, vidSrc : VideoStream = defaultVideo) -> 
 	#MusicManager.stop_music.emit()
 	if isRandom:
 		var vIndex = randi_range(0,trollVideos.size()-1)
+		# Ensure Randomness does not repeat previous video
+		while vIndex == currentIndex:
+			vIndex = randi_range(0,trollVideos.size()-1)
+		currentIndex = vIndex
 		if vIndex == 2:
 			trollButton.disabled = false
 		else:
