@@ -717,8 +717,11 @@ trollApp = NodePath("trollApp")
 memeFolder = NodePath("memeFolder")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
 taskBar = NodePath("../Taskbar")
-changelogText = "v0.1.8 - Notepad Update (??/02/2026)
+changelogText = "v0.1.8 - Notepad Update (22/02/2026)
 - Added README File :D
+- Added TextFile/Notepad Instance
+- Added Text File Icons
+- Added Notepad Button Overrides
 
 --------------------------------------------------------------------------------
 v0.1.7-1 - Hotfix (21/02/2026)
