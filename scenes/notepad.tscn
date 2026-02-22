@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcooeg7a1orem"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_nkxj1"]
+[ext_resource type="Script" uid="uid://dp8gkrw66oamj" path="res://scripts/notepad.gd" id="1_pq6gc"]
+[ext_resource type="StyleBox" uid="uid://bfdj4d2gs16b0" path="res://themes/eXP/styles/custom/notepad/notepad_TextEdit.tres" id="2_fhm5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq6gc"]
+
+[node name="Notepad" type="Control" node_paths=PackedStringArray("myWindow", "textPanel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nkxj1")
+script = ExtResource("1_pq6gc")
+myWindow = NodePath("Window")
+textPanel = NodePath("Window/Panel/VContainer/TextEdit")
+
+[node name="Window" type="Window" parent="."]
+oversampling_override = 1.0
+title = "Notepad"
+initial_position = 2
+size = Vector2i(360, 270)
+theme = ExtResource("1_nkxj1")
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
+disabled = true
+text = "File"
+flat = true
+
+[node name="Button2" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
+disabled = true
+text = "Edit"
+flat = true
+
+[node name="Button3" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
+disabled = true
+text = "Format"
+flat = true
+
+[node name="Button4" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
+disabled = true
+text = "View"
+flat = true
+
+[node name="Button5" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
+disabled = true
+text = "Help"
+flat = true
+
+[node name="TextEdit" type="TextEdit" parent="Window/Panel/VContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("2_fhm5p")
+theme_override_styles/read_only = ExtResource("2_fhm5p")
+text = "Hello World!"
+caret_blink = true
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
