@@ -19,10 +19,6 @@ func _ready() -> void:
 	populateStartMenuThemes()
 	populateIconStyles()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_window_close_requested() -> void:
 	myWindow.visible = false
 	%AppManager.taskBar.closeTask("Setting")

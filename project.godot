@@ -20,10 +20,6 @@ config/icon="res://icon.svg"
 MusicManager="*res://addons/MusicManager/music_manager.tscn"
 globalParameters="*res://global_parameters.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/viewport_width=640

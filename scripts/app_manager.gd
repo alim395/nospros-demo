@@ -6,6 +6,7 @@ var activeTaskName : String
 # Multitask Instances
 var webInstance : Node
 var musicInstance : Node
+var tfInstance : Node
 var isTrolling : bool = false
 
 var taskCount : int = 0
@@ -18,9 +19,12 @@ var taskCount : int = 0
 @export var trollIcon : Control
 @export var taskBar : Taskbar
 
+@export_multiline var changelogText : String
+
 # Apps
 @onready var musicPlayerApp = preload("res://scenes/musicPlayer.tscn")
 @onready var browserApp = preload("res://scenes/globeTrotter.tscn")
+@onready var notepadApp = preload("res://scenes/notepad.tscn")
 
 # Others
 @export var dWins : Control
@@ -35,7 +39,7 @@ func _ready() -> void:
 	theme = globalParameters.defaultWindowTheme
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_released("DEBUG_OpenMusicApp") :
 		openMusicApp()
 	if Input.is_action_just_released("DEBUG_OpenSettingsApp") :
@@ -167,6 +171,7 @@ func closeAllTasks() -> void:
 	closeActiveInstance()
 	closeWebInstance()
 	closeMusicInstance()
+	closeTextInstance()
 	closeCoreApps()
 	closeTroll()
 	dWins.closeAllDialogues()
@@ -192,6 +197,8 @@ func updateTheme() -> void:
 		webInstance.theme = globalParameters.defaultWindowTheme
 	if musicInstance != null:
 		musicInstance.theme = globalParameters.defaultWindowTheme
+	if tfInstance != null:
+		tfInstance.theme = globalParameters.defaultWindowTheme
 	if activeInstance != null:
 		activeInstance.theme = globalParameters.defaultWindowTheme
 	trollApp.myWindow.theme = globalParameters.defaultWindowTheme
@@ -213,3 +220,28 @@ func openMemeFolder() -> void:
 	activeTaskName = "memes"
 	var tB = taskBar.openTask(activeTaskName)
 	memeFolder.setTaskButton(tB)
+
+func _on_textFile_button_pressed() -> void:
+	openTextFile()
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")
+
+func openTextFile() -> void:
+	if tfInstance == null:
+		tfInstance = notepadApp.instantiate()
+		print("INSTANTIATED")
+		add_child(tfInstance)
+		if taskCount > 0:
+			tfInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+		var tB = taskBar.openTask("notes")
+		#tB.set_task_name("README")
+		tfInstance.setTaskButton(tB)
+		updateTaskCount()
+		# Update Changelog Text
+		tfInstance.setTextStatic(changelogText)
+
+func closeTextInstance() -> void:
+	taskBar.closeTask("notes")
+	if tfInstance != null:
+		tfInstance.queue_free()
+		tfInstance = null
+	updateTaskCount()

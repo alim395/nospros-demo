@@ -699,7 +699,7 @@ stretch_mode = 0
 [node name="AppName" type="Label" parent="IconManager/DesktopColumns/ThirdColumn/NotesApp/NotesAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "README"
+text = "notes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -718,7 +718,7 @@ memeFolder = NodePath("memeFolder")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
 taskBar = NodePath("../Taskbar")
 changelogText = "v0.1.8 - Notepad Update (??/02/2026)
-- Added README File :D
+- TBC
 
 --------------------------------------------------------------------------------
 v0.1.7-1 - Hotfix (21/02/2026)
@@ -738,7 +738,7 @@ v0.1.7 - Themes + Music Player UI (20/02/2026)
   - Added More memes
   - Added secret folder for memes
 
-HINT FOR SECRET 2: Find the memes
+HINT: Find the memes
 
 --------------------------------------------------------------------------------
 
@@ -816,7 +816,7 @@ v0.1.1 - Bugfix + Export Update (12/01/2026)
 
 v0.1.0 - Initial Release (11/01/2026)
 
-HINT FOR SECRET 1: 10 Red Errors
+HINT: 10 Red Errors
 
 - Player Name and PFP Customization
 - Web Browser App (W.I.P)
@@ -828,7 +828,8 @@ HINT FOR SECRET 1: 10 Red Errors
 	- CRT Filter
 - Error Dialogs + Troll Easter Egg ;)
 - Start Menu (W.I.P)
-- Power Options"
+- Power Options
+"
 dWins = NodePath("DialogueWindows")
 
 [node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper", "folderRows")]
