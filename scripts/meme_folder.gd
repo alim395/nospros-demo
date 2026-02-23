@@ -63,10 +63,12 @@ func _on_meme_image_button_pressed(imageKey: String) -> void:
 	subWindow.visible = false
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	displayImage(imageKey)
+	subWindow.title = imageKey
 	subWindow.visible = true
 
 func _on_meme_video_button_pressed(videoKey: String) -> void:
 	subWindow.visible = false
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	playVideo(videoKey)
+	subWindow.title = videoKey
 	subWindow.visible = true

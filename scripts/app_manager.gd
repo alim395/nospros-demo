@@ -237,7 +237,7 @@ func openTextFile() -> void:
 		tfInstance.setTaskButton(tB)
 		updateTaskCount()
 		# Update Changelog Text
-		tfInstance.setTextStatic(changelogText)
+		tfInstance.setTextFree(changelogText)
 
 func closeTextInstance() -> void:
 	taskBar.closeTask("notes")

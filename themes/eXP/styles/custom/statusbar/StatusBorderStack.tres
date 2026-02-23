@@ -7,10 +7,10 @@
 [resource]
 resource_local_to_scene = false
 resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
+content_margin_left = 2.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
 script = ExtResource("1_rf7kv")
 style_boxes = Array[StyleBox]([ExtResource("2_ak706"), ExtResource("3_s4s61")])
 metadata/_custom_type_script = "uid://bpobhv17fo8i"

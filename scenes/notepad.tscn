@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcooeg7a1orem"]
+[gd_scene load_steps=10 format=3 uid="uid://bcooeg7a1orem"]
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_nkxj1"]
 [ext_resource type="Script" uid="uid://dp8gkrw66oamj" path="res://scripts/notepad.gd" id="1_pq6gc"]
 [ext_resource type="StyleBox" uid="uid://bfdj4d2gs16b0" path="res://themes/eXP/styles/custom/notepad/notepad_TextEdit.tres" id="2_fhm5p"]
+[ext_resource type="StyleBox" uid="uid://wt4yiury1j25" path="res://themes/eXP/styles/custom/statusbar/StatusBarPanel.tres" id="5_6fgxw"]
+[ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="6_6fgxw"]
+[ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="6_rrruc"]
+[ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="7_rrruc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq6gc"]
 
-[node name="Notepad" type="Control" node_paths=PackedStringArray("myWindow", "textPanel")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxxac"]
+
+[node name="Notepad" type="Control" node_paths=PackedStringArray("myWindow", "textPanel", "LineNum", "ColNum", "CharCount")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,10 +23,13 @@ theme = ExtResource("1_nkxj1")
 script = ExtResource("1_pq6gc")
 myWindow = NodePath("Window")
 textPanel = NodePath("Window/Panel/VContainer/TextEdit")
+LineNum = NodePath("Window/Panel/VContainer/StatusBarPanel/HBoxContainer/LineNum")
+ColNum = NodePath("Window/Panel/VContainer/StatusBarPanel/HBoxContainer/ColNum")
+CharCount = NodePath("Window/Panel/VContainer/StatusBarPanel/HBoxContainer/CharCount")
 
 [node name="Window" type="Window" parent="."]
 oversampling_override = 1.0
-title = "Notepad"
+title = "README - Notepad"
 initial_position = 2
 size = Vector2i(360, 270)
 theme = ExtResource("1_nkxj1")
@@ -92,5 +101,45 @@ theme_override_styles/read_only = ExtResource("2_fhm5p")
 text = "Hello World!"
 caret_blink = true
 
+[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VContainer"]
+custom_minimum_size = Vector2(0, 18.5)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("5_6fgxw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VContainer/StatusBarPanel"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="LineNum" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_rrruc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gxxac")
+text = "Ln 1"
+vertical_alignment = 1
+
+[node name="ColNum" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_6fgxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gxxac")
+text = "Col 1"
+vertical_alignment = 1
+
+[node name="CharCount" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("7_rrruc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gxxac")
+text = "123 Characters"
+vertical_alignment = 1
+
 [connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="caret_changed" from="Window/Panel/VContainer/TextEdit" to="." method="_on_text_edit_caret_changed"]

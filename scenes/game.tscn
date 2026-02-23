@@ -717,13 +717,22 @@ trollApp = NodePath("trollApp")
 memeFolder = NodePath("memeFolder")
 trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
 taskBar = NodePath("../Taskbar")
-changelogText = "v0.1.8 - Notepad Update (22/02/2026)
+changelogText = "README
+--------------------------------------------------------------------------------
+
+v0.1.8-1 - Notepad Status (24/02/2026)
+- Added Status Bar to Notepad
+- Made README File Editable
+
+v0.1.8 - Notepad Update (22/02/2026)
 - Added README File :D
 - Added TextFile/Notepad Instance
 - Added Text File Icons
 - Added Notepad Button Overrides
+- Updated Window Titles
 
 --------------------------------------------------------------------------------
+
 v0.1.7-1 - Hotfix (21/02/2026)
 - Fixed bug where video player keeps playing when opening image
 - Made media window open in front of other window when selecting new media
@@ -1569,6 +1578,7 @@ mediaDict = Dictionary[String, Resource]({
 
 [node name="mainWindow" type="Window" parent="AppManager/memeFolder"]
 oversampling_override = 1.0
+title = "memes - Explorer"
 initial_position = 1
 size = Vector2i(480, 232)
 visible = false
@@ -1814,6 +1824,7 @@ vertical_alignment = 1
 
 [node name="subWindow" type="Window" parent="AppManager/memeFolder"]
 oversampling_override = 1.0
+title = "Untitled.xyz"
 initial_position = 1
 size = Vector2i(320, 240)
 visible = false
