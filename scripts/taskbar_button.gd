@@ -25,6 +25,5 @@ func set_task(taskSetName : String) -> void:
 	text = taskSetName
 	if globalParameters.icon_dict.get(taskSetName):
 		icon = globalParameters.icon_dict.get(taskSetName)
-
-#func set_task_name(ptaskName : String) -> void:
-	#taskName = ptaskName
+	else:
+		icon = globalParameters.icon_dict.get("memes")

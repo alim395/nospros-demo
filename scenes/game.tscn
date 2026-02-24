@@ -472,38 +472,35 @@ visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("6_ms3bu")
-browserAppButton = NodePath("DesktopColumns/First Column/BrowserApp/BrowserAppBox/AppButton")
-musicAppButton = NodePath("DesktopColumns/First Column/MusicApp/MusicAppBox/AppButton")
-pictureAppButton = NodePath("DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton")
-settingAppButton = NodePath("DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton")
-errorAppButton = NodePath("DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton")
-memeFolderButton = NodePath("DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox/AppButton")
-textFileButton = NodePath("DesktopColumns/ThirdColumn/NotesApp/NotesAppBox/AppButton")
-memeFolder = NodePath("DesktopColumns/SecondColumn/MemeFolder")
+browserAppButton = NodePath("DesktopColumns/BrowserApp/BrowserAppBox/AppButton")
+musicAppButton = NodePath("DesktopColumns/MusicApp/MusicAppBox/AppButton")
+pictureAppButton = NodePath("DesktopColumns/PicturesApp/PicturesAppBox/AppButton")
+settingAppButton = NodePath("DesktopColumns/SettingsApp/SettingsAppBox/AppButton")
+errorAppButton = NodePath("DesktopColumns/ErrorApp/ErrorAppBox/AppButton")
+memeFolderButton = NodePath("DesktopColumns/MemeFolder/MemeFolderBox/AppButton")
+textFileButton = NodePath("DesktopColumns/NotesApp/NotesAppBox/AppButton")
+memeFolder = NodePath("DesktopColumns/MemeFolder")
 classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0"), ExtResource("13_tc8uq")])
 YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm")])
 
-[node name="DesktopColumns" type="HBoxContainer" parent="IconManager"]
+[node name="DesktopColumns" type="VFlowContainer" parent="IconManager"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 328.0
 
-[node name="First Column" type="VBoxContainer" parent="IconManager/DesktopColumns"]
-layout_mode = 2
-
-[node name="BrowserApp" type="MarginContainer" parent="IconManager/DesktopColumns/First Column"]
+[node name="BrowserApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/First Column/BrowserApp"]
+[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/BrowserApp"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/First Column/BrowserApp/BrowserAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/BrowserApp/BrowserAppBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -513,26 +510,26 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/First Column/BrowserApp/BrowserAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/BrowserApp/BrowserAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Browser"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicApp" type="MarginContainer" parent="IconManager/DesktopColumns/First Column"]
+[node name="MusicApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MusicAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/First Column/MusicApp"]
+[node name="MusicAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/MusicApp"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/First Column/MusicApp/MusicAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/MusicApp/MusicAppBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -542,26 +539,26 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/First Column/MusicApp/MusicAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/MusicApp/MusicAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PicturesApp" type="MarginContainer" parent="IconManager/DesktopColumns/First Column"]
+[node name="PicturesApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="PicturesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/First Column/PicturesApp"]
+[node name="PicturesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/PicturesApp"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/PicturesApp/PicturesAppBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -571,29 +568,26 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/PicturesApp/PicturesAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Photos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SecondColumn" type="VBoxContainer" parent="IconManager/DesktopColumns"]
-layout_mode = 2
-
-[node name="SettingsApp" type="MarginContainer" parent="IconManager/DesktopColumns/SecondColumn"]
+[node name="SettingsApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SettingsAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SecondColumn/SettingsApp"]
+[node name="SettingsAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SettingsApp"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SettingsApp/SettingsAppBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -603,14 +597,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SettingsApp/SettingsAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ErrorApp" type="MarginContainer" parent="IconManager/DesktopColumns/SecondColumn"]
+[node name="ErrorApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -618,12 +612,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ErrorAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SecondColumn/ErrorApp"]
+[node name="ErrorAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ErrorApp"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ErrorApp/ErrorAppBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -633,7 +627,7 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ErrorApp/ErrorAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -641,7 +635,7 @@ text = "untitled"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MemeFolder" type="MarginContainer" parent="IconManager/DesktopColumns/SecondColumn"]
+[node name="MemeFolder" type="MarginContainer" parent="IconManager/DesktopColumns"]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -649,21 +643,22 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MemeFolderBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SecondColumn/MemeFolder"]
+[node name="MemeFolderBox" type="VBoxContainer" parent="IconManager/DesktopColumns/MemeFolder"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/MemeFolder/MemeFolderBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("18_flw08")
 texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/MemeFolder/MemeFolderBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -671,22 +666,19 @@ text = "memes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ThirdColumn" type="VBoxContainer" parent="IconManager/DesktopColumns"]
-layout_mode = 2
-
-[node name="NotesApp" type="MarginContainer" parent="IconManager/DesktopColumns/ThirdColumn"]
+[node name="NotesApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="NotesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ThirdColumn/NotesApp"]
+[node name="NotesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/NotesApp"]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ThirdColumn/NotesApp/NotesAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/NotesApp/NotesAppBox"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -696,7 +688,7 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ThirdColumn/NotesApp/NotesAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/NotesApp/NotesAppBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 text = "README"
@@ -715,10 +707,13 @@ pictureApp = NodePath("pictureApp")
 settingApp = NodePath("settingApp")
 trollApp = NodePath("trollApp")
 memeFolder = NodePath("memeFolder")
-trollIcon = NodePath("../IconManager/DesktopColumns/SecondColumn/ErrorApp")
+trollIcon = NodePath("../IconManager/DesktopColumns/ErrorApp")
 taskBar = NodePath("../Taskbar")
 changelogText = "README
 --------------------------------------------------------------------------------
+v0.1.8-3 - Memes Tasks + Flow containers (25/02/2026)
+- Replaced desktop icon container with VFlowContainers
+- Meme Folder Subwindow now has taskbutton
 
 v0.1.8-2 - Window Limits + Flow Containers (24/02/2026)
 - Replaced folder rows wit HFlowContainers
@@ -1893,6 +1888,7 @@ offset_bottom = 40.0
 script = ExtResource("53_2iuns")
 
 [node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 7
@@ -2306,13 +2302,13 @@ roll_line_amount = 0.0
 metadata/_custom_type_script = "uid://bghaddibpt6f1"
 
 [connection signal="timeout" from="LoginDelay" to="." method="_on_login_delay_timeout"]
-[connection signal="pressed" from="IconManager/DesktopColumns/First Column/BrowserApp/BrowserAppBox/AppButton" to="AppManager" method="_on_browser_button_pressed"]
-[connection signal="pressed" from="IconManager/DesktopColumns/First Column/MusicApp/MusicAppBox/AppButton" to="AppManager" method="_on_music_button_pressed"]
-[connection signal="pressed" from="IconManager/DesktopColumns/First Column/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
-[connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
-[connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
-[connection signal="pressed" from="IconManager/DesktopColumns/SecondColumn/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
-[connection signal="pressed" from="IconManager/DesktopColumns/ThirdColumn/NotesApp/NotesAppBox/AppButton" to="AppManager" method="_on_textFile_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/BrowserApp/BrowserAppBox/AppButton" to="AppManager" method="_on_browser_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/MusicApp/MusicAppBox/AppButton" to="AppManager" method="_on_music_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/SettingsApp/SettingsAppBox/AppButton" to="AppManager" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/NotesApp/NotesAppBox/AppButton" to="AppManager" method="_on_textFile_button_pressed"]
 [connection signal="theme_changed" from="AppManager/pictureApp" to="AppManager/pictureApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
