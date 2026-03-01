@@ -10,8 +10,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7i7e"]
 shader = ExtResource("3_1sggn")
-shader_parameter/blur_radius = 8
-shader_parameter/Darkness = 0.05
+shader_parameter/blur_radius = 4
+shader_parameter/Darkness = 0.0
 shader_parameter/R = 0.0
 shader_parameter/G = 0.0
 shader_parameter/B = 0.0
@@ -97,7 +97,6 @@ size_flags_vertical = 4
 text = "Back to Menu"
 
 [node name="Preview" type="Control" parent="." node_paths=PackedStringArray("crtNode", "softBlur")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

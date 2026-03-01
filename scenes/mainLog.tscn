@@ -34,8 +34,8 @@ texture_margin_bottom = 4.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hin8t"]
 shader = ExtResource("16_ti1w0")
-shader_parameter/blur_radius = 8
-shader_parameter/Darkness = 0.05
+shader_parameter/blur_radius = 4
+shader_parameter/Darkness = 0.0
 shader_parameter/R = 0.0
 shader_parameter/G = 0.0
 shader_parameter/B = 0.0
@@ -196,7 +196,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CRT" type="CanvasLayer" parent="."]
 layer = 9001
+visible = false
 script = ExtResource("16_icvme")
+update_in_editor = false
 resolution = Vector2(640, 360)
 vignette_amount = 0.3
 roll_line_amount = 0.0

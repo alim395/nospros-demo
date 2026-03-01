@@ -30,3 +30,6 @@ func set_task(taskSetName : String) -> void:
 		icon = globalParameters.icon_dict.get("notes")
 	else:
 		icon = globalParameters.icon_dict.get("memes")
+
+func set_icon(tIcon : Texture2D) -> void:
+	icon = tIcon

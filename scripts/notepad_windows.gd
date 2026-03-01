@@ -53,6 +53,7 @@ func getSavedNotepad(fName : String) -> notepadInstance:
 	return null
 
 func getActiveNotepad(fName : String) -> notepadInstance:
+	updateActiveInstances()
 	for N in activeNotepadInstances:
 		if N.getName() == fName:
 			return N
@@ -81,6 +82,8 @@ func saveNotepad(fName : String, fText : String) -> void:
 		if get_children():
 			for n in get_children():
 				n.updateSubMenu(savedNotepadInstances)
+				n.isSaved = true
+	updateActiveInstances()
 
 func closeNotepad(fName : String) -> void:
 	print("CLOSING " + fName)
@@ -89,9 +92,7 @@ func closeNotepad(fName : String) -> void:
 		if N.getName() == fName:
 			activeNotepadInstances.pop_at(index)
 		index += 1
-	
-	# Close Task
-	taskbar.closeTask(fName + " - Notepad")
+	updateActiveInstances()
 
 func _on_child_entered_tree(node: Node) -> void:
 	node.newNote.connect(newNotepad)
@@ -103,6 +104,22 @@ func _on_child_entered_tree(node: Node) -> void:
 func closeAllNotepads() -> void:
 	if get_children():
 		for n in get_children():
-			closeNotepad(n.getFileName())
-			n.queue_free()
-		
+			n._on_window_close_requested()
+
+func updateActiveInstances() -> void:
+	if not activeNotepadInstances.is_empty():
+		# Get list of Active Instance Names
+		var niNames : Array[String]
+		for nI in activeNotepadInstances:
+			niNames.push_back(nI.fileName)
+		# Get List of Active Notepad Names
+		var fNames : Array[String]
+		if get_children():
+			for n in get_children():
+				fNames.push_back(n.getFileName())
+		# Compare List and remove outliers
+		var index = 0
+		for aN in niNames:
+			if fNames.find(aN) == -1:
+				activeNotepadInstances.pop_at(index)
+			index +=1

@@ -38,6 +38,7 @@ func playVideo(mediaKey : String) -> void:
 func _on_window_close_requested() -> void:
 	myWindow.visible = false
 	%AppManager.taskBar.closeTask("memes")
+	_on_sub_window_close_requested()
 
 func setTaskButton(tB : taskbarButton) -> void:
 	myTaskButton = tB

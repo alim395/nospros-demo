@@ -178,6 +178,7 @@ func closeAllTasks() -> void:
 	closeTextInstance()
 	closeCoreApps()
 	closeTroll()
+	memeFolder._on_window_close_requested()
 	dWins.closeAllDialogues()
 	NotepadWins.closeAllNotepads()
 

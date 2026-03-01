@@ -304,6 +304,7 @@ TabContainer/styles/tab_focus = ExtResource("44_r4cd7")
 TabContainer/styles/tab_hovered = ExtResource("37_3en0o")
 TabContainer/styles/tab_selected = ExtResource("46_kp54r")
 TabContainer/styles/tab_unselected = ExtResource("38_xc2pt")
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
 TextEdit/colors/font_color = Color(0, 0, 0, 1)
 TextEdit/font_sizes/font_size = 11
 TextEdit/fonts/font = ExtResource("1_iqoho")

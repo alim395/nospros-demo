@@ -90,6 +90,7 @@ func minimizeWindow() -> void:
 func _on_window_close_requested() -> void:
 	#globalParameters.closeApp(myTaskButton.taskName)
 	closeNote.emit(fileName)
+	myTaskButton.queue_free()
 	queue_free()
 
 func _on_theme_changed() -> void:
@@ -118,8 +119,7 @@ func fileMenu(id : int) -> void:
 		0:
 			print("NEW FILE")
 			if not isSaved:
-				closeNote.emit(fileName)
-				queue_free()
+				_on_window_close_requested()
 			newNote.emit()
 		1:
 			print("SAVE")
@@ -136,8 +136,7 @@ func fileMenu(id : int) -> void:
 			if isSaved and textChanged:
 				saveNotepad(true)
 			else:
-				closeNote.emit(fileName)
-				queue_free()
+				_on_window_close_requested()
 		_:
 			print(id)
 

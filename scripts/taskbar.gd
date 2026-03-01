@@ -18,15 +18,40 @@ var currentTheme = defaultTheme
 
 @export var buttonContainer : HBoxContainer
 
+# Bar Panel
+@export var clockTimer : Timer
+@export var timeLabel : Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	defaultTheme = globalParameters.defaultTheme
 	changeTheme(defaultTheme, globalParameters.TaskThemes.find_key(int(defaultTheme)))
 	startMenu.visible = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func calculateTimeString() -> String:
+	var minute : int = Time.get_datetime_dict_from_system().get("minute")
+	var hour : int = Time.get_datetime_dict_from_system().get("hour")
+	var twelveMod : String = "AM"
+	
+	var hourString : String
+	if hour == 0:
+		hourString = "12"
+	elif hour < 12:
+		hourString = str(hour)
+	elif hour == 12:
+		hourString = str(hour)
+		twelveMod = "PM"
+	else:
+		hourString = str(hour - 12)
+		twelveMod = "PM"
+	
+	var minuteString : String
+	if minute < 10:
+		minuteString = "0" + str(minute)
+	else:
+		minuteString = str(minute)
+	
+	return (hourString + ":" + minuteString + " " + twelveMod)
 
 func changeTheme(themeIndex : globalParameters.TaskThemes, themeName := "Luna") -> void:
 	## Switch barSprite
@@ -127,3 +152,7 @@ func focusTask(task : String) -> void:
 				pass
 			else:
 				tB.set_pressed_no_signal(false)
+
+func _on_clock_timer_timeout() -> void:
+	timeLabel.text = calculateTimeString()
+	clockTimer.start()
