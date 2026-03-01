@@ -14,12 +14,13 @@ var taskCount : int = 0
 #@export var clickSFX : AudioStream
 @export var pictureApp : Control
 @export var settingApp : Control
+@export var pcApp : Control
 @export var trollApp : Control
 @export var memeFolder : Control
 @export var trollIcon : Control
 @export var taskBar : Taskbar
 
-@export_multiline var changelogText : String
+#@export_multiline var changelogText : String
 
 # Apps
 @onready var musicPlayerApp = preload("res://scenes/musicPlayer.tscn")
@@ -28,6 +29,7 @@ var taskCount : int = 0
 
 # Others
 @export var dWins : Control
+@export var NotepadWins : Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -77,6 +79,8 @@ func closeCoreApps() -> void:
 	taskBar.closeTask("Picture")
 	settingApp._on_window_close_requested()
 	taskBar.closeTask("Setting")
+	pcApp._on_window_close_requested()
+	taskBar.closeTask("Computer")
 	#closeTroll()
 
 func openMusicApp() -> void:
@@ -175,6 +179,7 @@ func closeAllTasks() -> void:
 	closeCoreApps()
 	closeTroll()
 	dWins.closeAllDialogues()
+	NotepadWins.closeAllNotepads()
 
 func closeTroll() -> void:
 	if isTrolling:
@@ -208,6 +213,11 @@ func updateTheme() -> void:
 	if dWins.get_children():
 		for d in dWins.get_children():
 			d.myWindow.theme = globalParameters.defaultWindowTheme
+	
+	# Notepad Windows
+	if NotepadWins.get_children():
+		for n in NotepadWins.get_children():
+			n.theme = globalParameters.defaultWindowTheme
 
 
 func _on_meme_button_pressed() -> void:
@@ -227,21 +237,36 @@ func _on_textFile_button_pressed() -> void:
 
 func openTextFile() -> void:
 	if tfInstance == null:
-		tfInstance = notepadApp.instantiate()
-		print("INSTANTIATED")
-		add_child(tfInstance)
-		if taskCount > 0:
-			tfInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
-		var tB = taskBar.openTask("notes")
-		#tB.set_task_name("README")
-		tfInstance.setTaskButton(tB)
-		updateTaskCount()
-		# Update Changelog Text
-		tfInstance.setTextFree(changelogText)
+		#tfInstance = notepadApp.instantiate()
+		#tfInstance.setFileName("README")
+		#print("INSTANTIATED")
+		#add_child(tfInstance)
+		#if taskCount > 0:
+			#tfInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+		#var tB = taskBar.openTask("README - Notepad")
+		##tB.set_task_name("README")
+		#tfInstance.setTaskButton(tB)
+		#updateTaskCount()
+		## Update Changelog Text
+		#tfInstance.setTextFree(changelogText)
+		tfInstance = NotepadWins.openNotepad("README")
 
 func closeTextInstance() -> void:
-	taskBar.closeTask("notes")
+	taskBar.closeTask("README - Notepad")
 	if tfInstance != null:
 		tfInstance.queue_free()
 		tfInstance = null
 	updateTaskCount()
+
+func openPCApp() -> void:
+	closeCoreApps()
+	pcApp.openWindow()
+	if taskCount > 0:
+			pcApp.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+	activeTaskName = "Computer"
+	var tB = taskBar.openTask(activeTaskName)
+	pcApp.setTaskButton(tB)
+
+func _on_pc_button_pressed() -> void:
+	openPCApp()
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")

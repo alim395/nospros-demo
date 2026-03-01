@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=117 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://6cglns3xdqmv" path="res://sprites/backgrounds/FollowMe.png" id="13_05nbr"]
 [ext_resource type="Texture2D" uid="uid://470wfhae4cxu" path="res://sprites/icons/Text_Icon.png" id="13_tc8uq"]
 [ext_resource type="Texture2D" uid="uid://bvijjo1f4o1jr" path="res://sprites/icons/Settings_2.png" id="14_bk1p3"]
+[ext_resource type="Texture2D" uid="uid://sl6np7l82w2x" path="res://sprites/icons/PC_Icon.png" id="14_gdf8r"]
 [ext_resource type="Texture2D" uid="uid://dhxcccipnxit" path="res://sprites/backgrounds/VortecSpace.png" id="15_0sl42"]
 [ext_resource type="Texture2D" uid="uid://pragqk6we42s" path="res://sprites/icons/Video_Icon2.png" id="16_66xif"]
 [ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
@@ -48,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://b1tsrdlveu5op" path="res://sprites/icons/Text_Icon2.png" id="20_xjcjm"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
 [ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/troll_app.gd" id="21_rm0al"]
+[ext_resource type="Texture2D" uid="uid://cqqt7xpwcehm2" path="res://sprites/icons/PC_Icon2.png" id="21_xbifu"]
 [ext_resource type="Texture2D" uid="uid://dpt52ws8f7tmr" path="res://sprites/backgrounds/Azul.png" id="22_2iuns"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
 [ext_resource type="Texture2D" uid="uid://dwbuqjcjq0g2l" path="res://sprites/backgrounds/Crystal.png" id="23_7gkqi"]
@@ -56,11 +58,13 @@
 [ext_resource type="Texture2D" uid="uid://fj3m5kxctqtj" path="res://sprites/buttons/Exit_Pressed.png" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://clo0ox8ojcx4s" path="res://sprites/buttons/LogOff_Pressed.png" id="24_wljb1"]
 [ext_resource type="Texture2D" uid="uid://dsb1ivygm5c61" path="res://sprites/backgrounds/Friend.png" id="25_753oq"]
+[ext_resource type="Script" uid="uid://dfgdx75ktc5d6" path="res://scripts/pc_app.gd" id="25_s33c4"]
 [ext_resource type="Texture2D" uid="uid://g5dw67vkxjr2" path="res://sprites/buttons/Exit_Hover.png" id="25_suyxu"]
 [ext_resource type="Texture2D" uid="uid://blra1sk2fgdnl" path="res://sprites/buttons/LogOff_Hover.png" id="25_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://cyj2qdutkalvw" path="res://sprites/backgrounds/Home.png" id="26_3x338"]
 [ext_resource type="Texture2D" uid="uid://def0owgc73j7q" path="res://sprites/buttons/LogOff_Disabled.png" id="26_js0lu"]
 [ext_resource type="Texture2D" uid="uid://c00p2rtoj0j27" path="res://sprites/buttons/Exit_Disabled.png" id="26_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://b1h46t7101ipn" path="res://sprites/UI/XP/panels/sys.png" id="26_x8trd"]
 [ext_resource type="Texture2D" uid="uid://ds1jftn4yeq87" path="res://sprites/backgrounds/Moon_flower.png" id="27_1yg85"]
 [ext_resource type="Texture2D" uid="uid://dvxej6ivfpqqv" path="res://sprites/backgrounds/Peace.png" id="28_s0g06"]
 [ext_resource type="Texture2D" uid="uid://cy066y08f03a1" path="res://sprites/backgrounds/Power.png" id="29_2gnni"]
@@ -97,6 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://cvtdxeg0lpgov" path="res://sprites/UI/XP/taskbar/Panel/Metallic.png" id="53_4nbsr"]
 [ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
 [ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
+[ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/notepad_windows.gd" id="59_h5tdf"]
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -466,7 +471,7 @@ expand_mode = 3
 one_shot = true
 autostart = true
 
-[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "textFileButton", "memeFolder")]
+[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "textFileButton", "pcButton", "errorApp", "memeFolder")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -479,14 +484,45 @@ settingAppButton = NodePath("DesktopColumns/SettingsApp/SettingsAppBox/AppButton
 errorAppButton = NodePath("DesktopColumns/ErrorApp/ErrorAppBox/AppButton")
 memeFolderButton = NodePath("DesktopColumns/MemeFolder/MemeFolderBox/AppButton")
 textFileButton = NodePath("DesktopColumns/NotesApp/NotesAppBox/AppButton")
+pcButton = NodePath("DesktopColumns/ComputerApp/BrowserAppBox/AppButton")
+errorApp = NodePath("DesktopColumns/ErrorApp")
 memeFolder = NodePath("DesktopColumns/MemeFolder")
-classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0"), ExtResource("13_tc8uq")])
-YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm")])
+classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0"), ExtResource("13_tc8uq"), ExtResource("14_gdf8r")])
+YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm"), ExtResource("21_xbifu")])
 
 [node name="DesktopColumns" type="VFlowContainer" parent="IconManager"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 328.0
+
+[node name="ComputerApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ComputerApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ComputerApp/BrowserAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("21_xbifu")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ComputerApp/BrowserAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "My PC"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BrowserApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
 layout_mode = 2
@@ -695,7 +731,7 @@ text = "README"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "trollApp", "memeFolder", "trollIcon", "taskBar", "dWins")]
+[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "pcApp", "trollApp", "memeFolder", "trollIcon", "taskBar", "dWins", "NotepadWins")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -705,142 +741,88 @@ offset_bottom = 336.0
 script = ExtResource("5_wljb1")
 pictureApp = NodePath("pictureApp")
 settingApp = NodePath("settingApp")
+pcApp = NodePath("pcApp")
 trollApp = NodePath("trollApp")
 memeFolder = NodePath("memeFolder")
 trollIcon = NodePath("../IconManager/DesktopColumns/ErrorApp")
 taskBar = NodePath("../Taskbar")
-changelogText = "README
---------------------------------------------------------------------------------
-v0.1.8-3 - Memes Tasks + Flow containers (25/02/2026)
-- Replaced desktop icon container with VFlowContainers
-- Meme Folder Subwindow now has taskbutton
-
-v0.1.8-2 - Window Limits + Flow Containers (24/02/2026)
-- Replaced folder rows wit HFlowContainers
-- Added size limits and resize flags for various windows to avoid clipping
-
-v0.1.8-1 - Notepad Status (23/02/2026)
-- Added Status Bar to Notepad
-- Made README File Editable
-
-v0.1.8 - Notepad Update (22/02/2026)
-- Added README File :D
-- Added TextFile/Notepad Instance
-- Added Text File Icons
-- Added Notepad Button Overrides
-- Updated Window Titles
-
---------------------------------------------------------------------------------
-
-v0.1.7-1 - Hotfix (21/02/2026)
-- Fixed bug where video player keeps playing when opening image
-- Made media window open in front of other window when selecting new media
-- Fixed Bug where desktop wallpaper resets to bliss after logging off and on
-- Ensured Randomness does not repeat previous video
-
-v0.1.7 - Themes + Music Player UI (20/02/2026)
-- Remade Error Dialog System + SAIKNEKY Album
-- Added Persistence between main and settings menu.
-- Fixed Bug where troll would not close during power options.
-- Dialog windows now close with everything else during power options.
-- Fixed bug where troll would duplicate taskbar button
-- Implemented Taskbar Panel, currently hidden.
-- Implemented Second Secret
-  - Added More memes
-  - Added secret folder for memes
-
-HINT FOR SECRET 2: Find the memes
-
---------------------------------------------------------------------------------
-
-v0.1.6 - Themes + Music Player UI (11/02/2026)
-- Added the eXP-Themes
-- Added Theme Overrides for Music Player with Classic style buttons
-- Migrated classic style overrides to eXP theme folder.
-
---------------------------------------------------------------------------------
-
-v0.1.5-2 - Hotfix #2 (08/02/2026)
-- Fixed Name Persistence
-- Re-added Fullscreen
-- Upgrade actions/checkout to v4 and enable Git LFS
-- Normalized .jpg extensions and removed faulty astronaut .jpg
-
-v0.1.5-1 - Hotfix #1 (20/01/2026)
-- Fixed Taskbar appearing in front  of gray screen during power opt. animation
-- Fixed Error Window not closing during power off animation
-- Fixed Power Options not opening due to lack of error instance.
-
-
-v0.1.5 - Taskbar Update (19/01/2026)
-- Cleaned up UI Elements
-- Added Taskbar Buttons to minimize windows
-- Added True Multitasking
-- Multiple Apps can now be opened at a time
-
---------------------------------------------------------------------------------
-
-v0.1.4 - Audio Update - Part 2 (15/01/2026)
-- Created SFX and AudioLibrary class
-- Created XP AudioLibrary for common SFX Reference
-- Implemented TRUE Polyphony for ALL SFX (SFX no longer interrupts each other)
-- Added Non-poly method
-- Fixed \"notify\" tag in SFX
-- Re-enabled Options Screen
-- Added Filter Settings
-- Adjusted UI Containers
-- Fixed Main Scene Bug
-- Added Preview button for viewing filters
-- Fixed Music Restarting when returning to main menu
-
---------------------------------------------------------------------------------
-
-v0.1.3 - Audio Update - Part 1 (13/01/2026)
-- Added Togglable Panel Display
-  - Panel Display now functions as a button which toggles visualizers.
-- Added Dedicated SFX Player
-- Updated SFX Player References
-- Enabled Tactile Button Sounds for Music Player
-- Globalized playSFX Function
-  - playSFX() is now a global function with one simple implementation.
-  - Also added GlassTap Sound for panel button.
-
---------------------------------------------------------------------------------
-
-v0.1.2 - File Conversions (12/01/2026)
-- Converted all audio files to ogg
-- Increased PNG compression
-
---------------------------------------------------------------------------------
-
-v0.1.1 - Bugfix + Export Update (12/01/2026)
-- Minor Audio and Filter Fix
-- Separated Music and SFX into different audio buses
-- Added polyphony up to 8 on SFX Bus
-- Added Canvas Layer to enforce consistency of Soft Filter
-- Added Soft Filter carry over to Log Screen
-- Update export_presets.cfg
-- Added Auto Itch Deployment
-- Updated Exports for Mac Deployment
-
---------------------------------------------------------------------------------
-
-v0.1.0 - Initial Release (11/01/2026)
-
-HINT FOR SECRET 1: 10 Red Errors
-
-- Player Name and PFP Customization
-- Web Browser App (W.I.P)
-- Music Player
-- Photos (Wallpaper) App
-- Taskbar Themes
-- Screen Filters:
-	- Gaussian Blur Filter
-	- CRT Filter
-- Error Dialogs + Troll Easter Egg ;)
-- Start Menu (W.I.P)
-- Power Options"
 dWins = NodePath("DialogueWindows")
+NotepadWins = NodePath("NotepadWindows")
+
+[node name="pcApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "sysinfoLabel")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("25_s33c4")
+myWindow = NodePath("Window")
+myPCInfo = "System:
+        Nostalgia Process eXP
+        Alpha Build
+        Version 0.1.9
+
+Registered to:
+        PLAYERNAME"
+sysinfoLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/TabContainer/General/HBoxContainer/SystemInfo")
+
+[node name="Window" type="Window" parent="AppManager/pcApp"]
+oversampling_override = 1.0
+title = "My Computer"
+initial_position = 1
+size = Vector2i(320, 180)
+visible = false
+unresizable = true
+theme = ExtResource("41_p4npv")
+
+[node name="Panel" type="Panel" parent="AppManager/pcApp/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AppManager/pcApp/Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="General" type="MarginContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="PCTexture" type="TextureRect" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer/General/HBoxContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource("26_x8trd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SystemInfo" type="Label" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer/General/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "System:
+        Nostalgia Process eXP
+        Alpha
+        Version 0.19.0
+
+Registered to:
+        PlayerName"
 
 [node name="pictureApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "desktopWallpaper")]
 layout_mode = 1
@@ -1452,7 +1434,7 @@ text = "Wind"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "crtNode", "startMenuOptions", "iconStyleOptions", "taskBar")]
+[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "fullScreen", "crtNode", "startMenuOptions", "iconStyleOptions", "taskBar")]
 custom_minimum_size = Vector2(640, 336)
 layout_mode = 1
 anchors_preset = 15
@@ -1467,6 +1449,7 @@ myWindow = NodePath("Window")
 softBlur = NodePath("../../ScreenFilters/BackBufferCopy1/CanvasLayer/SoftBlur")
 highFidelity = NodePath("Window/Panel/settings/HFButton")
 crtFilter = NodePath("Window/Panel/settings/CRTButton")
+fullScreen = NodePath("Window/Panel/settings/FullScreenButton")
 crtNode = NodePath("../../CRT")
 startMenuOptions = NodePath("Window/Panel/settings/ThemeOption/StartTheme")
 iconStyleOptions = NodePath("Window/Panel/settings/IconOption/IconStyle")
@@ -1476,7 +1459,7 @@ taskBar = NodePath("../../Taskbar")
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
-size = Vector2i(260, 120)
+size = Vector2i(260, 168)
 visible = false
 unresizable = true
 
@@ -1510,6 +1493,10 @@ text = "Disable Soft Filter"
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable CRT Filter"
+
+[node name="FullScreenButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+text = "Enable Fullscreen"
 
 [node name="IconOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
 layout_mode = 2
@@ -1887,6 +1874,160 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("53_2iuns")
 
+[node name="NotepadWindows" type="Control" parent="AppManager" node_paths=PackedStringArray("taskbar")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("59_h5tdf")
+taskbar = NodePath("../../Taskbar")
+readmeText = "README
+--------------------------------------------------------------------------------
+
+v0.1.9 - Notepad Extensions + Bug Fixes (01/03/2026)
+- Fixed bug where secrets would disappear when logging off
+- Added My PC App
+- Implemented Notepad File Menu:
+	- New text files can be created
+	- New files can be saved
+	- Existing Files can be overwritten
+	- Saved Files can be Opened from Submenu
+	- On exit, user will prompted to save
+- Enforced minimum size for taskbar buttons
+- Added Fullscreen Toggle to settings (How TH did I not do this sooner!?)
+- Updated Themes to use Black Line Caret and darker placeholder text
+
+--------------------------------------------------------------------------------
+
+v0.1.8-3 - Memes Tasks + Flow containers (25/02/2026)
+- Replaced desktop icon container with VFlowContainers
+- Meme Folder Subwindow now has taskbutton
+
+v0.1.8-2 - Window Limits + Flow Containers (24/02/2026)
+- Replaced folder rows wit HFlowContainers
+- Added size limits and resize flags for various windows to avoid clipping
+
+v0.1.8-1 - Notepad Status (23/02/2026)
+- Added Status Bar to Notepad
+- Made README File Editable
+
+v0.1.8 - Notepad Update (22/02/2026)
+- Added README File :D
+- Added TextFile/Notepad Instance
+- Added Text File Icons
+- Added Notepad Button Overrides
+- Updated Window Titles
+
+--------------------------------------------------------------------------------
+
+v0.1.7-1 - Hotfix (21/02/2026)
+- Fixed bug where video player keeps playing when opening image
+- Made media window open in front of other window when selecting new media
+- Fixed Bug where desktop wallpaper resets to bliss after logging off and on
+- Ensured Randomness does not repeat previous video
+
+v0.1.7 - Themes + Music Player UI (20/02/2026)
+- Remade Error Dialog System + SAIKNEKY Album
+- Added Persistence between main and settings menu.
+- Fixed Bug where troll would not close during power options.
+- Dialog windows now close with everything else during power options.
+- Fixed bug where troll would duplicate taskbar button
+- Implemented Taskbar Panel, currently hidden.
+- Implemented Second Secret
+  - Added More memes
+  - Added secret folder for memes
+
+HINT FOR SECRET 2: Find the memes
+
+--------------------------------------------------------------------------------
+
+v0.1.6 - Themes + Music Player UI (11/02/2026)
+- Added the eXP-Themes
+- Added Theme Overrides for Music Player with Classic style buttons
+- Migrated classic style overrides to eXP theme folder.
+
+--------------------------------------------------------------------------------
+
+v0.1.5-2 - Hotfix #2 (08/02/2026)
+- Fixed Name Persistence
+- Re-added Fullscreen
+- Upgrade actions/checkout to v4 and enable Git LFS
+- Normalized .jpg extensions and removed faulty astronaut .jpg
+
+v0.1.5-1 - Hotfix #1 (20/01/2026)
+- Fixed Taskbar appearing in front  of gray screen during power opt. animation
+- Fixed Error Window not closing during power off animation
+- Fixed Power Options not opening due to lack of error instance.
+
+
+v0.1.5 - Taskbar Update (19/01/2026)
+- Cleaned up UI Elements
+- Added Taskbar Buttons to minimize windows
+- Added True Multitasking
+- Multiple Apps can now be opened at a time
+
+--------------------------------------------------------------------------------
+
+v0.1.4 - Audio Update - Part 2 (15/01/2026)
+- Created SFX and AudioLibrary class
+- Created XP AudioLibrary for common SFX Reference
+- Implemented TRUE Polyphony for ALL SFX (SFX no longer interrupts each other)
+- Added Non-poly method
+- Fixed \"notify\" tag in SFX
+- Re-enabled Options Screen
+- Added Filter Settings
+- Adjusted UI Containers
+- Fixed Main Scene Bug
+- Added Preview button for viewing filters
+- Fixed Music Restarting when returning to main menu
+
+--------------------------------------------------------------------------------
+
+v0.1.3 - Audio Update - Part 1 (13/01/2026)
+- Added Togglable Panel Display
+  - Panel Display now functions as a button which toggles visualizers.
+- Added Dedicated SFX Player
+- Updated SFX Player References
+- Enabled Tactile Button Sounds for Music Player
+- Globalized playSFX Function
+  - playSFX() is now a global function with one simple implementation.
+  - Also added GlassTap Sound for panel button.
+
+--------------------------------------------------------------------------------
+
+v0.1.2 - File Conversions (12/01/2026)
+- Converted all audio files to ogg
+- Increased PNG compression
+
+--------------------------------------------------------------------------------
+
+v0.1.1 - Bugfix + Export Update (12/01/2026)
+- Minor Audio and Filter Fix
+- Separated Music and SFX into different audio buses
+- Added polyphony up to 8 on SFX Bus
+- Added Canvas Layer to enforce consistency of Soft Filter
+- Added Soft Filter carry over to Log Screen
+- Update export_presets.cfg
+- Added Auto Itch Deployment
+- Updated Exports for Mac Deployment
+
+--------------------------------------------------------------------------------
+
+v0.1.0 - Initial Release (11/01/2026)
+
+HINT FOR SECRET 1: 10 Red Errors
+
+- Player Name and PFP Customization
+- Web Browser App (W.I.P)
+- Music Player
+- Photos (Wallpaper) App
+- Taskbar Themes
+- Screen Filters:
+	- Gaussian Blur Filter
+	- CRT Filter
+- Error Dialogs + Troll Easter Egg ;)
+- Start Menu (W.I.P)
+- Power Options"
+
 [node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer")]
 unique_name_in_owner = true
 visible = false
@@ -1971,6 +2112,7 @@ vertical_alignment = 1
 [node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
 offset_left = 98.0
+offset_top = 3.0
 offset_right = 640.0
 offset_bottom = 24.0
 theme_override_constants/separation = 0
@@ -2302,6 +2444,7 @@ roll_line_amount = 0.0
 metadata/_custom_type_script = "uid://bghaddibpt6f1"
 
 [connection signal="timeout" from="LoginDelay" to="." method="_on_login_delay_timeout"]
+[connection signal="pressed" from="IconManager/DesktopColumns/ComputerApp/BrowserAppBox/AppButton" to="AppManager" method="_on_pc_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/BrowserApp/BrowserAppBox/AppButton" to="AppManager" method="_on_browser_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/MusicApp/MusicAppBox/AppButton" to="AppManager" method="_on_music_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/PicturesApp/PicturesAppBox/AppButton" to="AppManager" method="_on_photo_button_pressed"]
@@ -2309,6 +2452,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/NotesApp/NotesAppBox/AppButton" to="AppManager" method="_on_textFile_button_pressed"]
+[connection signal="close_requested" from="AppManager/pcApp/Window" to="AppManager/pcApp" method="_on_window_close_requested"]
 [connection signal="theme_changed" from="AppManager/pictureApp" to="AppManager/pictureApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Photo0/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
@@ -2333,6 +2477,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="close_requested" from="AppManager/settingApp/Window" to="AppManager/settingApp" method="_on_window_close_requested"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/HFButton" to="AppManager/settingApp" method="_on_check_button_toggled"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/CRTButton" to="AppManager/settingApp" method="_on_crt_button_toggled"]
+[connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/FullScreenButton" to="AppManager/settingApp" method="_on_full_screen_button_toggled"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
 [connection signal="close_requested" from="AppManager/memeFolder/mainWindow" to="AppManager/memeFolder" method="_on_window_close_requested"]
@@ -2349,6 +2494,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="IconManager" method="_on_secret_2_button_pressed"]
 [connection signal="child_entered_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_exiting_tree"]
+[connection signal="child_entered_tree" from="AppManager/NotepadWindows" to="AppManager/NotepadWindows" method="_on_child_entered_tree"]
 [connection signal="visibility_changed" from="Taskbar" to="Taskbar" method="_on_visibility_changed"]
 [connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/Button" to="." method="_on_untitled_button_pressed"]

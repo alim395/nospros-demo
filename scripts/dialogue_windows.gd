@@ -11,8 +11,8 @@ func closeAllDialogues() -> void:
 		for d in get_children():
 			d.queue_free()
 
-func _on_child_entered_tree(node: Node) -> void:
+func _on_child_entered_tree(_node: Node) -> void:
 	windowCount += 1
 
-func _on_child_exiting_tree(node: Node) -> void:
+func _on_child_exiting_tree(_node: Node) -> void:
 	windowCount -= 1

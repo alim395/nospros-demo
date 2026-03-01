@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://117npiijpvf"]
+
+[ext_resource type="Script" uid="uid://c7ticdgxvaopk" path="res://scripts/form_window.gd" id="1_xnk67"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="2_5ant4"]
+
+[node name="FormWindow" type="Control" node_paths=PackedStringArray("myWindow", "fileNameInput", "saveButton", "cancelButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xnk67")
+myWindow = NodePath("Window")
+fileNameInput = NodePath("Window/Panel/VBoxContainer/IconOption/FileNameInput")
+saveButton = NodePath("Window/Panel/VBoxContainer/ButtonContainer/Save")
+cancelButton = NodePath("Window/Panel/VBoxContainer/ButtonContainer/Cancel")
+
+[node name="Window" type="Window" parent="."]
+oversampling_override = 1.0
+title = "Save as..."
+initial_position = 1
+size = Vector2i(260, 90)
+unresizable = true
+always_on_top = true
+theme = ExtResource("2_5ant4")
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -17.5
+offset_right = 15.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="IconOption" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Default: Classic"
+
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/IconOption"]
+layout_mode = 2
+text = "File Name : "
+
+[node name="FileNameInput" type="LineEdit" parent="Window/Panel/VBoxContainer/IconOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="Window/Panel/VBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save"
+
+[node name="Cancel" type="Button" parent="Window/Panel/VBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cancel"
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="text_changed" from="Window/Panel/VBoxContainer/IconOption/FileNameInput" to="." method="_on_file_name_input_text_changed"]
+[connection signal="pressed" from="Window/Panel/VBoxContainer/ButtonContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Window/Panel/VBoxContainer/ButtonContainer/Cancel" to="." method="_on_cancel_pressed"]

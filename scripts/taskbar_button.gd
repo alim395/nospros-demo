@@ -20,10 +20,13 @@ func _ready() -> void:
 		icon = taskIcon
 	if taskName != null:
 		text = taskName
+	custom_minimum_size = Vector2(90, 20)
 
 func set_task(taskSetName : String) -> void:
 	text = taskSetName
 	if globalParameters.icon_dict.get(taskSetName):
 		icon = globalParameters.icon_dict.get(taskSetName)
+	elif taskSetName.contains(" - Notepad"):
+		icon = globalParameters.icon_dict.get("notes")
 	else:
 		icon = globalParameters.icon_dict.get("memes")

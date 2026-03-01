@@ -29,7 +29,7 @@ CharCount = NodePath("Window/Panel/VContainer/StatusBarPanel/HBoxContainer/CharC
 
 [node name="Window" type="Window" parent="."]
 oversampling_override = 1.0
-title = "README - Notepad"
+title = "Untitled - Notepad"
 initial_position = 2
 size = Vector2i(360, 264)
 min_size = Vector2i(264, 132)
@@ -57,12 +57,23 @@ theme_override_constants/separation = 2
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Button" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="File" type="MenuButton" parent="Window/Panel/VContainer/TitleBarContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
-disabled = true
 text = "File"
-flat = true
+item_count = 6
+popup/item_0/text = "New"
+popup/item_0/id = 0
+popup/item_1/text = "Open..."
+popup/item_1/id = 5
+popup/item_2/text = "Save"
+popup/item_2/id = 1
+popup/item_3/text = "Save as..."
+popup/item_3/id = 2
+popup/item_4/id = 3
+popup/item_4/separator = true
+popup/item_5/text = "Exit"
+popup/item_5/id = 4
 
 [node name="Button2" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
 layout_mode = 2
@@ -71,12 +82,14 @@ disabled = true
 text = "Edit"
 flat = true
 
-[node name="Button3" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Format" type="MenuButton" parent="Window/Panel/VContainer/TitleBarContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pq6gc")
-disabled = true
 text = "Format"
-flat = true
+item_count = 1
+popup/item_0/text = "Word Wrap"
+popup/item_0/checkable = 1
+popup/item_0/id = 0
 
 [node name="Button4" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
 layout_mode = 2
@@ -144,3 +157,4 @@ vertical_alignment = 1
 [connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="caret_changed" from="Window/Panel/VContainer/TextEdit" to="." method="_on_text_edit_caret_changed"]
+[connection signal="text_changed" from="Window/Panel/VContainer/TextEdit" to="." method="_on_text_edit_text_changed"]

@@ -45,6 +45,7 @@ var pfpIndex = 0
 signal GetTrolled
 signal CloseAppSignal(taskApp:String)
 
+@export var secret1 : bool = false
 @export var secret2 : bool = false
 
 # Called when the node enters the scene tree for the first time.
