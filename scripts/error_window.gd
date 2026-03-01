@@ -48,3 +48,4 @@ func unlockSecret() -> void:
 	setErrorMessage("SECRET UNLOCKED!")
 	secret1 = true
 	globalParameters.trollMode = true
+	globalParameters.secret1 = true

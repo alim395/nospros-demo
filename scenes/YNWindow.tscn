@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://nsvdhbvbwra2"]
+
+[ext_resource type="Script" uid="uid://dx6x3dh0v4eir" path="res://scripts/yn_window.gd" id="1_5n835"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="2_j2yk2"]
+[ext_resource type="Texture2D" uid="uid://du8ymh1g46mhr" path="res://sprites/UI/XP/panels/Critical.png" id="3_hdded"]
+[ext_resource type="Texture2D" uid="uid://nrh53vvbcmk" path="res://sprites/UI/XP/panels/Alert.png" id="4_o23xj"]
+
+[node name="YnWindow" type="Control" node_paths=PackedStringArray("myWindow", "dialogMSG", "yesButton", "noButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5n835")
+myWindow = NodePath("Window")
+dialogMSG = NodePath("Window/Panel/VBoxContainer/DialogMSG/DialogLabel")
+yesButton = NodePath("Window/Panel/VBoxContainer/ButtonContainer/Yes")
+noButton = NodePath("Window/Panel/VBoxContainer/ButtonContainer/No")
+
+[node name="Window" type="Window" parent="."]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(260, 90)
+unresizable = true
+always_on_top = true
+theme = ExtResource("2_j2yk2")
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -17.5
+offset_right = 15.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="DialogMSG" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="DialogButton" type="TextureButton" parent="Window/Panel/VBoxContainer/DialogMSG"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_hdded")
+texture_disabled = ExtResource("4_o23xj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DialogLabel" type="Label" parent="Window/Panel/VBoxContainer/DialogMSG"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Are you sure?"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Yes" type="Button" parent="Window/Panel/VBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Yes"
+
+[node name="No" type="Button" parent="Window/Panel/VBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "No
+"
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/Panel/VBoxContainer/ButtonContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Window/Panel/VBoxContainer/ButtonContainer/No" to="." method="_on_no_pressed"]

@@ -7,6 +7,7 @@ var isMinimize : bool = false
 @export var softBlur : ColorRect
 @export var highFidelity : CheckButton
 @export var crtFilter : CheckButton
+@export var fullScreen : CheckButton
 @export var crtNode : CRT
 @export var startMenuOptions : OptionButton
 @export var iconStyleOptions : OptionButton
@@ -18,6 +19,12 @@ func _ready() -> void:
 	crtFilter.button_pressed = globalParameters.crtFilter
 	populateStartMenuThemes()
 	populateIconStyles()
+	
+	# Check if fullscreen:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		fullScreen.button_pressed = true
+	else:
+		fullScreen.button_pressed = false
 
 func _on_window_close_requested() -> void:
 	myWindow.visible = false
@@ -68,3 +75,9 @@ func minimizeWindow() -> void:
 		isMinimize = false
 		myWindow.visible = not isMinimize
 		myWindow.grab_focus()
+
+func _on_full_screen_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN) 
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)

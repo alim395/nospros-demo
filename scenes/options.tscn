@@ -24,7 +24,7 @@ script = ExtResource("1_1sggn")
 position = Vector2(320, 180)
 texture = ExtResource("1_c2u1v")
 
-[node name="settingScreen" type="Control" parent="." node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter")]
+[node name="settingScreen" type="Control" parent="." node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter", "fullScreen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,6 +37,7 @@ script = ExtResource("2_kv8mn")
 softBlur = NodePath("../Preview/ScreenFilters/BackBufferCopy1/SoftBlur")
 highFidelity = NodePath("VBoxContainer/Panel/settings/HFButton")
 crtFilter = NodePath("VBoxContainer/Panel/settings/CRTButton")
+fullScreen = NodePath("VBoxContainer/Panel/settings/FullScreenButton")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="settingScreen"]
 layout_mode = 1
@@ -54,20 +55,15 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Panel" type="Panel" parent="settingScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="settings" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -118.0
-offset_top = -24.5
-offset_right = 118.0
-offset_bottom = 24.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -80,6 +76,11 @@ text = "Disable Soft Filter"
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable CRT Filter"
+
+[node name="FullScreenButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel/settings"]
+layout_mode = 2
+button_pressed = true
+text = "Enable Fullscreen"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="settingScreen/VBoxContainer"]
 layout_mode = 2
@@ -159,6 +160,7 @@ mouse_filter = 2
 layer = 9001
 visible = false
 script = ExtResource("4_e6vpq")
+update_in_editor = false
 resolution = Vector2(640, 360)
 vignette_amount = 0.3
 roll_line_amount = 0.0
@@ -166,6 +168,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 
 [connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/HFButton" to="settingScreen" method="_on_check_button_toggled"]
 [connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/CRTButton" to="settingScreen" method="_on_crt_button_toggled"]
+[connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/FullScreenButton" to="settingScreen" method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="settingScreen/VBoxContainer/HBoxContainer/PreviewButton" to="Preview" method="_on_preview_button_pressed"]
 [connection signal="pressed" from="settingScreen/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Preview/ExitPreview" to="Preview" method="_on_exit_preview_pressed"]
