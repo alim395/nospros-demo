@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=119 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -102,6 +102,8 @@
 [ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
 [ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
 [ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/notepad_windows.gd" id="59_h5tdf"]
+[ext_resource type="Texture2D" uid="uid://oqu17jxhsyo7" path="res://sprites/UI/XP/taskbar/RoyaleDark.png" id="70_vniw0"]
+[ext_resource type="Texture2D" uid="uid://bv1lttol3h0r3" path="res://sprites/UI/XP/taskbar/Panel/RoyaleDark.png" id="77_lddog"]
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -759,7 +761,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.9
-        Revision 1
+        Revision 2
 
 Registered to:
         PLAYERNAME"
@@ -1883,6 +1885,9 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+v0.1.9-2 - Theme Update
+- Split Zune and Royale Dark Themes (eXP-Themes)
+- Added Zune and Royale Dark Start Button, Taskbar, and Taskbuttons
 
 v0.1.9-1 - Notepad Bug Fixes + Shader Adjustment
 - Fixed bug where overwriting active file would break previously saved files
@@ -2053,9 +2058,9 @@ grow_vertical = 0
 script = ExtResource("5_trtic")
 myCanvas = NodePath("Start/StartLayer")
 barTexture = NodePath("Bar/BarContainer/BarTexture")
-barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("33_yd4ix"), ExtResource("34_66xif"), ExtResource("8_dinhu")])
+barTextureArray = Array[Texture2D]([ExtResource("5_u5sy4"), ExtResource("6_vtaks"), ExtResource("7_kvpfn"), ExtResource("33_yd4ix"), ExtResource("34_66xif"), ExtResource("70_vniw0"), ExtResource("8_dinhu")])
 barPanel = NodePath("Bar/BarContainer/BarPanel")
-barPanelTextureArray = Array[Texture2D]([ExtResource("50_3x338"), ExtResource("51_s0g06"), ExtResource("52_2gnni"), ExtResource("53_4nbsr"), ExtResource("54_fkywm"), ExtResource("55_dku7i")])
+barPanelTextureArray = Array[Texture2D]([ExtResource("50_3x338"), ExtResource("51_s0g06"), ExtResource("52_2gnni"), ExtResource("53_4nbsr"), ExtResource("54_fkywm"), ExtResource("77_lddog"), ExtResource("55_dku7i")])
 StartButton = NodePath("Start/StartButton")
 startButtonTextures = ExtResource("6_ir15t")
 startMenu = NodePath("Start/StartLayer/StartMenu")

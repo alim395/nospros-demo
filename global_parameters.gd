@@ -1,6 +1,6 @@
 extends Node
 
-enum TaskThemes {Luna, OliveGreen, Embedded, Metallic, Royale, ZunaRoyaleNoir}
+enum TaskThemes {Luna, OliveGreen, Embedded, Metallic, Royale, RoyaleDark, Zune}
 enum buttonStyle {Classic, Y2K}
 
 # Window Themes
@@ -9,6 +9,7 @@ var OliveTheme : Theme = load("res://themes/eXP/eXP_Olive.tres")
 var EmbeddedTheme : Theme = load("res://themes/eXP/eXP_Embedded.tres")
 var MetallicTheme : Theme = load("res://themes/eXP/eXP_Metallic.tres")
 var RoyaleTheme : Theme = load("res://themes/eXP/eXP_Royale.tres")
+var RoyaleDarkTheme : Theme = load("res://themes/eXP/eXP_RoyaleDark.tres")
 var ZuneTheme : Theme = load("res://themes/eXP/eXP_Zune.tres")
 
 # Task Themes
@@ -17,6 +18,7 @@ var OliveTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskOlive.
 var EmbeddedTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskEmbedded.tres")
 var MetallicTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskMetallic.tres")
 var RoyaleTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskRoyale.tres")
+var RoyaleDarkTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskRoyaleDark.tres")
 var ZuneTask : Theme = load("res://sprites/UI/XP/taskbar/taskButtons/taskZune.tres")
 
 # Icon Store

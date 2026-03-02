@@ -102,10 +102,17 @@ func changeTheme(themeIndex : globalParameters.TaskThemes, themeName := "Luna") 
 			buttonContainer.theme = globalParameters.RoyaleTask
 			barPanel.theme = globalParameters.RoyaleTask
 			globalParameters.defaultWindowTheme = globalParameters.RoyaleTheme
-		globalParameters.TaskThemes.ZunaRoyaleNoir:
-			StartButton.texture_normal = startButtonTextures.RoyaleNoirTextures[0]
-			StartButton.texture_pressed = startButtonTextures.RoyaleNoirTextures[2]
-			StartButton.texture_hover = startButtonTextures.RoyaleNoirTextures[1]
+		globalParameters.TaskThemes.RoyaleDark:
+			StartButton.texture_normal = startButtonTextures.RoyaleDarkTextures[0]
+			StartButton.texture_pressed = startButtonTextures.RoyaleDarkTextures[2]
+			StartButton.texture_hover = startButtonTextures.RoyaleDarkTextures[1]
+			buttonContainer.theme = globalParameters.RoyaleDarkTask
+			barPanel.theme = globalParameters.RoyaleDarkTask
+			globalParameters.defaultWindowTheme = globalParameters.RoyaleDarkTheme
+		globalParameters.TaskThemes.Zune:
+			StartButton.texture_normal = startButtonTextures.ZuneTextures[0]
+			StartButton.texture_pressed = startButtonTextures.ZuneTextures[2]
+			StartButton.texture_hover = startButtonTextures.ZuneTextures[1]
 			buttonContainer.theme = globalParameters.ZuneTask
 			barPanel.theme = globalParameters.ZuneTask
 			globalParameters.defaultWindowTheme = globalParameters.ZuneTheme
