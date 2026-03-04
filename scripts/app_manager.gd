@@ -207,8 +207,9 @@ func updateTheme() -> void:
 		tfInstance.theme = globalParameters.defaultWindowTheme
 	if activeInstance != null:
 		activeInstance.theme = globalParameters.defaultWindowTheme
-	trollApp.myWindow.theme = globalParameters.defaultWindowTheme
+	trollApp.theme = globalParameters.defaultWindowTheme
 	memeFolder.changeTheme(globalParameters.defaultWindowTheme)
+	pcApp.theme = globalParameters.defaultWindowTheme
 	
 	# Dialog Windows
 	if dWins.get_children():

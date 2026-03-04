@@ -6,6 +6,7 @@ extends Control
 @export var errorTextures : Array[Texture2D]
 
 var secret1 : bool = false
+var secret2 : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,8 @@ func _ready() -> void:
 	if globalParameters.errorCount == 10:
 		MusicManager.sfx_player.play_SFX_from_library_poly("notify")
 		unlockSecret()
+	elif errorButton.disabled == true:
+		MusicManager.sfx_player.play_SFX_from_library_poly("notify")
 	else:
 		MusicManager.sfx_player.play_SFX_from_library_poly("error")
 	globalParameters.errorCount += 1

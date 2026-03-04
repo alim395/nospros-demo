@@ -35,4 +35,4 @@ func minimizeWindow() -> void:
 		myWindow.grab_focus()
 
 func _on_theme_changed() -> void:
-	myWindow.theme = globalParameters.defaultWindowTheme
+	myWindow.theme = theme

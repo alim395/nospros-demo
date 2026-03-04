@@ -761,7 +761,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.9
-        Revision 2
+        Revision 3
 
 Registered to:
         PLAYERNAME"
@@ -1885,11 +1885,16 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
-v0.1.9-2 - Theme Update
+v0.1.9-3 - Hotfix #1 (04/03/2026)
+- Fixed bug where PC App did not update theme with rest of system
+- Clock Timer is no longer affected by time scale
+- Fixed bug where Secret 2 played \"Error\" sound instead of \"Alert\" sound
+
+v0.1.9-2 - Theme Update (03/03/2026)
 - Split Zune and Royale Dark Themes (eXP-Themes)
 - Added Zune and Royale Dark Start Button, Taskbar, and Taskbuttons
 
-v0.1.9-1 - Notepad Bug Fixes + Shader Adjustment
+v0.1.9-1 - Notepad Bug Fixes + Shader Adjustment (02/03/2026)
 - Fixed bug where overwriting active file would break previously saved files
 - Fixed bug where Meme Folder and Player would not close power options/shutdown
 - Meme player now closes if meme folder is closed
@@ -2183,6 +2188,7 @@ text = "POWER OPTIONS"
 
 [node name="clockTimer" type="Timer" parent="Taskbar"]
 autostart = true
+ignore_time_scale = true
 
 [node name="WelcomeScreen" type="Control" parent="." node_paths=PackedStringArray("pfp", "nameLabel")]
 layout_mode = 3
@@ -2469,6 +2475,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/NotesApp/NotesAppBox/AppButton" to="AppManager" method="_on_textFile_button_pressed"]
+[connection signal="theme_changed" from="AppManager/pcApp" to="AppManager/pcApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pcApp/Window" to="AppManager/pcApp" method="_on_window_close_requested"]
 [connection signal="theme_changed" from="AppManager/pictureApp" to="AppManager/pictureApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pictureApp/Window" to="AppManager/pictureApp" method="_on_window_close_requested"]
@@ -2506,6 +2513,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme5/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_video_button_pressed" binds= ["PBJ"]]
 [connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme6/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_video_button_pressed" binds= ["photograph"]]
 [connection signal="close_requested" from="AppManager/memeFolder/subWindow" to="AppManager/memeFolder" method="_on_sub_window_close_requested"]
+[connection signal="theme_changed" from="AppManager/trollApp" to="AppManager/trollApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="." method="_on_secret_2_button_pressed"]
 [connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="IconManager" method="_on_secret_2_button_pressed"]

@@ -53,3 +53,6 @@ func minimizeWindow() -> void:
 		isMinimize = false
 		myWindow.visible = not isMinimize
 		myWindow.grab_focus()
+
+func _on_theme_changed() -> void:
+	myWindow.theme = theme
