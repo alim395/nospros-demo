@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=38 format=3 uid="uid://decf48acwjrm8"]
 
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_t4c88"]
@@ -29,9 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bqsgg1ap5dnf0" path="res://sprites/musicButtons/TrackNext.svg" id="20_66olg"]
 [ext_resource type="Texture2D" uid="uid://df2t2xxgtw503" path="res://sprites/musicButtons/Shuffle.svg" id="21_5nukk"]
 [ext_resource type="Texture2D" uid="uid://c6syusnipt7s2" path="res://sprites/musicButtons/musicGrabber.png" id="25_a15ay"]
-[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="26_66olg"]
-[ext_resource type="StyleBox" uid="uid://lp4h43qlge6c" path="res://themes/eXP/styles/button/slider.tres" id="27_5nukk"]
-[ext_resource type="StyleBox" uid="uid://de4px7ryyccf" path="res://themes/eXP/styles/button/slider_HTrack.tres" id="28_rmxtt"]
+[ext_resource type="StyleBox" uid="uid://56hd8f0hh7qu" path="res://themes/eXP/styles/custom/slider_alt/sliderThick.tres" id="30_rmxtt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcwgm"]
 bg_color = Color(0, 0, 0, 1)
@@ -59,17 +57,6 @@ width = 160
 height = 80
 fill = 2
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="StyleBox" id="StyleBox_np205"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("26_66olg")
-style_boxes = Array[StyleBox]([ExtResource("27_5nukk"), ExtResource("28_rmxtt")])
-metadata/_custom_type_script = "uid://bpobhv17fo8i"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4c88"]
 bg_color = Color(0, 0, 0.8, 1)
@@ -112,6 +99,7 @@ changeSound = ExtResource("11_t4c88")
 
 [node name="Window" type="Window" parent="."]
 snap_2d_vertices_to_pixel = true
+canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 title = "Music Player"
 initial_position = 1
@@ -407,7 +395,7 @@ layout_mode = 2
 theme_override_icons/grabber = ExtResource("25_a15ay")
 theme_override_icons/grabber_highlight = ExtResource("25_a15ay")
 theme_override_icons/grabber_disabled = ExtResource("25_a15ay")
-theme_override_styles/slider = SubResource("StyleBox_np205")
+theme_override_styles/slider = ExtResource("30_rmxtt")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t4c88")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_a15ay")
 step = 0.1

@@ -156,6 +156,7 @@ playback_type = 1
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 16
 bus = &"SFX"
+playback_type = 1
 script = ExtResource("2_53hd7")
 audioLibrary = ExtResource("3_qfn6u")
 

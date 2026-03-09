@@ -61,5 +61,5 @@ metadata/_custom_type_script = "uid://crhp0kg7otq8a"
 
 [resource]
 script = ExtResource("1_3pm3p")
-soundEffects = Array[ExtResource("2_uxa5k")]([SubResource("Resource_d1ghw"), SubResource("Resource_mxwpr"), SubResource("Resource_7mi35"), SubResource("Resource_xygj2"), SubResource("Resource_kovbe"), SubResource("Resource_7d4xa"), SubResource("Resource_se8y0"), SubResource("Resource_lsknx"), null])
+soundEffects = Array[ExtResource("2_uxa5k")]([SubResource("Resource_d1ghw"), SubResource("Resource_mxwpr"), SubResource("Resource_7mi35"), SubResource("Resource_xygj2"), SubResource("Resource_kovbe"), SubResource("Resource_7d4xa"), SubResource("Resource_se8y0"), SubResource("Resource_lsknx")])
 metadata/_custom_type_script = "uid://exl37ft8rypp"

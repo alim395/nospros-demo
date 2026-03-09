@@ -1,0 +1,210 @@
+[gd_scene load_steps=14 format=3 uid="uid://g0hfxho8l0ty"]
+
+[ext_resource type="Script" uid="uid://ff2m73ec4hcg" path="res://scripts/volume.gd" id="1_8ty1d"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_bml30"]
+[ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="2_wvjlw"]
+[ext_resource type="Texture2D" uid="uid://wn6nt17n6fj2" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale.png" id="3_7oq1j"]
+[ext_resource type="Texture2D" uid="uid://bmaaeu5lysxqi" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale-hover.png" id="4_mch7p"]
+[ext_resource type="Texture2D" uid="uid://dt4njyt18d6ic" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale-disabled.png" id="5_gocru"]
+[ext_resource type="AudioStream" uid="uid://bx04tmfd4ev0s" path="res://audio/music/Rickroll.ogg" id="7_7oq1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvi8a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w60lv"]
+bg_color = Color(0.9254902, 0.9137255, 0.84705883, 1)
+border_width_bottom = 2
+border_blend = true
+
+[sub_resource type="Gradient" id="Gradient_gid0c"]
+offsets = PackedFloat32Array(0, 0.18181819)
+colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 11
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_33fri"]
+gradient = SubResource("Gradient_gid0c")
+width = 4
+height = 11
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ty1d"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 3.0
+content_margin_bottom = 0.0
+texture = SubResource("GradientTexture2D_33fri")
+texture_margin_top = 2.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(0, 0, 4, 11)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7oq1j"]
+
+[node name="Volume" type="Control" node_paths=PackedStringArray("masterBalance")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ty1d")
+masterBalance = NodePath("Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider")
+
+[node name="Window" type="Window" parent="."]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(160, 240)
+theme = ExtResource("1_bml30")
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button4" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvi8a")
+disabled = true
+text = "Options"
+flat = true
+
+[node name="Button5" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvi8a")
+disabled = true
+text = "Help"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Master" type="PanelContainer" parent="Window/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/HBoxContainer/Master"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
+
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "Volume Control"
+
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Balance:"
+
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/BalanceContainer"]
+layout_mode = 2
+
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("3_7oq1j")
+theme_override_icons/grabber_highlight = ExtResource("4_mch7p")
+theme_override_icons/grabber_disabled = ExtResource("5_gocru")
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+tick_count = 3
+ticks_on_borders = true
+
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute all"
+
+[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 18.5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ty1d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/StatusBarPanel"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="LineNum" type="Label" parent="Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_wvjlw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7oq1j")
+text = "Ln 1"
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7oq1j")
+autoplay = true
+
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/HBoxContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_bal_slider_value_changed"]
