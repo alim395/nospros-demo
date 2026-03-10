@@ -1475,9 +1475,10 @@ taskBar = NodePath("../../Taskbar")
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
-size = Vector2i(260, 200)
+size = Vector2i(260, 152)
 visible = false
 unresizable = true
+theme = ExtResource("41_p4npv")
 
 [node name="Panel" type="Panel" parent="AppManager/settingApp/Window"]
 anchors_preset = 15
