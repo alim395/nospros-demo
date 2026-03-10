@@ -31,5 +31,8 @@ func set_task(taskSetName : String) -> void:
 	else:
 		icon = globalParameters.icon_dict.get("memes")
 
+func get_task() -> String:
+	return taskName
+
 func set_icon(tIcon : Texture2D) -> void:
 	icon = tIcon

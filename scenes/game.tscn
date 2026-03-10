@@ -773,7 +773,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.10
-        Revision 0
+        Revision 1
 
 Registered to:
         PLAYERNAME"
@@ -1461,6 +1461,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_0sl42")
 myWindow = NodePath("Window")
+vTIcon = ExtResource("80_8tghg")
 softBlur = NodePath("../../ScreenFilters/BackBufferCopy1/CanvasLayer/SoftBlur")
 highFidelity = NodePath("Window/Panel/settings/HFButton")
 crtFilter = NodePath("Window/Panel/settings/CRTButton")
@@ -1474,7 +1475,7 @@ taskBar = NodePath("../../Taskbar")
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
-size = Vector2i(260, 168)
+size = Vector2i(260, 200)
 visible = false
 unresizable = true
 
@@ -1536,6 +1537,12 @@ text = "Theme : "
 [node name="StartTheme" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="AudioButton" type="Button" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Audio Settings"
 
 [node name="memeFolder" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "subWindow", "imageDisplay", "videoPlayer")]
 anchors_preset = 0
@@ -1898,7 +1905,15 @@ taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
 
-v0.1.10 - Audio Controls
+v0.1.10-1 - Volume Control Window (10/03/2026)
+- Enabled volume sliders for Music and SFX in Options Menu
+- Added \"Audio Settings\" Button  to Settings App
+- Enabled Full Volume Control Window
+- Added \"Ding\" SFX
+- Volume Popup now plays \"Ding\" sound when changed
+- Muting now disables associated Slider(s)
+
+v0.1.10 - Audio Controls (09/03/2026)
 - Added Volume Settings to Options Menu
 - Added Volume Icon to System Tray Panel + Popup
 - Added Panner (effect) to audio buses to adjust audio balance
@@ -2614,6 +2629,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/FullScreenButton" to="AppManager/settingApp" method="_on_full_screen_button_toggled"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
+[connection signal="pressed" from="AppManager/settingApp/Window/Panel/settings/AudioButton" to="AppManager/settingApp" method="_on_audio_button_pressed"]
 [connection signal="close_requested" from="AppManager/memeFolder/mainWindow" to="AppManager/memeFolder" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme0/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["courage"]]
 [connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme1/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["keepcalm"]]

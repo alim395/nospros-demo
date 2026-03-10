@@ -1,5 +1,9 @@
 extends Control
 
+@export var myWindow : Window
+@export var myTaskButton : taskbarButton
+var isMinimize : bool = false
+
 @export var masterBalance : HSlider
 @export var masterVol : VSlider
 
@@ -13,11 +17,10 @@ extends Control
 @export var musicMute : CheckBox
 @export var sfxMute : CheckBox
 
-## Test Vars
-#@export var musicButton : Button
-#@export var sfxButton : Button
-#@export var testMusic : AudioStreamPlayer
-#@export var testSFX : AudioStreamPlayer
+# Test Vars
+@export var testMaster : AudioStreamPlayer
+@export var testMusic : AudioStreamPlayer
+@export var testSFX : AudioStreamPlayer
 
 @export var audioDeviceLabel : Label
 
@@ -63,6 +66,14 @@ func _on_mute_box_toggled(toggled_on: bool) -> void:
 		musicMute.set_pressed_no_signal(toggled_on)
 	if sfxMute != null:
 		sfxMute.set_pressed_no_signal(toggled_on)
+	
+	# If Mute, disable sliders
+	masterVol.editable = not toggled_on
+	masterBalance.editable = not toggled_on
+	musicVol.editable = not toggled_on
+	musicBalance.editable = not toggled_on
+	sfxVol.editable = not toggled_on
+	sfxBalance.editable = not toggled_on
 
 func _on_music_bal_slider_value_changed(value: float) -> void:
 	if musicPanner != null:
@@ -88,6 +99,39 @@ func _on_sfx_vol_slider_value_changed(value: float) -> void:
 
 func _on_music_check_box_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(1, toggled_on)
+	musicVol.editable = not toggled_on
+	musicBalance.editable = not toggled_on
 
 func _on_sfx_check_box_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(2, toggled_on)
+	sfxVol.editable = not toggled_on
+	sfxBalance.editable = not toggled_on
+
+func openWindow() -> void:
+	myWindow.visible = true
+
+func setTaskButton(tB : taskbarButton) -> void:
+	myTaskButton = tB
+	myTaskButton.pressed.connect(minimizeWindow)
+
+func minimizeWindow() -> void:
+	isMinimize = true
+	myWindow.visible = not isMinimize
+	if myTaskButton.button_pressed:
+		isMinimize = false
+		myWindow.visible = not isMinimize
+		myWindow.grab_focus()
+
+func _on_window_close_requested() -> void:
+	myWindow.visible = false
+	globalParameters.closeApp(myTaskButton.get_task())
+	queue_free()
+
+func _on_vol_slider_drag_ended(_value_changed: bool) -> void:
+	testMaster.play()
+
+func _on_music_slider_drag_ended(_value_changed: bool) -> void:
+	testMusic.play()
+
+func _on_sfx_slider_drag_ended(_value_changed: bool) -> void:
+	testSFX.play()

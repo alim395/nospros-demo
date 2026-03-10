@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://g0hfxho8l0ty"]
+[gd_scene load_steps=26 format=3 uid="uid://g0hfxho8l0ty"]
 
 [ext_resource type="Script" uid="uid://ff2m73ec4hcg" path="res://scripts/volume.gd" id="1_8ty1d"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_bml30"]
@@ -13,6 +13,9 @@
 [ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="9_1ohds"]
 [ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="12_5o1ct"]
 [ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="13_yduor"]
+[ext_resource type="AudioStream" uid="uid://fn41kq21gnjv" path="res://audio/sfx/Ding.ogg" id="14_fqi84"]
+[ext_resource type="AudioStream" uid="uid://heft5rnta720" path="res://audio/sfx/logon.ogg" id="15_yduor"]
+[ext_resource type="AudioStream" uid="uid://djn8u6033xro0" path="res://audio/sfx/errorXP.ogg" id="16_hjk02"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvi8a"]
 
@@ -60,7 +63,7 @@ metadata/_custom_type_script = "uid://bpobhv17fo8i"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7oq1j"]
 
-[node name="Volume" type="Control" node_paths=PackedStringArray("masterBalance", "masterVol", "musicBalance", "musicVol", "sfxBalance", "sfxVol", "masterMute", "musicMute", "sfxMute", "audioDeviceLabel")]
+[node name="Volume" type="Control" node_paths=PackedStringArray("myWindow", "masterBalance", "masterVol", "musicBalance", "musicVol", "sfxBalance", "sfxVol", "masterMute", "musicMute", "sfxMute", "testMaster", "testMusic", "testSFX", "audioDeviceLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,6 +71,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ty1d")
+myWindow = NodePath("Window")
 masterBalance = NodePath("Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider")
 masterVol = NodePath("Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider")
 musicBalance = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider")
@@ -77,6 +81,9 @@ sfxVol = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContain
 masterMute = NodePath("Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/CheckBox")
 musicMute = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/CheckBox")
 sfxMute = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/CheckBox")
+testMaster = NodePath("testMaster")
+testMusic = NodePath("testMusic")
+testSFX = NodePath("testSFX")
 audioDeviceLabel = NodePath("Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer/OutputDevice")
 
 [node name="Window" type="Window" parent="."]
@@ -440,12 +447,30 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7oq1j")
 text = "Ln 1"
 vertical_alignment = 1
 
+[node name="testMaster" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fqi84")
+playback_type = 1
+
+[node name="testMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_yduor")
+bus = &"Music"
+playback_type = 1
+
+[node name="testSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_hjk02")
+bus = &"SFX"
+playback_type = 1
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_bal_slider_value_changed"]
+[connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_vol_slider_drag_ended"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_vol_slider_value_changed"]
 [connection signal="toggled" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/CheckBox" to="." method="_on_mute_box_toggled"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_music_bal_slider_value_changed"]
+[connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_music_slider_drag_ended"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="toggled" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/CheckBox" to="." method="_on_music_check_box_toggled"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_sfx_bal_slider_value_changed"]
+[connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="toggled" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/CheckBox" to="." method="_on_sfx_check_box_toggled"]

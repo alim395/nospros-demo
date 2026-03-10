@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AudioLibrary" load_steps=19 format=3 uid="uid://dj4rikuf24amr"]
+[gd_resource type="Resource" script_class="AudioLibrary" load_steps=21 format=3 uid="uid://dj4rikuf24amr"]
 
 [ext_resource type="Script" uid="uid://exl37ft8rypp" path="res://audio/sfx/AudioLibrary.gd" id="1_3pm3p"]
 [ext_resource type="Script" uid="uid://crhp0kg7otq8a" path="res://audio/sfx/SFX.gd" id="2_uxa5k"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dtto4f6wn3g5p" path="res://audio/sfx/musicPlayerButtons/Pause.ogg" id="8_n0m32"]
 [ext_resource type="AudioStream" uid="uid://y4w6jskccl0c" path="res://audio/sfx/musicPlayerButtons/Stop.ogg" id="9_v0272"]
 [ext_resource type="AudioStream" uid="uid://det7copv4y5rx" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.ogg" id="10_objii"]
+[ext_resource type="AudioStream" uid="uid://fn41kq21gnjv" path="res://audio/sfx/Ding.ogg" id="11_n0m32"]
 
 [sub_resource type="Resource" id="Resource_d1ghw"]
 script = ExtResource("2_uxa5k")
@@ -59,7 +60,13 @@ tag = "mp_Change"
 stream = ExtResource("10_objii")
 metadata/_custom_type_script = "uid://crhp0kg7otq8a"
 
+[sub_resource type="Resource" id="Resource_v0272"]
+script = ExtResource("2_uxa5k")
+tag = "ding"
+stream = ExtResource("11_n0m32")
+metadata/_custom_type_script = "uid://crhp0kg7otq8a"
+
 [resource]
 script = ExtResource("1_3pm3p")
-soundEffects = Array[ExtResource("2_uxa5k")]([SubResource("Resource_d1ghw"), SubResource("Resource_mxwpr"), SubResource("Resource_7mi35"), SubResource("Resource_xygj2"), SubResource("Resource_kovbe"), SubResource("Resource_7d4xa"), SubResource("Resource_se8y0"), SubResource("Resource_lsknx")])
+soundEffects = Array[ExtResource("2_uxa5k")]([SubResource("Resource_d1ghw"), SubResource("Resource_mxwpr"), SubResource("Resource_7mi35"), SubResource("Resource_xygj2"), SubResource("Resource_kovbe"), SubResource("Resource_7d4xa"), SubResource("Resource_se8y0"), SubResource("Resource_lsknx"), SubResource("Resource_v0272")])
 metadata/_custom_type_script = "uid://exl37ft8rypp"

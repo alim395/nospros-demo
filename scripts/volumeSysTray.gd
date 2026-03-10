@@ -13,6 +13,7 @@ func _on_vol_slider_value_changed(value: float) -> void:
 
 func _on_mute_box_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(0, toggled_on)
+	masterVol.editable = not toggled_on
 
 func _on_vol_slider_drag_ended(_value_changed: bool) -> void:
-	MusicManager.sfx_player.play_SFX_from_library_poly("notify")
+	MusicManager.sfx_player.play_SFX_from_library_poly("ding")
