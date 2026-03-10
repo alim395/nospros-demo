@@ -1,0 +1,476 @@
+[gd_scene load_steps=26 format=3 uid="uid://g0hfxho8l0ty"]
+
+[ext_resource type="Script" uid="uid://ff2m73ec4hcg" path="res://scripts/volume.gd" id="1_8ty1d"]
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_bml30"]
+[ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="2_wvjlw"]
+[ext_resource type="Texture2D" uid="uid://wn6nt17n6fj2" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale.png" id="3_7oq1j"]
+[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="3_fqi84"]
+[ext_resource type="StyleBox" uid="uid://du0hynwy7v360" path="res://themes/eXP/styles/custom/statusbar/StatusbarPanelBorder.tres" id="3_mch7p"]
+[ext_resource type="Texture2D" uid="uid://bmaaeu5lysxqi" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale-hover.png" id="4_mch7p"]
+[ext_resource type="Texture2D" uid="uid://57sdfc3e2dia" path="res://sprites/UI/XP/panels/Sound (left) (small).png" id="4_wv35w"]
+[ext_resource type="Texture2D" uid="uid://dt4njyt18d6ic" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale-disabled.png" id="5_gocru"]
+[ext_resource type="Texture2D" uid="uid://dg2yqdxt70kee" path="res://sprites/UI/XP/panels/Sound (right) (small).png" id="8_1ohds"]
+[ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="9_1ohds"]
+[ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="12_5o1ct"]
+[ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="13_yduor"]
+[ext_resource type="AudioStream" uid="uid://fn41kq21gnjv" path="res://audio/sfx/Ding.ogg" id="14_fqi84"]
+[ext_resource type="AudioStream" uid="uid://heft5rnta720" path="res://audio/sfx/logon.ogg" id="15_yduor"]
+[ext_resource type="AudioStream" uid="uid://djn8u6033xro0" path="res://audio/sfx/errorXP.ogg" id="16_hjk02"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvi8a"]
+
+[sub_resource type="StyleBox" id="StyleBox_hjk02"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("3_fqi84")
+style_boxes = Array[StyleBox]([ExtResource("3_mch7p"), ExtResource("2_wvjlw")])
+metadata/_custom_type_script = "uid://bpobhv17fo8i"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w60lv"]
+bg_color = Color(0.9254902, 0.9137255, 0.84705883, 1)
+border_width_bottom = 2
+border_blend = true
+
+[sub_resource type="Gradient" id="Gradient_1ohds"]
+colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 1, 0.5019608, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lhf5r"]
+gradient = SubResource("Gradient_1ohds")
+width = 1
+height = 3
+
+[sub_resource type="Gradient" id="Gradient_d5iur"]
+colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 1, 0.5019608, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fqi84"]
+gradient = SubResource("Gradient_d5iur")
+width = 3
+
+[sub_resource type="StyleBox" id="StyleBox_scryu"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("3_fqi84")
+style_boxes = Array[StyleBox]([ExtResource("3_mch7p"), ExtResource("12_5o1ct")])
+metadata/_custom_type_script = "uid://bpobhv17fo8i"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7oq1j"]
+
+[node name="Volume" type="Control" node_paths=PackedStringArray("myWindow", "masterBalance", "masterVol", "musicBalance", "musicVol", "sfxBalance", "sfxVol", "masterMute", "musicMute", "sfxMute", "testMaster", "testMusic", "testSFX", "audioDeviceLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ty1d")
+myWindow = NodePath("Window")
+masterBalance = NodePath("Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider")
+masterVol = NodePath("Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider")
+musicBalance = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider")
+musicVol = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider")
+sfxBalance = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider")
+sfxVol = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider")
+masterMute = NodePath("Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/CheckBox")
+musicMute = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/CheckBox")
+sfxMute = NodePath("Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/CheckBox")
+testMaster = NodePath("testMaster")
+testMusic = NodePath("testMusic")
+testSFX = NodePath("testSFX")
+audioDeviceLabel = NodePath("Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer/OutputDevice")
+
+[node name="Window" type="Window" parent="."]
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Volume Control"
+initial_position = 1
+size = Vector2i(360, 240)
+theme = ExtResource("1_bml30")
+
+[node name="Panel" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button4" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvi8a")
+disabled = true
+text = "Options"
+flat = true
+
+[node name="Button5" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvi8a")
+disabled = true
+text = "Help"
+flat = true
+
+[node name="BodyContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Master" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBox_hjk02")
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
+
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "Volume Control"
+
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Balance:"
+
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer"]
+layout_mode = 2
+
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_wv35w")
+expand_mode = 1
+
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/tick_offset = 11
+theme_override_icons/grabber = ExtResource("3_7oq1j")
+theme_override_icons/grabber_highlight = ExtResource("4_mch7p")
+theme_override_icons/grabber_disabled = ExtResource("5_gocru")
+theme_override_icons/tick = SubResource("GradientTexture2D_lhf5r")
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+tick_count = 3
+ticks_on_borders = true
+
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_1ohds")
+expand_mode = 1
+
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/tick_offset = 11
+theme_override_icons/tick = SubResource("GradientTexture1D_fqi84")
+theme_override_styles/slider = ExtResource("9_1ohds")
+max_value = 1.0
+step = 0.001
+value = 1.0
+tick_count = 7
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute all"
+
+[node name="Others" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = SubResource("StyleBox_scryu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="MusicContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
+
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_wvjlw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Balance:"
+
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer"]
+layout_mode = 2
+
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_wv35w")
+expand_mode = 1
+
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/tick_offset = 11
+theme_override_icons/grabber = ExtResource("3_7oq1j")
+theme_override_icons/grabber_highlight = ExtResource("4_mch7p")
+theme_override_icons/grabber_disabled = ExtResource("5_gocru")
+theme_override_icons/tick = SubResource("GradientTexture2D_lhf5r")
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+tick_count = 3
+ticks_on_borders = true
+
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_1ohds")
+expand_mode = 1
+
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/tick_offset = 11
+theme_override_icons/tick = SubResource("GradientTexture1D_fqi84")
+theme_override_styles/slider = ExtResource("9_1ohds")
+max_value = 1.0
+step = 0.001
+value = 1.0
+tick_count = 7
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="SFXContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
+
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("13_yduor")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Balance:"
+
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer"]
+layout_mode = 2
+
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_wv35w")
+expand_mode = 1
+
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/tick_offset = 11
+theme_override_icons/grabber = ExtResource("3_7oq1j")
+theme_override_icons/grabber_highlight = ExtResource("4_mch7p")
+theme_override_icons/grabber_disabled = ExtResource("5_gocru")
+theme_override_icons/tick = SubResource("GradientTexture2D_lhf5r")
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+tick_count = 3
+ticks_on_borders = true
+
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_1ohds")
+expand_mode = 1
+
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/tick_offset = 11
+theme_override_icons/tick = SubResource("GradientTexture1D_fqi84")
+theme_override_styles/slider = ExtResource("9_1ohds")
+max_value = 1.0
+step = 0.001
+value = 1.0
+tick_count = 7
+ticks_on_borders = true
+ticks_position = 2
+
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 18.5)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_mch7p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/StatusBarPanel"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="OutputDevice" type="Label" parent="Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_wvjlw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7oq1j")
+text = "Ln 1"
+vertical_alignment = 1
+
+[node name="testMaster" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fqi84")
+playback_type = 1
+
+[node name="testMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_yduor")
+bus = &"Music"
+playback_type = 1
+
+[node name="testSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_hjk02")
+bus = &"SFX"
+playback_type = 1
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_bal_slider_value_changed"]
+[connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_vol_slider_drag_ended"]
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_vol_slider_value_changed"]
+[connection signal="toggled" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/CheckBox" to="." method="_on_mute_box_toggled"]
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_music_bal_slider_value_changed"]
+[connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="toggled" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/CheckBox" to="." method="_on_music_check_box_toggled"]
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_sfx_bal_slider_value_changed"]
+[connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="toggled" from="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/CheckBox" to="." method="_on_sfx_check_box_toggled"]

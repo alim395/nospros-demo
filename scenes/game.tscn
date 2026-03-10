@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=126 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -104,6 +104,18 @@
 [ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/notepad_windows.gd" id="59_h5tdf"]
 [ext_resource type="Texture2D" uid="uid://oqu17jxhsyo7" path="res://sprites/UI/XP/taskbar/RoyaleDark.png" id="70_vniw0"]
 [ext_resource type="Texture2D" uid="uid://bv1lttol3h0r3" path="res://sprites/UI/XP/taskbar/Panel/RoyaleDark.png" id="77_lddog"]
+[ext_resource type="Texture2D" uid="uid://b6f5lay58ahsw" path="res://sprites/UI/XP/panels/Volume.png" id="80_8tghg"]
+[ext_resource type="Script" uid="uid://ddvb572cjdwj1" path="res://scripts/volumeSysTray.gd" id="83_473mq"]
+[ext_resource type="Script" uid="uid://bcjmsd8htc48n" path="res://scripts/sys_tray_popups.gd" id="86_473mq"]
+[ext_resource type="StyleBox" uid="uid://cqoxwovvtldc4" path="res://themes/eXP/styles/custom/classic/button/buttonClassic.tres" id="87_1va0p"]
+[ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="88_2tvof"]
+
+[sub_resource type="Gradient" id="Gradient_d5iur"]
+colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 1, 0.5019608, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fsry6"]
+gradient = SubResource("Gradient_d5iur")
+width = 3
 
 [sub_resource type="Gradient" id="Gradient_iywne"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -760,8 +772,8 @@ myWindow = NodePath("Window")
 myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
-        Version 0.1.9
-        Revision 3
+        Version 0.1.10
+        Revision 1
 
 Registered to:
         PLAYERNAME"
@@ -1449,6 +1461,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_0sl42")
 myWindow = NodePath("Window")
+vTIcon = ExtResource("80_8tghg")
 softBlur = NodePath("../../ScreenFilters/BackBufferCopy1/CanvasLayer/SoftBlur")
 highFidelity = NodePath("Window/Panel/settings/HFButton")
 crtFilter = NodePath("Window/Panel/settings/CRTButton")
@@ -1462,9 +1475,10 @@ taskBar = NodePath("../../Taskbar")
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
-size = Vector2i(260, 168)
+size = Vector2i(260, 152)
 visible = false
 unresizable = true
+theme = ExtResource("41_p4npv")
 
 [node name="Panel" type="Panel" parent="AppManager/settingApp/Window"]
 anchors_preset = 15
@@ -1524,6 +1538,12 @@ text = "Theme : "
 [node name="StartTheme" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="AudioButton" type="Button" parent="AppManager/settingApp/Window/Panel/settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Audio Settings"
 
 [node name="memeFolder" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "subWindow", "imageDisplay", "videoPlayer")]
 anchors_preset = 0
@@ -1885,6 +1905,25 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+
+v0.1.10-1 - Volume Control Window (10/03/2026)
+- Enabled volume sliders for Music and SFX in Options Menu
+- Added \"Audio Settings\" Button  to Settings App
+- Enabled Full Volume Control Window
+- Added \"Ding\" SFX
+- Volume Popup now plays \"Ding\" sound when changed
+- Muting now disables associated Slider(s)
+
+v0.1.10 - Audio Controls (09/03/2026)
+- Added Volume Settings to Options Menu
+- Added Volume Icon to System Tray Panel + Popup
+- Added Panner (effect) to audio buses to adjust audio balance
+- Added Volume Control Menu (not yet enabled)
+- Updated Texture filtering to Nearest on several Windows
+- Updated Slider Themes
+
+--------------------------------------------------------------------------------
+
 v0.1.9-3 - Hotfix #1 (04/03/2026)
 - Fixed bug where PC App did not update theme with rest of system
 - Clock Timer is no longer affected by time scale
@@ -2071,7 +2110,7 @@ startButtonTextures = ExtResource("6_ir15t")
 startMenu = NodePath("Start/StartLayer/StartMenu")
 buttonContainer = NodePath("Bar/BarButtonContainer")
 clockTimer = NodePath("clockTimer")
-timeLabel = NodePath("Bar/BarContainer/BarPanel/HBoxContainer/Time")
+timeLabel = NodePath("Bar/BarContainer/BarPanel/SystemTrayContainer/Time")
 
 [node name="Bar" type="Control" parent="Taskbar"]
 layout_mode = 1
@@ -2100,7 +2139,7 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="BarPanel" type="NinePatchRect" parent="Taskbar/Bar/BarContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("50_3x338")
@@ -2109,24 +2148,109 @@ patch_margin_left = 4
 patch_margin_top = 3
 patch_margin_bottom = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel"]
+[node name="SystemTrayContainer" type="HBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel" node_paths=PackedStringArray("volumeButton", "volumeWindow")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 2
+script = ExtResource("86_473mq")
+volumeButton = NodePath("VolumeButton")
+volumeWindow = NodePath("../SysTrayWindows/Volume")
+
+[node name="VolumeButton" type="TextureButton" parent="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("80_8tghg")
+stretch_mode = 3
+
+[node name="Time" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("52_1yg85")
+theme_override_font_sizes/font_size = 12
+text = "12:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SysTrayWindows" type="Control" parent="Taskbar/Bar/BarContainer/BarPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 2
+mouse_filter = 2
 
-[node name="Time" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+[node name="Volume" type="Window" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows" node_paths=PackedStringArray("masterVol", "masterMute")]
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+position = Vector2i(528, 200)
+size = Vector2i(81, 136)
+visible = false
+borderless = true
+theme = ExtResource("41_p4npv")
+script = ExtResource("83_473mq")
+masterVol = NodePath("Panel/MarginContainer/VBoxContainer/VolumeContainer/VolSlider")
+masterMute = NodePath("Panel/MarginContainer/VBoxContainer/MuteBox")
+
+[node name="Panel" type="Panel" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume"]
+custom_minimum_size = Vector2(81, 136)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("87_1va0p")
+
+[node name="MarginContainer" type="MarginContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("52_1yg85")
-theme_override_font_sizes/font_size = 12
-text = "12:00 AM"
+
+[node name="Volume" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="VolumeContainer" type="MarginContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VolSlider" type="VSlider" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/tick_offset = 11
+theme_override_icons/tick = SubResource("GradientTexture1D_fsry6")
+theme_override_styles/slider = ExtResource("88_2tvof")
+max_value = 1.0
+step = 0.001
+value = 1.0
+ticks_position = 2
+
+[node name="MuteBox" type="CheckBox" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
 
 [node name="BarButtonContainer" type="HBoxContainer" parent="Taskbar/Bar"]
 layout_mode = 0
@@ -2134,6 +2258,7 @@ offset_left = 98.0
 offset_top = 3.0
 offset_right = 640.0
 offset_bottom = 24.0
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="Start" type="Control" parent="Taskbar"]
@@ -2331,6 +2456,7 @@ rect = Rect2(0, 0, 200, 200)
 layer = 1026
 
 [node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1/CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_s33c4")
 anchors_preset = 15
 anchor_right = 1.0
@@ -2504,6 +2630,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/FullScreenButton" to="AppManager/settingApp" method="_on_full_screen_button_toggled"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
+[connection signal="pressed" from="AppManager/settingApp/Window/Panel/settings/AudioButton" to="AppManager/settingApp" method="_on_audio_button_pressed"]
 [connection signal="close_requested" from="AppManager/memeFolder/mainWindow" to="AppManager/memeFolder" method="_on_window_close_requested"]
 [connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme0/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["courage"]]
 [connection signal="pressed" from="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme1/IconContainer/AppButton" to="AppManager/memeFolder" method="_on_meme_image_button_pressed" binds= ["keepcalm"]]
@@ -2521,6 +2648,11 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="child_exiting_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_exiting_tree"]
 [connection signal="child_entered_tree" from="AppManager/NotepadWindows" to="AppManager/NotepadWindows" method="_on_child_entered_tree"]
 [connection signal="visibility_changed" from="Taskbar" to="Taskbar" method="_on_visibility_changed"]
+[connection signal="toggled" from="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer/VolumeButton" to="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer" method="_on_volume_button_toggled"]
+[connection signal="focus_exited" from="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume" to="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer" method="_on_volume_focus_exited"]
+[connection signal="drag_ended" from="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume" method="_on_vol_slider_drag_ended"]
+[connection signal="value_changed" from="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume" method="_on_vol_slider_value_changed"]
+[connection signal="toggled" from="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer/MuteBox" to="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume" method="_on_mute_box_toggled"]
 [connection signal="pressed" from="Taskbar/Start/StartButton" to="Taskbar" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/Button" to="." method="_on_untitled_button_pressed"]
 [connection signal="pressed" from="Taskbar/Start/StartLayer/StartMenu/PowerOptions" to="." method="_on_power_options_pressed"]

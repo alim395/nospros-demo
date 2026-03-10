@@ -2,6 +2,10 @@ extends Control
 
 @export var myWindow : Window
 @export var myTaskButton : taskbarButton
+
+# Sub Task Icons
+@export var vTIcon : Texture2D
+
 var isMinimize : bool = false
 
 @export var softBlur : ColorRect
@@ -12,6 +16,9 @@ var isMinimize : bool = false
 @export var startMenuOptions : OptionButton
 @export var iconStyleOptions : OptionButton
 @export var taskBar : Taskbar
+
+@onready var volumeControl = preload("res://scenes/volume.tscn")
+var vc : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -81,3 +88,12 @@ func _on_full_screen_button_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN) 
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+
+func _on_audio_button_pressed() -> void:
+	if vc == null:
+		vc = volumeControl.instantiate()
+		var tB = taskBar.openTask("Volume Control")
+		vc.setTaskButton(tB)
+		tB.set_icon(vTIcon)
+		add_child(vc)
+	vc.openWindow()

@@ -24,7 +24,7 @@ script = ExtResource("1_1sggn")
 position = Vector2(320, 180)
 texture = ExtResource("1_c2u1v")
 
-[node name="settingScreen" type="Control" parent="." node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter", "fullScreen")]
+[node name="settingScreen" type="Control" parent="." node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter", "fullScreen", "masterVol", "musicVol", "sfxVol")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,9 +35,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_kv8mn")
 softBlur = NodePath("../Preview/ScreenFilters/BackBufferCopy1/SoftBlur")
-highFidelity = NodePath("VBoxContainer/Panel/settings/HFButton")
-crtFilter = NodePath("VBoxContainer/Panel/settings/CRTButton")
-fullScreen = NodePath("VBoxContainer/Panel/settings/FullScreenButton")
+highFidelity = NodePath("VBoxContainer/Panel0/settings/HFButton")
+crtFilter = NodePath("VBoxContainer/Panel0/settings/CRTButton")
+fullScreen = NodePath("VBoxContainer/Panel0/settings/FullScreenButton")
+masterVol = NodePath("VBoxContainer/Panel1/MarginContainer/settings2/Master/masterSlider")
+musicVol = NodePath("VBoxContainer/Panel1/MarginContainer/settings2/Music/musicSlider")
+sfxVol = NodePath("VBoxContainer/Panel1/MarginContainer/settings2/SFX/sfxSlider")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="settingScreen"]
 layout_mode = 1
@@ -54,12 +57,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Panel" type="Panel" parent="settingScreen/VBoxContainer"]
+[node name="Panel0" type="Panel" parent="settingScreen/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="settings" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel"]
+[node name="settings" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel0"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,20 +70,86 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HFButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel/settings"]
+[node name="HFButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings"]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Disable Soft Filter"
 
-[node name="CRTButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel/settings"]
+[node name="CRTButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings"]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable CRT Filter"
 
-[node name="FullScreenButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel/settings"]
+[node name="FullScreenButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings"]
 layout_mode = 2
 button_pressed = true
 text = "Enable Fullscreen"
+
+[node name="Panel1" type="Panel" parent="settingScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="settingScreen/VBoxContainer/Panel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="settings2" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master"]
+layout_mode = 2
+text = "Master :"
+
+[node name="masterSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Music" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music"]
+layout_mode = 2
+text = "Music   :"
+
+[node name="musicSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFX" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX"]
+layout_mode = 2
+text = "SFX       :"
+
+[node name="sfxSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="settingScreen/VBoxContainer"]
 layout_mode = 2
@@ -97,6 +166,7 @@ size_flags_vertical = 4
 text = "Back to Menu"
 
 [node name="Preview" type="Control" parent="." node_paths=PackedStringArray("crtNode", "softBlur")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,9 +235,12 @@ vignette_amount = 0.3
 roll_line_amount = 0.0
 metadata/_custom_type_script = "uid://bghaddibpt6f1"
 
-[connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/HFButton" to="settingScreen" method="_on_check_button_toggled"]
-[connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/CRTButton" to="settingScreen" method="_on_crt_button_toggled"]
-[connection signal="toggled" from="settingScreen/VBoxContainer/Panel/settings/FullScreenButton" to="settingScreen" method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="settingScreen/VBoxContainer/Panel0/settings/HFButton" to="settingScreen" method="_on_check_button_toggled"]
+[connection signal="toggled" from="settingScreen/VBoxContainer/Panel0/settings/CRTButton" to="settingScreen" method="_on_crt_button_toggled"]
+[connection signal="toggled" from="settingScreen/VBoxContainer/Panel0/settings/FullScreenButton" to="settingScreen" method="_on_fullscreen_button_toggled"]
+[connection signal="value_changed" from="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master/masterSlider" to="settingScreen" method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music/musicSlider" to="settingScreen" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX/sfxSlider" to="settingScreen" method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="settingScreen/VBoxContainer/HBoxContainer/PreviewButton" to="Preview" method="_on_preview_button_pressed"]
 [connection signal="pressed" from="settingScreen/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Preview/ExitPreview" to="Preview" method="_on_exit_preview_pressed"]
