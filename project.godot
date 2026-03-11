@@ -36,6 +36,19 @@ project/assembly_name="NosPros"
 
 enabled=PackedStringArray("res://addons/MusicManager/plugin.cfg", "res://addons/crt/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://MMSongs/": "pink",
+"res://audio/": "red",
+"res://scenes/": "orange",
+"res://scripts/": "yellow",
+"res://sprites/": "blue",
+"res://textures/": "teal",
+"res://themes/": "blue",
+"res://video/": "purple"
+}
+
 [gui]
 
 common/snap_controls_to_pixels=false
