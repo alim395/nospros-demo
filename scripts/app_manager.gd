@@ -51,7 +51,6 @@ func _process(_delta: float) -> void:
 	if globalParameters.trollMode:
 		trollIcon.visible = true
 		globalParameters.trollMode = false
-	
 
 func closeActiveInstance() -> void:
 	taskBar.closeTask(activeTaskName)
@@ -81,18 +80,8 @@ func closeCoreApps() -> void:
 	taskBar.closeTask("Setting")
 	pcApp._on_window_close_requested()
 	taskBar.closeTask("Computer")
-	#closeTroll()
 
 func openMusicApp() -> void:
-	#if activeInstance != null:
-		#closeActiveInstance()
-	##closeCoreApps()
-	#activeInstance = musicPlayerApp.instantiate()
-	#add_child(activeInstance)
-	#activeTaskName = "Music"
-	#var tB = taskBar.openTask(activeTaskName)
-	#activeInstance.setTaskButton(tB)
-	
 	if musicInstance == null:
 		musicInstance = musicPlayerApp.instantiate()
 		add_child(musicInstance)
@@ -101,10 +90,12 @@ func openMusicApp() -> void:
 		var tB = taskBar.openTask("Music")
 		musicInstance.setTaskButton(tB)
 		updateTaskCount()
+	else:
+		print("MUSIC ALREADY OPEN!")
+		musicInstance.myTaskButton.set_pressed_no_signal(true)
+		musicInstance.minimizeWindow()
 
 func openPhotoApp() -> void:
-	#if activeInstance != null:
-		#closeActiveInstance()
 	closeCoreApps()
 	pictureApp.openWindow()
 	if taskCount > 0:
@@ -114,8 +105,6 @@ func openPhotoApp() -> void:
 	pictureApp.setTaskButton(tB)
 
 func openSettingsApp() -> void:
-	#if activeInstance != null:
-		#closeActiveInstance()
 	closeCoreApps()
 	settingApp.openWindow()
 	if taskCount > 0:
@@ -125,15 +114,6 @@ func openSettingsApp() -> void:
 	settingApp.setTaskButton(tB)
 	
 func openWebApp() -> void:
-	#if activeInstance != null:
-		#closeActiveInstance()
-	##closeCoreApps()
-	#activeInstance = browserApp.instantiate()
-	#add_child(activeInstance)
-	#activeTaskName = "Browser"
-	#var tB = taskBar.openTask(activeTaskName)
-	#activeInstance.setTaskButton(tB)
-	
 	if webInstance == null:
 		webInstance = browserApp.instantiate()
 		add_child(webInstance)
@@ -142,6 +122,10 @@ func openWebApp() -> void:
 		var tB = taskBar.openTask("Browser")
 		webInstance.setTaskButton(tB)
 		updateTaskCount()
+	else:
+		print("BROWSER ALREADY OPEN!")
+		webInstance.myTaskButton.set_pressed_no_signal(true)
+		webInstance.minimizeWindow()
 	
 func _on_music_button_pressed() -> void:
 	openMusicApp()
@@ -238,20 +222,11 @@ func _on_textFile_button_pressed() -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func openTextFile() -> void:
-	if tfInstance == null:
-		#tfInstance = notepadApp.instantiate()
-		#tfInstance.setFileName("README")
-		#print("INSTANTIATED")
-		#add_child(tfInstance)
-		#if taskCount > 0:
-			#tfInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
-		#var tB = taskBar.openTask("README - Notepad")
-		##tB.set_task_name("README")
-		#tfInstance.setTaskButton(tB)
-		#updateTaskCount()
-		## Update Changelog Text
-		#tfInstance.setTextFree(changelogText)
-		tfInstance = NotepadWins.openNotepad("README")
+	if not NotepadWins.getActiveNotepad("README"):
+		NotepadWins.openNotepad("README")
+	else:
+		NotepadWins.unMinNotepad("README")
+		taskBar.focusTask("README - Notepad")
 
 func closeTextInstance() -> void:
 	taskBar.closeTask("README - Notepad")

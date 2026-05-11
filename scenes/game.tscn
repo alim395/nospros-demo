@@ -772,8 +772,8 @@ myWindow = NodePath("Window")
 myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
-        Version 0.1.10
-        Revision 1
+        Version 0.1.11
+        Revision 0
 
 Registered to:
         PLAYERNAME"
@@ -1904,6 +1904,14 @@ offset_bottom = 40.0
 script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
+--------------------------------------------------------------------------------
+v0.1.11 - Featureless QoL Update (11/05/2026)
+- Window order can now be changed by Taskbar buttons and Icons
+- Updated Window Tile for Luna theme
+- Added Custom Desktop Icon
+- Updated Export Preset with Game Description
+- Taskbar icons now update with icon style
+
 --------------------------------------------------------------------------------
 
 v0.1.10-1 - Volume Control Window (10/03/2026)
