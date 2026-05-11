@@ -62,6 +62,11 @@ func _on_login_delay_timeout() -> void:
 	welcomeAnimation.play("fade_out")
 	
 func _on_welcome_animation_animation_finished(_anim_name: StringName) -> void:
+	#var fps : float = Engine.get_frames_per_second()
+	#if fps < 60.0:
+		#print("LOW FPS DETECTED")
+		#globalParameters.highFidelity = true
+		#softBlur.visible = not globalParameters.highFidelity
 	Task_Bar.visible = true;
 	await get_tree().create_timer(0.5).timeout
 	iconManager.visible = true;

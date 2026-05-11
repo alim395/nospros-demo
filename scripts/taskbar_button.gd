@@ -31,6 +31,9 @@ func set_task(taskSetName : String) -> void:
 	else:
 		icon = globalParameters.icon_dict.get("memes")
 
+func updateTask() -> void:
+	set_task(taskName)
+
 func get_task() -> String:
 	return taskName
 

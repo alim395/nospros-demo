@@ -66,6 +66,7 @@ func _on_start_menu_theme_item_selected(index: int) -> void:
 func _on_icon_style_item_selected(index: int) -> void:
 	%IconManager.changeStyle(index)
 	print("Index Selected: ", index)
+	taskBar.updateTaskIcons()
 
 func _on_crt_button_toggled(toggled_on: bool) -> void:
 	crtNode.visible = toggled_on

@@ -123,3 +123,11 @@ func updateActiveInstances() -> void:
 			if fNames.find(aN) == -1:
 				activeNotepadInstances.pop_at(index)
 			index +=1
+
+func unMinNotepad(fName : String) -> void:
+	if get_children():
+		for n in get_children():
+			if n.getFileName() == fName:
+				n.myTaskButton.set_pressed(true)
+				n.minimizeWindow()
+				break

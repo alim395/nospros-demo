@@ -163,3 +163,8 @@ func focusTask(task : String) -> void:
 func _on_clock_timer_timeout() -> void:
 	timeLabel.text = calculateTimeString()
 	clockTimer.start()
+
+func updateTaskIcons() -> void:
+	if buttonContainer.get_children():
+		for tB in buttonContainer.get_children():
+			tB.updateTask()
