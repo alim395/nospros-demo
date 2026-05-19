@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bw0r2q6mgj01d"
+path="res://.godot/imported/Standing Stones.ogg-1d57bc629fc630d8d4ecf6f890736691.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Standing Stones.ogg"
+dest_files=["res://.godot/imported/Standing Stones.ogg-1d57bc629fc630d8d4ecf6f890736691.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

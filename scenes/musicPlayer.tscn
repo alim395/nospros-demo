@@ -1,11 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=36 format=3 uid="uid://decf48acwjrm8"]
 
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_t4c88"]
-[ext_resource type="Resource" uid="uid://du5a2mex75jul" path="res://MMSongs/Albums/7/SAIKNEKY.tres" id="3_dcwgm"]
 [ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="3_y1jbc"]
 [ext_resource type="Texture2D" uid="uid://h8eked3v42f7" path="res://sprites/albumArt/AlbumTEST.png" id="3_yj2aj"]
-[ext_resource type="Resource" uid="uid://kcfcelkt7aou" path="res://MMSongs/Albums/XP/009_Sound_System.tres" id="4_b2ner"]
 [ext_resource type="Resource" uid="uid://bimj5fu4x7gh3" path="res://MMSongs/Albums/XP/XP_OST.tres" id="5_yb2vk"]
 [ext_resource type="Script" uid="uid://plvrf5wtrq0r" path="res://scripts/audio_spectrum_visualizer.gd" id="6_py3vy"]
 [ext_resource type="AudioStream" uid="uid://cfbtjk8h84bkd" path="res://audio/sfx/musicPlayerButtons/Play.ogg" id="8_8evac"]
@@ -81,7 +79,7 @@ grow_vertical = 2
 theme = ExtResource("1_t4c88")
 script = ExtResource("1_gkd1q")
 myWindow = NodePath("Window")
-albumList = Array[ExtResource("3_y1jbc")]([ExtResource("4_b2ner"), ExtResource("3_dcwgm"), ExtResource("5_yb2vk")])
+albumList = Array[ExtResource("3_y1jbc")]([ExtResource("5_yb2vk")])
 trackNumLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/TrackNumLabel")
 playtimeLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/playTimeLabel")
 albumOption = NodePath("Window/Panel/OptionsContainer/AlbumContainer/OptionButton")
@@ -349,6 +347,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("3_yj2aj")
 expand_mode = 2
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="Window/Panel/HBoxContainer/VBoxContainer"]
 layout_mode = 2

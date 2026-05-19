@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bipg5pvuwnuw"
+path="res://.godot/imported/crystal settings.ogg-a95cea467aada6f6dc482d48d8767e7c.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/dream OS/crystal settings.ogg"
+dest_files=["res://.godot/imported/crystal settings.ogg-a95cea467aada6f6dc482d48d8767e7c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

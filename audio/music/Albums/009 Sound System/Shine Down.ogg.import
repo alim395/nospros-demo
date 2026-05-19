@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://j14qdbrbd3oj"
+path="res://.godot/imported/Shine Down.ogg-213a05e5eab51d6c7f9af820cb7e4670.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Shine Down.ogg"
+dest_files=["res://.godot/imported/Shine Down.ogg-213a05e5eab51d6c7f9af820cb7e4670.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

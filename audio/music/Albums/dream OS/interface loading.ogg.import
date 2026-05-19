@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5bejitsjt6j4"
+path="res://.godot/imported/interface loading.ogg-cd3dd5cb4a9873f22cd7c3f5de01e980.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/dream OS/interface loading.ogg"
+dest_files=["res://.godot/imported/interface loading.ogg-cd3dd5cb4a9873f22cd7c3f5de01e980.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

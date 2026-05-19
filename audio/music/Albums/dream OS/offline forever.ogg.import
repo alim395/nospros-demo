@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ci3bo615r2fga"
+path="res://.godot/imported/offline forever.ogg-bd5560be71dc9e56fca09151c8923725.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/dream OS/offline forever.ogg"
+dest_files=["res://.godot/imported/offline forever.ogg-bd5560be71dc9e56fca09151c8923725.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

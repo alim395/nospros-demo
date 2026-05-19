@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dkc8be5v5182n"
+path="res://.godot/imported/connected silence.ogg-fb428e085526d30a4aa477e6e57b148f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/dream OS/connected silence.ogg"
+dest_files=["res://.godot/imported/connected silence.ogg-fb428e085526d30a4aa477e6e57b148f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

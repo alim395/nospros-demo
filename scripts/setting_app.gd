@@ -98,3 +98,8 @@ func _on_audio_button_pressed() -> void:
 		tB.set_icon(vTIcon)
 		add_child(vc)
 	vc.openWindow()
+
+func _on_theme_changed() -> void:
+	myWindow.theme = theme
+	if vc != null:
+		vc.theme = theme

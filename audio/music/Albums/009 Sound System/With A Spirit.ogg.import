@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://de7osvvp461nd"
+path="res://.godot/imported/With A Spirit.ogg-5a2958b53f0446b6e6ae1ccd6bfc3703.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/With A Spirit.ogg"
+dest_files=["res://.godot/imported/With A Spirit.ogg-5a2958b53f0446b6e6ae1ccd6bfc3703.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

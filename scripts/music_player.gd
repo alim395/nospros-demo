@@ -24,6 +24,7 @@ var currentTrackNum := 0
 @export var albumOption : OptionButton
 @export var trackOption : OptionButton
 @export var albumArt : TextureRect
+@export var coverArt : Texture2D
 @export var defaultAlbumArt : Texture2D
 @export var artistLabel : Label
 @export var seekSlider : HSlider
@@ -43,7 +44,9 @@ func _ready() -> void:
 		MusicManager.all_music_finished.connect(_on_all_music_finished)
 	
 	theme = globalParameters.defaultWindowTheme
-	
+	#updateAlbumList(albumList)
+	if MusicFiles.getAlbumList():
+		updateAlbumList(MusicFiles.getAlbumList())
 	defaultAlbum = albumList[0]
 	currentTrackNum = 0
 	currentAlbumNum = 0
@@ -51,6 +54,8 @@ func _ready() -> void:
 	currentTrack = currentAlbum.tracks[0]
 	if currentAlbum.art != null:
 		albumArt.texture = currentAlbum.art
+	if currentTrack.coverArt != null:
+		albumArt.texture = currentTrack.coverArt
 	setTrackLabel()
 	
 	for a in albumList:
@@ -168,6 +173,9 @@ func updateSong() -> void:
 	isPlaying = true
 	MusicManager.play_song.emit(currentTrack, false, false, 0)
 	
+	if currentTrack.coverArt != null:
+		albumArt.texture = currentTrack.coverArt
+	
 func _on_prev_track_pressed() -> void:
 	currentTrackNum -= 1
 	updateSong()
@@ -283,3 +291,8 @@ func minimizeWindow() -> void:
 		isMinimize = false
 		myWindow.visible = not isMinimize
 		myWindow.grab_focus()
+
+func updateAlbumList(aL : Array[MusicPlaylist]) -> void:
+	for a in aL:
+		print(a.name)
+	albumList = aL

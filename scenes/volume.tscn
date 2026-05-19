@@ -461,6 +461,7 @@ stream = ExtResource("16_hjk02")
 bus = &"SFX"
 playback_type = 1
 
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="value_changed" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer/BalSlider" to="." method="_on_bal_slider_value_changed"]
 [connection signal="drag_ended" from="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer/VolSlider" to="." method="_on_vol_slider_drag_ended"]

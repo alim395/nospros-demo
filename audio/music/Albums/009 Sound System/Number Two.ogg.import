@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cn0f6tbq8cd2y"
+path="res://.godot/imported/Number Two.ogg-1f79b975f7aff769176d5606cfbd9f05.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Number Two.ogg"
+dest_files=["res://.godot/imported/Number Two.ogg-1f79b975f7aff769176d5606cfbd9f05.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

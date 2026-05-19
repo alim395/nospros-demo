@@ -135,3 +135,6 @@ func _on_music_slider_drag_ended(_value_changed: bool) -> void:
 
 func _on_sfx_slider_drag_ended(_value_changed: bool) -> void:
 	testSFX.play()
+
+func _on_theme_changed() -> void:
+	myWindow.theme = theme

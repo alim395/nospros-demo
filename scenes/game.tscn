@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=127 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cqkesdqmvfcu1" path="res://MMSongs/XPStart.tres" id="2_lbhrr"]
@@ -79,7 +79,7 @@
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
 [ext_resource type="VideoStream" uid="uid://dfj2oofn0fmol" path="res://video/joke/Photograph.ogv" id="41_2iuns"]
-[ext_resource type="VideoStream" uid="uid://del701b226cja" path="res://video/joke/RickRoll.ogv" id="41_7gkqi"]
+[ext_resource type="VideoStream" uid="uid://dukoms7a2sd46" path="res://video/joke/RickRoll.ogv" id="41_7gkqi"]
 [ext_resource type="Script" uid="uid://cs1m16ct1tap4" path="res://scripts/meme_folder.gd" id="41_15b3c"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="41_p4npv"]
 [ext_resource type="Texture2D" uid="uid://ke5w3s7ijiqo" path="res://sprites/memes/Courage_Wolf.jpg" id="43_xjcjm"]
@@ -101,6 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://cvtdxeg0lpgov" path="res://sprites/UI/XP/taskbar/Panel/Metallic.png" id="53_4nbsr"]
 [ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
 [ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
+[ext_resource type="VideoStream" uid="uid://dukoms7a2sd46" path="res://video/joke/rickroll.ogv" id="56_1va0p"]
 [ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/notepad_windows.gd" id="59_h5tdf"]
 [ext_resource type="Texture2D" uid="uid://oqu17jxhsyo7" path="res://sprites/UI/XP/taskbar/RoyaleDark.png" id="70_vniw0"]
 [ext_resource type="Texture2D" uid="uid://bv1lttol3h0r3" path="res://sprites/UI/XP/taskbar/Panel/RoyaleDark.png" id="77_lddog"]
@@ -773,7 +774,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.11
-        Revision 0
+        Revision 1
 
 Registered to:
         PLAYERNAME"
@@ -1562,7 +1563,7 @@ mediaDict = Dictionary[String, Resource]({
 "keepcalm": ExtResource("44_tc8uq"),
 "philosoraptor": ExtResource("45_h5tdf"),
 "photograph": ExtResource("41_2iuns"),
-"rickroll": ExtResource("41_7gkqi")
+"rickroll": ExtResource("56_1va0p")
 })
 
 [node name="mainWindow" type="Window" parent="AppManager/memeFolder"]
@@ -1705,7 +1706,7 @@ stretch_mode = 5
 [node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme3/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "RickRoll.wma"
+text = "RickRoll.wmv"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1734,7 +1735,7 @@ stretch_mode = 5
 [node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme4/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "HamsterDance.wma"
+text = "HamsterDance.wmv"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1763,7 +1764,7 @@ stretch_mode = 5
 [node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme5/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "PBJ_Time.wma"
+text = "PBJ_Time.wmv"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1792,7 +1793,7 @@ stretch_mode = 5
 [node name="AppName" type="Label" parent="AppManager/memeFolder/mainWindow/Panel/ScrollContainer/FolderRows/meme6/IconContainer"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-text = "Photograph.wma"
+text = "Photograph.wmv"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1850,7 +1851,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("21_rm0al")
 myWindow = NodePath("Window")
-trollVideos = Array[VideoStreamTheora]([ExtResource("41_2iuns"), ExtResource("41_7gkqi"), ExtResource("45_flw08"), ExtResource("45_84hbc"), ExtResource("46_15b3c")])
+trollVideos = Array[VideoStreamTheora]([ExtResource("41_7gkqi"), ExtResource("41_2iuns"), ExtResource("45_flw08"), ExtResource("45_84hbc"), ExtResource("46_15b3c")])
 videoPlayer = NodePath("Window/Panel/VideoStreamPlayer")
 trollButton = NodePath("Window/Panel/VideoStreamPlayer/Secret2Button")
 
@@ -1905,6 +1906,17 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+v0.1.11-1 - Massive QoL Update (19/05/2026)
+- Remade Album System:
+	- Albums are now imported directly from resources at runtime (musicFiles.gd)
+	- Removed premade Tracks and Albums Resources
+	- Tracks and Albums are created at runtime, with info derived from metadata
+	- Album Art is now updated per track from metadata via 'metadata_block_picture' and coverArt property
+- Memes are now returned using a shuffle bag algorithm
+- Recompressed existing videos for smaller file size
+- Compressed User Icons and backgrounds (lossless -> lossy)
+- Fixed Bug where settings and volume control theme did not update correctly
+
 v0.1.11 - Featureless QoL Update (11/05/2026)
 - Window order can now be changed by Taskbar buttons and Icons
 - Updated Window Tile for Luna theme
@@ -2632,6 +2644,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Photo16/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Photo17/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
 [connection signal="pressed" from="AppManager/pictureApp/Window/Panel/ScrollContainer/FolderRows/Photo18/IconContainer/AppButton" to="AppManager/pictureApp" method="_on_photo_button_pressed" flags=18]
+[connection signal="theme_changed" from="AppManager/settingApp" to="AppManager/settingApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/settingApp/Window" to="AppManager/settingApp" method="_on_window_close_requested"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/HFButton" to="AppManager/settingApp" method="_on_check_button_toggled"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/CRTButton" to="AppManager/settingApp" method="_on_crt_button_toggled"]

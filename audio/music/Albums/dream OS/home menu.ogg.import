@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djunjh22s3yn0"
+path="res://.godot/imported/home menu.ogg-3e905a610b76210fefad86e4a694b4ad.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/dream OS/home menu.ogg"
+dest_files=["res://.godot/imported/home menu.ogg-3e905a610b76210fefad86e4a694b4ad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

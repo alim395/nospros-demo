@@ -191,6 +191,7 @@ func updateTheme() -> void:
 		tfInstance.theme = globalParameters.defaultWindowTheme
 	if activeInstance != null:
 		activeInstance.theme = globalParameters.defaultWindowTheme
+	settingApp.theme = globalParameters.defaultWindowTheme
 	trollApp.theme = globalParameters.defaultWindowTheme
 	memeFolder.changeTheme(globalParameters.defaultWindowTheme)
 	pcApp.theme = globalParameters.defaultWindowTheme

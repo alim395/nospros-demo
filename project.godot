@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="NosPros"
+config/version="0.1.11.1"
 run/main_scene="uid://c7pbugsh5ew6t"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -20,6 +21,7 @@ config/windows_native_icon="res://icon.ico"
 
 MusicManager="*res://addons/MusicManager/music_manager.tscn"
 globalParameters="*res://global_parameters.gd"
+MusicFiles="*res://musicFiles.gd"
 
 [display]
 

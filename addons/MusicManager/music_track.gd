@@ -9,3 +9,7 @@ extends Resource
 
 ## Audiostream file for the song: .ogg or .wav are recommended with Godot. Other file types may work but are not recommended.
 @export var track: AudioStream
+
+@export var trackNum: int = 0
+
+@export var coverArt: Texture2D

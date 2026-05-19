@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbbvxymfc1eq7"
+path="res://.godot/imported/Dreamscape.ogg-af8ab726c269d8fc6ce48cf3a23eff84.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Dreamscape.ogg"
+dest_files=["res://.godot/imported/Dreamscape.ogg-af8ab726c269d8fc6ce48cf3a23eff84.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

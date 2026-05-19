@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpkvitj7psijc"
+path="res://.godot/imported/Born To Be Wasted.ogg-72c6aa095dbed26c94c05e57c9460f28.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Born To Be Wasted.ogg"
+dest_files=["res://.godot/imported/Born To Be Wasted.ogg-72c6aa095dbed26c94c05e57c9460f28.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

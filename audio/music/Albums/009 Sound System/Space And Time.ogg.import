@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buhlapvyswv27"
+path="res://.godot/imported/Space And Time.ogg-c3ad76f0c1953e60921d0e60ade4c18a.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Space And Time.ogg"
+dest_files=["res://.godot/imported/Space And Time.ogg-c3ad76f0c1953e60921d0e60ade4c18a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

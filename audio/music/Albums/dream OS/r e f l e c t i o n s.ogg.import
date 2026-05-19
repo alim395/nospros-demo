@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6axf7g6myyhf"
+path="res://.godot/imported/r e f l e c t i o n s.ogg-7020a1981d0073c68d9332370a03ae11.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/dream OS/r e f l e c t i o n s.ogg"
+dest_files=["res://.godot/imported/r e f l e c t i o n s.ogg-7020a1981d0073c68d9332370a03ae11.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

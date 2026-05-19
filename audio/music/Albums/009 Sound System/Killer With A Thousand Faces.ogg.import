@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhj5fiefx2lyv"
+path="res://.godot/imported/Killer With A Thousand Faces.ogg-2853b8f51036997ad4acc3b25e38a76f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Albums/009 Sound System/Killer With A Thousand Faces.ogg"
+dest_files=["res://.godot/imported/Killer With A Thousand Faces.ogg-2853b8f51036997ad4acc3b25e38a76f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
