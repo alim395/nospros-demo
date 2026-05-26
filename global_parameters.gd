@@ -32,6 +32,8 @@ var icon_dict : Dictionary[String, Texture2D]
 @export var defaultWindowTheme : Theme
 @export var defaultButtonStyle : buttonStyle
 @export var defaultWallpaper : Texture2D
+@export var startTheme : MusicTrack
+@export var shutdownTheme : MusicTrack
 
 # Error Stats
 enum errorType {critical, alert}
@@ -49,6 +51,7 @@ signal CloseAppSignal(taskApp:String)
 
 @export var secret1 : bool = false
 @export var secret2 : bool = false
+@export var secret3 : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -59,6 +62,8 @@ func _ready() -> void:
 	defaultTheme = TaskThemes.Luna
 	defaultWindowTheme = LunaTheme
 	defaultButtonStyle = buttonStyle.Classic
+	startTheme = preload("res://MMSongs/XPStart.tres")
+	shutdownTheme = preload("res://MMSongs/XPShutdown.tres")
 	errorCount = 0
 	
 	# Resources

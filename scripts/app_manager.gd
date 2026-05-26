@@ -6,6 +6,7 @@ var activeTaskName : String
 # Multitask Instances
 var webInstance : Node
 var musicInstance : Node
+var wmpInstance : Node
 var tfInstance : Node
 var isTrolling : bool = false
 
@@ -26,6 +27,7 @@ var taskCount : int = 0
 @onready var musicPlayerApp = preload("res://scenes/musicPlayer.tscn")
 @onready var browserApp = preload("res://scenes/globeTrotter.tscn")
 @onready var notepadApp = preload("res://scenes/notepad.tscn")
+@onready var wmpApp = preload("res://scenes/mediaPlayer.tscn")
 
 # Others
 @export var dWins : Control
@@ -36,6 +38,7 @@ func _ready() -> void:
 	activeInstance = null
 	webInstance = null
 	musicInstance = null
+	wmpInstance = null
 	#closeCoreApps()
 	globalParameters.GetTrolled.connect(_on_troll_button_pressed)
 	theme = globalParameters.defaultWindowTheme
@@ -48,6 +51,8 @@ func _process(_delta: float) -> void:
 		openSettingsApp()
 	if Input.is_action_just_released("DEBUG_ActivateTrollMode") :
 		globalParameters.GetTrolled.emit()
+	if Input.is_action_just_released("DEBUG_OpenMediaApp") :
+		openMediaPlayer()
 	if globalParameters.trollMode:
 		trollIcon.visible = true
 		globalParameters.trollMode = false
@@ -189,6 +194,8 @@ func updateTheme() -> void:
 		musicInstance.theme = globalParameters.defaultWindowTheme
 	if tfInstance != null:
 		tfInstance.theme = globalParameters.defaultWindowTheme
+	if wmpInstance != null:
+		wmpInstance.theme = globalParameters.defaultWindowTheme
 	if activeInstance != null:
 		activeInstance.theme = globalParameters.defaultWindowTheme
 	settingApp.theme = globalParameters.defaultWindowTheme
@@ -248,3 +255,17 @@ func openPCApp() -> void:
 func _on_pc_button_pressed() -> void:
 	openPCApp()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
+
+func openMediaPlayer() -> void:
+	if wmpInstance == null:
+		wmpInstance = wmpApp.instantiate()
+		add_child(wmpInstance)
+		if taskCount > 0:
+			wmpInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+		var tB = taskBar.openTask("WMP")
+		wmpInstance.setTaskButton(tB)
+		updateTaskCount()
+	else:
+		print("WMP ALREADY OPEN!")
+		wmpInstance.myTaskButton.set_pressed_no_signal(true)
+		wmpInstance.minimizeWindow()

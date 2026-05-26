@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=37 format=3 uid="uid://decf48acwjrm8"]
 
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_t4c88"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://cfbtjk8h84bkd" path="res://audio/sfx/musicPlayerButtons/Play.ogg" id="8_8evac"]
 [ext_resource type="AudioStream" uid="uid://dtto4f6wn3g5p" path="res://audio/sfx/musicPlayerButtons/Pause.ogg" id="9_knkca"]
 [ext_resource type="AudioStream" uid="uid://y4w6jskccl0c" path="res://audio/sfx/musicPlayerButtons/Stop.ogg" id="10_2jk8m"]
+[ext_resource type="StyleBox" uid="uid://dogf7fgtkji0b" path="res://themes/eXP/styles/window/WindowPanel.tres" id="10_5nukk"]
+[ext_resource type="StyleBox" uid="uid://6gxnkvgkcv6k" path="res://themes/eXP/styles/custom/displayPanelClassic2.tres" id="11_rmxtt"]
 [ext_resource type="AudioStream" uid="uid://det7copv4y5rx" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.ogg" id="11_t4c88"]
 [ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="13_8evac"]
 [ext_resource type="Script" uid="uid://p5i3fo41p05n" path="res://scripts/audio_wave_visualizer.gd" id="13_knkca"]
@@ -28,9 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://df2t2xxgtw503" path="res://sprites/musicButtons/Shuffle.svg" id="21_5nukk"]
 [ext_resource type="Texture2D" uid="uid://c6syusnipt7s2" path="res://sprites/musicButtons/musicGrabber.png" id="25_a15ay"]
 [ext_resource type="StyleBox" uid="uid://56hd8f0hh7qu" path="res://themes/eXP/styles/custom/slider_alt/sliderThick.tres" id="30_rmxtt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcwgm"]
-bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_2jk8m"]
 offsets = PackedFloat32Array(0.7, 1)
@@ -80,16 +79,16 @@ theme = ExtResource("1_t4c88")
 script = ExtResource("1_gkd1q")
 myWindow = NodePath("Window")
 albumList = Array[ExtResource("3_y1jbc")]([ExtResource("5_yb2vk")])
-trackNumLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/TrackNumLabel")
-playtimeLabel = NodePath("Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime/playTimeLabel")
-albumOption = NodePath("Window/Panel/OptionsContainer/AlbumContainer/OptionButton")
-trackOption = NodePath("Window/Panel/OptionsContainer/TrackContainer/OptionButton")
-albumArt = NodePath("Window/Panel/HBoxContainer/VBoxContainer/TextureRect")
+trackNumLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime/TrackNumLabel")
+playtimeLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime/playTimeLabel")
+albumOption = NodePath("Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer/OptionButton")
+trackOption = NodePath("Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer/OptionButton")
+albumArt = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline/TextureRect")
 defaultAlbumArt = ExtResource("3_yj2aj")
-artistLabel = NodePath("Window/Panel/HBoxContainer/VBoxContainer/Label")
-seekSlider = NodePath("Window/Panel/OptionsContainer/seekSlider")
-loopButton = NodePath("Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/LoopButton")
-shuffleButton = NodePath("Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/Shuffle")
+artistLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/Label")
+seekSlider = NodePath("Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/seekSlider")
+loopButton = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer/LoopButton")
+shuffleButton = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/Shuffle")
 playSound = ExtResource("8_8evac")
 pauseSound = ExtResource("9_knkca")
 stopSound = ExtResource("10_2jk8m")
@@ -101,70 +100,68 @@ canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 title = "Music Player"
 initial_position = 1
-size = Vector2i(480, 224)
+size = Vector2i(432, 190)
+wrap_controls = true
 unresizable = true
 content_scale_mode = 1
 content_scale_aspect = 1
 content_scale_stretch = 1
 
-[node name="Panel" type="Panel" parent="Window"]
+[node name="Panel" type="PanelContainer" parent="Window"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("10_5nukk")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 0
-offset_left = 16.0
-offset_top = 19.0
-offset_right = 464.0
-offset_bottom = 109.0
-theme_override_constants/separation = 32
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="DisplayPanel" type="PanelContainer" parent="Window/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(168, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_dcwgm")
+size_flags_vertical = 3
+theme_override_constants/separation = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/HBoxContainer/DisplayPanel"]
+[node name="DisplayPanelContainer" type="PanelContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(152, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("11_rmxtt")
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer"]
+[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
 script = ExtResource("6_py3vy")
 
-[node name="WaveContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer"]
+[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer"]
 visible = false
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer/WaveContainer"]
 z_index = 1
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("13_knkca")
 
-[node name="Panel" type="Panel" parent="Window/Panel/HBoxContainer/DisplayPanel/MarginContainer/WaveContainer"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/HBoxContainer/DisplayPanel"]
+[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TrackNumLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime"]
+[node name="TrackNumLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -173,7 +170,7 @@ theme_override_font_sizes/font_size = 32
 text = "[00]"
 horizontal_alignment = 1
 
-[node name="playTimeLabel" type="Label" parent="Window/Panel/HBoxContainer/DisplayPanel/PanelPlayTime"]
+[node name="playTimeLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
@@ -182,34 +179,37 @@ theme_override_font_sizes/font_size = 32
 text = "00:00"
 horizontal_alignment = 1
 
-[node name="Panel Button" type="TextureButton" parent="Window/Panel/HBoxContainer/DisplayPanel" node_paths=PackedStringArray("panelVisuals")]
+[node name="Panel Button" type="TextureButton" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer" node_paths=PackedStringArray("panelVisuals")]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_pressed = SubResource("GradientTexture2D_t4c88")
 texture_hover = SubResource("GradientTexture2D_2jk8m")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("14_2jk8m")
 glassTap = ExtResource("15_t4c88")
-panelVisuals = [NodePath("../PanelPlayTime"), NodePath("../MarginContainer/AudioSpectrumVisualizer"), NodePath("../MarginContainer/WaveContainer")]
+panelVisuals = [NodePath("../MarginContainer/PanelPlayTime"), NodePath("../MarginContainer/AudioSpectrumVisualizer"), NodePath("../MarginContainer/AudioWaveVisualizer")]
 
-[node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
+[node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PPSContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/ButtonContainer"]
+[node name="PPSContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="PlayButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -219,11 +219,12 @@ icon = ExtResource("13_8evac")
 icon_alignment = 1
 expand_icon = true
 
-[node name="PauseButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="PauseButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -233,11 +234,12 @@ icon = ExtResource("14_knkca")
 icon_alignment = 1
 expand_icon = true
 
-[node name="StopButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="StopButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -247,11 +249,12 @@ icon = ExtResource("15_2jk8m")
 icon_alignment = 1
 expand_icon = true
 
-[node name="LoopButton" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="LoopButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -262,16 +265,17 @@ icon = ExtResource("16_t4c88")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekContainer" type="HBoxContainer" parent="Window/Panel/HBoxContainer/ButtonContainer"]
+[node name="SeekContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PrevTrack" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="PrevTrack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -281,11 +285,12 @@ icon = ExtResource("17_a15ay")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekBack" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="SeekBack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -296,11 +301,12 @@ icon = ExtResource("18_e4hja")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekForward" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="SeekForward" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -310,11 +316,12 @@ icon = ExtResource("19_bnu85")
 icon_alignment = 1
 expand_icon = true
 
-[node name="NextTrack" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="NextTrack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -324,11 +331,12 @@ icon = ExtResource("20_66olg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Shuffle" type="Button" parent="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="Shuffle" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("16_rmxtt")
 theme_override_styles/pressed = ExtResource("17_ca0gc")
 theme_override_styles/hover = ExtResource("16_rmxtt")
@@ -339,58 +347,71 @@ icon = ExtResource("21_5nukk")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/HBoxContainer"]
+[node name="ArtContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(72, 90)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Window/Panel/HBoxContainer/VBoxContainer"]
+[node name="ArtOutline" type="PanelContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("11_rmxtt")
+
+[node name="TextureRect" type="TextureRect" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("3_yj2aj")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="Label" type="Label" parent="Window/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer"]
 layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 16
 theme_override_font_sizes/font_size = 12
-text = "ARTIST AB"
+text = "ARTIST"
 horizontal_alignment = 1
 vertical_alignment = 1
-text_overrun_behavior = 5
+text_overrun_behavior = 3
 
-[node name="OptionsContainer" type="VBoxContainer" parent="Window/Panel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 116.0
-offset_right = 464.0
-offset_bottom = 212.0
+[node name="OptionsContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
 
-[node name="AlbumContainer" type="HBoxContainer" parent="Window/Panel/OptionsContainer"]
+[node name="AlbumContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Window/Panel/OptionsContainer/AlbumContainer"]
+[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer"]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 text = "Album :"
 
-[node name="OptionButton" type="OptionButton" parent="Window/Panel/OptionsContainer/AlbumContainer"]
+[node name="OptionButton" type="OptionButton" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 
-[node name="TrackContainer" type="HBoxContainer" parent="Window/Panel/OptionsContainer"]
+[node name="TrackContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Window/Panel/OptionsContainer/TrackContainer"]
+[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer"]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 text = "Track   :"
 
-[node name="OptionButton" type="OptionButton" parent="Window/Panel/OptionsContainer/TrackContainer"]
+[node name="OptionButton" type="OptionButton" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 
-[node name="seekSlider" type="HSlider" parent="Window/Panel/OptionsContainer"]
+[node name="seekSlider" type="HSlider" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+mouse_default_cursor_shape = 8
 theme_override_icons/grabber = ExtResource("25_a15ay")
 theme_override_icons/grabber_highlight = ExtResource("25_a15ay")
 theme_override_icons/grabber_disabled = ExtResource("25_a15ay")
@@ -402,19 +423,19 @@ scrollable = false
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
-[connection signal="pressed" from="Window/Panel/HBoxContainer/DisplayPanel/Panel Button" to="Window/Panel/HBoxContainer/DisplayPanel/Panel Button" method="_on_pressed"]
-[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/StopButton" to="." method="_on_stop_button_pressed"]
-[connection signal="toggled" from="Window/Panel/HBoxContainer/ButtonContainer/PPSContainer/LoopButton" to="." method="_on_loop_button_toggled"]
-[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/PrevTrack" to="." method="_on_prev_track_pressed"]
-[connection signal="button_down" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekBack" to="." method="_on_seek_back_button_down"]
-[connection signal="button_up" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekBack" to="." method="_on_seek_back_button_up"]
-[connection signal="button_down" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_down"]
-[connection signal="button_up" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_up"]
-[connection signal="pressed" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/NextTrack" to="." method="_on_next_track_pressed"]
-[connection signal="toggled" from="Window/Panel/HBoxContainer/ButtonContainer/SeekContainer/Shuffle" to="." method="_on_shuffle_toggled"]
-[connection signal="item_selected" from="Window/Panel/OptionsContainer/AlbumContainer/OptionButton" to="." method="_on_album_option_button_item_selected"]
-[connection signal="item_selected" from="Window/Panel/OptionsContainer/TrackContainer/OptionButton" to="." method="_on_track_option_button_item_selected"]
-[connection signal="drag_ended" from="Window/Panel/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_ended"]
-[connection signal="drag_started" from="Window/Panel/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_started"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/Panel Button" to="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/Panel Button" method="_on_pressed"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="toggled" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer/LoopButton" to="." method="_on_loop_button_toggled"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/PrevTrack" to="." method="_on_prev_track_pressed"]
+[connection signal="button_down" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/SeekBack" to="." method="_on_seek_back_button_down"]
+[connection signal="button_up" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/SeekBack" to="." method="_on_seek_back_button_up"]
+[connection signal="button_down" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_down"]
+[connection signal="button_up" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_up"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/NextTrack" to="." method="_on_next_track_pressed"]
+[connection signal="toggled" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/Shuffle" to="." method="_on_shuffle_toggled"]
+[connection signal="item_selected" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer/OptionButton" to="." method="_on_album_option_button_item_selected"]
+[connection signal="item_selected" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer/OptionButton" to="." method="_on_track_option_button_item_selected"]
+[connection signal="drag_ended" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_ended"]
+[connection signal="drag_started" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_started"]

@@ -12,8 +12,14 @@ var isSubMinimize : bool = false
 
 @export var mediaDict : Dictionary[String, Resource]
 
+@export var folderRows : HFlowContainer
+var mBScene: PackedScene = preload("res://scenes/photoButton.tscn")
+var photoMemesPath : String = "res://sprites/memes/"
+var videoMemesPath : String = "res://video/memes/"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	generateMemeButtons()
 	imageDisplay.visible = false
 	videoPlayer.visible = false
 
@@ -100,3 +106,60 @@ func _on_meme_video_button_pressed(videoKey: String) -> void:
 	# Sub Task Button
 	var tB = %Taskbar.openTask("memePlayer")
 	setSubTaskButton(tB)
+
+func generateMemeButtons() -> void:
+	# Load Images
+	if ResourceLoader.list_directory(photoMemesPath):
+		var photoMemes : PackedStringArray = ResourceLoader.list_directory(photoMemesPath)
+		for p in photoMemes:
+			# Ignore Directories
+			if p.contains("/"):
+				continue
+			var memeName : String = p.split(".")[0]
+			var memePhoto : Texture2D = ResourceLoader.load(photoMemesPath + p) as Texture2D
+			# Add to Media Dictionary
+			mediaDict[memeName] = memePhoto
+			# Add button
+			var mB = mBScene.instantiate()
+			mB.call("setPhoto", memePhoto)
+			mB.call("setLabel", memeName)
+			var mBButton : TextureButton = mB.pButton
+			mBButton.connect("pressed", _on_meme_image_button_pressed.bind(memeName))
+			mBButton.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+			folderRows.add_child(mB)
+	# Load Videos
+	if ResourceLoader.list_directory(videoMemesPath):
+		var videoMemes : PackedStringArray = ResourceLoader.list_directory(videoMemesPath)
+		var videoThumbs : PackedStringArray = ResourceLoader.list_directory(videoMemesPath + "thumb/")
+		# Construct Thumbnail Dict
+		var vidThumbDict : Dictionary[String, Texture2D] = {}
+		for t in videoThumbs:
+			# Ignore Directories
+			if t.contains("/"):
+				continue
+			var thumbName : String = t.split(".")[0]
+			var thumbPhoto : Texture2D = ResourceLoader.load(videoMemesPath + "thumb/" + t) as Texture2D
+			# Add to thumb Dictionary
+			vidThumbDict[thumbName] = thumbPhoto
+		# Make Video Buttons
+		for v in videoMemes:
+			# Ignore Directories
+			if v.contains("/"):
+				continue
+			var memeName : String = v.split(".")[0]
+			# Get Thumbnail
+			var memePhoto : Texture2D = vidThumbDict[memeName]
+			# Get Video
+			var memeVideo : VideoStreamTheora = ResourceLoader.load(videoMemesPath + v) as VideoStreamTheora
+			# Add to Media Dictionary
+			mediaDict[memeName] = memeVideo
+			# Add button
+			var mB = mBScene.instantiate()
+			mB.call("setPhoto", memePhoto)
+			mB.call("setLabel", memeName)
+			var mBButton : TextureButton = mB.pButton
+			mBButton.connect("pressed", _on_meme_video_button_pressed.bind(memeName))
+			mBButton.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+			folderRows.add_child(mB)
+	
+	pass

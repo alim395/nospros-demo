@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://btdhwmec8vods"]
+
+[ext_resource type="Texture2D" uid="uid://ditiabfymucor" path="res://themes/eXP/styles/custom/classic/button/ButtonWhite.png" id="1_ky54a"]
+
+[resource]
+texture = ExtResource("1_ky54a")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

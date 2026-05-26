@@ -1,34 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://g0hfxho8l0ty"]
+[gd_scene load_steps=24 format=3 uid="uid://g0hfxho8l0ty"]
 
 [ext_resource type="Script" uid="uid://ff2m73ec4hcg" path="res://scripts/volume.gd" id="1_8ty1d"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_bml30"]
 [ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="2_wvjlw"]
 [ext_resource type="Texture2D" uid="uid://wn6nt17n6fj2" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale.png" id="3_7oq1j"]
-[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="3_fqi84"]
 [ext_resource type="StyleBox" uid="uid://du0hynwy7v360" path="res://themes/eXP/styles/custom/statusbar/StatusbarPanelBorder.tres" id="3_mch7p"]
+[ext_resource type="StyleBox" uid="uid://nmfxlw37mbif" path="res://themes/eXP/styles/custom/panelContainer_1.tres" id="3_yduor"]
 [ext_resource type="Texture2D" uid="uid://bmaaeu5lysxqi" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale-hover.png" id="4_mch7p"]
 [ext_resource type="Texture2D" uid="uid://57sdfc3e2dia" path="res://sprites/UI/XP/panels/Sound (left) (small).png" id="4_wv35w"]
 [ext_resource type="Texture2D" uid="uid://dt4njyt18d6ic" path="res://themes/eXP/styles/custom/slider_alt/slider-horz-scale-disabled.png" id="5_gocru"]
 [ext_resource type="Texture2D" uid="uid://dg2yqdxt70kee" path="res://sprites/UI/XP/panels/Sound (right) (small).png" id="8_1ohds"]
 [ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="9_1ohds"]
-[ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="12_5o1ct"]
+[ext_resource type="StyleBox" uid="uid://b5duolq4gnb61" path="res://themes/eXP/styles/custom/panelContainer_2.tres" id="10_hjk02"]
 [ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="13_yduor"]
 [ext_resource type="AudioStream" uid="uid://fn41kq21gnjv" path="res://audio/sfx/Ding.ogg" id="14_fqi84"]
 [ext_resource type="AudioStream" uid="uid://heft5rnta720" path="res://audio/sfx/logon.ogg" id="15_yduor"]
 [ext_resource type="AudioStream" uid="uid://djn8u6033xro0" path="res://audio/sfx/errorXP.ogg" id="16_hjk02"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvi8a"]
-
-[sub_resource type="StyleBox" id="StyleBox_hjk02"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_fqi84")
-style_boxes = Array[StyleBox]([ExtResource("3_mch7p"), ExtResource("2_wvjlw")])
-metadata/_custom_type_script = "uid://bpobhv17fo8i"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w60lv"]
 bg_color = Color(0.9254902, 0.9137255, 0.84705883, 1)
@@ -49,17 +38,6 @@ colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 1, 0.5019608, 0.50196
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_fqi84"]
 gradient = SubResource("Gradient_d5iur")
 width = 3
-
-[sub_resource type="StyleBox" id="StyleBox_scryu"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = -1.0
-content_margin_top = -1.0
-content_margin_right = -1.0
-content_margin_bottom = -1.0
-script = ExtResource("3_fqi84")
-style_boxes = Array[StyleBox]([ExtResource("3_mch7p"), ExtResource("12_5o1ct")])
-metadata/_custom_type_script = "uid://bpobhv17fo8i"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7oq1j"]
 
@@ -139,7 +117,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-theme_override_styles/panel = SubResource("StyleBox_hjk02")
+theme_override_styles/panel = ExtResource("3_yduor")
 
 [node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master"]
 layout_mode = 2
@@ -232,7 +210,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
-theme_override_styles/panel = SubResource("StyleBox_scryu")
+theme_override_styles/panel = ExtResource("10_hjk02")
 
 [node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others"]
 layout_mode = 2

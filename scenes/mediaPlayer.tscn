@@ -1,0 +1,378 @@
+[gd_scene load_steps=41 format=3 uid="uid://cjs2gaxkb1rsh"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_w2bi0"]
+[ext_resource type="VideoStream" uid="uid://de0i5tg0ndtj2" path="res://video/wmv/planet.ogv" id="2_agk2i"]
+[ext_resource type="Script" uid="uid://cs0154l1s6wsf" path="res://scripts/mediaPlayer.gd" id="2_mw4q8"]
+[ext_resource type="StyleBox" uid="uid://dogf7fgtkji0b" path="res://themes/eXP/styles/window/WindowPanel.tres" id="2_rcnly"]
+[ext_resource type="Texture2D" uid="uid://c6syusnipt7s2" path="res://sprites/musicButtons/musicGrabber.png" id="3_rhyf6"]
+[ext_resource type="StyleBox" uid="uid://56hd8f0hh7qu" path="res://themes/eXP/styles/custom/slider_alt/sliderThick.tres" id="4_cgij8"]
+[ext_resource type="StyleBox" uid="uid://6gxnkvgkcv6k" path="res://themes/eXP/styles/custom/displayPanelClassic2.tres" id="4_wu4ry"]
+[ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="6_tqbdp"]
+[ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="9_6xdpb"]
+[ext_resource type="StyleBox" uid="uid://b2w2c66dh46dg" path="res://themes/eXP/styles/custom/classic/button/buttonClassicPressed2.tres" id="9_wu4ry"]
+[ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="10_koxm3"]
+[ext_resource type="StyleBox" uid="uid://cqoxwovvtldc4" path="res://themes/eXP/styles/custom/classic/button/buttonClassic.tres" id="10_mq3oo"]
+[ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="11_ejjfo"]
+[ext_resource type="Texture2D" uid="uid://b5oouud5yf3kc" path="res://sprites/musicButtons/TrackPrev.svg" id="12_2yk8m"]
+[ext_resource type="Texture2D" uid="uid://bkqxyr333f8jj" path="res://sprites/musicButtons/SeekBack.svg" id="13_h2wnx"]
+[ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="13_mq3oo"]
+[ext_resource type="Texture2D" uid="uid://dlfdy5idatye6" path="res://sprites/musicButtons/SeekForward.svg" id="14_dgjwm"]
+[ext_resource type="Texture2D" uid="uid://bqsgg1ap5dnf0" path="res://sprites/musicButtons/TrackNext.svg" id="15_iobfv"]
+[ext_resource type="Texture2D" uid="uid://dg2yqdxt70kee" path="res://sprites/UI/XP/panels/Sound (right) (small).png" id="17_ieqqa"]
+[ext_resource type="Texture2D" uid="uid://brvje4vhj353e" path="res://sprites/UI/XP/panels/Sound Muted.png" id="18_4oh08"]
+[ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="22_2hawr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mq3oo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y4q8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7pyc"]
+bg_color = Color(0, 0, 0.8, 1)
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhdn3"]
+bg_color = Color(0, 0, 0.8, 1)
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b4txl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y4q8"]
+bg_color = Color(0.92947316, 0.91775256, 0.8548469, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ysi0v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mw4q8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k7kou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqbdp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu4ry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3rq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8muw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmy8t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjely"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cfq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hawr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu4ry"]
+bg_color = Color(0.5, 0.5, 1, 1)
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw4q8"]
+bg_color = Color(0, 0, 0.735357, 1)
+expand_margin_bottom = 1.0
+
+[node name="mediaPlayer" type="Control" node_paths=PackedStringArray("myWindow", "videoPlayer", "seekSlider", "playButton", "pauseButton", "stopButton", "muteButton", "volumeSlider")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w2bi0")
+script = ExtResource("2_mw4q8")
+myWindow = NodePath("Window")
+videoPlayer = NodePath("Window/WindowPanel/VBoxContainer/PanelContainer/AspectRatioContainer/VideoPlayer")
+seekSlider = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/seekSlider")
+playButton = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PlayButton")
+pauseButton = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PauseButton")
+stopButton = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/StopButton")
+muteButton = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/MuteButton")
+muteIcons = Array[Texture2D]([ExtResource("17_ieqqa"), ExtResource("18_4oh08")])
+volumeSlider = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/VolumeSlider")
+
+[node name="Window" type="Window" parent="."]
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Media Player"
+initial_position = 1
+size = Vector2i(224, 204)
+wrap_controls = true
+min_size = Vector2i(213, 160)
+content_scale_mode = 1
+content_scale_aspect = 4
+
+[node name="WindowPanel" type="PanelContainer" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_rcnly")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowPanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="File" type="MenuButton" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mq3oo")
+disabled = true
+text = "File"
+item_count = 6
+popup/item_0/text = "New"
+popup/item_0/id = 0
+popup/item_1/text = "Open..."
+popup/item_1/id = 5
+popup/item_2/text = "Save"
+popup/item_2/id = 1
+popup/item_3/text = "Save as..."
+popup/item_3/id = 2
+popup/item_4/id = 3
+popup/item_4/separator = true
+popup/item_5/text = "Exit"
+popup/item_5/id = 4
+
+[node name="Button2" type="Button" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2y4q8")
+disabled = true
+text = "Edit"
+flat = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_wu4ry")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Window/WindowPanel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+ratio = 1.775
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="Window/WindowPanel/VBoxContainer/PanelContainer/AspectRatioContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 120)
+layout_mode = 2
+stream = ExtResource("2_agk2i")
+expand = true
+
+[node name="Controls" type="MarginContainer" parent="Window/WindowPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="seekSlider" type="HSlider" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_rhyf6")
+theme_override_icons/grabber_highlight = ExtResource("3_rhyf6")
+theme_override_icons/grabber_disabled = ExtResource("3_rhyf6")
+theme_override_styles/slider = ExtResource("4_cgij8")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_f7pyc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qhdn3")
+step = 0.1
+scrollable = false
+
+[node name="ControlButtons" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PPS" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = ExtResource("6_tqbdp")
+
+[node name="PPSContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b4txl")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ysi0v")
+icon = ExtResource("9_6xdpb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PauseButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mw4q8")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k7kou")
+icon = ExtResource("10_koxm3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StopButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tqbdp")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu4ry")
+icon = ExtResource("11_ejjfo")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SEEK" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_styles/panel = ExtResource("13_mq3oo")
+
+[node name="SeekContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PrevTrack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g3rq4")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8muw")
+disabled = true
+icon = ExtResource("12_2yk8m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekBack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmy8t")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bjely")
+disabled = true
+icon = ExtResource("13_h2wnx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekForward" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmy8t")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bjely")
+disabled = true
+icon = ExtResource("14_dgjwm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NextTrack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmy8t")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bjely")
+disabled = true
+icon = ExtResource("15_iobfv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Volume" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = ExtResource("22_2hawr")
+
+[node name="VolumeContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MuteButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2cfq5")
+theme_override_styles/pressed = ExtResource("9_wu4ry")
+theme_override_styles/hover = ExtResource("10_mq3oo")
+theme_override_styles/hover_pressed = ExtResource("9_wu4ry")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2y4q8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2hawr")
+toggle_mode = true
+icon = ExtResource("17_ieqqa")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VolumeSlider" type="HSlider" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+mouse_default_cursor_shape = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_wu4ry")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mw4q8")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="finished" from="Window/WindowPanel/VBoxContainer/PanelContainer/AspectRatioContainer/VideoPlayer" to="." method="_on_video_player_finished"]
+[connection signal="drag_ended" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/seekSlider" to="." method="_on_seek_slider_drag_ended"]
+[connection signal="drag_started" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/seekSlider" to="." method="_on_seek_slider_drag_started"]
+[connection signal="button_up" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PauseButton" to="." method="_on_pause_button_button_up"]
+[connection signal="button_up" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/StopButton" to="." method="_on_stop_button_button_up"]
+[connection signal="toggled" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="value_changed" from="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]

@@ -1,10 +1,10 @@
 extends Control
 
-const VU_COUNT = 32
+const VU_COUNT = 34
 const FREQ_MAX = 11050.0
 
 const WIDTH = 160
-const HEIGHT = 80
+const HEIGHT = 82-6
 const HEIGHT_SCALE = 8.0
 const MIN_DB = 60
 const ANIMATION_SPEED = 0.1

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var startSong : MusicTrack
+var startSong : MusicTrack
 @export var welcomeScreen : Control
 @export var welcomeName : Label
 @export var welcomeAnimation : AnimationPlayer
@@ -20,7 +20,7 @@ extends Node2D
 #@export var logOffSound : AudioStream
 @export var logOffSong : MusicTrack
 
-@export var shutdownSong : MusicTrack
+var shutdownSong : MusicTrack
 @export var shutdownScreen : Control
 @export var shutdownAnimation : AnimationPlayer
 
@@ -33,6 +33,8 @@ extends Node2D
 func _ready() -> void:
 	# Connect Signal
 	globalParameters.CloseAppSignal.connect(closeApp)
+	startSong = globalParameters.startTheme
+	shutdownSong = globalParameters.shutdownTheme
 	welcomeName.text = globalParameters.playerName
 	ScreenFilter.visible = true;
 	softBlur.visible = not globalParameters.highFidelity
