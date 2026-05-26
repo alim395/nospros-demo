@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3q0pr7v62yj1"]
+
+[ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/wallpapers/Bliss.png" id="1_i0jid"]
+[ext_resource type="Script" uid="uid://boql5c6xqb07c" path="res://scripts/photo_button.gd" id="1_m75or"]
+[ext_resource type="Texture2D" uid="uid://dga1gs336dl6c" path="res://sprites/icons/FOCUSED_Icon.png" id="2_m75or"]
+
+[node name="Photo0" type="MarginContainer" node_paths=PackedStringArray("pButton", "pLabel")]
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_m75or")
+pButton = NodePath("IconContainer/AppButton")
+pLabel = NodePath("IconContainer/AppName")
+
+[node name="IconContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconContainer"]
+custom_minimum_size = Vector2(136, 76.5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_i0jid")
+texture_focused = ExtResource("2_m75or")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Bliss"
+horizontal_alignment = 1
+vertical_alignment = 1

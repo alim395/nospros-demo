@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://dfq0esfuvf8kp" path="res://shaders/GaussianBlur.gdshader" id="3_1sggn"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="4_e6vpq"]
 [ext_resource type="Script" uid="uid://b4xe2sthx85xq" path="res://scripts/preview.gd" id="4_o7i7e"]
-[ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/Bliss21.png" id="5_uon5e"]
+[ext_resource type="Texture2D" uid="uid://cr2ref0h8d581" path="res://sprites/backgrounds/wallpapers/Bliss.png" id="5_uon5e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7i7e"]
 shader = ExtResource("3_1sggn")

@@ -68,8 +68,10 @@ func _ready() -> void:
 	
 	currentTrackArtist = currentTrack.artist
 	artistLabel.text = currentTrackArtist
+	artistLabel.tooltip_text = currentTrackArtist
 	
 	seekSlider.editable = false
+	seekSlider.set_default_cursor_shape(CursorShape.CURSOR_FORBIDDEN)
 	seekSlider.max_value = currentTrack.track.get_length()
 	
 	MusicManager.stop_music.emit()
@@ -88,6 +90,7 @@ func _on_play_button_pressed() -> void:
 	if seekSlider.value != 0:
 		isInitial = false
 	seekSlider.editable = true
+	seekSlider.set_default_cursor_shape(CursorShape.CURSOR_POINTING_HAND)
 	if not isPlaying:
 		isPlaying = true
 		if not isPaused:
@@ -112,6 +115,7 @@ func _on_pause_button_pressed() -> void:
 func _on_stop_button_pressed() -> void:
 	isInitial = true
 	seekSlider.editable = false
+	seekSlider.set_default_cursor_shape(CursorShape.CURSOR_FORBIDDEN)
 	if isPaused:
 		MusicManager.resume_music.emit()
 	isPlaying = false
@@ -123,6 +127,7 @@ func _on_stop_button_pressed() -> void:
 
 func _on_track_option_button_item_selected(index: int) -> void:
 	seekSlider.editable = true
+	seekSlider.set_default_cursor_shape(CursorShape.CURSOR_POINTING_HAND)
 	currentTrackNum = index
 	updateSong()
 	MusicManager.sfx_player.play_SFX_from_library("mp_Change")
@@ -170,8 +175,11 @@ func updateSong() -> void:
 	setTrackLabel()
 	currentTrackArtist = currentTrack.artist
 	artistLabel.text = currentTrackArtist
+	artistLabel.tooltip_text = currentTrackArtist
 	isPlaying = true
 	MusicManager.play_song.emit(currentTrack, false, false, 0)
+	seekSlider.editable = true
+	seekSlider.set_default_cursor_shape(CursorShape.CURSOR_POINTING_HAND)
 	
 	if currentTrack.coverArt != null:
 		albumArt.texture = currentTrack.coverArt

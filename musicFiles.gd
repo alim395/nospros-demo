@@ -11,11 +11,7 @@ func _ready() -> void:
 	#file = FileAccess.open("imageTest.txt", FileAccess.WRITE)
 	createAlbumList()
 	#file.store_string(imageDataString)
-	print(albumList)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	#print(albumList)
 
 func createAlbumList() -> void:
 	# Check for Albums in Folder
