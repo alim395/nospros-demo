@@ -9,7 +9,7 @@ var isMinimize : bool = false
 var wallpaperPath : String = "res://sprites/backgrounds/wallpapers/"
 
 @export var folderRows : HFlowContainer
-var pBScene: PackedScene = preload("res://scenes/photoButton.tscn")
+var pBScene: PackedScene = preload("res://scenes/buttons/photoButton.tscn")
 
 # Constant Limits
 const ROWLIMIT = 3

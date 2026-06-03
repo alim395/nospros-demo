@@ -10,7 +10,7 @@ func _ready() -> void:
 	crtNode.visible = globalParameters.crtFilter
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if self.visibility_changed:
 		var children = get_children()
 		for c in children:

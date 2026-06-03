@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene load_steps=105 format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cm72m1my2mjmd" path="res://MMSongs/XPLogout.tres" id="3_66xif"]
@@ -24,31 +24,33 @@
 [ext_resource type="Texture2D" uid="uid://bcqg4e5o1i7qw" path="res://sprites/UI/XP/startbuttons/Luna000.png" id="9_kvuet"]
 [ext_resource type="Texture2D" uid="uid://ckng02ytlmywa" path="res://sprites/icons/Photo_Icon2.png" id="9_ms3bu"]
 [ext_resource type="Texture2D" uid="uid://ys7yfjhvjijo" path="res://sprites/icons/Browser_Icon.png" id="10_3hbvx"]
-[ext_resource type="Script" uid="uid://brbqxhnpbmlw8" path="res://scripts/picture_app.gd" id="10_7025r"]
+[ext_resource type="Script" uid="uid://brbqxhnpbmlw8" path="res://scripts/apps/notepad/picture_app.gd" id="10_7025r"]
 [ext_resource type="Texture2D" uid="uid://bm3qqoexuu6d1" path="res://sprites/UI/XP/startbuttons/Luna002.png" id="10_trtic"]
 [ext_resource type="Texture2D" uid="uid://0ys3kkg8i4hr" path="res://sprites/UI/XP/startbuttons/Luna001.png" id="11_ir15t"]
 [ext_resource type="Texture2D" uid="uid://bas22ukk7spqr" path="res://sprites/icons/Video_Icon.png" id="11_yd4ix"]
 [ext_resource type="Texture2D" uid="uid://cpvflbs5q2b5o" path="res://sprites/icons/Folder_Icon.png" id="12_veaf0"]
+[ext_resource type="Texture2D" uid="uid://4sng7ydnnxyf" path="res://sprites/icons/wmp1.png" id="13_15b3c"]
 [ext_resource type="Texture2D" uid="uid://470wfhae4cxu" path="res://sprites/icons/Text_Icon.png" id="13_tc8uq"]
 [ext_resource type="Texture2D" uid="uid://bvijjo1f4o1jr" path="res://sprites/icons/Settings_2.png" id="14_bk1p3"]
 [ext_resource type="Texture2D" uid="uid://sl6np7l82w2x" path="res://sprites/icons/PC_Icon.png" id="14_gdf8r"]
 [ext_resource type="Texture2D" uid="uid://pragqk6we42s" path="res://sprites/icons/Video_Icon2.png" id="16_66xif"]
 [ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
-[ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/setting_app.gd" id="17_0sl42"]
+[ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/apps/setting_app.gd" id="17_0sl42"]
 [ext_resource type="Texture2D" uid="uid://cvkppvgw27ijf" path="res://sprites/buttons/Shutdown.png" id="18_37s47"]
 [ext_resource type="Texture2D" uid="uid://bvilf1qjfxqgb" path="res://sprites/icons/Folder_Icon2.png" id="18_flw08"]
 [ext_resource type="Texture2D" uid="uid://cdxbew7cfl0kc" path="res://sprites/buttons/Shutdown_Pressed.png" id="19_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://b1tsrdlveu5op" path="res://sprites/icons/Text_Icon2.png" id="20_xjcjm"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
-[ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/troll_app.gd" id="21_rm0al"]
+[ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/apps/troll_app.gd" id="21_rm0al"]
 [ext_resource type="Texture2D" uid="uid://cqqt7xpwcehm2" path="res://sprites/icons/PC_Icon2.png" id="21_xbifu"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
+[ext_resource type="Texture2D" uid="uid://55x5kpeygbxv" path="res://sprites/icons/wmp2.png" id="22_veukt"]
 [ext_resource type="Texture2D" uid="uid://bu2hshr0cnal" path="res://sprites/buttons/Exit.png" id="23_qnb83"]
 [ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
 [ext_resource type="Texture2D" uid="uid://fj3m5kxctqtj" path="res://sprites/buttons/Exit_Pressed.png" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://clo0ox8ojcx4s" path="res://sprites/buttons/LogOff_Pressed.png" id="24_wljb1"]
-[ext_resource type="Script" uid="uid://dfgdx75ktc5d6" path="res://scripts/pc_app.gd" id="25_s33c4"]
+[ext_resource type="Script" uid="uid://dfgdx75ktc5d6" path="res://scripts/apps/pc_app.gd" id="25_s33c4"]
 [ext_resource type="Texture2D" uid="uid://g5dw67vkxjr2" path="res://sprites/buttons/Exit_Hover.png" id="25_suyxu"]
 [ext_resource type="Texture2D" uid="uid://blra1sk2fgdnl" path="res://sprites/buttons/LogOff_Hover.png" id="25_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://def0owgc73j7q" path="res://sprites/buttons/LogOff_Disabled.png" id="26_js0lu"]
@@ -59,7 +61,7 @@
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
 [ext_resource type="VideoStream" uid="uid://dfj2oofn0fmol" path="res://video/memes/Photograph.ogv" id="41_2iuns"]
-[ext_resource type="Script" uid="uid://cs1m16ct1tap4" path="res://scripts/meme_folder.gd" id="41_15b3c"]
+[ext_resource type="Script" uid="uid://cs1m16ct1tap4" path="res://scripts/apps/meme_folder.gd" id="41_15b3c"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="41_p4npv"]
 [ext_resource type="Texture2D" uid="uid://ke5w3s7ijiqo" path="res://sprites/memes/courage.jpg" id="43_xjcjm"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
@@ -72,12 +74,12 @@
 [ext_resource type="Texture2D" uid="uid://dojwpn6t2f08h" path="res://sprites/UI/XP/taskbar/Panel/Olive.png" id="51_s0g06"]
 [ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="52_1yg85"]
 [ext_resource type="Texture2D" uid="uid://doi4gt48rav3r" path="res://sprites/UI/XP/taskbar/Panel/Embedded.png" id="52_2gnni"]
-[ext_resource type="Script" uid="uid://cuyhf0go5bavo" path="res://scripts/dialogue_windows.gd" id="53_2iuns"]
+[ext_resource type="Script" uid="uid://cuyhf0go5bavo" path="res://scripts/dialogs/dialogue_windows.gd" id="53_2iuns"]
 [ext_resource type="Texture2D" uid="uid://cvtdxeg0lpgov" path="res://sprites/UI/XP/taskbar/Panel/Metallic.png" id="53_4nbsr"]
 [ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
 [ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
 [ext_resource type="VideoStream" uid="uid://dukoms7a2sd46" path="res://video/memes/RickRoll.ogv" id="56_1va0p"]
-[ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/notepad_windows.gd" id="59_h5tdf"]
+[ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/apps/notepad/notepad_windows.gd" id="59_h5tdf"]
 [ext_resource type="Texture2D" uid="uid://oqu17jxhsyo7" path="res://sprites/UI/XP/taskbar/RoyaleDark.png" id="70_vniw0"]
 [ext_resource type="Texture2D" uid="uid://bv1lttol3h0r3" path="res://sprites/UI/XP/taskbar/Panel/RoyaleDark.png" id="77_lddog"]
 [ext_resource type="Texture2D" uid="uid://b6f5lay58ahsw" path="res://sprites/UI/XP/panels/Volume.png" id="80_8tghg"]
@@ -463,7 +465,7 @@ stretch_mode = 6
 one_shot = true
 autostart = true
 
-[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "textFileButton", "pcButton", "errorApp", "memeFolder")]
+[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "textFileButton", "pcButton", "wmpButton", "errorApp", "memeFolder", "wmpApp")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -477,10 +479,12 @@ errorAppButton = NodePath("DesktopColumns/ErrorApp/ErrorAppBox/AppButton")
 memeFolderButton = NodePath("DesktopColumns/MemeFolder/MemeFolderBox/AppButton")
 textFileButton = NodePath("DesktopColumns/NotesApp/NotesAppBox/AppButton")
 pcButton = NodePath("DesktopColumns/ComputerApp/BrowserAppBox/AppButton")
+wmpButton = NodePath("DesktopColumns/wmpApp/wmpAppBox/AppButton")
 errorApp = NodePath("DesktopColumns/ErrorApp")
 memeFolder = NodePath("DesktopColumns/MemeFolder")
-classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0"), ExtResource("13_tc8uq"), ExtResource("14_gdf8r")])
-YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm"), ExtResource("21_xbifu")])
+wmpApp = NodePath("DesktopColumns/wmpApp")
+classicIcons = Array[Texture2D]([ExtResource("7_n8ral"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0"), ExtResource("13_tc8uq"), ExtResource("14_gdf8r"), ExtResource("13_15b3c")])
+YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm"), ExtResource("21_xbifu"), ExtResource("22_veukt")])
 
 [node name="DesktopColumns" type="VFlowContainer" parent="IconManager"]
 layout_mode = 0
@@ -723,6 +727,36 @@ text = "README"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="wmpApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="wmpAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/wmpApp"]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/wmpApp/wmpAppBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("20_xjcjm")
+texture_focused = ExtResource("6_js0lu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/wmpApp/wmpAppBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+text = "Video"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("pictureApp", "settingApp", "pcApp", "trollApp", "memeFolder", "trollIcon", "taskBar", "dWins", "NotepadWins")]
 unique_name_in_owner = true
 visible = false
@@ -751,7 +785,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.12
-        Revision 0
+        Revision 1
 
 Registered to:
         PLAYERNAME"
@@ -1115,7 +1149,17 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
-v0.1.12 - Media Player Update (26/05/2026)
+v0.1.12.1 - Media Player Update 2 (03/06/2026)
+- Added NEW Radial Visualizer
+- Restructured Resource File Structure
+- Implemented Secret 3 Triggers
+
+HINT FOR SECRET 3: (Unlock 1 + 2 First)
+2. LISTEN for the flap of Butterflies wings.
+1. LOOK for the sun when it shines down on you.
+3. When you dream, sit down and reflect.
+
+v0.1.12 - Media Player Update 1 (26/05/2026)
 - Implemented Secret 3 (NEW MEDIA PLAYER :D)
 	- Added new media player for enhanced video playback
 	- Comes with new cartoon (PLANETRONIKA by Rafael Andaya)
@@ -1325,7 +1369,8 @@ HINT FOR SECRET 1: 10 Red Errors
 	- CRT Filter
 - Error Dialogs + Troll Easter Egg ;)
 - Start Menu (W.I.P)
-- Power Options"
+- Power Options
+"
 
 [node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer", "clockTimer", "timeLabel")]
 unique_name_in_owner = true
@@ -1843,6 +1888,7 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/ErrorApp/ErrorAppBox/AppButton" to="AppManager" method="_on_troll_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/NotesApp/NotesAppBox/AppButton" to="AppManager" method="_on_textFile_button_pressed"]
+[connection signal="pressed" from="IconManager/DesktopColumns/wmpApp/wmpAppBox/AppButton" to="AppManager" method="_on_wmp_button_pressed"]
 [connection signal="theme_changed" from="AppManager/pcApp" to="AppManager/pcApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/pcApp/Window" to="AppManager/pcApp" method="_on_window_close_requested"]
 [connection signal="theme_changed" from="AppManager/pictureApp" to="AppManager/pictureApp" method="_on_theme_changed"]

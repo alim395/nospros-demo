@@ -38,7 +38,7 @@ var icon_dict : Dictionary[String, Texture2D]
 # Error Stats
 enum errorType {critical, alert}
 var errorCount : int
-var trollMode := false
+var trollMode : bool = false
 
 # Player Stats
 @export var playerName := "Adam"
@@ -48,6 +48,7 @@ var pfpIndex = 0
 
 signal GetTrolled
 signal CloseAppSignal(taskApp:String)
+signal unlockWMP
 
 @export var secret1 : bool = false
 @export var secret2 : bool = false
@@ -73,6 +74,9 @@ func _ready() -> void:
 
 func activateTroll() -> void:
 	GetTrolled.emit()
+
+func activateWMP() -> void:
+	unlockWMP.emit()
 
 #func playSFX(sfx : AudioStream) -> void:
 	#MusicManager.sfx_player.stream = sfx

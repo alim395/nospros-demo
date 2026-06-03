@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bcooeg7a1orem"]
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_nkxj1"]
-[ext_resource type="Script" uid="uid://dp8gkrw66oamj" path="res://scripts/notepad.gd" id="1_pq6gc"]
+[ext_resource type="Script" uid="uid://dp8gkrw66oamj" path="res://scripts/apps/notepad/notepad.gd" id="1_pq6gc"]
 [ext_resource type="StyleBox" uid="uid://bfdj4d2gs16b0" path="res://themes/eXP/styles/custom/notepad/notepad_TextEdit.tres" id="2_fhm5p"]
 [ext_resource type="StyleBox" uid="uid://wt4yiury1j25" path="res://themes/eXP/styles/custom/statusbar/StatusBarPanel.tres" id="5_6fgxw"]
 [ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="6_6fgxw"]

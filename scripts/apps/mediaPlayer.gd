@@ -21,6 +21,11 @@ var isSeeking : bool = false
 func _ready() -> void:
 	if videoPlayer:
 		if videoPlayer.stream:
+			if not videoPlayer.stream.resource_name.is_empty():
+				print(videoPlayer.stream.resource_name)
+				myWindow.title = videoPlayer.stream.resource_name + " - Media Player"
+			else:
+				myWindow.title = "Untitled - Media Player"
 			_on_play_button_button_up()
 			seekSlider.value = 0
 			seekSlider.max_value = videoPlayer.get_stream_length()

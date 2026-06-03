@@ -28,8 +28,8 @@ signal openNote
 # Dialogs
 var openSubMenu : PopupMenu
 
-@onready var YNDialog = preload("res://scenes/YNWindow.tscn")
-@onready var FormDialog = preload("res://scenes/FormWindow.tscn")
+@onready var YNDialog = preload("res://scenes/dialogs/YNWindow.tscn")
+@onready var FormDialog = preload("res://scenes/dialogs/FormWindow.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

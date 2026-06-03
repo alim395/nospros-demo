@@ -26,13 +26,14 @@ var shutdownSong : MusicTrack
 
 # Error Window
 @export var dialogueWindowNode : Control
-@onready var errorWindow = preload("res://scenes/errorWindow.tscn")
+@onready var errorWindow = preload("res://scenes/dialogs/errorWindow.tscn")
 #var currentError : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Connect Signal
 	globalParameters.CloseAppSignal.connect(closeApp)
+	globalParameters.unlockWMP.connect(_on_secret_3_button_pressed)
 	startSong = globalParameters.startTheme
 	shutdownSong = globalParameters.shutdownTheme
 	welcomeName.text = globalParameters.playerName
@@ -127,3 +128,8 @@ func _on_secret_2_button_pressed() -> void:
 	if globalParameters.secret2 == false:
 		globalParameters.secret2 = true
 		spawnError("SECRET 2 UNLOCKED!", globalParameters.errorType.alert)
+
+func _on_secret_3_button_pressed() -> void:
+	if globalParameters.secret3 == false:
+		globalParameters.secret3 = true
+		spawnError("SECRET 3 UNLOCKED!", globalParameters.errorType.alert)
