@@ -8,10 +8,12 @@ extends Control
 @export var memeFolderButton := TextureButton
 @export var textFileButton := TextureButton
 @export var pcButton := TextureButton
+@export var wmpButton := TextureButton
 
 # App Icon Refrences
 @export var errorApp := Control
 @export var memeFolder := Control
+@export var wmpApp := Control
 
 # Icons
 @export var classicIcons : Array[Texture2D]
@@ -31,6 +33,10 @@ func _ready() -> void:
 		errorApp.visible = true
 	if globalParameters.secret2:
 		memeFolder.visible = true
+	if globalParameters.secret3:
+		wmpApp.visible = true
+	
+	globalParameters.unlockWMP.connect(_on_secret_3_button_pressed)
 
 func setButtonClassic() -> void:
 	print("CLASSIC STYLE!")
@@ -50,6 +56,8 @@ func setButtonClassic() -> void:
 	globalParameters.icon_dict.set("notes", classicIcons[6])
 	pcButton.texture_normal = classicIcons[7]
 	globalParameters.icon_dict.set("Computer", classicIcons[7])
+	wmpButton.texture_normal = classicIcons[8]
+	globalParameters.icon_dict.set("WMP", classicIcons[8])
 	
 func setButtonY2K() -> void:
 	print("Y2K STYLE!")
@@ -69,6 +77,8 @@ func setButtonY2K() -> void:
 	globalParameters.icon_dict.set("notes", YTKIcons[6])
 	pcButton.texture_normal = YTKIcons[7]
 	globalParameters.icon_dict.set("Computer", YTKIcons[7])
+	wmpButton.texture_normal = YTKIcons[8]
+	globalParameters.icon_dict.set("WMP", YTKIcons[8])
 
 func changeStyle(styleIndex : globalParameters.buttonStyle) -> void:
 	print("Change Style to : ", styleIndex)
@@ -90,3 +100,6 @@ func changeStyle(styleIndex : globalParameters.buttonStyle) -> void:
 
 func _on_secret_2_button_pressed() -> void:
 	memeFolder.visible = true
+
+func _on_secret_3_button_pressed() -> void:
+	wmpApp.visible = true

@@ -13,7 +13,7 @@ var isSubMinimize : bool = false
 @export var mediaDict : Dictionary[String, Resource]
 
 @export var folderRows : HFlowContainer
-var mBScene: PackedScene = preload("res://scenes/photoButton.tscn")
+var mBScene: PackedScene = preload("res://scenes/buttons/photoButton.tscn")
 var photoMemesPath : String = "res://sprites/memes/"
 var videoMemesPath : String = "res://video/memes/"
 

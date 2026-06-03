@@ -7,6 +7,7 @@ extends Control
 
 var secret1 : bool = false
 var secret2 : bool = false
+var secret3 : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

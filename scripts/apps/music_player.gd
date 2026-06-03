@@ -32,10 +32,21 @@ var currentTrackNum := 0
 @export var loopButton : Button
 @export var shuffleButton : Button
 
+var randomArray : Array[int]
+var randomIndex : int
+
 @export var playSound : AudioStream
 @export var pauseSound : AudioStream
 @export var stopSound : AudioStream
 @export var changeSound : AudioStream
+
+# For Secret 3
+@export var secret3Active : bool = false
+@export var radialVisualizer : Control
+@export var secretSongs : Dictionary[int,String]
+@export_multiline var secretMessages : Array[String]
+var secretFlags : Array[bool]
+@export var secret3button : BaseButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -75,6 +86,17 @@ func _ready() -> void:
 	seekSlider.max_value = currentTrack.track.get_length()
 	
 	MusicManager.stop_music.emit()
+	
+	# Secret 3
+	radialVisualizer.clearSecret()
+	secret3button.disabled = true
+	secret3button.visible = false
+	if secretSongs:
+		secretFlags.resize(secretSongs.size())
+		for s in secretSongs:
+			secretFlags.set(s,false)
+	else:
+		print("No secrets to be found here.")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -184,6 +206,11 @@ func updateSong() -> void:
 	if currentTrack.coverArt != null:
 		albumArt.texture = currentTrack.coverArt
 	
+	# Secret 3 
+	if secret3Active:
+		checkS3Songs(currentTrack.name)
+		checkS3Flags(currentTrack.name)
+	
 func _on_prev_track_pressed() -> void:
 	currentTrackNum -= 1
 	updateSong()
@@ -236,10 +263,12 @@ func _on_all_music_finished() -> void:
 		_on_play_button_pressed()
 	elif isShuffle:
 		print("Shuffling!")
-		# Catch Repeat TrackNum
-		var prevTrackNum = currentTrackNum
-		while prevTrackNum == currentTrackNum:
-			currentTrackNum = randi_range(0, currentAlbum.tracks.size())
+		if randomArray.is_empty() || randomIndex == randomArray.size():
+			randomIndex = 0
+			randomArray.assign(range(currentAlbum.tracks.size()))
+			randomArray.shuffle()
+		currentTrackNum = randomArray[randomIndex]
+		randomIndex += 1
 		updateSong()
 		trackOption.select(currentTrackNum)
 		_on_play_button_pressed()
@@ -304,3 +333,33 @@ func updateAlbumList(aL : Array[MusicPlaylist]) -> void:
 	for a in aL:
 		print(a.name)
 	albumList = aL
+
+func activateS3() -> void:
+	secret3Active = true
+
+func checkS3Songs(songName : String) -> void:
+	for s in secretSongs:
+		if secretSongs.get(s) == songName:
+			secretFlags[s] = true
+			print("Key #" + str(s) + " Found!")
+			radialVisualizer.setSecret(secretMessages[s], true)
+			return
+	radialVisualizer.clearSecret()
+
+func checkS3Flags(songName : String) -> void:
+	for s in secretSongs:
+		if not secretFlags[s]:
+			return
+	print("All Flags TRUE!")
+	if songName == "Butterflies":
+		secret3button.disabled = false
+		secret3button.visible = true
+
+func _on_secret_3_button_pressed() -> void:
+	print("SECRET 3 UNLOCKED")
+	secret3button.disabled = true
+	secret3button.visible = false
+	secret3Active = false
+	radialVisualizer.clearSecret()
+	# Unlock WMP
+	globalParameters.activateWMP()

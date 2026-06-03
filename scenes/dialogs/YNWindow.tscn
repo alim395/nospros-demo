@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nsvdhbvbwra2"]
 
-[ext_resource type="Script" uid="uid://dx6x3dh0v4eir" path="res://scripts/yn_window.gd" id="1_5n835"]
+[ext_resource type="Script" uid="uid://dx6x3dh0v4eir" path="res://scripts/dialogs/yn_window.gd" id="1_5n835"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="2_j2yk2"]
 [ext_resource type="Texture2D" uid="uid://du8ymh1g46mhr" path="res://sprites/UI/XP/panels/Critical.png" id="3_hdded"]
 [ext_resource type="Texture2D" uid="uid://nrh53vvbcmk" path="res://sprites/UI/XP/panels/Alert.png" id="4_o23xj"]

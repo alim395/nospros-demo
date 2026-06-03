@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_w2bi0"]
 [ext_resource type="VideoStream" uid="uid://de0i5tg0ndtj2" path="res://video/wmv/planet.ogv" id="2_agk2i"]
-[ext_resource type="Script" uid="uid://cs0154l1s6wsf" path="res://scripts/mediaPlayer.gd" id="2_mw4q8"]
+[ext_resource type="Script" uid="uid://cs0154l1s6wsf" path="res://scripts/apps/mediaPlayer.gd" id="2_mw4q8"]
 [ext_resource type="StyleBox" uid="uid://dogf7fgtkji0b" path="res://themes/eXP/styles/window/WindowPanel.tres" id="2_rcnly"]
 [ext_resource type="Texture2D" uid="uid://c6syusnipt7s2" path="res://sprites/musicButtons/musicGrabber.png" id="3_rhyf6"]
 [ext_resource type="StyleBox" uid="uid://56hd8f0hh7qu" path="res://themes/eXP/styles/custom/slider_alt/sliderThick.tres" id="4_cgij8"]
@@ -97,7 +97,7 @@ canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 title = "Media Player"
 initial_position = 1
-size = Vector2i(224, 204)
+size = Vector2i(221, 204)
 wrap_controls = true
 min_size = Vector2i(213, 160)
 content_scale_mode = 1
@@ -154,7 +154,6 @@ theme_override_styles/panel = ExtResource("4_wu4ry")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Window/WindowPanel/VBoxContainer/PanelContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 ratio = 1.775
 
 [node name="VideoPlayer" type="VideoStreamPlayer" parent="Window/WindowPanel/VBoxContainer/PanelContainer/AspectRatioContainer"]

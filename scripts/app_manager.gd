@@ -24,10 +24,10 @@ var taskCount : int = 0
 #@export_multiline var changelogText : String
 
 # Apps
-@onready var musicPlayerApp = preload("res://scenes/musicPlayer.tscn")
-@onready var browserApp = preload("res://scenes/globeTrotter.tscn")
-@onready var notepadApp = preload("res://scenes/notepad.tscn")
-@onready var wmpApp = preload("res://scenes/mediaPlayer.tscn")
+@onready var musicPlayerApp = preload("res://scenes/apps/musicPlayer.tscn")
+@onready var browserApp = preload("res://scenes/apps/globeTrotter.tscn")
+@onready var notepadApp = preload("res://scenes/apps/notepad.tscn")
+@onready var wmpApp = preload("res://scenes/apps/mediaPlayer.tscn")
 
 # Others
 @export var dWins : Control
@@ -99,6 +99,9 @@ func openMusicApp() -> void:
 		print("MUSIC ALREADY OPEN!")
 		musicInstance.myTaskButton.set_pressed_no_signal(true)
 		musicInstance.minimizeWindow()
+		
+	if globalParameters.secret1 and globalParameters.secret2 and not globalParameters.secret3:
+			musicInstance.activateS3()
 
 func openPhotoApp() -> void:
 	closeCoreApps()
@@ -269,3 +272,7 @@ func openMediaPlayer() -> void:
 		print("WMP ALREADY OPEN!")
 		wmpInstance.myTaskButton.set_pressed_no_signal(true)
 		wmpInstance.minimizeWindow()
+
+func _on_wmp_button_pressed() -> void:
+	openMediaPlayer()
+	MusicManager.sfx_player.play_SFX_from_library_poly("click")

@@ -1,11 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene load_steps=39 format=3 uid="uid://decf48acwjrm8"]
 
-[ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/music_player.gd" id="1_gkd1q"]
+[ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/apps/music_player.gd" id="1_gkd1q"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_t4c88"]
 [ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="3_y1jbc"]
 [ext_resource type="Texture2D" uid="uid://h8eked3v42f7" path="res://sprites/albumArt/AlbumTEST.png" id="3_yj2aj"]
 [ext_resource type="Resource" uid="uid://bimj5fu4x7gh3" path="res://MMSongs/Albums/XP/XP_OST.tres" id="5_yb2vk"]
-[ext_resource type="Script" uid="uid://plvrf5wtrq0r" path="res://scripts/audio_spectrum_visualizer.gd" id="6_py3vy"]
+[ext_resource type="Script" uid="uid://plvrf5wtrq0r" path="res://scripts/audioVisualizers/audio_spectrum_visualizer.gd" id="6_py3vy"]
 [ext_resource type="AudioStream" uid="uid://cfbtjk8h84bkd" path="res://audio/sfx/musicPlayerButtons/Play.ogg" id="8_8evac"]
 [ext_resource type="AudioStream" uid="uid://dtto4f6wn3g5p" path="res://audio/sfx/musicPlayerButtons/Pause.ogg" id="9_knkca"]
 [ext_resource type="AudioStream" uid="uid://y4w6jskccl0c" path="res://audio/sfx/musicPlayerButtons/Stop.ogg" id="10_2jk8m"]
@@ -13,11 +13,13 @@
 [ext_resource type="StyleBox" uid="uid://6gxnkvgkcv6k" path="res://themes/eXP/styles/custom/displayPanelClassic2.tres" id="11_rmxtt"]
 [ext_resource type="AudioStream" uid="uid://det7copv4y5rx" path="res://audio/sfx/musicPlayerButtons/ChangeTrack.ogg" id="11_t4c88"]
 [ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="13_8evac"]
-[ext_resource type="Script" uid="uid://p5i3fo41p05n" path="res://scripts/audio_wave_visualizer.gd" id="13_knkca"]
+[ext_resource type="Script" uid="uid://p5i3fo41p05n" path="res://scripts/audioVisualizers/audio_wave_visualizer.gd" id="13_knkca"]
 [ext_resource type="Script" uid="uid://cskqibnc2af5p" path="res://scripts/music_panel_button.gd" id="14_2jk8m"]
 [ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="14_knkca"]
+[ext_resource type="Script" uid="uid://bg5rb8m4pia3w" path="res://scripts/audioVisualizers/audio_radial.gd" id="14_np205"]
 [ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="15_2jk8m"]
 [ext_resource type="AudioStream" uid="uid://dh8uqeyyrs684" path="res://audio/sfx/musicPlayerButtons/TapGlass.ogg" id="15_t4c88"]
+[ext_resource type="FontFile" uid="uid://w18dyjku5h4p" path="res://fonts/consola.ttf" id="15_yicri"]
 [ext_resource type="StyleBox" uid="uid://cqoxwovvtldc4" path="res://themes/eXP/styles/custom/classic/button/buttonClassic.tres" id="16_rmxtt"]
 [ext_resource type="Texture2D" uid="uid://nw10fi27osmh" path="res://sprites/musicButtons/Loop.svg" id="16_t4c88"]
 [ext_resource type="Texture2D" uid="uid://b5oouud5yf3kc" path="res://sprites/musicButtons/TrackPrev.svg" id="17_a15ay"]
@@ -67,7 +69,7 @@ expand_margin_left = 1.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
-[node name="MusicPlayer" type="Control" node_paths=PackedStringArray("myWindow", "trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton")]
+[node name="MusicPlayer" type="Control" node_paths=PackedStringArray("myWindow", "trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton", "radialVisualizer", "secret3button")]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -79,8 +81,8 @@ theme = ExtResource("1_t4c88")
 script = ExtResource("1_gkd1q")
 myWindow = NodePath("Window")
 albumList = Array[ExtResource("3_y1jbc")]([ExtResource("5_yb2vk")])
-trackNumLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime/TrackNumLabel")
-playtimeLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime/playTimeLabel")
+trackNumLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime/TrackNumLabel")
+playtimeLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime/playTimeLabel")
 albumOption = NodePath("Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer/OptionButton")
 trackOption = NodePath("Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer/OptionButton")
 albumArt = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline/TextureRect")
@@ -93,6 +95,36 @@ playSound = ExtResource("8_8evac")
 pauseSound = ExtResource("9_knkca")
 stopSound = ExtResource("10_2jk8m")
 changeSound = ExtResource("11_t4c88")
+radialVisualizer = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial")
+secretSongs = Dictionary[int, String]({
+0: "Butterflies",
+1: "Shine Down",
+2: "r e f l e c t i o n s"
+})
+secretMessages = Array[String](["   .  .
+ __ \\/ __
+/O*\\()/*O\\
+\\***||***/     FLY
+ `>-||-<'
+ (o/\\/\\o)    _   _
+  \"    \"    (o\\w/o)
+BUTTER       `>I<'
+             (/'\\)", "   ,-------,
+  /       / | 
+ /______ /  /
+|___/___/  /
+|__..___|.' 
+  //click
+.'/", "┌───────────────────┐
+│┌─────────────────┐│
+││                 ││
+││                 ││
+││      COVER      ││
+││                 ││
+││                 ││
+│└─────────────────┘│
+└───────────────────┘"])
+secret3button = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline/Secret3Button")
 
 [node name="Window" type="Window" parent="."]
 snap_2d_vertices_to_pixel = true
@@ -138,30 +170,63 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("11_rmxtt")
 
-[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer"]
+[node name="AudioVisualizers" type="MarginContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer"]
+clip_contents = true
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer"]
+[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers"]
 visible = false
 layout_mode = 2
 script = ExtResource("6_py3vy")
 
-[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer"]
+[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers"]
 visible = false
 z_index = 1
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("13_knkca")
 
-[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer"]
+[node name="AudioRadial" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers" node_paths=PackedStringArray("s3Label")]
+layout_mode = 2
+script = ExtResource("14_np205")
+secretFont = ExtResource("15_yicri")
+s3Label = NodePath("CenterContainer/S3")
+
+[node name="CenterContainer" type="CenterContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="S3" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("15_yicri")
+theme_override_font_sizes/font_size = 8
+text = "////////////////////////////////
+//                            //
+// _________            ___   //
+//|___ /___ \\  __  __  / _ \\  //
+//  |_ \\ __) | \\ \\/ / | (_) | //
+// ___) / __/   >  <   \\__, | //
+//|____/_____| /_/\\_\\    /_/  //
+//                            //
+////////////////////////////////"
+vertical_alignment = 1
+
+[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers"]
+visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="TrackNumLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime"]
+[node name="TrackNumLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -170,7 +235,7 @@ theme_override_font_sizes/font_size = 32
 text = "[00]"
 horizontal_alignment = 1
 
-[node name="playTimeLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/MarginContainer/PanelPlayTime"]
+[node name="playTimeLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
@@ -188,7 +253,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("14_2jk8m")
 glassTap = ExtResource("15_t4c88")
-panelVisuals = [NodePath("../MarginContainer/PanelPlayTime"), NodePath("../MarginContainer/AudioSpectrumVisualizer"), NodePath("../MarginContainer/AudioWaveVisualizer")]
+panelVisuals = [NodePath("../AudioVisualizers/PanelPlayTime"), NodePath("../AudioVisualizers/AudioSpectrumVisualizer"), NodePath("../AudioVisualizers/AudioWaveVisualizer"), NodePath("../AudioVisualizers/AudioRadial")]
 
 [node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
@@ -363,9 +428,18 @@ theme_override_styles/panel = ExtResource("11_rmxtt")
 [node name="TextureRect" type="TextureRect" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_yj2aj")
 expand_mode = 2
 stretch_mode = 6
+
+[node name="Secret3Button" type="TextureButton" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_pressed = SubResource("GradientTexture2D_t4c88")
+texture_hover = SubResource("GradientTexture2D_2jk8m")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer"]
 layout_mode = 2
@@ -435,6 +509,7 @@ scrollable = false
 [connection signal="button_up" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/SeekForward" to="." method="_on_seek_forward_button_up"]
 [connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/NextTrack" to="." method="_on_next_track_pressed"]
 [connection signal="toggled" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer/Shuffle" to="." method="_on_shuffle_toggled"]
+[connection signal="pressed" from="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline/Secret3Button" to="." method="_on_secret_3_button_pressed"]
 [connection signal="item_selected" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer/OptionButton" to="." method="_on_album_option_button_item_selected"]
 [connection signal="item_selected" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer/OptionButton" to="." method="_on_track_option_button_item_selected"]
 [connection signal="drag_ended" from="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/seekSlider" to="." method="_on_seek_slider_drag_ended"]

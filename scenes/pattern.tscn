@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://7h56wi27t8x1"]
+
+[ext_resource type="FontFile" uid="uid://w18dyjku5h4p" path="res://fonts/consola.ttf" id="2_p404m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hviu3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Pattern" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DisplayPanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hviu3")
+
+[node name="PatternControl" type="Control" parent="DisplayPanelContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="DisplayPanelContainer/PatternControl"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="PatternText" type="Label" parent="DisplayPanelContainer/PatternControl/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_p404m")
+theme_override_font_sizes/font_size = 8
+text = " _____                                                 _____ 
+( ___ )                                               ( ___ )
+ |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |       _  _    ___           _ _  _  ____        |   | 
+ |   |      | || |  / _ \\  __  __ / | || || ___|       |   | 
+ |   |      | || |_| | | | \\ \\/ / | | || ||___ \\       |   | 
+ |   |      |__   _| |_| |  >  <  | |__   _|__) |      |   | 
+ |   |         |_|  \\___/  /_/\\_\\ |_|  |_||____/       |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |   |                                                 |   | 
+ |___|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|___| 
+(_____)                                               (_____)"
+vertical_alignment = 1

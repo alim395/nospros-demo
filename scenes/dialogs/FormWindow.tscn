@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://117npiijpvf"]
 
-[ext_resource type="Script" uid="uid://c7ticdgxvaopk" path="res://scripts/form_window.gd" id="1_xnk67"]
+[ext_resource type="Script" uid="uid://c7ticdgxvaopk" path="res://scripts/dialogs/form_window.gd" id="1_xnk67"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="2_5ant4"]
 
 [node name="FormWindow" type="Control" node_paths=PackedStringArray("myWindow", "fileNameInput", "saveButton", "cancelButton")]

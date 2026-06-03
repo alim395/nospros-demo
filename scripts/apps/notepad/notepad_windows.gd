@@ -3,7 +3,7 @@ extends Control
 var savedNotepadInstances : Array[notepadInstance]
 var activeNotepadInstances : Array[notepadInstance]
 
-@onready var notepadApp = preload("res://scenes/notepad.tscn")
+@onready var notepadApp = preload("res://scenes/apps/notepad.tscn")
 @export var taskbar : Control
 
 # README
