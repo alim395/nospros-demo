@@ -161,5 +161,3 @@ func generateMemeButtons() -> void:
 			mBButton.connect("pressed", _on_meme_video_button_pressed.bind(memeName))
 			mBButton.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 			folderRows.add_child(mB)
-	
-	pass

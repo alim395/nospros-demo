@@ -3,6 +3,9 @@ extends Control
 @export var myWindow : Window
 @export var myTaskButton : taskbarButton
 var isMinimize : bool = false
+var isMaximize : bool = false
+var prevSize : Vector2i
+var maxSize : Vector2i = Vector2i(634, 304)
 
 @export var desktopWallpaper : TextureRect
 @export var defaultWallpaper : Texture2D
@@ -16,6 +19,7 @@ const ROWLIMIT = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	prevSize = myWindow.get_size_with_decorations()
 	if globalParameters.defaultWallpaper:
 		desktopWallpaper.texture = globalParameters.defaultWallpaper
 	else:
@@ -40,6 +44,21 @@ func minimizeWindow() -> void:
 		isMinimize = false
 		myWindow.visible = not isMinimize
 		myWindow.grab_focus()
+
+func maximizeWindow() -> void:
+	isMaximize = not isMaximize
+	if isMaximize:
+		print("MAXIMIZE")
+		myWindow.visible = false
+		myWindow.size = maxSize
+		myWindow.unresizable = true
+		minimizeWindow()
+	else:
+		print("UNMAXIMIZE")
+		myWindow.visible = false
+		myWindow.unresizable = false
+		myWindow.size = prevSize
+		minimizeWindow()
 
 func _on_photo_button_pressed(source: TextureButton) -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
@@ -66,3 +85,14 @@ func generatePhotoButtons() -> void:
 				if pBButton:
 					pBButton.connect("pressed", _on_photo_button_pressed.bind(pBButton))
 				folderRows.add_child(pB)
+
+func _on_window_size_changed() -> void:
+	if not isMaximize:
+		print(myWindow.size)
+		#prevSize = myWindow.size
+
+#func _on_window_window_input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
+			#print("DOUBLE CLICK")
+			#maximizeWindow()

@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://5gdiqm3dpsy4"]
+
+[ext_resource type="Texture2D" uid="uid://c7pbrnkmit3np" path="res://themes/eXP/styles/window/WindowsTitleEmbeddedUnfocus.png" id="1_jev5i"]
+
+[resource]
+texture = ExtResource("1_jev5i")
+texture_margin_left = 5.0
+texture_margin_top = 28.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 23, 28)
+draw_center = false

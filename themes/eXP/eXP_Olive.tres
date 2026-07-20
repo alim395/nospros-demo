@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=89 format=3 uid="uid://yquhykuwmafe"]
+[gd_resource type="Theme" load_steps=101 format=3 uid="uid://yquhykuwmafe"]
 
 [ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_486pf"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_bcvcg"]
@@ -63,6 +63,18 @@
 [ext_resource type="Texture2D" uid="uid://c2ywvq6m3avdv" path="res://themes/eXP/styles/scroll/slider-vert-insensitive.png" id="55_csyaa"]
 [ext_resource type="Texture2D" uid="uid://csk83h4cucn20" path="res://themes/eXP/styles/scroll/slider-vert-hover.png" id="56_oavu8"]
 [ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="58_fltgk"]
+[ext_resource type="Texture2D" uid="uid://mpkkm415hxqw" path="res://themes/eXP/styles/window/close-hover.svg" id="61_fltgk"]
+[ext_resource type="Texture2D" uid="uid://irmclxmuwvbn" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-normal.png" id="65_1w0r7"]
+[ext_resource type="Texture2D" uid="uid://dhbilbhnwtmrj" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-hover.png" id="66_tmx5b"]
+[ext_resource type="Texture2D" uid="uid://xrqsixelb7f" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-active.png" id="67_6qxsv"]
+[ext_resource type="Texture2D" uid="uid://l5kggdp5xn8d" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-normal.png" id="68_qjc84"]
+[ext_resource type="Texture2D" uid="uid://bsfvc3fdtolsm" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-hover.png" id="69_0sc8l"]
+[ext_resource type="Texture2D" uid="uid://d4556jmffw1h" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-active.png" id="70_e7bah"]
+[ext_resource type="Texture2D" uid="uid://bv087q615lbvq" path="res://themes/eXP/styles/window/customWindow/Olive/restore-normal.png" id="71_18p08"]
+[ext_resource type="Texture2D" uid="uid://wreiy0kjly8d" path="res://themes/eXP/styles/window/customWindow/Olive/restore-hover.png" id="72_ejpgg"]
+[ext_resource type="Texture2D" uid="uid://da8s2h2arp0ac" path="res://themes/eXP/styles/window/customWindow/Olive/restore-active.png" id="73_x51wf"]
+[ext_resource type="StyleBox" uid="uid://b2hla310xn62n" path="res://themes/eXP/styles/window/customWindow/Olive/customWindowOlive.tres" id="74_sgtuc"]
+[ext_resource type="StyleBox" uid="uid://cya1iv0pwo7wt" path="res://themes/eXP/styles/window/customWindow/Olive/customWindowOliveUnfocused.tres" id="75_sr7fc"]
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -327,6 +339,7 @@ VSlider/icons/grabber = ExtResource("54_cy3pj")
 VSlider/icons/grabber_disabled = ExtResource("55_csyaa")
 VSlider/icons/grabber_highlight = ExtResource("56_oavu8")
 VSlider/styles/slider = ExtResource("58_fltgk")
+Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
 Window/colors/title_outline_modulate = Color(0.5921569, 0.65882355, 0.4117647, 1)
 Window/constants/close_h_offset = 24
 Window/constants/title_height = 28
@@ -334,6 +347,18 @@ Window/constants/title_outline_size = 1
 Window/font_sizes/title_font_size = 13
 Window/fonts/title_font = ExtResource("42_xtlxq")
 Window/icons/close = ExtResource("43_fitjg")
+Window/icons/close_hover = ExtResource("61_fltgk")
 Window/icons/close_pressed = ExtResource("44_ccoxa")
 Window/styles/embedded_border = ExtResource("45_dg4nf")
 Window/styles/embedded_unfocused_border = SubResource("StyleBox_ly1vu")
+customWindow/icons/maximize = ExtResource("65_1w0r7")
+customWindow/icons/maximize_hover = ExtResource("66_tmx5b")
+customWindow/icons/maximize_pressed = ExtResource("67_6qxsv")
+customWindow/icons/minimize = ExtResource("68_qjc84")
+customWindow/icons/minimize_hover = ExtResource("69_0sc8l")
+customWindow/icons/minimize_pressed = ExtResource("70_e7bah")
+customWindow/icons/restore = ExtResource("71_18p08")
+customWindow/icons/restore_hover = ExtResource("72_ejpgg")
+customWindow/icons/restore_pressed = ExtResource("73_x51wf")
+customWindow/styles/border = ExtResource("74_sgtuc")
+customWindow/styles/borderUnfocused = ExtResource("75_sr7fc")

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=96 format=3 uid="uid://ck3kfrt4rx6dn"]
+[gd_resource type="Theme" load_steps=108 format=3 uid="uid://ck3kfrt4rx6dn"]
 
 [ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_m1611"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_3pphv"]
@@ -59,12 +59,24 @@
 [ext_resource type="Texture2D" uid="uid://cptemu475tgmn" path="res://themes/eXP/styles/scroll/royale/Range/slider-vert-hover.png" id="56_3xyq0"]
 [ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="58_3qqvx"]
 [ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="58_b3cla"]
-[ext_resource type="Texture2D" uid="uid://c4q6gal0qcnxg" path="res://themes/eXP/styles/window/close.svg" id="59_870t2"]
-[ext_resource type="Texture2D" uid="uid://cggs3fhqd7nmb" path="res://themes/eXP/styles/window/close-active.svg" id="60_7ne0h"]
+[ext_resource type="Texture2D" uid="uid://cereiweb6e2x8" path="res://themes/eXP/styles/window/customWindow/Zune/close-normal.png" id="60_gsjvu"]
 [ext_resource type="Texture2D" uid="uid://cm2ho8skdnbam" path="res://themes/eXP/styles/window/WindowsTitleZune.png" id="61_m1g0s"]
+[ext_resource type="Texture2D" uid="uid://cclg7iepc7fdo" path="res://themes/eXP/styles/window/customWindow/Zune/close-hover.png" id="61_ym6pj"]
+[ext_resource type="Texture2D" uid="uid://dm1du731d18ei" path="res://themes/eXP/styles/window/customWindow/Zune/close-active.png" id="62_agjde"]
 [ext_resource type="Texture2D" uid="uid://bfdgmwiqa50fh" path="res://themes/eXP/styles/window/ZuneBorder.png" id="62_vl8ly"]
 [ext_resource type="Texture2D" uid="uid://2wog2tatyo43" path="res://themes/eXP/styles/window/WindowsTitleZuneUnfocused.png" id="63_b3cla"]
 [ext_resource type="Texture2D" uid="uid://b2q6dp3iursj6" path="res://themes/eXP/styles/window/ZuneBorderUnfocused.png" id="64_aqrty"]
+[ext_resource type="Texture2D" uid="uid://bsd0stl32m548" path="res://themes/eXP/styles/window/customWindow/Zune/maximize-normal.png" id="67_h7xfn"]
+[ext_resource type="Texture2D" uid="uid://bmi207tj6sxob" path="res://themes/eXP/styles/window/customWindow/Zune/maximize-hover.png" id="68_elrt3"]
+[ext_resource type="Texture2D" uid="uid://bufwf82xfdblw" path="res://themes/eXP/styles/window/customWindow/Zune/maximize-active.png" id="69_qh6yp"]
+[ext_resource type="Texture2D" uid="uid://b3itfobgl1k1o" path="res://themes/eXP/styles/window/customWindow/Zune/minimize-normal.png" id="70_s7wb2"]
+[ext_resource type="Texture2D" uid="uid://cr4578uko7yvl" path="res://themes/eXP/styles/window/customWindow/Zune/minimize-hover.png" id="71_wjufw"]
+[ext_resource type="Texture2D" uid="uid://67v82xuvm0fp" path="res://themes/eXP/styles/window/customWindow/Zune/minimize-active.png" id="72_2vwec"]
+[ext_resource type="Texture2D" uid="uid://bfau4wfmfybxq" path="res://themes/eXP/styles/window/customWindow/Zune/restore-normal.png" id="73_5500x"]
+[ext_resource type="Texture2D" uid="uid://c72jthxbuw0hl" path="res://themes/eXP/styles/window/customWindow/Zune/restore-hover.png" id="74_7kmht"]
+[ext_resource type="Texture2D" uid="uid://birdi4w5kvr2s" path="res://themes/eXP/styles/window/customWindow/Zune/restore-active.png" id="75_ycibg"]
+[ext_resource type="StyleBox" uid="uid://exrx8nw25f67" path="res://themes/eXP/styles/window/customWindow/Zune/customWindowZune.tres" id="76_4r7v1"]
+[ext_resource type="StyleBox" uid="uid://dxrgk8t0uprv7" path="res://themes/eXP/styles/window/customWindow/Zune/customWindowZuneUnfocused.tres" id="77_3q27e"]
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -378,13 +390,26 @@ VSlider/icons/grabber = ExtResource("54_aqrty")
 VSlider/icons/grabber_disabled = ExtResource("55_ojbg3")
 VSlider/icons/grabber_highlight = ExtResource("56_3xyq0")
 VSlider/styles/slider = ExtResource("58_b3cla")
+Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
 Window/colors/title_outline_modulate = Color(0.105882354, 0.105882354, 0.105882354, 1)
 Window/constants/close_h_offset = 24
 Window/constants/title_height = 28
 Window/constants/title_outline_size = 1
 Window/font_sizes/title_font_size = 13
 Window/fonts/title_font = ExtResource("58_3qqvx")
-Window/icons/close = ExtResource("59_870t2")
-Window/icons/close_pressed = ExtResource("60_7ne0h")
+Window/icons/close = ExtResource("60_gsjvu")
+Window/icons/close_hover = ExtResource("61_ym6pj")
+Window/icons/close_pressed = ExtResource("62_agjde")
 Window/styles/embedded_border = SubResource("StyleBox_4a6c3")
 Window/styles/embedded_unfocused_border = SubResource("StyleBox_4te76")
+customWindow/icons/maximize = ExtResource("67_h7xfn")
+customWindow/icons/maximize_hover = ExtResource("68_elrt3")
+customWindow/icons/maximize_pressed = ExtResource("69_qh6yp")
+customWindow/icons/minimize = ExtResource("70_s7wb2")
+customWindow/icons/minimize_hover = ExtResource("71_wjufw")
+customWindow/icons/minimize_pressed = ExtResource("72_2vwec")
+customWindow/icons/restore = ExtResource("73_5500x")
+customWindow/icons/restore_hover = ExtResource("74_7kmht")
+customWindow/icons/restore_pressed = ExtResource("75_ycibg")
+customWindow/styles/border = ExtResource("76_4r7v1")
+customWindow/styles/borderUnfocused = ExtResource("77_3q27e")

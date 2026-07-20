@@ -28,6 +28,7 @@ var icon_dict : Dictionary[String, Texture2D]
 @export var skipWelcome : bool
 @export var highFidelity : bool
 @export var crtFilter : bool
+@export var smallIcons : bool
 @export var defaultTheme : TaskThemes
 @export var defaultWindowTheme : Theme
 @export var defaultButtonStyle : buttonStyle
@@ -53,6 +54,7 @@ signal unlockWMP
 @export var secret1 : bool = false
 @export var secret2 : bool = false
 @export var secret3 : bool = false
+var secret3Array : Array[String]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

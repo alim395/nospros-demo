@@ -1,0 +1,298 @@
+[gd_scene load_steps=27 format=3 uid="uid://p3fcftbqut5j"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_qrhmk"]
+[ext_resource type="Script" uid="uid://bu3qfxchjklil" path="res://scripts/customApps/custom_meme_folder.gd" id="2_dlbtt"]
+[ext_resource type="VideoStream" uid="uid://b74aqqw5qjwyv" path="res://video/memes/PBJ.ogv" id="3_p340w"]
+[ext_resource type="VideoStream" uid="uid://bmv2ybevrlgar" path="res://video/memes/HamsterDance.ogv" id="5_5chid"]
+[ext_resource type="Texture2D" uid="uid://yqragrtffyd1" path="res://sprites/memes/calmpanic.jpg" id="6_88yr4"]
+[ext_resource type="Texture2D" uid="uid://cmwhnparokkeo" path="res://sprites/memes/philosoraptor.jpg" id="7_250fu"]
+[ext_resource type="VideoStream" uid="uid://dukoms7a2sd46" path="res://video/memes/RickRoll.ogv" id="9_01u7g"]
+[ext_resource type="Texture2D" uid="uid://dnhy2aob6kpqw" path="res://icon.svg" id="9_7trc4"]
+[ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="10_y7mlb"]
+[ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="11_8gfo3"]
+[ext_resource type="Texture2D" uid="uid://c3eunioyc3ehh" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-hover.png" id="12_w5u3y"]
+[ext_resource type="Texture2D" uid="uid://ch1oxpv356kry" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-normal.png" id="13_c60a2"]
+[ext_resource type="Texture2D" uid="uid://jnhygni0hweq" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-active.png" id="14_15eib"]
+[ext_resource type="Texture2D" uid="uid://w5vihtd8i6fk" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-hover.png" id="15_qfaek"]
+[ext_resource type="Texture2D" uid="uid://b2k2olnf00fyf" path="res://themes/eXP/styles/window/customWindow/Luna/restore-normal.png" id="16_gqm7l"]
+[ext_resource type="Texture2D" uid="uid://cy5xsx1r7q31s" path="res://themes/eXP/styles/window/customWindow/Luna/restore-active.png" id="17_8e4wm"]
+[ext_resource type="Texture2D" uid="uid://ca3rik34ti44a" path="res://themes/eXP/styles/window/customWindow/Luna/restore-hover.png" id="18_u0bxc"]
+[ext_resource type="Texture2D" uid="uid://c4q6gal0qcnxg" path="res://themes/eXP/styles/window/close.svg" id="19_eu0jb"]
+[ext_resource type="Texture2D" uid="uid://cggs3fhqd7nmb" path="res://themes/eXP/styles/window/close-active.svg" id="20_1m0uq"]
+[ext_resource type="Texture2D" uid="uid://mpkkm415hxqw" path="res://themes/eXP/styles/window/close-hover.svg" id="21_rpw84"]
+[ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="22_3er80"]
+[ext_resource type="Script" uid="uid://bwv74ljx4xnh7" path="res://scripts/handlesCustom.gd" id="23_vuqwe"]
+[ext_resource type="Texture2D" uid="uid://ke5w3s7ijiqo" path="res://sprites/memes/courage.jpg" id="24_fvffy"]
+[ext_resource type="PackedScene" uid="uid://oqtloxixj5fo" path="res://scenes/customApps/customSubWindow.tscn" id="25_fvffy"]
+[ext_resource type="VideoStream" uid="uid://dfj2oofn0fmol" path="res://video/memes/Photograph.ogv" id="25_ugn60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vdpk"]
+
+[node name="customMemeFolder" type="Control" node_paths=PackedStringArray("subWindowNode", "folderRows", "titleLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_qrhmk")
+script = ExtResource("2_dlbtt")
+subWindowNode = NodePath("CustomSubWindow")
+mediaDict = Dictionary[String, Resource]({
+"PBJ": ExtResource("3_p340w"),
+"courage": ExtResource("24_fvffy"),
+"hamster": ExtResource("5_5chid"),
+"keepcalm": ExtResource("6_88yr4"),
+"philosoraptor": ExtResource("7_250fu"),
+"photograph": ExtResource("25_ugn60"),
+"rickroll": ExtResource("9_01u7g")
+})
+folderRows = NodePath("WindowContainer/Layout/PanelMargin/Panel/ScrollContainer/FolderRows")
+title = "Memes"
+titleLabel = NodePath("WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/TitleLabel")
+
+[node name="WindowContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(340, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="Border" type="PanelContainer" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("9_7trc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("22_3er80")
+theme_override_font_sizes/font_size = 13
+text = "Custom Window :D"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7vdpk")
+
+[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("10_y7mlb")
+texture_pressed = ExtResource("11_8gfo3")
+texture_hover = ExtResource("12_w5u3y")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("13_c60a2")
+texture_pressed = ExtResource("14_15eib")
+texture_hover = ExtResource("15_qfaek")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("16_gqm7l")
+texture_pressed = ExtResource("17_8e4wm")
+texture_hover = ExtResource("18_u0bxc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("19_eu0jb")
+texture_pressed = ExtResource("20_1m0uq")
+texture_hover = ExtResource("21_rpw84")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="WindowContainer/Layout/PanelMargin/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FolderRows" type="HFlowContainer" parent="WindowContainer/Layout/PanelMargin/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Handles" type="Control" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("23_vuqwe")
+
+[node name="Top" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 9
+
+[node name="Bottom" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 9
+
+[node name="Left" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="Right" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="TLCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 0
+offset_right = 5.0
+offset_bottom = 5.0
+mouse_default_cursor_shape = 12
+
+[node name="BLCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_right = 5.0
+grow_vertical = 0
+mouse_default_cursor_shape = 11
+
+[node name="TRCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 11
+
+[node name="BRCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 12
+
+[node name="CustomSubWindow" parent="." instance=ExtResource("25_fvffy")]
+visible = false
+layout_mode = 1
+title = "Untitled.xyz"
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="focus_entered" from="WindowContainer" to="." method="_on_window_container_focus_entered"]
+[connection signal="focus_exited" from="WindowContainer" to="." method="_on_window_container_focus_exited"]
+[connection signal="gui_input" from="WindowContainer" to="." method="_on_window_container_gui_input"]
+[connection signal="resized" from="WindowContainer" to="." method="_on_window_container_resized"]
+[connection signal="gui_input" from="WindowContainer/Layout/TitleBarContainer" to="." method="_on_title_bar_container_gui_input"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/MinimizeButton" to="." method="_on_minimize_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/MaximizeButton" to="." method="_on_maximize_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/RestoreButton" to="." method="_on_restore_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="gui_input" from="WindowContainer/Layout/PanelMargin/Panel" to="." method="_on_panel_gui_input"]
