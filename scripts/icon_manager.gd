@@ -22,6 +22,10 @@ extends Control
 var defaultStyle := globalParameters.defaultButtonStyle
 var currentStyle = defaultStyle
 
+# Other
+@export var desktopColumns : VFlowContainer
+var smallIcons : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Default = ", globalParameters.defaultButtonStyle)
@@ -37,6 +41,7 @@ func _ready() -> void:
 		wmpApp.visible = true
 	
 	globalParameters.unlockWMP.connect(_on_secret_3_button_pressed)
+	_on_small_icons_toggled(globalParameters.smallIcons)
 
 func setButtonClassic() -> void:
 	print("CLASSIC STYLE!")
@@ -103,3 +108,16 @@ func _on_secret_2_button_pressed() -> void:
 
 func _on_secret_3_button_pressed() -> void:
 	wmpApp.visible = true
+
+func toggleSmallIcons() -> void:
+	for app in desktopColumns.get_children():
+		var button : TextureButton = app.get_child(0).get_child(0)
+		var label : Label = app.get_child(0).get_child(1)
+		button.custom_minimum_size = Vector2(32,32) if smallIcons else Vector2(64,64)
+		label.add_theme_font_size_override("font_size", 8 if smallIcons else 16)
+	print("SMALL ICONS TOGGLED")
+
+func _on_small_icons_toggled(toggled_on: bool) -> void:
+	smallIcons = toggled_on
+	globalParameters.smallIcons = smallIcons
+	toggleSmallIcons()

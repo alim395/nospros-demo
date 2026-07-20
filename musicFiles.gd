@@ -8,10 +8,11 @@ var albumList : Array[MusicPlaylist]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#file = FileAccess.open("imageTest.txt", FileAccess.WRITE)
+	#file = FileAccess.open("res://imageTest.txt", FileAccess.WRITE)
 	createAlbumList()
-	#file.store_string(imageDataString)
 	#print(albumList)
+	#file.store_string(imageDataString)
+	#file.close()
 
 func createAlbumList() -> void:
 	# Check for Albums in Folder
@@ -53,11 +54,11 @@ func createAlbumList() -> void:
 					if tags.has("metadata_block_picture"):
 						# Remove image/jpeg header
 						var imageIndex : int = tags["metadata_block_picture"].find("/9j/")
-						var cleanString = tags["metadata_block_picture"].right(-imageIndex)
+						#var imageHeader : String = tags["metadata_block_picture"].left(imageIndex)
+						var cleanString : String = tags["metadata_block_picture"].right(-imageIndex)
 						var imageCover : Image = Image.new()
 						var imageRaw : PackedByteArray = Marshalls.base64_to_raw(cleanString)
-						#if imageDataString.is_empty():
-							#imageDataString = tags["metadata_block_picture"]
+							#print(imageHeader)
 						var error = imageCover.load_jpg_from_buffer(imageRaw)
 						if error != OK:
 							push_error("FAILED TO LOAD IMAGE FROM BUFFER")

@@ -20,3 +20,4 @@ bin/
 screenshots/
 /exports
 nospros-README.txt
+*.tmp

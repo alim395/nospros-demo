@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NosPros"
-config/version="0.1.12.0"
+config/version="0.1.13.0"
 run/main_scene="uid://c7pbugsh5ew6t"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://dnhy2aob6kpqw"

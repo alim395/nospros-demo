@@ -8,26 +8,32 @@ var webInstance : Node
 var musicInstance : Node
 var wmpInstance : Node
 var tfInstance : Node
+#var photoInstance : Node
 var isTrolling : bool = false
 
 var taskCount : int = 0
 
 #@export var clickSFX : AudioStream
-@export var pictureApp : Control
+#@export var pictureApp : Control
 @export var settingApp : Control
 @export var pcApp : Control
 @export var trollApp : Control
-@export var memeFolder : Control
+#@export var memeFolder : Control
 @export var trollIcon : Control
 @export var taskBar : Taskbar
 
 #@export_multiline var changelogText : String
 
 # Apps
-@onready var musicPlayerApp = preload("res://scenes/apps/musicPlayer.tscn")
+@onready var musicPlayerApp = preload("res://scenes/customApps/customMusicPlayer.tscn")
 @onready var browserApp = preload("res://scenes/apps/globeTrotter.tscn")
-@onready var notepadApp = preload("res://scenes/apps/notepad.tscn")
-@onready var wmpApp = preload("res://scenes/apps/mediaPlayer.tscn")
+@onready var notepadApp = preload("res://scenes/customApps/customNotepad.tscn")
+@onready var wmpApp = preload("res://scenes/customApps/customMediaPlayer.tscn")
+
+# custom Apps
+@export var customPictureApp : Control
+@export var customMemeFolder : Control
+#@export var customMediaPlayer : Control
 
 # Others
 @export var dWins : Control
@@ -42,17 +48,22 @@ func _ready() -> void:
 	#closeCoreApps()
 	globalParameters.GetTrolled.connect(_on_troll_button_pressed)
 	theme = globalParameters.defaultWindowTheme
+	visible = true
+	for app in get_children():
+		app.visible = false
+	dWins.visible = true
+	NotepadWins.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("DEBUG_OpenMusicApp") :
-		openMusicApp()
+		openCustomMusicApp()
 	if Input.is_action_just_released("DEBUG_OpenSettingsApp") :
 		openSettingsApp()
 	if Input.is_action_just_released("DEBUG_ActivateTrollMode") :
 		globalParameters.GetTrolled.emit()
 	if Input.is_action_just_released("DEBUG_OpenMediaApp") :
-		openMediaPlayer()
+		openCustomMediaPlayer()
 	if globalParameters.trollMode:
 		trollIcon.visible = true
 		globalParameters.trollMode = false
@@ -72,26 +83,43 @@ func closeWebInstance() -> void:
 	updateTaskCount()
 
 func closeMusicInstance() -> void:
-	taskBar.closeTask("Music")
 	if musicInstance != null:
-		musicInstance.queue_free()
+		musicInstance.closeWindow()
 		musicInstance = null
 	updateTaskCount()
 
 func closeCoreApps() -> void:
-	pictureApp._on_window_close_requested()
-	taskBar.closeTask("Picture")
+	#pictureApp._on_window_close_requested()
+	#taskBar.closeTask("Picture")
 	settingApp._on_window_close_requested()
 	taskBar.closeTask("Setting")
 	pcApp._on_window_close_requested()
 	taskBar.closeTask("Computer")
 
-func openMusicApp() -> void:
+#func openMusicApp() -> void:
+	#if musicInstance == null:
+		#musicInstance = musicPlayerApp.instantiate()
+		#add_child(musicInstance)
+		#if taskCount > 0:
+			#musicInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+		#var tB = taskBar.openTask("Music")
+		#musicInstance.setTaskButton(tB)
+		#updateTaskCount()
+	#else:
+		#print("MUSIC ALREADY OPEN!")
+		#musicInstance.myTaskButton.set_pressed_no_signal(true)
+		#musicInstance.minimizeWindow()
+		#
+	#if globalParameters.secret1 and globalParameters.secret2 and not globalParameters.secret3:
+			#musicInstance.activateS3()
+
+func openCustomMusicApp() -> void:
 	if musicInstance == null:
 		musicInstance = musicPlayerApp.instantiate()
 		add_child(musicInstance)
+		musicInstance.openWindow()
 		if taskCount > 0:
-			musicInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+			musicInstance.myWindow.position += Vector2(randi_range(10,20), randi_range(10,20))
 		var tB = taskBar.openTask("Music")
 		musicInstance.setTaskButton(tB)
 		updateTaskCount()
@@ -101,16 +129,33 @@ func openMusicApp() -> void:
 		musicInstance.minimizeWindow()
 		
 	if globalParameters.secret1 and globalParameters.secret2 and not globalParameters.secret3:
-			musicInstance.activateS3()
+		musicInstance.activateS3()
 
-func openPhotoApp() -> void:
-	closeCoreApps()
-	pictureApp.openWindow()
-	if taskCount > 0:
-			pictureApp.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+#func openPhotoApp() -> void:
+	#closeCoreApps()
+	#pictureApp.openWindow()
+	#if taskCount > 0:
+			#pictureApp.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+	#activeTaskName = "Picture"
+	#var tB = taskBar.openTask(activeTaskName)
+	#pictureApp.setTaskButton(tB)
+
+func openCustomPictureApp() -> void:
+	customPictureApp.closeWindow()
+	customPictureApp.openWindow()
+	updateAppIcons()
+	customPictureApp.visible = true
+	#if taskCount > 0:
+			#customPictureApp.myWindow.position += Vector2(randi_range(10,20), randi_range(10,20))
 	activeTaskName = "Picture"
 	var tB = taskBar.openTask(activeTaskName)
-	pictureApp.setTaskButton(tB)
+	customPictureApp.setTaskButton(tB)
+	updateTaskCount()
+
+func closeCustomPictureApp() -> void:
+	customPictureApp.closeWindow()
+	taskBar.closeTask("Picture")
+	updateTaskCount()
 
 func openSettingsApp() -> void:
 	closeCoreApps()
@@ -136,11 +181,12 @@ func openWebApp() -> void:
 		webInstance.minimizeWindow()
 	
 func _on_music_button_pressed() -> void:
-	openMusicApp()
+	openCustomMusicApp()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_photo_button_pressed() -> void:
-	openPhotoApp()
+	#openPhotoApp()
+	openCustomPictureApp()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func _on_settings_button_pressed() -> void:
@@ -170,7 +216,9 @@ func closeAllTasks() -> void:
 	closeTextInstance()
 	closeCoreApps()
 	closeTroll()
-	memeFolder._on_window_close_requested()
+	closeCustomPictureApp()
+	closeCustomMemeFolder()
+	closeCustomMediaPlayer()
 	dWins.closeAllDialogues()
 	NotepadWins.closeAllNotepads()
 
@@ -188,6 +236,7 @@ func updateTaskCount() -> void:
 		taskCount +=1
 	if musicInstance != null:
 		taskCount +=1
+	print(taskCount)
 
 func updateTheme() -> void:
 	theme = globalParameters.defaultWindowTheme
@@ -203,8 +252,9 @@ func updateTheme() -> void:
 		activeInstance.theme = globalParameters.defaultWindowTheme
 	settingApp.theme = globalParameters.defaultWindowTheme
 	trollApp.theme = globalParameters.defaultWindowTheme
-	memeFolder.changeTheme(globalParameters.defaultWindowTheme)
 	pcApp.theme = globalParameters.defaultWindowTheme
+	customPictureApp.theme = globalParameters.defaultWindowTheme
+	customMemeFolder.theme = globalParameters.defaultWindowTheme
 	
 	# Dialog Windows
 	if dWins.get_children():
@@ -218,15 +268,32 @@ func updateTheme() -> void:
 
 
 func _on_meme_button_pressed() -> void:
-	openMemeFolder()
+	#openMemeFolder()
+	openCustomMemeFolder()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
-func openMemeFolder() -> void:
-	memeFolder._on_window_close_requested()
-	memeFolder.openWindow()
-	activeTaskName = "memes"
+#func openMemeFolder() -> void:
+	#memeFolder._on_window_close_requested()
+	#memeFolder.openWindow()
+	#activeTaskName = "memes"
+	#var tB = taskBar.openTask(activeTaskName)
+	#memeFolder.setTaskButton(tB)
+
+func openCustomMemeFolder() -> void:
+	customMemeFolder.closeWindow()
+	customMemeFolder.openWindow()
+	updateAppIcons()
+	customMemeFolder.visible = true
+	if taskCount > 0:
+			customMemeFolder.myWindow.position += Vector2(randi_range(10,20), randi_range(10,20))
+	activeTaskName = "Memes"
 	var tB = taskBar.openTask(activeTaskName)
-	memeFolder.setTaskButton(tB)
+	customMemeFolder.setTaskButton(tB)
+
+func closeCustomMemeFolder() -> void:
+	customMemeFolder.closeWindow()
+	taskBar.closeTask("Memes")
+	updateTaskCount()
 
 func _on_textFile_button_pressed() -> void:
 	openTextFile()
@@ -259,12 +326,27 @@ func _on_pc_button_pressed() -> void:
 	openPCApp()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
-func openMediaPlayer() -> void:
+#func openMediaPlayer() -> void:
+	#if wmpInstance == null:
+		#wmpInstance = wmpApp.instantiate()
+		#add_child(wmpInstance)
+		#if taskCount > 0:
+			#wmpInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+		#var tB = taskBar.openTask("WMP")
+		#wmpInstance.setTaskButton(tB)
+		#updateTaskCount()
+	#else:
+		#print("WMP ALREADY OPEN!")
+		#wmpInstance.myTaskButton.set_pressed_no_signal(true)
+		#wmpInstance.minimizeWindow()
+
+func openCustomMediaPlayer() -> void:
 	if wmpInstance == null:
 		wmpInstance = wmpApp.instantiate()
 		add_child(wmpInstance)
+		wmpInstance.openWindow()
 		if taskCount > 0:
-			wmpInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+			wmpInstance.myWindow.position += Vector2(randi_range(10,20), randi_range(10,20))
 		var tB = taskBar.openTask("WMP")
 		wmpInstance.setTaskButton(tB)
 		updateTaskCount()
@@ -272,7 +354,21 @@ func openMediaPlayer() -> void:
 		print("WMP ALREADY OPEN!")
 		wmpInstance.myTaskButton.set_pressed_no_signal(true)
 		wmpInstance.minimizeWindow()
+	updateAppIcons()
+
+func closeCustomMediaPlayer() -> void:
+	if wmpInstance != null:
+		wmpInstance.closeWindow()
+	#taskBar.closeTask("WMP")
+	updateTaskCount()
 
 func _on_wmp_button_pressed() -> void:
-	openMediaPlayer()
+	#openMediaPlayer()
+	openCustomMediaPlayer()
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
+
+func updateAppIcons() -> void:
+	for p in get_children():
+		if p.get("programIcon"):
+			p.updateProgramIcon()
+	NotepadWins.updateIcon()

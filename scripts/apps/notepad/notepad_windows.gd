@@ -3,7 +3,7 @@ extends Control
 var savedNotepadInstances : Array[notepadInstance]
 var activeNotepadInstances : Array[notepadInstance]
 
-@onready var notepadApp = preload("res://scenes/apps/notepad.tscn")
+@onready var notepadApp = preload("res://scenes/customApps/customNotepad.tscn")
 @export var taskbar : Control
 
 # README
@@ -14,19 +14,17 @@ func _ready() -> void:
 	# README FILE
 	saveNotepad("README", readmeText)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 func newNotepad(fName : String = "Untitled", fText : String = "Hello World!", fSave : bool = false) -> Node:
 	var tfInstance = notepadApp.instantiate()
-	tfInstance.setFileName(fName)
-	tfInstance.setTextFree(fText)
+	#tfInstance.setFileName(fName)
+	#tfInstance.setTextFree(fText)
 	if fSave:
 		tfInstance.isSaved = true
 	add_child(tfInstance)
+	tfInstance.setFileName(fName)
+	tfInstance.setTextFree(fText)
 	if get_child_count() > 0:
-		tfInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+		tfInstance.myWindow.position += Vector2(randi_range(10,20), randi_range(10,20))
 	
 	# Notepad Instance
 	var nI = notepadInstance.new()
@@ -104,7 +102,7 @@ func _on_child_entered_tree(node: Node) -> void:
 func closeAllNotepads() -> void:
 	if get_children():
 		for n in get_children():
-			n._on_window_close_requested()
+			n.closeWindow()
 
 func updateActiveInstances() -> void:
 	if not activeNotepadInstances.is_empty():
@@ -131,3 +129,8 @@ func unMinNotepad(fName : String) -> void:
 				n.myTaskButton.set_pressed(true)
 				n.minimizeWindow()
 				break
+
+func updateIcon() -> void:
+	if get_children():
+		for n in get_children():
+			n.updateProgramIcon()

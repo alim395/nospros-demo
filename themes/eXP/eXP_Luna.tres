@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=82 format=3 uid="uid://diofr3kthuaw"]
+[gd_resource type="Theme" load_steps=94 format=3 uid="uid://diofr3kthuaw"]
 
 [ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_vvby4"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_fgatk"]
@@ -63,6 +63,18 @@
 [ext_resource type="Texture2D" uid="uid://cggs3fhqd7nmb" path="res://themes/eXP/styles/window/close-active.svg" id="59_mfv02"]
 [ext_resource type="StyleBox" uid="uid://cruaht3q5fnxd" path="res://themes/eXP/styles/window/Window.tres" id="60_am3q8"]
 [ext_resource type="StyleBox" uid="uid://d0lrckwxo0ku6" path="res://themes/eXP/styles/window/Window-unfocused.tres" id="61_fe1x7"]
+[ext_resource type="StyleBox" uid="uid://nbwlbx168c7q" path="res://themes/eXP/styles/window/customWindow/Luna/customWindowLuna.tres" id="64_0ah8x"]
+[ext_resource type="Texture2D" uid="uid://mpkkm415hxqw" path="res://themes/eXP/styles/window/close-hover.svg" id="64_q4jew"]
+[ext_resource type="StyleBox" uid="uid://b76mjhhksnlvc" path="res://themes/eXP/styles/window/customWindow/Luna/customWindowLunaUnfocused.tres" id="65_ft4mn"]
+[ext_resource type="Texture2D" uid="uid://ch1oxpv356kry" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-normal.png" id="65_lvsqc"]
+[ext_resource type="Texture2D" uid="uid://w5vihtd8i6fk" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-hover.png" id="66_opswp"]
+[ext_resource type="Texture2D" uid="uid://jnhygni0hweq" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-active.png" id="67_opesp"]
+[ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="68_uvmca"]
+[ext_resource type="Texture2D" uid="uid://c3eunioyc3ehh" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-hover.png" id="69_kglnp"]
+[ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="70_ogfnc"]
+[ext_resource type="Texture2D" uid="uid://b2k2olnf00fyf" path="res://themes/eXP/styles/window/customWindow/Luna/restore-normal.png" id="71_uvmca"]
+[ext_resource type="Texture2D" uid="uid://ca3rik34ti44a" path="res://themes/eXP/styles/window/customWindow/Luna/restore-hover.png" id="72_kglnp"]
+[ext_resource type="Texture2D" uid="uid://cy5xsx1r7q31s" path="res://themes/eXP/styles/window/customWindow/Luna/restore-active.png" id="73_ogfnc"]
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -271,6 +283,7 @@ VSlider/icons/grabber = ExtResource("53_pvkl4")
 VSlider/icons/grabber_disabled = ExtResource("54_kfdlk")
 VSlider/icons/grabber_highlight = ExtResource("55_ugmfd")
 VSlider/styles/slider = ExtResource("58_0ah8x")
+Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
 Window/colors/title_outline_modulate = Color(0.05882353, 0.0627451, 0.5372549, 1)
 Window/constants/close_h_offset = 24
 Window/constants/title_height = 28
@@ -278,6 +291,18 @@ Window/constants/title_outline_size = 1
 Window/font_sizes/title_font_size = 13
 Window/fonts/title_font = ExtResource("57_3eh6e")
 Window/icons/close = ExtResource("58_xtt4t")
+Window/icons/close_hover = ExtResource("64_q4jew")
 Window/icons/close_pressed = ExtResource("59_mfv02")
 Window/styles/embedded_border = ExtResource("60_am3q8")
 Window/styles/embedded_unfocused_border = ExtResource("61_fe1x7")
+customWindow/icons/maximize = ExtResource("65_lvsqc")
+customWindow/icons/maximize_hover = ExtResource("66_opswp")
+customWindow/icons/maximize_pressed = ExtResource("67_opesp")
+customWindow/icons/minimize = ExtResource("68_uvmca")
+customWindow/icons/minimize_hover = ExtResource("69_kglnp")
+customWindow/icons/minimize_pressed = ExtResource("70_ogfnc")
+customWindow/icons/restore = ExtResource("71_uvmca")
+customWindow/icons/restore_hover = ExtResource("72_kglnp")
+customWindow/icons/restore_pressed = ExtResource("73_ogfnc")
+customWindow/styles/border = ExtResource("64_0ah8x")
+customWindow/styles/borderUnfocused = ExtResource("65_ft4mn")

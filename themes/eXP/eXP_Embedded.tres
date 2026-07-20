@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=88 format=3 uid="uid://ck4ke6iweo4ss"]
+[gd_resource type="Theme" load_steps=100 format=3 uid="uid://ck4ke6iweo4ss"]
 
 [ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_iqoho"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_rkieb"]
@@ -53,16 +53,28 @@
 [ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="46_kuxup"]
 [ext_resource type="Texture2D" uid="uid://5pnhlngqq2p3" path="res://themes/eXP/styles/scroll/embedded/bottom-stepper-active.png" id="46_yww1x"]
 [ext_resource type="Texture2D" uid="uid://dba1uyd2rdg2t" path="res://themes/eXP/styles/scroll/embedded/slider-vert.png" id="47_70wnv"]
-[ext_resource type="Texture2D" uid="uid://c4q6gal0qcnxg" path="res://themes/eXP/styles/window/close.svg" id="47_dcqos"]
 [ext_resource type="Texture2D" uid="uid://dowutv4vqgcpi" path="res://themes/eXP/styles/scroll/embedded/slider-vert-prelight.png" id="48_0l1g5"]
-[ext_resource type="Texture2D" uid="uid://cggs3fhqd7nmb" path="res://themes/eXP/styles/window/close-active.svg" id="48_xxq26"]
 [ext_resource type="StyleBox" uid="uid://c7hjl1mh22fxs" path="res://themes/eXP/styles/window/WindowEmbeddedStack.tres" id="49_e80c4"]
 [ext_resource type="Texture2D" uid="uid://cpofq2cn56m58" path="res://themes/eXP/styles/scroll/embedded/slider-vert-active.png" id="49_ok4fo"]
 [ext_resource type="Texture2D" uid="uid://dhof3w2mcysq2" path="res://themes/eXP/styles/scroll/slider-vert.png" id="53_bhs1g"]
 [ext_resource type="Texture2D" uid="uid://c2ywvq6m3avdv" path="res://themes/eXP/styles/scroll/slider-vert-insensitive.png" id="54_sxg7s"]
 [ext_resource type="Texture2D" uid="uid://csk83h4cucn20" path="res://themes/eXP/styles/scroll/slider-vert-hover.png" id="55_km730"]
 [ext_resource type="StyleBox" uid="uid://dea58gi66rjws" path="res://themes/eXP/styles/custom/range/Vslider_Simple.tres" id="58_33nn2"]
+[ext_resource type="Texture2D" uid="uid://d0vqvw4667yri" path="res://themes/eXP/styles/window/customWindow/Embedded/close-normal.png" id="60_r4cd7"]
+[ext_resource type="Texture2D" uid="uid://0w6eu3cp56ym" path="res://themes/eXP/styles/window/customWindow/Embedded/close-hover.png" id="61_ak8t1"]
+[ext_resource type="Texture2D" uid="uid://c7rpwqy3sg3cj" path="res://themes/eXP/styles/window/customWindow/Embedded/close-active.png" id="62_70wnv"]
 [ext_resource type="StyleBox" uid="uid://dqva1vfsgihva" path="res://themes/eXP/styles/window/WindowEmbeddedStackUnfocus.tres" id="62_yww1x"]
+[ext_resource type="StyleBox" uid="uid://ceapq2a1pvui1" path="res://themes/eXP/styles/window/customWindow/Embedded/customWindowEmbedded.tres" id="64_kp54r"]
+[ext_resource type="Texture2D" uid="uid://bg1bfbfmxfujm" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-normal.png" id="65_c8vdm"]
+[ext_resource type="StyleBox" uid="uid://5gdiqm3dpsy4" path="res://themes/eXP/styles/window/customWindow/Embedded/customWindowEmbeddedUnfocused.tres" id="65_r4cd7"]
+[ext_resource type="Texture2D" uid="uid://bc7ju35ww11um" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-hover.png" id="66_i80ew"]
+[ext_resource type="Texture2D" uid="uid://b8q47n3qnbi1r" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-active.png" id="67_gdtwb"]
+[ext_resource type="Texture2D" uid="uid://h5lmn3ojsq6h" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-normal.png" id="68_bf556"]
+[ext_resource type="Texture2D" uid="uid://brge1b4yx0dat" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-hover.png" id="69_6pytt"]
+[ext_resource type="Texture2D" uid="uid://w6v86jp5gfyo" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-active.png" id="70_lnxfs"]
+[ext_resource type="Texture2D" uid="uid://k83ynwhxaja8" path="res://themes/eXP/styles/window/customWindow/Embedded/restore-normal.png" id="71_bhs1g"]
+[ext_resource type="Texture2D" uid="uid://d1rip67sbqmn7" path="res://themes/eXP/styles/window/customWindow/Embedded/restore-hover.png" id="72_sxg7s"]
+[ext_resource type="Texture2D" uid="uid://bw7hfdwbyfbj0" path="res://themes/eXP/styles/window/customWindow/Embedded/restore-active.png" id="73_km730"]
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -313,13 +325,26 @@ VSlider/icons/grabber = ExtResource("53_bhs1g")
 VSlider/icons/grabber_disabled = ExtResource("54_sxg7s")
 VSlider/icons/grabber_highlight = ExtResource("55_km730")
 VSlider/styles/slider = ExtResource("58_33nn2")
+Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
 Window/colors/title_outline_modulate = Color(0.003921569, 0.18431373, 0.32941177, 1)
 Window/constants/close_h_offset = 24
 Window/constants/title_height = 28
 Window/constants/title_outline_size = 1
 Window/font_sizes/title_font_size = 13
 Window/fonts/title_font = ExtResource("46_kuxup")
-Window/icons/close = ExtResource("47_dcqos")
-Window/icons/close_pressed = ExtResource("48_xxq26")
+Window/icons/close = ExtResource("60_r4cd7")
+Window/icons/close_hover = ExtResource("61_ak8t1")
+Window/icons/close_pressed = ExtResource("62_70wnv")
 Window/styles/embedded_border = ExtResource("49_e80c4")
 Window/styles/embedded_unfocused_border = ExtResource("62_yww1x")
+customWindow/icons/maximize = ExtResource("65_c8vdm")
+customWindow/icons/maximize_hover = ExtResource("66_i80ew")
+customWindow/icons/maximize_pressed = ExtResource("67_gdtwb")
+customWindow/icons/minimize = ExtResource("68_bf556")
+customWindow/icons/minimize_hover = ExtResource("69_6pytt")
+customWindow/icons/minimize_pressed = ExtResource("70_lnxfs")
+customWindow/icons/restore = ExtResource("71_bhs1g")
+customWindow/icons/restore_hover = ExtResource("72_sxg7s")
+customWindow/icons/restore_pressed = ExtResource("73_km730")
+customWindow/styles/border = ExtResource("64_kp54r")
+customWindow/styles/borderUnfocused = ExtResource("65_r4cd7")

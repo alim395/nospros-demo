@@ -16,7 +16,7 @@ var currentTheme = defaultTheme
 @export var startButtonTextures : Resource
 @export var startMenu : Control
 
-@export var buttonContainer : HBoxContainer
+@export var buttonContainer : HFlowContainer
 
 # Bar Panel
 @export var clockTimer : Timer

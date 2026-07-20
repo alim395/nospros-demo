@@ -1,0 +1,612 @@
+[gd_scene load_steps=56 format=3 uid="uid://sf8unooafmjq"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_nprdi"]
+[ext_resource type="Script" uid="uid://dgk8cnk2le5pl" path="res://scripts/customApps/custom_media_player.gd" id="2_qawqq"]
+[ext_resource type="Texture2D" uid="uid://dnhy2aob6kpqw" path="res://icon.svg" id="3_y1w3n"]
+[ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="4_bxfp2"]
+[ext_resource type="Texture2D" uid="uid://brvje4vhj353e" path="res://sprites/UI/XP/panels/Sound Muted.png" id="4_ttnik"]
+[ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="5_mpf5e"]
+[ext_resource type="Texture2D" uid="uid://c3eunioyc3ehh" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-hover.png" id="6_iyago"]
+[ext_resource type="Texture2D" uid="uid://ch1oxpv356kry" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-normal.png" id="7_bol0s"]
+[ext_resource type="Texture2D" uid="uid://jnhygni0hweq" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-active.png" id="8_ruhae"]
+[ext_resource type="Texture2D" uid="uid://w5vihtd8i6fk" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-hover.png" id="9_clgda"]
+[ext_resource type="Texture2D" uid="uid://b2k2olnf00fyf" path="res://themes/eXP/styles/window/customWindow/Luna/restore-normal.png" id="10_507a5"]
+[ext_resource type="Texture2D" uid="uid://cy5xsx1r7q31s" path="res://themes/eXP/styles/window/customWindow/Luna/restore-active.png" id="11_gyjqh"]
+[ext_resource type="Texture2D" uid="uid://ca3rik34ti44a" path="res://themes/eXP/styles/window/customWindow/Luna/restore-hover.png" id="12_ktf31"]
+[ext_resource type="Texture2D" uid="uid://c4q6gal0qcnxg" path="res://themes/eXP/styles/window/close.svg" id="13_vxs4j"]
+[ext_resource type="Texture2D" uid="uid://cggs3fhqd7nmb" path="res://themes/eXP/styles/window/close-active.svg" id="14_8m14l"]
+[ext_resource type="Texture2D" uid="uid://mpkkm415hxqw" path="res://themes/eXP/styles/window/close-hover.svg" id="15_830jr"]
+[ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="16_ualla"]
+[ext_resource type="Script" uid="uid://bwv74ljx4xnh7" path="res://scripts/handlesCustom.gd" id="17_326ro"]
+[ext_resource type="StyleBox" uid="uid://6gxnkvgkcv6k" path="res://themes/eXP/styles/custom/displayPanelClassic2.tres" id="17_qawqq"]
+[ext_resource type="VideoStream" uid="uid://de0i5tg0ndtj2" path="res://video/wmv/planet.ogv" id="18_ttnik"]
+[ext_resource type="Texture2D" uid="uid://c6syusnipt7s2" path="res://sprites/musicButtons/musicGrabber.png" id="19_hcoth"]
+[ext_resource type="StyleBox" uid="uid://56hd8f0hh7qu" path="res://themes/eXP/styles/custom/slider_alt/sliderThick.tres" id="20_0sr6a"]
+[ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="21_i5s7k"]
+[ext_resource type="StyleBox" uid="uid://b2w2c66dh46dg" path="res://themes/eXP/styles/custom/classic/button/buttonClassicPressed2.tres" id="22_yt4q7"]
+[ext_resource type="StyleBox" uid="uid://cqoxwovvtldc4" path="res://themes/eXP/styles/custom/classic/button/buttonClassic.tres" id="23_rimtb"]
+[ext_resource type="Texture2D" uid="uid://dfmp45h7s57py" path="res://sprites/musicButtons/Play.svg" id="24_h35iy"]
+[ext_resource type="Texture2D" uid="uid://be1qjkv53c0qr" path="res://sprites/musicButtons/Pause.svg" id="25_1xfat"]
+[ext_resource type="Texture2D" uid="uid://rh2pbdcea1nm" path="res://sprites/musicButtons/Stop.svg" id="26_070hx"]
+[ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="27_aj1gx"]
+[ext_resource type="Texture2D" uid="uid://b5oouud5yf3kc" path="res://sprites/musicButtons/TrackPrev.svg" id="28_xqoxj"]
+[ext_resource type="Texture2D" uid="uid://bkqxyr333f8jj" path="res://sprites/musicButtons/SeekBack.svg" id="29_6a6fu"]
+[ext_resource type="Texture2D" uid="uid://dlfdy5idatye6" path="res://sprites/musicButtons/SeekForward.svg" id="30_1atlj"]
+[ext_resource type="Texture2D" uid="uid://bqsgg1ap5dnf0" path="res://sprites/musicButtons/TrackNext.svg" id="31_knv73"]
+[ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="32_2n3ia"]
+[ext_resource type="Texture2D" uid="uid://dg2yqdxt70kee" path="res://sprites/UI/XP/panels/Sound (right) (small).png" id="33_mkgtm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vdpk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsm2i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cofr0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl208"]
+bg_color = Color(0, 0, 0.8, 1)
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le3de"]
+bg_color = Color(0, 0, 0.8, 1)
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yulc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm4a7"]
+bg_color = Color(0.92947316, 0.91775256, 0.8548469, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgreb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hc6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x54d5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyh25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g7np"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5jy7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hpk4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mys6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82l6w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6fnr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xwkl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu45f"]
+bg_color = Color(0.5, 0.5, 1, 1)
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w5n1"]
+bg_color = Color(0, 0, 0.735357, 1)
+expand_margin_bottom = 1.0
+
+[node name="CustomMediaPlayer" type="Control" node_paths=PackedStringArray("seekSlider", "playButton", "pauseButton", "stopButton", "muteButton", "volumeSlider", "titleLabel", "videoPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_nprdi")
+script = ExtResource("2_qawqq")
+seekSlider = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/seekSlider")
+playButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PlayButton")
+pauseButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PauseButton")
+stopButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/StopButton")
+muteButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/MuteButton")
+muteIcons = Array[Texture2D]([ExtResource("33_mkgtm"), ExtResource("4_ttnik")])
+volumeSlider = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/VolumeSlider")
+title = "Media Player"
+titleLabel = NodePath("WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/TitleLabel")
+videoPlayer = NodePath("WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/PanelContainer/AspectRatioContainer/VideoPlayer")
+
+[node name="WindowContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(229, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -120.0
+offset_right = 114.5
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="Border" type="PanelContainer" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="WindowContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_y1w3n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("16_ualla")
+theme_override_font_sizes/font_size = 13
+text = "Custom Window :D"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7vdpk")
+
+[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("4_bxfp2")
+texture_pressed = ExtResource("5_mpf5e")
+texture_hover = ExtResource("6_iyago")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("7_bol0s")
+texture_pressed = ExtResource("8_ruhae")
+texture_hover = ExtResource("9_clgda")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("10_507a5")
+texture_pressed = ExtResource("11_gyjqh")
+texture_hover = ExtResource("12_ktf31")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("13_vxs4j")
+texture_pressed = ExtResource("14_8m14l")
+texture_hover = ExtResource("15_830jr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel"]
+custom_minimum_size = Vector2(221, 207)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopBarContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="File" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/TopBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsm2i")
+disabled = true
+text = "File"
+item_count = 6
+popup/item_0/text = "New"
+popup/item_0/id = 0
+popup/item_1/text = "Open..."
+popup/item_1/id = 5
+popup/item_2/text = "Save"
+popup/item_2/id = 1
+popup/item_3/text = "Save as..."
+popup/item_3/id = 2
+popup/item_4/id = 3
+popup/item_4/separator = true
+popup/item_5/text = "Exit"
+popup/item_5/id = 4
+
+[node name="Button2" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/TopBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cofr0")
+disabled = true
+text = "Edit"
+flat = true
+
+[node name="Button3" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/TopBarContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cofr0")
+disabled = true
+text = "Help"
+flat = true
+
+[node name="PanelContainer" type="PanelContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("17_qawqq")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+ratio = 1.775
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/PanelContainer/AspectRatioContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(213, 120)
+layout_mode = 2
+stream = ExtResource("18_ttnik")
+expand = true
+
+[node name="Controls" type="MarginContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="seekSlider" type="HSlider" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("19_hcoth")
+theme_override_icons/grabber_highlight = ExtResource("19_hcoth")
+theme_override_icons/grabber_disabled = ExtResource("19_hcoth")
+theme_override_styles/slider = ExtResource("20_0sr6a")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_hl208")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_le3de")
+step = 0.1
+scrollable = false
+
+[node name="ControlButtons" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PPS" type="PanelContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = ExtResource("21_i5s7k")
+
+[node name="PPSContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4yulc")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mgreb")
+icon = ExtResource("24_h35iy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PauseButton" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4hc6r")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x54d5")
+icon = ExtResource("25_1xfat")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StopButton" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kyh25")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4g7np")
+icon = ExtResource("26_070hx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SEEK" type="PanelContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_styles/panel = ExtResource("27_aj1gx")
+
+[node name="SeekContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PrevTrack" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d5jy7")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2hpk4")
+disabled = true
+icon = ExtResource("28_xqoxj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekBack" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mys6a")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_82l6w")
+disabled = true
+icon = ExtResource("29_6a6fu")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SeekForward" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mys6a")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_82l6w")
+disabled = true
+icon = ExtResource("30_1atlj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NextTrack" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mys6a")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_82l6w")
+disabled = true
+icon = ExtResource("31_knv73")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Volume" type="PanelContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = ExtResource("32_2n3ia")
+
+[node name="VolumeContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MuteButton" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q6fnr")
+theme_override_styles/pressed = ExtResource("22_yt4q7")
+theme_override_styles/hover = ExtResource("23_rimtb")
+theme_override_styles/hover_pressed = ExtResource("22_yt4q7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hm4a7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8xwkl")
+toggle_mode = true
+icon = ExtResource("33_mkgtm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VolumeSlider" type="HSlider" parent="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+mouse_default_cursor_shape = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_lu45f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_6w5n1")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Handles" type="Control" parent="WindowContainer"]
+custom_minimum_size = Vector2(229, 240)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("17_326ro")
+
+[node name="Top" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 9
+
+[node name="Bottom" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 9
+
+[node name="Left" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="Right" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="TLCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 0
+offset_right = 5.0
+offset_bottom = 5.0
+mouse_default_cursor_shape = 12
+
+[node name="BLCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_right = 5.0
+grow_vertical = 0
+mouse_default_cursor_shape = 11
+
+[node name="TRCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 11
+
+[node name="BRCorner" type="Control" parent="WindowContainer/Handles"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 12
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="focus_entered" from="WindowContainer" to="." method="_on_window_container_focus_entered"]
+[connection signal="focus_exited" from="WindowContainer" to="." method="_on_window_container_focus_exited"]
+[connection signal="gui_input" from="WindowContainer" to="." method="_on_window_container_gui_input"]
+[connection signal="resized" from="WindowContainer" to="." method="_on_window_container_resized"]
+[connection signal="gui_input" from="WindowContainer/Layout/TitleBarContainer" to="." method="_on_title_bar_container_gui_input"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/MinimizeButton" to="." method="_on_minimize_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/MaximizeButton" to="." method="_on_maximize_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/RestoreButton" to="." method="_on_restore_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="gui_input" from="WindowContainer/Layout/PanelMargin/Panel" to="." method="_on_panel_gui_input"]
+[connection signal="finished" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/PanelContainer/AspectRatioContainer/VideoPlayer" to="." method="_on_video_player_finished"]
+[connection signal="drag_ended" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/seekSlider" to="." method="_on_seek_slider_drag_ended"]
+[connection signal="drag_started" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/seekSlider" to="." method="_on_seek_slider_drag_started"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/PauseButton" to="." method="_on_pause_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer/StopButton" to="." method="_on_stop_button_button_up"]
+[connection signal="toggled" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="value_changed" from="WindowContainer/Layout/PanelMargin/Panel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
