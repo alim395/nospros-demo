@@ -796,7 +796,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.13
-        Revision 0
+        Revision 1
 
 Registered to:
         PLAYERNAME"
@@ -1037,6 +1037,11 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+v0.1.13 - Custom Window Update (20/07/2026)
+- Fixed texture bu for Luna and Olive Scroll Bars
+- Fixed Control Anchors for Apps
+- Fixed Theme biug for custom window apps
+
 v0.1.13 - Custom Window Update (20/07/2026)
 - Added Small Icons Setting for the Desktop
 - Fixed a bug where Secret 3 Flags would reset if music player was closed early
