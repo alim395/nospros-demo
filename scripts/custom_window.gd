@@ -63,6 +63,7 @@ func _ready() -> void:
 	minimizeButton.pressed.connect(titleButtonPressed)
 	
 	#_on_restore_button_button_up()
+	theme = globalParameters.defaultWindowTheme
 	updateTheme()
 	myWindow.grab_focus()
 
