@@ -1037,8 +1037,13 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
-v0.1.13 - Custom Window Update (20/07/2026)
-- Fixed texture bu for Luna and Olive Scroll Bars
+v0.1.13-2 - Custom Window Update 3 (03/08/2026)
+- Fixed README Text
+- Normalized Button Textures
+- Updated SAIKNEKY Album
+
+v0.1.13-1 - Custom Window Update 2 (21/07/2026)
+- Fixed textures for Luna and Olive Scroll Bars
 - Fixed Control Anchors for Apps
 - Fixed Theme biug for custom window apps
 
@@ -1059,7 +1064,7 @@ v0.1.13 - Custom Window Update (20/07/2026)
 - Updated Configs
 
 --------------------------------------------------------------------------------
-v0.1.12.1 - Media Player Update 2 (03/06/2026)
+v0.1.12-1 - Media Player Update 2 (03/06/2026)
 - Added NEW Radial Visualizer
 - Restructured Resource File Structure
 - Implemented Secret 3 Triggers
