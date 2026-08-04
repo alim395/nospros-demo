@@ -49,7 +49,8 @@ func _on_error_button_pressed() -> void:
 
 func unlockSecret() -> void:
 	setErrorType(globalParameters.errorType.alert)
-	setErrorMessage("SECRET UNLOCKED!")
+	setErrorMessage("SECRET 1 UNLOCKED!")
 	secret1 = true
 	globalParameters.trollMode = true
 	globalParameters.secret1 = true
+	

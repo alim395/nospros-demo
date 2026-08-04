@@ -27,6 +27,7 @@ var shutdownSong : MusicTrack
 # Error Window
 @export var dialogueWindowNode : Control
 @onready var errorWindow = preload("res://scenes/dialogs/errorWindow.tscn")
+@onready var ynWindow = preload("res://scenes/dialogs/YNWindow.tscn")
 #var currentError : Node
 
 # Called when the node enters the scene tree for the first time.
@@ -54,7 +55,6 @@ func _ready() -> void:
 		Task_Bar.visible = true;
 		Task_Bar.visibility_changed.emit()
 		iconManager.visible = true;
-		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -124,12 +124,31 @@ func spawnError(msg : String = "This feature is not available yet.", eType : int
 		if dialogueWindowNode.get_child_count() > 1:
 			d.myWindow.position += Vector2i(randi_range(10,40), randi_range(10,40))
 
+func spawnYN(msg:String = "YES or No?", title:String = "Untitled", isCool : bool = false):
+	var d = ynWindow.instantiate()
+	d.setMessage(msg)
+	d.setTitle(title)
+	if isCool:
+		d.toggleCoolMessage()
+	dialogueWindowNode.add_child(d)
+	if dialogueWindowNode.get_children():
+		if dialogueWindowNode.get_child_count() > 1:
+			d.myWindow.position += Vector2i(randi_range(10,40), randi_range(10,40))
+	return d
+
 func _on_secret_2_button_pressed() -> void:
 	if globalParameters.secret2 == false:
 		globalParameters.secret2 = true
-		spawnError("SECRET 2 UNLOCKED!", globalParameters.errorType.alert)
+		spawnError("SECRET 2 UNLOCKED!\n Memes Folder Available", globalParameters.errorType.alert)
 
 func _on_secret_3_button_pressed() -> void:
 	if globalParameters.secret3 == false:
 		globalParameters.secret3 = true
-		spawnError("SECRET 3 UNLOCKED!", globalParameters.errorType.alert)
+		spawnError("SECRET 3 UNLOCKED!\n Media Player Available", globalParameters.errorType.alert)
+		await get_tree().create_timer(10.0).timeout
+		var yn = spawnYN("ALL SECRETS UNLOCKED\nWould you like to see the credits?","Game Complete", true)
+		yn.yesPress.connect(beginCredits)
+
+func beginCredits() -> void:
+	globalParameters.creditsBool = true
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

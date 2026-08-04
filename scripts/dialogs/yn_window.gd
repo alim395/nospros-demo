@@ -7,20 +7,29 @@ extends Control
 @export var yesButton : Button
 @export var noButton : Button
 
+@export var altDisabledIcon : Texture2D
+@export var coolMessage : bool = false
+@export var dialogButton : TextureButton
+
 # Signal
 signal yesPress
 signal noPress
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	MusicManager.sfx_player.play_SFX_from_library_poly("notify")
+	pass
 
 func setTitle(winTitle : String) -> void:
 	myWindow.title = winTitle
 
 func setMessage(msg : String) -> void:
 	dialogMSG.text = msg
+
+func toggleCoolMessage() -> void:
+	coolMessage = not coolMessage
+	if coolMessage:
+		dialogButton.texture_disabled = altDisabledIcon
 
 func _on_theme_changed() -> void:
 	myWindow.theme = theme

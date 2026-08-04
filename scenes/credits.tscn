@@ -1,0 +1,877 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxo1kibgddwr3"]
+
+[ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://crthd7bi2jwti" path="res://scripts/credits.gd" id="1_2ckv8"]
+[ext_resource type="Resource" uid="uid://bmi65rld62jqb" path="res://MMSongs/XPIntro.tres" id="2_kyhnv"]
+[ext_resource type="Resource" uid="uid://dv5ej0sf8dx8v" path="res://MMSongs/XPLogin.tres" id="2_mah5v"]
+[ext_resource type="FontFile" uid="uid://dx8bumt1hb7f7" path="res://fonts/tahomabd.ttf" id="3_0ctdu"]
+[ext_resource type="FontFile" uid="uid://dcvc5mxj5r36s" path="res://themes/eXP/styles/fonts/trebuc.ttf" id="4_2fbfq"]
+[ext_resource type="RichTextEffect" uid="uid://dra3ydy3uldyc" path="res://BBCode_VFX/matrix.tres" id="5_8gwij"]
+
+[sub_resource type="Animation" id="Animation_0ctdu"]
+resource_name = "Credits Transitions"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextLabels/TitleText:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextLabels/SubTitleText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextLabels/Testers:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 16, 28),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextLabels/Testers/TesterHeader:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 18, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextLabels/Testers/BodyMargin/BodyContainer/TesterLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 21, 23),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextLabels/Assets:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 28, 41),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextLabels/Assets/AssetsHeader:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(30, 32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextLabels/Assets/BodyMargin/BodyContainer/AssetsLabel:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 33, 36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextLabels/SCPP_Container:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 41, 82),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextLabels/SCPP_Container/SCPP00:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(43, 45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.015724182), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP01:visible_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(46, 49),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP02:visible_ratio")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(51, 54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP03:visible_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(56, 58),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP04:visible_ratio")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(60, 62),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP05:visible_ratio")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(64, 67),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP06:visible_ratio")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(69, 72),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP07:visible_ratio")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(74, 75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP08:visible_ratio")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(75, 76),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP09:visible_ratio")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(76, 77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("TextLabels/End_Container:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 82),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_2fbfq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextLabels/TitleText:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextLabels/SubTitleText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextLabels/Testers:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextLabels/Testers/TesterHeader:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextLabels/Testers/BodyMargin/BodyContainer/TesterLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextLabels/Assets:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextLabels/Assets/AssetsHeader:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextLabels/Assets/BodyMargin/BodyContainer/AssetsLabel:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextLabels/SCPP_Container:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextLabels/SCPP_Container/SCPP00:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.015724182)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP01:visible_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP02:visible_ratio")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP03:visible_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP04:visible_ratio")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP05:visible_ratio")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP06:visible_ratio")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP07:visible_ratio")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP08:visible_ratio")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("TextLabels/SCPP_Container/BodyMargin/BodyContainer/SCPP09:visible_ratio")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("TextLabels/End_Container:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gwij"]
+_data = {
+&"Credits Transitions": SubResource("Animation_0ctdu"),
+&"RESET": SubResource("Animation_2fbfq")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ckv8")
+creditsSong = ExtResource("2_kyhnv")
+goBackSong = ExtResource("2_mah5v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0bpdh")
+
+[node name="TextLabels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleText" type="RichTextLabel" parent="TextLabels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("3_0ctdu")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[pulse freq=0.125 color=#ffffff00]Nostalgia Process[/pulse]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubTitleText" type="RichTextLabel" parent="TextLabels"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("3_0ctdu")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[pulse freq=0.125 color=#ffffff00]A Solo Project by ZenkoZGames[/pulse]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Testers" type="VBoxContainer" parent="TextLabels"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TesterHeader" type="RichTextLabel" parent="TextLabels/Testers"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("3_0ctdu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Volunteer Testers
+[hr width=40%]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BodyMargin" type="MarginContainer" parent="TextLabels/Testers"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BodyContainer" type="VBoxContainer" parent="TextLabels/Testers/BodyMargin"]
+layout_mode = 2
+alignment = 1
+
+[node name="TesterLabel" type="RichTextLabel" parent="TextLabels/Testers/BodyMargin/BodyContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "Test Lead - vtaemins
+Associate Test Lead - RadiantGold
+Brute Force Tester - Kookie787"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Assets" type="VBoxContainer" parent="TextLabels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AssetsHeader" type="RichTextLabel" parent="TextLabels/Assets"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("3_0ctdu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Assets and References
+[hr width=45%]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BodyMargin" type="MarginContainer" parent="TextLabels/Assets"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BodyContainer" type="VBoxContainer" parent="TextLabels/Assets/BodyMargin"]
+layout_mode = 2
+alignment = 1
+
+[node name="AssetsLabel" type="RichTextLabel" parent="TextLabels/Assets/BodyMargin/BodyContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+text = "Windows XP - Microsoft Corporation
+009 Sound System - Alexander Perls
+SAIKNEKY - SAIKNEKY :3
+dreamOS - alyzea"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP_Container" type="VBoxContainer" parent="TextLabels"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SCPP00" type="RichTextLabel" parent="TextLabels/SCPP_Container"]
+modulate = Color(1, 1, 1, 0.015724182)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("3_0ctdu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Class of 2026
+[hr width=40%]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BodyMargin" type="MarginContainer" parent="TextLabels/SCPP_Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BodyContainer" type="HFlowContainer" parent="TextLabels/SCPP_Container/BodyMargin"]
+layout_mode = 2
+theme_override_constants/v_separation = 24
+alignment = 1
+
+[node name="SCPP01" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][rainbow]PPG[/rainbow][/center]
+[color=red]Ayesha Shaikh[/color]
+[color=green]Suhana Aafran Kareem Nawaz[/color]
+[color=blue]Rital al Jabari[/color]"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP02" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=red]H[/color]&[color=blue]M[/color][/center]
+[color=red]Hasan Abourakbah
+Haris Lughmani[/color]
+[color=blue]Mohamed Abutalib
+Mahin Mohamed[/color]
+"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP03" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=green][matrix]Crime Coders[/matrix][/color][/center]
+Dana Al-Sultani
+Malak Maleki
+"
+fit_content = true
+horizontal_alignment = 1
+custom_effects = [ExtResource("5_8gwij")]
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP04" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=dark_red][pulse]Evil's Embrace[/pulse][/color][/center]
+Dana Al-Sultani
+Malak Maleki
+"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP05" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=red]M[/color][color=gold]A[/color][color=green]J[/color][color=blue]E[/color][/center]
+[color=red]Muhammad Bin Adnan
+[color=gold]Ahmed Muhammed Hashir
+[color=green]John Paul Ribeiru
+[color=blue]Eric Ruhl"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP06" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[color=tan][shake][center]PAPYRUS[/center][/shake][/color]
+Mayasa Almidani
+Sarah Bouaouina
+Yasmeen Ghandour
+Aradhana Subramanian"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP07" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=red]Catch-22[/color][/center]
+Manha Afrah"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP08" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=green]The Snake Whisperers[/color][/center]
+Ronan MacCormack"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SCPP09" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+bbcode_enabled = true
+text = "[center][color=blue]Singularity[/color][/center]
+Naya Saleh"
+fit_content = true
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="End_Container" type="VBoxContainer" parent="TextLabels"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndText" type="RichTextLabel" parent="TextLabels/End_Container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("3_0ctdu")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Thanks for Playing :D"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndLabel" type="RichTextLabel" parent="TextLabels/End_Container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_fonts/normal_font = ExtResource("4_2fbfq")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "
+[url=\"go_back\"]Return to Desktop?"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CreditsAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8gwij")
+}
+autoplay = "Credits Transitions"
+
+[connection signal="meta_clicked" from="TextLabels/End_Container/EndLabel" to="." method="_on_end_label_meta_clicked"]

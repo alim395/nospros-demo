@@ -8,6 +8,8 @@ extends Node2D
 @export var startButton : Button
 @export var startLabel : Label
 
+@export var creditsButtonContainer : HBoxContainer
+
 @export var softBlur : Node2D
 @export var crtNode : CRT
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 	startButton.text = globalParameters.playerName + "\n \n"
 	if globalParameters.playerPFP != null:
 		startButton.icon = globalParameters.playerPFP
+	
+	creditsButtonContainer.visible = globalParameters.creditsBool
 	
 	if OS.get_name() == "Web":
 		shutdownButton.disabled = true
@@ -37,6 +41,8 @@ func _on_start_pressed() -> void:
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
