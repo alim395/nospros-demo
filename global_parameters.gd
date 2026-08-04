@@ -55,6 +55,7 @@ signal unlockWMP
 @export var secret2 : bool = false
 @export var secret3 : bool = false
 var secret3Array : Array[String]
+@export var creditsBool : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

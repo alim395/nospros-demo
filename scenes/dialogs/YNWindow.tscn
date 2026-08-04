@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://nsvdhbvbwra2"]
+[gd_scene load_steps=6 format=3 uid="uid://nsvdhbvbwra2"]
 
 [ext_resource type="Script" uid="uid://dx6x3dh0v4eir" path="res://scripts/dialogs/yn_window.gd" id="1_5n835"]
+[ext_resource type="Texture2D" uid="uid://inxjk66bbkhk" path="res://sprites/icons/Smile.png" id="2_3210s"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="2_j2yk2"]
 [ext_resource type="Texture2D" uid="uid://du8ymh1g46mhr" path="res://sprites/UI/XP/panels/Critical.png" id="3_hdded"]
 [ext_resource type="Texture2D" uid="uid://nrh53vvbcmk" path="res://sprites/UI/XP/panels/Alert.png" id="4_o23xj"]
 
-[node name="YnWindow" type="Control" node_paths=PackedStringArray("myWindow", "dialogMSG", "yesButton", "noButton")]
+[node name="YnWindow" type="Control" node_paths=PackedStringArray("myWindow", "dialogMSG", "yesButton", "noButton", "dialogButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,8 @@ myWindow = NodePath("Window")
 dialogMSG = NodePath("Window/Panel/VBoxContainer/DialogMSG/DialogLabel")
 yesButton = NodePath("Window/Panel/VBoxContainer/ButtonContainer/Yes")
 noButton = NodePath("Window/Panel/VBoxContainer/ButtonContainer/No")
+altDisabledIcon = ExtResource("2_3210s")
+dialogButton = NodePath("Window/Panel/VBoxContainer/DialogMSG/DialogButton")
 
 [node name="Window" type="Window" parent="."]
 oversampling_override = 1.0
@@ -54,6 +57,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="DialogButton" type="TextureButton" parent="Window/Panel/VBoxContainer/DialogMSG"]
+texture_filter = 1
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 disabled = true

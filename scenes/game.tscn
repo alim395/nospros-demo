@@ -1037,6 +1037,11 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+v0.1.13-3 - Credits Update (05/08/2026)
+- Added Credits Scene :D
+- Added Method to call YN Window
+- Added Custom Matrix BBCode Effect
+
 v0.1.13-2 - Custom Window Update 3 (03/08/2026)
 - Fixed README Text
 - Normalized Button Textures

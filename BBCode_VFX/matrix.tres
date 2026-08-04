@@ -1,0 +1,6 @@
+[gd_resource type="RichTextEffect" script_class="RichTextMatrix" load_steps=2 format=3 uid="uid://dra3ydy3uldyc"]
+
+[ext_resource type="Script" uid="uid://dco3m8glyhvik" path="res://BBCode_VFX/matrix.gd" id="1_385lx"]
+
+[resource]
+script = ExtResource("1_385lx")

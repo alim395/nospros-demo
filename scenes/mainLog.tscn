@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpb3lcfhbttjn"]
+[gd_scene load_steps=25 format=3 uid="uid://bpb3lcfhbttjn"]
 
 [ext_resource type="Script" uid="uid://ysvx6tfrjahy" path="res://scripts/main_log.gd" id="1_b4ej1"]
 [ext_resource type="Resource" uid="uid://dv5ej0sf8dx8v" path="res://MMSongs/XPLogin.tres" id="2_ti1w0"]
@@ -15,8 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="11_tuanb"]
 [ext_resource type="FontFile" uid="uid://dx8bumt1hb7f7" path="res://fonts/tahomabd.ttf" id="12_xjby3"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="13_j7xth"]
+[ext_resource type="Texture2D" uid="uid://d2fq14uuyjpt6" path="res://sprites/buttons/Credits.png" id="16_aqspi"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="16_icvme"]
 [ext_resource type="Shader" uid="uid://dfq0esfuvf8kp" path="res://shaders/GaussianBlur.gdshader" id="16_ti1w0"]
+[ext_resource type="Texture2D" uid="uid://bj3y3puudqomf" path="res://sprites/buttons/Credits_Pressed.png" id="17_tc1es"]
+[ext_resource type="Texture2D" uid="uid://xmdkpf04r2kq" path="res://sprites/buttons/Credits_Hover.png" id="18_6lklk"]
 
 [sub_resource type="Gradient" id="Gradient_85g3d"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -41,13 +44,14 @@ shader_parameter/G = 0.0
 shader_parameter/B = 0.0
 shader_parameter/blur_strength = 1.0
 
-[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "softBlur", "crtNode")]
+[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "creditsButtonContainer", "softBlur", "crtNode")]
 script = ExtResource("1_b4ej1")
 logOnSong = ExtResource("2_ti1w0")
 buttonManager = NodePath("ButtonManager")
-shutdownButton = NodePath("ButtonManager/Quit")
+shutdownButton = NodePath("ButtonManager/BottomContainer/ShutdownContainer/Quit")
 startButton = NodePath("ButtonManager/Start")
 startLabel = NodePath("ButtonManager/Start/StartLabel")
+creditsButtonContainer = NodePath("ButtonManager/BottomContainer/CreditsContainer")
 softBlur = NodePath("ScreenFilters/BackBufferCopy1")
 crtNode = NodePath("CRT")
 
@@ -71,10 +75,15 @@ width = 1.0
 gradient = SubResource("Gradient_tipki")
 
 [node name="ButtonManager" type="Control" parent="."]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Start" type="Button" parent="ButtonManager"]
 layout_mode = 0
@@ -138,29 +147,68 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Adjust user Settings"
 scroll_active = false
 
-[node name="Quit" type="TextureButton" parent="ButtonManager"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 315.0
-offset_right = 565.0
-offset_bottom = 871.0
-scale = Vector2(0.08, 0.08)
+[node name="BottomContainer" type="HBoxContainer" parent="ButtonManager"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ShutdownContainer" type="HBoxContainer" parent="ButtonManager/BottomContainer"]
+custom_minimum_size = Vector2(320, 44)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Quit" type="TextureButton" parent="ButtonManager/BottomContainer/ShutdownContainer"]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
 texture_normal = ExtResource("8_tc1es")
 texture_pressed = ExtResource("9_6lklk")
 texture_hover = ExtResource("10_b4oi1")
 texture_disabled = ExtResource("11_tuanb")
+ignore_texture_size = true
 stretch_mode = 4
 
-[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager"]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 328.0
-offset_right = 200.0
-offset_bottom = 344.0
+[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager/BottomContainer/ShutdownContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/bold_font = ExtResource("12_xjby3")
 theme_override_font_sizes/normal_font_size = 12
 text = "Turn off your Computer"
 scroll_active = false
+vertical_alignment = 1
+
+[node name="CreditsContainer" type="HBoxContainer" parent="ButtonManager/BottomContainer"]
+custom_minimum_size = Vector2(320, 44)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Credits" type="TextureButton" parent="ButtonManager/BottomContainer/CreditsContainer"]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+texture_normal = ExtResource("16_aqspi")
+texture_pressed = ExtResource("17_tc1es")
+texture_hover = ExtResource("18_6lklk")
+texture_disabled = ExtResource("11_tuanb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="CreditsLabel" type="RichTextLabel" parent="ButtonManager/BottomContainer/CreditsContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/bold_font = ExtResource("12_xjby3")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Credits"
+scroll_active = false
+vertical_alignment = 1
 
 [node name="WelcomeText" type="RichTextLabel" parent="."]
 offset_left = 160.0
@@ -174,6 +222,7 @@ text = "Nostalgia
 Process"
 
 [node name="ScreenFilters" type="Node2D" parent="."]
+visible = false
 
 [node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters"]
 z_index = 1
@@ -206,4 +255,5 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 
 [connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonManager/BottomContainer/ShutdownContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonManager/BottomContainer/CreditsContainer/Credits" to="." method="_on_credits_pressed"]
