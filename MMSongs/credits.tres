@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicTrack" load_steps=3 format=3 uid="uid://ci2x6j85h32y3"]
+
+[ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="1_8r1q4"]
+[ext_resource type="AudioStream" uid="uid://oetotyuycs0h" path="res://audio/music/OS/end/LEASE_Elevator_Mix.ogg" id="2_kasi7"]
+
+[resource]
+script = ExtResource("1_8r1q4")
+name = "LEASE Elevator Mix"
+artist = "Eight"
+track = ExtResource("2_kasi7")
+metadata/_custom_type_script = "uid://b4gw7svnn4fxu"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="1_0bpdh"]
 [ext_resource type="Script" uid="uid://crthd7bi2jwti" path="res://scripts/credits.gd" id="1_2ckv8"]
-[ext_resource type="Resource" uid="uid://bmi65rld62jqb" path="res://MMSongs/XPIntro.tres" id="2_kyhnv"]
+[ext_resource type="Resource" uid="uid://ci2x6j85h32y3" path="res://MMSongs/credits.tres" id="2_kyhnv"]
 [ext_resource type="Resource" uid="uid://dv5ej0sf8dx8v" path="res://MMSongs/XPLogin.tres" id="2_mah5v"]
 [ext_resource type="FontFile" uid="uid://dx8bumt1hb7f7" path="res://fonts/tahomabd.ttf" id="3_0ctdu"]
 [ext_resource type="FontFile" uid="uid://dcvc5mxj5r36s" path="res://themes/eXP/styles/fonts/trebuc.ttf" id="4_2fbfq"]
