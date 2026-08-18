@@ -146,9 +146,10 @@ func _on_secret_3_button_pressed() -> void:
 		globalParameters.secret3 = true
 		spawnError("SECRET 3 UNLOCKED!\n Media Player Available", globalParameters.errorType.alert)
 		await get_tree().create_timer(10.0).timeout
+		globalParameters.creditsBool = true
 		var yn = spawnYN("ALL SECRETS UNLOCKED\nWould you like to see the credits?","Game Complete", true)
 		yn.yesPress.connect(beginCredits)
 
 func beginCredits() -> void:
-	globalParameters.creditsBool = true
+	#globalParameters.creditsBool = true
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")

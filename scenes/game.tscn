@@ -796,7 +796,7 @@ myPCInfo = "System:
         Nostalgia Process eXP
         Alpha Build
         Version 0.1.13
-        Revision 1
+        Revision 4
 
 Registered to:
         PLAYERNAME"
@@ -1037,6 +1037,11 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+v0.1.13-4 - Credits Update (18/08/2026)
+- Added Missing Asset Credits
+- Fixed Bug Where Credit Button did not appear after Secret 3
+- Updated Revision Number
+
 v0.1.13-3 - Credits Update (05/08/2026)
 - Added Credits Scene :D
 - Added Method to call YN Window
