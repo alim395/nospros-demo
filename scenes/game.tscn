@@ -780,6 +780,14 @@ NotepadWins = NodePath("NotepadWindows")
 [node name="customPCApp" parent="AppManager" unique_id=766435961 instance=ExtResource("25_vgxg3")]
 visible = false
 layout_mode = 1
+myPCInfo = "System:
+			Nostalgia Process eXP
+			Alpha Build
+			Version 0.1.14
+			Revision 0
+
+Registered to:
+			PLAYERNAME"
 
 [node name="settingApp" type="Control" parent="AppManager" unique_id=1469770524 node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "fullScreen", "crtNode", "startMenuOptions", "iconStyleOptions", "taskBar")]
 visible = false
@@ -909,6 +917,29 @@ script = ExtResource("59_h5tdf")
 taskbar = NodePath("../../Taskbar")
 readmeText = "README
 --------------------------------------------------------------------------------
+v0.1.14 - Globetrotter (Browser) Update (01/11/2026)
+
+Globetrotter:
+- Add navigation buttons
+- Add example and error web pages
+- Add web directory with page addresses and downloadable files
+- Add file downloads: save prompt, progress dialog, overwrite confirm
+- Limit to one download at a time; cancel downloads when browser closes
+- Add per-filetype download handling (only txt for now)
+
+Misc:
+- Upgrade to Godot 4.7
+- Remove unused addons and themes
+- Removed unused IM Scene
+- Update audio bus
+- Replaced Microsoft Sans Serif with Tahoma 8pt
+- Update Y2K music icon
+- Update tree style
+- Fix grabber, scroll, progress bar textures and button styles
+- Add unfocused textures for window buttons
+
+
+--------------------------------------------------------------------------------
 v0.1.13-4 - Credits Update (18/08/2026)
 - Added Missing Asset Credits
 - Fixed Bug Where Credit Button did not appear after Secret 3
@@ -927,7 +958,7 @@ v0.1.13-2 - Custom Window Update 3 (03/08/2026)
 v0.1.13-1 - Custom Window Update 2 (21/07/2026)
 - Fixed textures for Luna and Olive Scroll Bars
 - Fixed Control Anchors for Apps
-- Fixed Theme biug for custom window apps
+- Fixed Theme bug for custom window apps
 
 v0.1.13 - Custom Window Update (20/07/2026)
 - Added Small Icons Setting for the Desktop
