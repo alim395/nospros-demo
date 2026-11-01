@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://tkswg5ivtcpw"]
+[gd_resource type="Theme" format=3 uid="uid://tkswg5ivtcpw"]
 
 [ext_resource type="Texture2D" uid="uid://cnmnxn6djc5m5" path="res://sprites/UI/XP/taskbar/taskButtons/Olive/hover.png" id="1_x7omf"]
 [ext_resource type="Texture2D" uid="uid://pddqa1ndqsok" path="res://sprites/UI/XP/taskbar/taskButtons/Olive/active-hover.png" id="2_ceui1"]

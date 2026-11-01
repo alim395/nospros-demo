@@ -1,6 +1,6 @@
 extends customWindow
 
-@export var myTaskButton : taskbarButton
+#@export var myTaskButton : taskbarButton
 var isMinimize : bool = false
 
 @export var desktopWallpaper : TextureRect
@@ -59,8 +59,8 @@ func _on_close_button_button_up() -> void:
 
 func closeWindow() -> void:
 	myWindow.visible = false
-	if get_parent():
-		%AppManager.taskBar.closeTask("Picture")
+	if myTaskButton:
+		myTaskButton.close_task()
 
 func _on_minimize_button_button_up() -> void:
 	super._on_minimize_button_button_up()

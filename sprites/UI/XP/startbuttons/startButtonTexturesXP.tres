@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=23 format=3 uid="uid://cyqiyj3q3vhhw"]
+[gd_resource type="Resource" format=3 uid="uid://cyqiyj3q3vhhw"]
 
 [ext_resource type="Texture2D" uid="uid://djajtm5k841of" path="res://sprites/UI/XP/startbuttons/Embedded000.png" id="1_axxs4"]
 [ext_resource type="Texture2D" uid="uid://h51pj7ghoyus" path="res://sprites/UI/XP/startbuttons/Embedded001.png" id="2_x78la"]

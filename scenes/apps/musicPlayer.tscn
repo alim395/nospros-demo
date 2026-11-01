@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://decf48acwjrm8"]
+[gd_scene format=3 uid="uid://decf48acwjrm8"]
 
 [ext_resource type="Script" uid="uid://betlkqfuo10it" path="res://scripts/apps/music_player.gd" id="1_gkd1q"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_t4c88"]
@@ -69,7 +69,7 @@ expand_margin_left = 1.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
-[node name="MusicPlayer" type="Control" node_paths=PackedStringArray("myWindow", "trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton", "radialVisualizer", "secret3button")]
+[node name="MusicPlayer" type="Control" unique_id=1838687998 node_paths=PackedStringArray("myWindow", "trackNumLabel", "playtimeLabel", "albumOption", "trackOption", "albumArt", "artistLabel", "seekSlider", "loopButton", "shuffleButton", "radialVisualizer", "secret3button")]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -127,7 +127,7 @@ BUTTER       `>I<'
 └───────────────────┘"])
 secret3button = NodePath("Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline/Secret3Button")
 
-[node name="Window" type="Window" parent="."]
+[node name="Window" type="Window" parent="." unique_id=1197754063]
 snap_2d_vertices_to_pixel = true
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
@@ -140,7 +140,7 @@ content_scale_mode = 1
 content_scale_aspect = 1
 content_scale_stretch = 1
 
-[node name="Panel" type="PanelContainer" parent="Window"]
+[node name="Panel" type="PanelContainer" parent="Window" unique_id=1737040872]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -150,28 +150,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("10_5nukk")
 
-[node name="MarginContainer" type="MarginContainer" parent="Window/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel" unique_id=603181545]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer" unique_id=767372719]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer" unique_id=1001336914]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 16
 
-[node name="DisplayPanelContainer" type="PanelContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="DisplayPanelContainer" type="PanelContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=287498779]
 custom_minimum_size = Vector2(152, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("11_rmxtt")
 
-[node name="AudioVisualizers" type="MarginContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer"]
+[node name="AudioVisualizers" type="MarginContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer" unique_id=2089565242]
 clip_contents = true
 layout_mode = 2
 theme_override_constants/margin_left = 4
@@ -179,25 +179,25 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers"]
+[node name="AudioSpectrumVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers" unique_id=966742192]
 visible = false
 layout_mode = 2
 script = ExtResource("6_py3vy")
 
-[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers"]
+[node name="AudioWaveVisualizer" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers" unique_id=1710954894]
 visible = false
 z_index = 1
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("13_knkca")
 
-[node name="AudioRadial" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers" node_paths=PackedStringArray("s3Label")]
+[node name="AudioRadial" type="Control" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers" unique_id=1471265706 node_paths=PackedStringArray("s3Label")]
 layout_mode = 2
 script = ExtResource("14_np205")
 secretFont = ExtResource("15_yicri")
 s3Label = NodePath("CenterContainer/S3")
 
-[node name="CenterContainer" type="CenterContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial"]
+[node name="CenterContainer" type="CenterContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial" unique_id=2015206081]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -205,7 +205,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="S3" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial/CenterContainer"]
+[node name="S3" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/AudioRadial/CenterContainer" unique_id=1257017322]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_constants/line_spacing = 0
@@ -222,12 +222,12 @@ text = "////////////////////////////////
 ////////////////////////////////"
 vertical_alignment = 1
 
-[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers"]
+[node name="PanelPlayTime" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers" unique_id=1414158696]
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="TrackNumLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime"]
+[node name="TrackNumLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime" unique_id=788070753]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -236,7 +236,7 @@ theme_override_font_sizes/font_size = 32
 text = "[00]"
 horizontal_alignment = 1
 
-[node name="playTimeLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime"]
+[node name="playTimeLabel" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer/AudioVisualizers/PanelPlayTime" unique_id=1667508506]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
@@ -245,7 +245,7 @@ theme_override_font_sizes/font_size = 32
 text = "00:00"
 horizontal_alignment = 1
 
-[node name="Panel Button" type="TextureButton" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer" node_paths=PackedStringArray("panelVisuals")]
+[node name="Panel Button" type="TextureButton" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/DisplayPanelContainer" unique_id=821580175 node_paths=PackedStringArray("panelVisuals")]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_pressed = SubResource("GradientTexture2D_t4c88")
@@ -256,7 +256,7 @@ script = ExtResource("14_2jk8m")
 glassTap = ExtResource("15_t4c88")
 panelVisuals = [NodePath("../AudioVisualizers/PanelPlayTime"), NodePath("../AudioVisualizers/AudioSpectrumVisualizer"), NodePath("../AudioVisualizers/AudioWaveVisualizer"), NodePath("../AudioVisualizers/AudioRadial")]
 
-[node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ButtonContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1328353278]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -264,12 +264,12 @@ size_flags_vertical = 4
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PPSContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer"]
+[node name="PPSContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer" unique_id=411339603]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="PlayButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer" unique_id=1892511508]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -285,7 +285,7 @@ icon = ExtResource("13_8evac")
 icon_alignment = 1
 expand_icon = true
 
-[node name="PauseButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="PauseButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer" unique_id=875189194]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -300,7 +300,7 @@ icon = ExtResource("14_knkca")
 icon_alignment = 1
 expand_icon = true
 
-[node name="StopButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="StopButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer" unique_id=1052880164]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -315,7 +315,7 @@ icon = ExtResource("15_2jk8m")
 icon_alignment = 1
 expand_icon = true
 
-[node name="LoopButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer"]
+[node name="LoopButton" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/PPSContainer" unique_id=49230230]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -331,12 +331,12 @@ icon = ExtResource("16_t4c88")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer"]
+[node name="SeekContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer" unique_id=132384368]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PrevTrack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="PrevTrack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer" unique_id=1397633074]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -351,7 +351,7 @@ icon = ExtResource("17_a15ay")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekBack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="SeekBack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer" unique_id=1393941207]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -367,7 +367,7 @@ icon = ExtResource("18_e4hja")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekForward" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="SeekForward" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer" unique_id=292231171]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -382,7 +382,7 @@ icon = ExtResource("19_bnu85")
 icon_alignment = 1
 expand_icon = true
 
-[node name="NextTrack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="NextTrack" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer" unique_id=1634055742]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -397,7 +397,7 @@ icon = ExtResource("20_66olg")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Shuffle" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer"]
+[node name="Shuffle" type="Button" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ButtonContainer/SeekContainer" unique_id=196188801]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -413,20 +413,20 @@ icon = ExtResource("21_5nukk")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ArtContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ArtContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1543872161]
 custom_minimum_size = Vector2(72, 90)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 alignment = 1
 
-[node name="ArtOutline" type="PanelContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer"]
+[node name="ArtOutline" type="PanelContainer" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer" unique_id=1849579712]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("11_rmxtt")
 
-[node name="TextureRect" type="TextureRect" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline"]
+[node name="TextureRect" type="TextureRect" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline" unique_id=477109471]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 2
@@ -434,7 +434,7 @@ texture = ExtResource("3_yj2aj")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="Secret3Button" type="TextureButton" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline"]
+[node name="Secret3Button" type="TextureButton" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer/ArtOutline" unique_id=104292417]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_pressed = SubResource("GradientTexture2D_t4c88")
@@ -442,7 +442,7 @@ texture_hover = SubResource("GradientTexture2D_2jk8m")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer"]
+[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/HBoxContainer/ArtContainer" unique_id=612355127]
 layout_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 16
@@ -452,38 +452,38 @@ horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 3
 
-[node name="OptionsContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer"]
+[node name="OptionsContainer" type="VBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer" unique_id=1856575933]
 layout_mode = 2
 size_flags_vertical = 8
 alignment = 2
 
-[node name="AlbumContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer"]
+[node name="AlbumContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer" unique_id=998728506]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer"]
+[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer" unique_id=1361652220]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 text = "Album :"
 
-[node name="OptionButton" type="OptionButton" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer"]
+[node name="OptionButton" type="OptionButton" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/AlbumContainer" unique_id=2025581166]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 
-[node name="TrackContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer"]
+[node name="TrackContainer" type="HBoxContainer" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer" unique_id=1548273155]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer"]
+[node name="Label" type="Label" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer" unique_id=463912510]
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 text = "Track   :"
 
-[node name="OptionButton" type="OptionButton" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer"]
+[node name="OptionButton" type="OptionButton" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer/TrackContainer" unique_id=1235866192]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 
-[node name="seekSlider" type="HSlider" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer"]
+[node name="seekSlider" type="HSlider" parent="Window/Panel/MarginContainer/VBoxContainer/OptionsContainer" unique_id=2048132018]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 mouse_default_cursor_shape = 8

@@ -1,7 +1,7 @@
 extends customWindow
 
 var isMinimize : bool = false
-@export var myTaskButton : taskbarButton
+#@export var myTaskButton : taskbarButton
 
 @export var seekSlider : HSlider
 
@@ -62,7 +62,7 @@ func closeWindow() -> void:
 	_on_stop_button_button_up()
 	myWindow.visible = false
 	if get_parent():
-		get_parent().get_node("%Taskbar").closeTask("WMP")
+		myTaskButton.close_task()
 	queue_free()
 
 func setTaskButton(tB : taskbarButton) -> void:

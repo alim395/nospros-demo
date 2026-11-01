@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://dwjvpdmcaiu8j"]
+[gd_scene format=3 uid="uid://dwjvpdmcaiu8j"]
 
 [ext_resource type="Script" uid="uid://2njgyjcuwh7t" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Resource" uid="uid://cm72m1my2mjmd" path="res://MMSongs/XPLogout.tres" id="3_66xif"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://470wfhae4cxu" path="res://sprites/icons/Text_Icon.png" id="13_tc8uq"]
 [ext_resource type="Texture2D" uid="uid://bvijjo1f4o1jr" path="res://sprites/icons/Settings_2.png" id="14_bk1p3"]
 [ext_resource type="Texture2D" uid="uid://sl6np7l82w2x" path="res://sprites/icons/PC_Icon.png" id="14_gdf8r"]
+[ext_resource type="Texture2D" uid="uid://caiuq0yj0edi7" path="res://sprites/icons/CD_Icon3.png" id="15_2gnni"]
 [ext_resource type="Texture2D" uid="uid://pragqk6we42s" path="res://sprites/icons/Video_Icon2.png" id="16_66xif"]
 [ext_resource type="Texture2D" uid="uid://cs1087a454fq8" path="res://sprites/UI/XP/panels/XPLoginPanel.svg" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://4hi6to0lxj7j" path="res://scripts/apps/setting_app.gd" id="17_0sl42"]
@@ -41,7 +42,6 @@
 [ext_resource type="Texture2D" uid="uid://b8yd0wr3odftt" path="res://sprites/buttons/Shutdown_Hover.png" id="20_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://b1tsrdlveu5op" path="res://sprites/icons/Text_Icon2.png" id="20_xjcjm"]
 [ext_resource type="Texture2D" uid="uid://q2o1ng1kybly" path="res://sprites/buttons/Shutdown_Disabled.png" id="21_pl11u"]
-[ext_resource type="Script" uid="uid://c0c60ik0ei382" path="res://scripts/apps/troll_app.gd" id="21_rm0al"]
 [ext_resource type="Texture2D" uid="uid://cqqt7xpwcehm2" path="res://sprites/icons/PC_Icon2.png" id="21_xbifu"]
 [ext_resource type="FontFile" uid="uid://dt08s88mopq3p" path="res://fonts/tahoma.ttf" id="22_bhx41"]
 [ext_resource type="Texture2D" uid="uid://55x5kpeygbxv" path="res://sprites/icons/wmp2.png" id="22_veukt"]
@@ -49,33 +49,28 @@
 [ext_resource type="Texture2D" uid="uid://1y35t6uasf6s" path="res://sprites/buttons/LogOff.png" id="23_qouja"]
 [ext_resource type="Texture2D" uid="uid://fj3m5kxctqtj" path="res://sprites/buttons/Exit_Pressed.png" id="24_sww3w"]
 [ext_resource type="Texture2D" uid="uid://clo0ox8ojcx4s" path="res://sprites/buttons/LogOff_Pressed.png" id="24_wljb1"]
-[ext_resource type="Script" uid="uid://dfgdx75ktc5d6" path="res://scripts/apps/pc_app.gd" id="25_s33c4"]
 [ext_resource type="Texture2D" uid="uid://g5dw67vkxjr2" path="res://sprites/buttons/Exit_Hover.png" id="25_suyxu"]
 [ext_resource type="Texture2D" uid="uid://blra1sk2fgdnl" path="res://sprites/buttons/LogOff_Hover.png" id="25_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://b3ss0n5x71h8n" path="res://scenes/customApps/customPCApp.tscn" id="25_vgxg3"]
 [ext_resource type="Texture2D" uid="uid://def0owgc73j7q" path="res://sprites/buttons/LogOff_Disabled.png" id="26_js0lu"]
 [ext_resource type="Texture2D" uid="uid://c00p2rtoj0j27" path="res://sprites/buttons/Exit_Disabled.png" id="26_sgl2t"]
-[ext_resource type="Texture2D" uid="uid://b1h46t7101ipn" path="res://sprites/UI/XP/panels/sys.png" id="26_x8trd"]
+[ext_resource type="PackedScene" uid="uid://b734ykfku3fwc" path="res://scenes/customApps/customTrollApp.tscn" id="30_flw08"]
 [ext_resource type="Texture2D" uid="uid://ds1j72y56u6d5" path="res://sprites/UI/XP/taskbar/Metallic.png" id="33_yd4ix"]
 [ext_resource type="Texture2D" uid="uid://bivghtadqisk5" path="res://sprites/UI/XP/taskbar/Royale.png" id="34_66xif"]
 [ext_resource type="Script" uid="uid://cd0pppp87510c" path="res://scripts/welcome_screen.gd" id="37_o8ni1"]
 [ext_resource type="Texture2D" uid="uid://dlb1jtlx1wgjj" path="res://sprites/userIcons/chess.jpg" id="39_3hbvx"]
-[ext_resource type="VideoStream" uid="uid://dfj2oofn0fmol" path="res://video/memes/Photograph.ogv" id="41_2iuns"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="41_p4npv"]
 [ext_resource type="PackedScene" uid="uid://dfpqk58p2qjdd" path="res://scenes/customApps/customPictureApp.tscn" id="43_veukt"]
 [ext_resource type="Script" uid="uid://bghaddibpt6f1" path="res://addons/crt/crt.gd" id="44_66xif"]
 [ext_resource type="PackedScene" uid="uid://p3fcftbqut5j" path="res://scenes/customApps/customMemeFolder.tscn" id="44_nbjts"]
-[ext_resource type="VideoStream" uid="uid://b74aqqw5qjwyv" path="res://video/memes/PBJ.ogv" id="45_84hbc"]
-[ext_resource type="VideoStream" uid="uid://qmb02i1epspt" path="res://video/Photograph2.ogv" id="45_flw08"]
-[ext_resource type="VideoStream" uid="uid://bmv2ybevrlgar" path="res://video/memes/HamsterDance.ogv" id="46_15b3c"]
 [ext_resource type="Texture2D" uid="uid://cyx0102unan36" path="res://sprites/UI/XP/taskbar/Panel/Luna.png" id="50_3x338"]
 [ext_resource type="Texture2D" uid="uid://dojwpn6t2f08h" path="res://sprites/UI/XP/taskbar/Panel/Olive.png" id="51_s0g06"]
-[ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="52_1yg85"]
+[ext_resource type="FontFile" uid="uid://qg1jp48qfeqs" path="res://themes/eXP/styles/fonts/tahoma8.otf" id="52_1yg85"]
 [ext_resource type="Texture2D" uid="uid://doi4gt48rav3r" path="res://sprites/UI/XP/taskbar/Panel/Embedded.png" id="52_2gnni"]
 [ext_resource type="Script" uid="uid://cuyhf0go5bavo" path="res://scripts/dialogs/dialogue_windows.gd" id="53_2iuns"]
 [ext_resource type="Texture2D" uid="uid://cvtdxeg0lpgov" path="res://sprites/UI/XP/taskbar/Panel/Metallic.png" id="53_4nbsr"]
 [ext_resource type="Texture2D" uid="uid://qit0ig4uwg8v" path="res://sprites/UI/XP/taskbar/Panel/Royale.png" id="54_fkywm"]
 [ext_resource type="Texture2D" uid="uid://cei5r47ftc4mp" path="res://sprites/UI/XP/taskbar/Panel/Zune.png" id="55_dku7i"]
-[ext_resource type="VideoStream" uid="uid://dukoms7a2sd46" path="res://video/memes/RickRoll.ogv" id="56_1va0p"]
 [ext_resource type="Script" uid="uid://dit8ot1adx3r8" path="res://scripts/apps/notepad/notepad_windows.gd" id="59_h5tdf"]
 [ext_resource type="Texture2D" uid="uid://oqu17jxhsyo7" path="res://sprites/UI/XP/taskbar/RoyaleDark.png" id="70_vniw0"]
 [ext_resource type="Texture2D" uid="uid://bv1lttol3h0r3" path="res://sprites/UI/XP/taskbar/Panel/RoyaleDark.png" id="77_lddog"]
@@ -414,7 +409,7 @@ _data = {
 &"becomeGray": SubResource("Animation_rysoc")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation", "dialogueWindowNode")]
+[node name="Game" type="Node2D" unique_id=1925003757 node_paths=PackedStringArray("welcomeScreen", "welcomeName", "welcomeAnimation", "ScreenFilter", "softBlur", "crtNode", "Task_Bar", "iconManager", "appManager", "taskBar", "loginDelay", "logScreen", "logAnimation", "shutdownScreen", "shutdownAnimation", "dialogueWindowNode")]
 script = ExtResource("1_lnu2h")
 welcomeScreen = NodePath("WelcomeScreen")
 welcomeName = NodePath("WelcomeScreen/Profile/VBoxContainer/NameLabel")
@@ -434,7 +429,7 @@ shutdownScreen = NodePath("ShutdownScreen")
 shutdownAnimation = NodePath("ShutdownScreen/shutdownAnimation")
 dialogueWindowNode = NodePath("AppManager/DialogueWindows")
 
-[node name="DesktopBackground" type="Control" parent="."]
+[node name="DesktopBackground" type="Control" parent="." unique_id=605795239]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -444,7 +439,7 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Wallpaper" type="TextureRect" parent="DesktopBackground"]
+[node name="Wallpaper" type="TextureRect" parent="DesktopBackground" unique_id=1334354548]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -455,11 +450,11 @@ texture = ExtResource("4_js0lu")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="LoginDelay" type="Timer" parent="."]
+[node name="LoginDelay" type="Timer" parent="." unique_id=1029723879]
 one_shot = true
 autostart = true
 
-[node name="IconManager" type="Control" parent="." node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "textFileButton", "pcButton", "wmpButton", "errorApp", "memeFolder", "wmpApp", "desktopColumns")]
+[node name="IconManager" type="Control" parent="." unique_id=824099501 node_paths=PackedStringArray("browserAppButton", "musicAppButton", "pictureAppButton", "settingAppButton", "errorAppButton", "memeFolderButton", "textFileButton", "pcButton", "wmpButton", "errorApp", "memeFolder", "wmpApp", "desktopColumns")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -479,17 +474,17 @@ errorApp = NodePath("DesktopColumns/ErrorApp")
 memeFolder = NodePath("DesktopColumns/MemeFolder")
 wmpApp = NodePath("DesktopColumns/wmpApp")
 classicIcons = Array[Texture2D]([ExtResource("5_15b3c"), ExtResource("5_v2yb1"), ExtResource("9_7ixpq"), ExtResource("8_oaba0"), ExtResource("11_yd4ix"), ExtResource("12_veaf0"), ExtResource("13_tc8uq"), ExtResource("14_gdf8r"), ExtResource("13_15b3c")])
-YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("8_q8j3a"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm"), ExtResource("21_xbifu"), ExtResource("22_veukt")])
+YTKIcons = Array[Texture2D]([ExtResource("10_3hbvx"), ExtResource("15_2gnni"), ExtResource("9_ms3bu"), ExtResource("14_bk1p3"), ExtResource("16_66xif"), ExtResource("18_flw08"), ExtResource("20_xjcjm"), ExtResource("21_xbifu"), ExtResource("22_veukt")])
 desktopColumns = NodePath("DesktopColumns")
 
-[node name="DesktopColumns" type="VFlowContainer" parent="IconManager"]
+[node name="DesktopColumns" type="VFlowContainer" parent="IconManager" unique_id=670082666]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 328.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="ComputerApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="ComputerApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=652147810]
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -497,11 +492,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ComputerApp"]
+[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ComputerApp" unique_id=1869655374]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ComputerApp/BrowserAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ComputerApp/BrowserAppBox" unique_id=1621605626]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -511,14 +506,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ComputerApp/BrowserAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ComputerApp/BrowserAppBox" unique_id=597116742]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "My PC"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BrowserApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="BrowserApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=220720302]
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -526,11 +521,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/BrowserApp"]
+[node name="BrowserAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/BrowserApp" unique_id=1183852349]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/BrowserApp/BrowserAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/BrowserApp/BrowserAppBox" unique_id=991241077]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -540,14 +535,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/BrowserApp/BrowserAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/BrowserApp/BrowserAppBox" unique_id=473457040]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "Browser"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="MusicApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=6148418]
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -555,11 +550,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MusicAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/MusicApp"]
+[node name="MusicAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/MusicApp" unique_id=1161228398]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/MusicApp/MusicAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/MusicApp/MusicAppBox" unique_id=1036411889]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -569,14 +564,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/MusicApp/MusicAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/MusicApp/MusicAppBox" unique_id=2119752749]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PicturesApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="PicturesApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=1007601990]
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -584,11 +579,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="PicturesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/PicturesApp"]
+[node name="PicturesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/PicturesApp" unique_id=371510278]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/PicturesApp/PicturesAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/PicturesApp/PicturesAppBox" unique_id=220213503]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -598,14 +593,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/PicturesApp/PicturesAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/PicturesApp/PicturesAppBox" unique_id=1026258507]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "Photos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="SettingsApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=809207693]
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -613,11 +608,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SettingsAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SettingsApp"]
+[node name="SettingsAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/SettingsApp" unique_id=1986312290]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SettingsApp/SettingsAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/SettingsApp/SettingsAppBox" unique_id=1845561888]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -627,14 +622,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SettingsApp/SettingsAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/SettingsApp/SettingsAppBox" unique_id=645371056]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ErrorApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="ErrorApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=139481300]
 visible = false
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
@@ -643,11 +638,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ErrorAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ErrorApp"]
+[node name="ErrorAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/ErrorApp" unique_id=753436353]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ErrorApp/ErrorAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/ErrorApp/ErrorAppBox" unique_id=1938620066]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -657,7 +652,7 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ErrorApp/ErrorAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/ErrorApp/ErrorAppBox" unique_id=1182638297]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -665,7 +660,7 @@ text = "untitled"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MemeFolder" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="MemeFolder" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=760651481]
 visible = false
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
@@ -674,11 +669,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MemeFolderBox" type="VBoxContainer" parent="IconManager/DesktopColumns/MemeFolder"]
+[node name="MemeFolderBox" type="VBoxContainer" parent="IconManager/DesktopColumns/MemeFolder" unique_id=1857189771]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/MemeFolder/MemeFolderBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/MemeFolder/MemeFolderBox" unique_id=976074732]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -688,7 +683,7 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/MemeFolder/MemeFolderBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/MemeFolder/MemeFolderBox" unique_id=1908805234]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -696,7 +691,7 @@ text = "memes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NotesApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="NotesApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=1674996229]
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -704,11 +699,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="NotesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/NotesApp"]
+[node name="NotesAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/NotesApp" unique_id=1215772859]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/NotesApp/NotesAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/NotesApp/NotesAppBox" unique_id=230375471]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -718,14 +713,14 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/NotesApp/NotesAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/NotesApp/NotesAppBox" unique_id=1236809192]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "README"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="wmpApp" type="MarginContainer" parent="IconManager/DesktopColumns"]
+[node name="wmpApp" type="MarginContainer" parent="IconManager/DesktopColumns" unique_id=778072240]
 visible = false
 custom_minimum_size = Vector2(32, 40)
 layout_mode = 2
@@ -734,11 +729,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="wmpAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/wmpApp"]
+[node name="wmpAppBox" type="VBoxContainer" parent="IconManager/DesktopColumns/wmpApp" unique_id=1123408698]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/wmpApp/wmpAppBox"]
+[node name="AppButton" type="TextureButton" parent="IconManager/DesktopColumns/wmpApp/wmpAppBox" unique_id=523121046]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -748,7 +743,7 @@ texture_focused = ExtResource("6_js0lu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AppName" type="Label" parent="IconManager/DesktopColumns/wmpApp/wmpAppBox"]
+[node name="AppName" type="Label" parent="IconManager/DesktopColumns/wmpApp/wmpAppBox" unique_id=567777211]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 text = "Media Player"
@@ -756,7 +751,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 4
 
-[node name="AppManager" type="Control" parent="." node_paths=PackedStringArray("settingApp", "pcApp", "trollApp", "trollIcon", "taskBar", "customPictureApp", "customMemeFolder", "dWins", "NotepadWins")]
+[node name="AppManager" type="Control" parent="." unique_id=1781131487 node_paths=PackedStringArray("settingApp", "pcApp", "trollApp", "trollIcon", "taskBar", "customPictureApp", "customMemeFolder", "dWins", "NotepadWins")]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(640, 360)
@@ -773,8 +768,8 @@ size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("5_wljb1")
 settingApp = NodePath("settingApp")
-pcApp = NodePath("pcApp")
-trollApp = NodePath("trollApp")
+pcApp = NodePath("customPCApp")
+trollApp = NodePath("customTrollApp")
 trollIcon = NodePath("../IconManager/DesktopColumns/ErrorApp")
 taskBar = NodePath("../Taskbar")
 customPictureApp = NodePath("customPictureApp")
@@ -782,87 +777,12 @@ customMemeFolder = NodePath("customMemeFolder")
 dWins = NodePath("DialogueWindows")
 NotepadWins = NodePath("NotepadWindows")
 
-[node name="pcApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "sysinfoLabel")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("25_s33c4")
-myWindow = NodePath("Window")
-myPCInfo = "System:
-        Nostalgia Process eXP
-        Alpha Build
-        Version 0.1.13
-        Revision 4
-
-Registered to:
-        PLAYERNAME"
-sysinfoLabel = NodePath("Window/Panel/MarginContainer/VBoxContainer/TabContainer/General/HBoxContainer/SystemInfo")
-
-[node name="Window" type="Window" parent="AppManager/pcApp"]
-oversampling_override = 1.0
-title = "My Computer"
-initial_position = 1
-size = Vector2i(320, 180)
+[node name="customPCApp" parent="AppManager" unique_id=766435961 instance=ExtResource("25_vgxg3")]
 visible = false
-unresizable = true
-theme = ExtResource("41_p4npv")
-
-[node name="Panel" type="Panel" parent="AppManager/pcApp/Window"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="AppManager/pcApp/Window/Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer"]
-layout_mode = 2
-
-[node name="TabContainer" type="TabContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-current_tab = 0
-
-[node name="General" type="MarginContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer/General"]
-layout_mode = 2
-
-[node name="PCTexture" type="TextureRect" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer/General/HBoxContainer"]
-custom_minimum_size = Vector2(110, 110)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-texture = ExtResource("26_x8trd")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="SystemInfo" type="Label" parent="AppManager/pcApp/Window/Panel/MarginContainer/VBoxContainer/TabContainer/General/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "System:
-        Nostalgia Process eXP
-        Alpha
-        Version 0.19.0
-
-Registered to:
-        PlayerName"
-
-[node name="settingApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "fullScreen", "crtNode", "startMenuOptions", "iconStyleOptions", "taskBar")]
+[node name="settingApp" type="Control" parent="AppManager" unique_id=1469770524 node_paths=PackedStringArray("myWindow", "softBlur", "highFidelity", "crtFilter", "fullScreen", "crtNode", "startMenuOptions", "iconStyleOptions", "taskBar")]
+visible = false
 custom_minimum_size = Vector2(640, 336)
 layout_mode = 1
 anchors_preset = 15
@@ -883,7 +803,7 @@ startMenuOptions = NodePath("Window/Panel/settings/ThemeOption/StartTheme")
 iconStyleOptions = NodePath("Window/Panel/settings/IconOption/IconStyle")
 taskBar = NodePath("../../Taskbar")
 
-[node name="Window" type="Window" parent="AppManager/settingApp"]
+[node name="Window" type="Window" parent="AppManager/settingApp" unique_id=651123914]
 oversampling_override = 1.0
 title = "Settings"
 initial_position = 1
@@ -892,14 +812,14 @@ visible = false
 unresizable = true
 theme = ExtResource("41_p4npv")
 
-[node name="Panel" type="Panel" parent="AppManager/settingApp/Window"]
+[node name="Panel" type="Panel" parent="AppManager/settingApp/Window" unique_id=1996409319]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="settings" type="VBoxContainer" parent="AppManager/settingApp/Window/Panel"]
+[node name="settings" type="VBoxContainer" parent="AppManager/settingApp/Window/Panel" unique_id=476856948]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -913,109 +833,61 @@ offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HFButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="HFButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings" unique_id=747189267]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Disable Soft Filter"
 
-[node name="CRTButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="CRTButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings" unique_id=1916836097]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable CRT Filter"
 
-[node name="FullScreenButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="FullScreenButton" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings" unique_id=368984968]
 layout_mode = 2
 tooltip_text = "Default: True"
 text = "Enable Fullscreen"
 
-[node name="SmallIcons" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="SmallIcons" type="CheckButton" parent="AppManager/settingApp/Window/Panel/settings" unique_id=675339814]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable Small Icons"
 
-[node name="IconOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="IconOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings" unique_id=1341876393]
 layout_mode = 2
 tooltip_text = "Default: Classic"
 
-[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/IconOption"]
+[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/IconOption" unique_id=973950782]
 layout_mode = 2
 text = "Icon Style : "
 
-[node name="IconStyle" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/IconOption"]
+[node name="IconStyle" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/IconOption" unique_id=1526996702]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ThemeOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="ThemeOption" type="HBoxContainer" parent="AppManager/settingApp/Window/Panel/settings" unique_id=1201301522]
 layout_mode = 2
 tooltip_text = "Default: Luna"
 
-[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
+[node name="Label" type="Label" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption" unique_id=1576409293]
 layout_mode = 2
 text = "Theme : "
 
-[node name="StartTheme" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption"]
+[node name="StartTheme" type="OptionButton" parent="AppManager/settingApp/Window/Panel/settings/ThemeOption" unique_id=1552320504]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AudioButton" type="Button" parent="AppManager/settingApp/Window/Panel/settings"]
+[node name="AudioButton" type="Button" parent="AppManager/settingApp/Window/Panel/settings" unique_id=1896178012]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Audio Settings"
 
-[node name="trollApp" type="Control" parent="AppManager" node_paths=PackedStringArray("myWindow", "videoPlayer", "trollButton")]
-custom_minimum_size = Vector2(640, 336)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("21_rm0al")
-myWindow = NodePath("Window")
-trollVideos = Array[VideoStreamTheora]([ExtResource("56_1va0p"), ExtResource("41_2iuns"), ExtResource("45_flw08"), ExtResource("45_84hbc"), ExtResource("46_15b3c")])
-videoPlayer = NodePath("Window/Panel/VideoStreamPlayer")
-trollButton = NodePath("Window/Panel/VideoStreamPlayer/Secret2Button")
-
-[node name="Window" type="Window" parent="AppManager/trollApp"]
-oversampling_override = 1.0
-title = "PRIZE"
-initial_position = 1
-size = Vector2i(320, 240)
+[node name="customTrollApp" parent="AppManager" unique_id=1898845206 instance=ExtResource("30_flw08")]
 visible = false
-min_size = Vector2i(160, 120)
-content_scale_mode = 1
-content_scale_aspect = 4
-
-[node name="Panel" type="Panel" parent="AppManager/trollApp/Window"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AppManager/trollApp/Window/Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stream = ExtResource("41_2iuns")
-expand = true
-loop = true
 
-[node name="Secret2Button" type="TextureButton" parent="AppManager/trollApp/Window/Panel/VideoStreamPlayer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-disabled = true
-
-[node name="DialogueWindows" type="Control" parent="AppManager"]
+[node name="DialogueWindows" type="Control" parent="AppManager" unique_id=1704072449]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1025,7 +897,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("53_2iuns")
 
-[node name="NotepadWindows" type="Control" parent="AppManager" node_paths=PackedStringArray("taskbar")]
+[node name="NotepadWindows" type="Control" parent="AppManager" unique_id=2146306094 node_paths=PackedStringArray("taskbar")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1297,14 +1169,16 @@ HINT FOR SECRET 1: 10 Red Errors
 - Power Options
 "
 
-[node name="customPictureApp" parent="AppManager" node_paths=PackedStringArray("desktopWallpaper") instance=ExtResource("43_veukt")]
+[node name="customPictureApp" parent="AppManager" unique_id=1996684430 node_paths=PackedStringArray("desktopWallpaper") instance=ExtResource("43_veukt")]
+visible = false
 layout_mode = 1
 desktopWallpaper = NodePath("../../DesktopBackground/Wallpaper")
 
-[node name="customMemeFolder" parent="AppManager" instance=ExtResource("44_nbjts")]
+[node name="customMemeFolder" parent="AppManager" unique_id=234709906 instance=ExtResource("44_nbjts")]
+visible = false
 layout_mode = 1
 
-[node name="Taskbar" type="Control" parent="." node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer", "clockTimer", "timeLabel")]
+[node name="Taskbar" type="Control" parent="." unique_id=1374563921 node_paths=PackedStringArray("myCanvas", "barTexture", "barPanel", "StartButton", "startMenu", "buttonContainer", "clockTimer", "timeLabel")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -1331,7 +1205,7 @@ buttonContainer = NodePath("Bar/BarButtonContainer")
 clockTimer = NodePath("clockTimer")
 timeLabel = NodePath("Bar/BarContainer/BarPanel/SystemTrayContainer/Time")
 
-[node name="Bar" type="Control" parent="Taskbar"]
+[node name="Bar" type="Control" parent="Taskbar" unique_id=1944825496]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -1342,13 +1216,13 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(88, 336)
 
-[node name="BarContainer" type="HBoxContainer" parent="Taskbar/Bar"]
+[node name="BarContainer" type="HBoxContainer" parent="Taskbar/Bar" unique_id=645404374]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 24.0
 theme_override_constants/separation = 0
 
-[node name="BarTexture" type="TextureRect" parent="Taskbar/Bar/BarContainer"]
+[node name="BarTexture" type="TextureRect" parent="Taskbar/Bar/BarContainer" unique_id=2061737139]
 texture_repeat = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1357,7 +1231,7 @@ texture = ExtResource("5_u5sy4")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="BarPanel" type="NinePatchRect" parent="Taskbar/Bar/BarContainer"]
+[node name="BarPanel" type="NinePatchRect" parent="Taskbar/Bar/BarContainer" unique_id=1757109550]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1367,7 +1241,7 @@ patch_margin_left = 4
 patch_margin_top = 3
 patch_margin_bottom = 1
 
-[node name="SystemTrayContainer" type="HBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel" node_paths=PackedStringArray("volumeButton", "volumeWindow")]
+[node name="SystemTrayContainer" type="HBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel" unique_id=423795575 node_paths=PackedStringArray("volumeButton", "volumeWindow")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1385,7 +1259,7 @@ script = ExtResource("86_473mq")
 volumeButton = NodePath("VolumeButton")
 volumeWindow = NodePath("../SysTrayWindows/Volume")
 
-[node name="VolumeButton" type="TextureButton" parent="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer"]
+[node name="VolumeButton" type="TextureButton" parent="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer" unique_id=1772821303]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -1397,17 +1271,16 @@ toggle_mode = true
 texture_normal = ExtResource("80_8tghg")
 stretch_mode = 3
 
-[node name="Time" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer"]
+[node name="Time" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/SystemTrayContainer" unique_id=502799196]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("52_1yg85")
-theme_override_font_sizes/font_size = 12
 text = "12:00 AM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SysTrayWindows" type="Control" parent="Taskbar/Bar/BarContainer/BarPanel"]
+[node name="SysTrayWindows" type="Control" parent="Taskbar/Bar/BarContainer/BarPanel" unique_id=1953766919]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1416,7 +1289,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Volume" type="Window" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows" node_paths=PackedStringArray("masterVol", "masterMute")]
+[node name="Volume" type="Window" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows" unique_id=883844399 node_paths=PackedStringArray("masterVol", "masterMute")]
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 position = Vector2i(528, 200)
@@ -1428,7 +1301,7 @@ script = ExtResource("83_473mq")
 masterVol = NodePath("Panel/MarginContainer/VBoxContainer/VolumeContainer/VolSlider")
 masterMute = NodePath("Panel/MarginContainer/VBoxContainer/MuteBox")
 
-[node name="Panel" type="Panel" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume"]
+[node name="Panel" type="Panel" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume" unique_id=185663453]
 custom_minimum_size = Vector2(81, 136)
 anchors_preset = 15
 anchor_right = 1.0
@@ -1437,7 +1310,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("87_1va0p")
 
-[node name="MarginContainer" type="MarginContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel" unique_id=766318095]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1445,20 +1318,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer" unique_id=780281118]
 layout_mode = 2
 
-[node name="Volume" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer"]
+[node name="Volume" type="Label" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer" unique_id=1824849168]
 layout_mode = 2
 text = "Volume"
 horizontal_alignment = 1
 
-[node name="VolumeContainer" type="MarginContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer"]
+[node name="VolumeContainer" type="MarginContainer" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer" unique_id=1661186303]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="VolSlider" type="VSlider" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer/VolumeContainer"]
+[node name="VolSlider" type="VSlider" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer/VolumeContainer" unique_id=1289605079]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/tick_offset = 11
@@ -1469,11 +1342,11 @@ step = 0.001
 value = 1.0
 ticks_position = 2
 
-[node name="MuteBox" type="CheckBox" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer"]
+[node name="MuteBox" type="CheckBox" parent="Taskbar/Bar/BarContainer/BarPanel/SysTrayWindows/Volume/Panel/MarginContainer/VBoxContainer" unique_id=982253062]
 layout_mode = 2
 text = "Mute"
 
-[node name="BarButtonContainer" type="HFlowContainer" parent="Taskbar/Bar"]
+[node name="BarButtonContainer" type="HFlowContainer" parent="Taskbar/Bar" unique_id=1842804260]
 clip_contents = true
 layout_mode = 0
 offset_left = 98.0
@@ -1483,7 +1356,7 @@ offset_bottom = 24.0
 mouse_filter = 2
 theme_override_constants/h_separation = 0
 
-[node name="Start" type="Control" parent="Taskbar"]
+[node name="Start" type="Control" parent="Taskbar" unique_id=1119090912]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1492,7 +1365,7 @@ offset_top = -24.0
 offset_right = 96.0
 grow_vertical = 0
 
-[node name="StartButton" type="TextureButton" parent="Taskbar/Start"]
+[node name="StartButton" type="TextureButton" parent="Taskbar/Start" unique_id=2058564144]
 layout_mode = 0
 offset_right = 99.0
 offset_bottom = 33.0
@@ -1502,7 +1375,7 @@ texture_pressed = ExtResource("10_trtic")
 texture_hover = ExtResource("11_ir15t")
 stretch_mode = 4
 
-[node name="StartText" type="RichTextLabel" parent="Taskbar/Start"]
+[node name="StartText" type="RichTextLabel" parent="Taskbar/Start" unique_id=814299781]
 layout_mode = 0
 offset_left = 32.0
 offset_right = 96.0
@@ -1514,30 +1387,30 @@ theme_override_font_sizes/normal_font_size = 16
 text = "start"
 vertical_alignment = 1
 
-[node name="StartLayer" type="CanvasLayer" parent="Taskbar/Start"]
+[node name="StartLayer" type="CanvasLayer" parent="Taskbar/Start" unique_id=68485925]
 layer = 1024
 visible = false
 
-[node name="StartMenu" type="VBoxContainer" parent="Taskbar/Start/StartLayer"]
+[node name="StartMenu" type="VBoxContainer" parent="Taskbar/Start/StartLayer" unique_id=242766695]
 offset_left = 1.0
 offset_top = 63.0
 offset_right = 193.0
 offset_bottom = 336.0
 alignment = 2
 
-[node name="Button" type="Button" parent="Taskbar/Start/StartLayer/StartMenu"]
+[node name="Button" type="Button" parent="Taskbar/Start/StartLayer/StartMenu" unique_id=1259764079]
 layout_mode = 2
 text = "NOT YET IMPLEMENTED"
 
-[node name="PowerOptions" type="Button" parent="Taskbar/Start/StartLayer/StartMenu"]
+[node name="PowerOptions" type="Button" parent="Taskbar/Start/StartLayer/StartMenu" unique_id=712672015]
 layout_mode = 2
 text = "POWER OPTIONS"
 
-[node name="clockTimer" type="Timer" parent="Taskbar"]
+[node name="clockTimer" type="Timer" parent="Taskbar" unique_id=147475279]
 autostart = true
 ignore_time_scale = true
 
-[node name="WelcomeScreen" type="Control" parent="." node_paths=PackedStringArray("pfp", "nameLabel")]
+[node name="WelcomeScreen" type="Control" parent="." unique_id=530432968 node_paths=PackedStringArray("pfp", "nameLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1550,12 +1423,12 @@ script = ExtResource("37_o8ni1")
 pfp = NodePath("Profile/PFP_Container/profilePicture")
 nameLabel = NodePath("Profile/VBoxContainer/NameLabel")
 
-[node name="XpWelcome" type="Sprite2D" parent="WelcomeScreen"]
+[node name="XpWelcome" type="Sprite2D" parent="WelcomeScreen" unique_id=1906733484]
 position = Vector2(320, 180)
 scale = Vector2(1, 0.75)
 texture = ExtResource("4_lbhrr")
 
-[node name="WelcomeText" type="RichTextLabel" parent="WelcomeScreen"]
+[node name="WelcomeText" type="RichTextLabel" parent="WelcomeScreen" unique_id=1083110451]
 layout_mode = 0
 offset_left = 184.0
 offset_top = 168.0
@@ -1566,58 +1439,56 @@ theme_override_fonts/normal_font = ExtResource("5_iywne")
 theme_override_font_sizes/normal_font_size = 22
 text = "welcome"
 
-[node name="TOP" type="Line2D" parent="WelcomeScreen"]
+[node name="TOP" type="Line2D" parent="WelcomeScreen" unique_id=576917731]
 position = Vector2(0, 33.730087)
 scale = Vector2(1, 0.46460176)
 points = PackedVector2Array(320, 64, 319.99997, 291.15237)
 width = 1.0
 gradient = SubResource("Gradient_iywne")
 
-[node name="BOTTOM" type="Line2D" parent="WelcomeScreen"]
+[node name="BOTTOM" type="Line2D" parent="WelcomeScreen" unique_id=1451873004]
 position = Vector2(0, 134.26991)
 scale = Vector2(1, 0.53539824)
 points = PackedVector2Array(320, 64, 320, 288)
 width = 1.0
 gradient = SubResource("Gradient_p57ef")
 
-[node name="welcomeAnimation" type="AnimationPlayer" parent="WelcomeScreen"]
-libraries = {
-&"": SubResource("AnimationLibrary_p57ef")
-}
+[node name="welcomeAnimation" type="AnimationPlayer" parent="WelcomeScreen" unique_id=1714212430]
+libraries/ = SubResource("AnimationLibrary_p57ef")
 
-[node name="Profile" type="HBoxContainer" parent="WelcomeScreen"]
+[node name="Profile" type="HBoxContainer" parent="WelcomeScreen" unique_id=1625763332]
 layout_mode = 0
 offset_left = 355.0
 offset_top = 156.0
 offset_right = 415.0
 offset_bottom = 216.0
 
-[node name="PFP_Container" type="PanelContainer" parent="WelcomeScreen/Profile"]
+[node name="PFP_Container" type="PanelContainer" parent="WelcomeScreen/Profile" unique_id=1062853335]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
 
-[node name="profilePicture" type="TextureRect" parent="WelcomeScreen/Profile/PFP_Container"]
+[node name="profilePicture" type="TextureRect" parent="WelcomeScreen/Profile/PFP_Container" unique_id=324980435]
 layout_mode = 2
 texture = ExtResource("39_3hbvx")
 expand_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/Profile"]
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen/Profile" unique_id=2095682796]
 layout_mode = 2
 alignment = 1
 
-[node name="NameLabel" type="Label" parent="WelcomeScreen/Profile/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="WelcomeScreen/Profile/VBoxContainer" unique_id=721517465]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_iywne")
 text = "Adam"
 
-[node name="StartLabel" type="Label" parent="WelcomeScreen/Profile/VBoxContainer"]
+[node name="StartLabel" type="Label" parent="WelcomeScreen/Profile/VBoxContainer" unique_id=511534651]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0627451, 0.19607843, 0.6313726, 1)
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 8
 text = "Loading your personal settings..."
 
-[node name="ShutdownScreen" type="Control" parent="."]
+[node name="ShutdownScreen" type="Control" parent="." unique_id=2091464202]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -1628,12 +1499,12 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="XpWelcome" type="Sprite2D" parent="ShutdownScreen"]
+[node name="XpWelcome" type="Sprite2D" parent="ShutdownScreen" unique_id=1861651782]
 position = Vector2(320, 180)
 scale = Vector2(1, 0.75)
 texture = ExtResource("4_lbhrr")
 
-[node name="WelcomeText" type="RichTextLabel" parent="ShutdownScreen"]
+[node name="WelcomeText" type="RichTextLabel" parent="ShutdownScreen" unique_id=1591993996]
 layout_mode = 0
 offset_left = 319.0
 offset_top = 168.0
@@ -1644,7 +1515,7 @@ theme_override_fonts/normal_font = ExtResource("5_iywne")
 theme_override_font_sizes/normal_font_size = 22
 text = "Goodbye"
 
-[node name="TOP" type="Line2D" parent="ShutdownScreen"]
+[node name="TOP" type="Line2D" parent="ShutdownScreen" unique_id=1475282090]
 visible = false
 position = Vector2(0, 33.730087)
 scale = Vector2(1, 0.46460176)
@@ -1652,7 +1523,7 @@ points = PackedVector2Array(320, 64, 319.99997, 291.15237)
 width = 1.0
 gradient = SubResource("Gradient_iywne")
 
-[node name="BOTTOM" type="Line2D" parent="ShutdownScreen"]
+[node name="BOTTOM" type="Line2D" parent="ShutdownScreen" unique_id=41626923]
 visible = false
 position = Vector2(0, 134.26991)
 scale = Vector2(1, 0.53539824)
@@ -1660,24 +1531,22 @@ points = PackedVector2Array(320, 64, 320, 288)
 width = 1.0
 gradient = SubResource("Gradient_p57ef")
 
-[node name="shutdownAnimation" type="AnimationPlayer" parent="ShutdownScreen"]
+[node name="shutdownAnimation" type="AnimationPlayer" parent="ShutdownScreen" unique_id=1267874800]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_pl11u")
-}
+libraries/ = SubResource("AnimationLibrary_pl11u")
 
-[node name="ScreenFilters" type="Node2D" parent="."]
+[node name="ScreenFilters" type="Node2D" parent="." unique_id=2093597122]
 visible = false
 
-[node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters"]
+[node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters" unique_id=748355794]
 z_index = 1
 copy_mode = 2
 rect = Rect2(0, 0, 200, 200)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="ScreenFilters/BackBufferCopy1"]
+[node name="CanvasLayer" type="CanvasLayer" parent="ScreenFilters/BackBufferCopy1" unique_id=1346404162]
 layer = 1026
 
-[node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1/CanvasLayer"]
+[node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1/CanvasLayer" unique_id=2000432218]
 visible = false
 material = SubResource("ShaderMaterial_s33c4")
 anchors_preset = 15
@@ -1689,11 +1558,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="BackBufferCopy2" type="BackBufferCopy" parent="ScreenFilters"]
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="ScreenFilters" unique_id=762162331]
 copy_mode = 2
 rect = Rect2(0, 0, 200, 200)
 
-[node name="GrayScale" type="ColorRect" parent="ScreenFilters/BackBufferCopy2"]
+[node name="GrayScale" type="ColorRect" parent="ScreenFilters/BackBufferCopy2" unique_id=828357063]
 visible = false
 modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_rysoc")
@@ -1707,17 +1576,17 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LogScreen" type="Control" parent="."]
+[node name="LogScreen" type="Control" parent="." unique_id=367939435]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 
-[node name="LogPanel" type="Sprite2D" parent="LogScreen"]
+[node name="LogPanel" type="Sprite2D" parent="LogScreen" unique_id=2083042587]
 position = Vector2(320, 144)
 scale = Vector2(0.8522013, 0.8522013)
 texture = ExtResource("16_ca42v")
 
-[node name="LogLabel" type="RichTextLabel" parent="LogScreen"]
+[node name="LogLabel" type="RichTextLabel" parent="LogScreen" unique_id=844916662]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 77.0
@@ -1728,7 +1597,7 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Turn off Computer"
 vertical_alignment = 1
 
-[node name="LogButtons" type="HBoxContainer" parent="LogScreen"]
+[node name="LogButtons" type="HBoxContainer" parent="LogScreen" unique_id=1283598802]
 layout_mode = 0
 offset_left = 245.0
 offset_top = 115.0
@@ -1736,11 +1605,11 @@ offset_right = 394.0
 offset_bottom = 165.0
 alignment = 1
 
-[node name="ShutdownContainer" type="VBoxContainer" parent="LogScreen/LogButtons"]
+[node name="ShutdownContainer" type="VBoxContainer" parent="LogScreen/LogButtons" unique_id=2045596277]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ShutdownButton" type="TextureButton" parent="LogScreen/LogButtons/ShutdownContainer"]
+[node name="ShutdownButton" type="TextureButton" parent="LogScreen/LogButtons/ShutdownContainer" unique_id=1477378473]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 texture_normal = ExtResource("18_37s47")
@@ -1750,18 +1619,18 @@ texture_disabled = ExtResource("21_pl11u")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ShutdownLabel" type="Label" parent="LogScreen/LogButtons/ShutdownContainer"]
+[node name="ShutdownLabel" type="Label" parent="LogScreen/LogButtons/ShutdownContainer" unique_id=1832327629]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("22_bhx41")
 theme_override_font_sizes/font_size = 12
 text = "Turn off"
 horizontal_alignment = 1
 
-[node name="LogOffContainer" type="VBoxContainer" parent="LogScreen/LogButtons"]
+[node name="LogOffContainer" type="VBoxContainer" parent="LogScreen/LogButtons" unique_id=1255686366]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="LogOff" type="TextureButton" parent="LogScreen/LogButtons/LogOffContainer"]
+[node name="LogOff" type="TextureButton" parent="LogScreen/LogButtons/LogOffContainer" unique_id=2065246149]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 texture_normal = ExtResource("23_qouja")
@@ -1771,18 +1640,18 @@ texture_disabled = ExtResource("26_js0lu")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LogOffLabel" type="Label" parent="LogScreen/LogButtons/LogOffContainer"]
+[node name="LogOffLabel" type="Label" parent="LogScreen/LogButtons/LogOffContainer" unique_id=1567597456]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("22_bhx41")
 theme_override_font_sizes/font_size = 12
 text = "Log Off"
 horizontal_alignment = 1
 
-[node name="ExitContainer" type="VBoxContainer" parent="LogScreen/LogButtons"]
+[node name="ExitContainer" type="VBoxContainer" parent="LogScreen/LogButtons" unique_id=611392778]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ExitBack" type="TextureButton" parent="LogScreen/LogButtons/ExitContainer"]
+[node name="ExitBack" type="TextureButton" parent="LogScreen/LogButtons/ExitContainer" unique_id=1488317182]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 texture_normal = ExtResource("23_qnb83")
@@ -1792,19 +1661,17 @@ texture_disabled = ExtResource("26_sgl2t")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ExitLabel" type="Label" parent="LogScreen/LogButtons/ExitContainer"]
+[node name="ExitLabel" type="Label" parent="LogScreen/LogButtons/ExitContainer" unique_id=781279831]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("22_bhx41")
 theme_override_font_sizes/font_size = 12
 text = "Cancel"
 horizontal_alignment = 1
 
-[node name="logAnimation" type="AnimationPlayer" parent="LogScreen"]
-libraries = {
-&"": SubResource("AnimationLibrary_264po")
-}
+[node name="logAnimation" type="AnimationPlayer" parent="LogScreen" unique_id=1441828875]
+libraries/ = SubResource("AnimationLibrary_264po")
 
-[node name="CRT" type="CanvasLayer" parent="."]
+[node name="CRT" type="CanvasLayer" parent="." unique_id=1217120641]
 layer = 9001
 visible = false
 script = ExtResource("44_66xif")
@@ -1824,8 +1691,6 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="pressed" from="IconManager/DesktopColumns/MemeFolder/MemeFolderBox/AppButton" to="AppManager" method="_on_meme_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/NotesApp/NotesAppBox/AppButton" to="AppManager" method="_on_textFile_button_pressed"]
 [connection signal="pressed" from="IconManager/DesktopColumns/wmpApp/wmpAppBox/AppButton" to="AppManager" method="_on_wmp_button_pressed"]
-[connection signal="theme_changed" from="AppManager/pcApp" to="AppManager/pcApp" method="_on_theme_changed"]
-[connection signal="close_requested" from="AppManager/pcApp/Window" to="AppManager/pcApp" method="_on_window_close_requested"]
 [connection signal="theme_changed" from="AppManager/settingApp" to="AppManager/settingApp" method="_on_theme_changed"]
 [connection signal="close_requested" from="AppManager/settingApp/Window" to="AppManager/settingApp" method="_on_window_close_requested"]
 [connection signal="toggled" from="AppManager/settingApp/Window/Panel/settings/HFButton" to="AppManager/settingApp" method="_on_check_button_toggled"]
@@ -1835,10 +1700,6 @@ metadata/_custom_type_script = "uid://bghaddibpt6f1"
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/IconOption/IconStyle" to="AppManager/settingApp" method="_on_icon_style_item_selected"]
 [connection signal="item_selected" from="AppManager/settingApp/Window/Panel/settings/ThemeOption/StartTheme" to="AppManager/settingApp" method="_on_start_menu_theme_item_selected"]
 [connection signal="pressed" from="AppManager/settingApp/Window/Panel/settings/AudioButton" to="AppManager/settingApp" method="_on_audio_button_pressed"]
-[connection signal="theme_changed" from="AppManager/trollApp" to="AppManager/trollApp" method="_on_theme_changed"]
-[connection signal="close_requested" from="AppManager/trollApp/Window" to="AppManager/trollApp" method="_on_window_close_requested"]
-[connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="." method="_on_secret_2_button_pressed"]
-[connection signal="pressed" from="AppManager/trollApp/Window/Panel/VideoStreamPlayer/Secret2Button" to="IconManager" method="_on_secret_2_button_pressed"]
 [connection signal="child_entered_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="AppManager/DialogueWindows" to="AppManager/DialogueWindows" method="_on_child_exiting_tree"]
 [connection signal="child_entered_tree" from="AppManager/NotepadWindows" to="AppManager/NotepadWindows" method="_on_child_entered_tree"]

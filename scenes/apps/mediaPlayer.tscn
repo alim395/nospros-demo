@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cjs2gaxkb1rsh"]
+[gd_scene format=3 uid="uid://cjs2gaxkb1rsh"]
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_w2bi0"]
 [ext_resource type="VideoStream" uid="uid://de0i5tg0ndtj2" path="res://video/wmv/planet.ogv" id="2_agk2i"]
@@ -73,7 +73,7 @@ expand_margin_bottom = 1.0
 bg_color = Color(0, 0, 0.735357, 1)
 expand_margin_bottom = 1.0
 
-[node name="mediaPlayer" type="Control" node_paths=PackedStringArray("myWindow", "videoPlayer", "seekSlider", "playButton", "pauseButton", "stopButton", "muteButton", "volumeSlider")]
+[node name="mediaPlayer" type="Control" unique_id=1576592387 node_paths=PackedStringArray("myWindow", "videoPlayer", "seekSlider", "playButton", "pauseButton", "stopButton", "muteButton", "volumeSlider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,7 +93,7 @@ muteButton = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/C
 muteIcons = Array[Texture2D]([ExtResource("17_ieqqa"), ExtResource("18_4oh08")])
 volumeSlider = NodePath("Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer/VolumeSlider")
 
-[node name="Window" type="Window" parent="."]
+[node name="Window" type="Window" parent="." unique_id=1792339441]
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 title = "Media Player"
@@ -104,7 +104,7 @@ min_size = Vector2i(213, 160)
 content_scale_mode = 1
 content_scale_aspect = 4
 
-[node name="WindowPanel" type="PanelContainer" parent="Window"]
+[node name="WindowPanel" type="PanelContainer" parent="Window" unique_id=790512959]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -114,15 +114,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_rcnly")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowPanel" unique_id=554922309]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TitleBarContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer"]
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer" unique_id=957279346]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="File" type="MenuButton" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer"]
+[node name="File" type="MenuButton" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer" unique_id=1641164929]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mq3oo")
 disabled = true
@@ -141,37 +141,37 @@ popup/item_4/separator = true
 popup/item_5/text = "Exit"
 popup/item_5/id = 4
 
-[node name="Button2" type="Button" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer"]
+[node name="Button2" type="Button" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer" unique_id=1627310054]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2y4q8")
 disabled = true
 text = "Edit"
 flat = true
 
-[node name="Button3" type="Button" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer"]
+[node name="Button3" type="Button" parent="Window/WindowPanel/VBoxContainer/TitleBarContainer" unique_id=542431]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2y4q8")
 disabled = true
 text = "Help"
 flat = true
 
-[node name="PanelContainer" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer" unique_id=1941885402]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("4_wu4ry")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Window/WindowPanel/VBoxContainer/PanelContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Window/WindowPanel/VBoxContainer/PanelContainer" unique_id=1784619268]
 layout_mode = 2
 ratio = 1.775
 
-[node name="VideoPlayer" type="VideoStreamPlayer" parent="Window/WindowPanel/VBoxContainer/PanelContainer/AspectRatioContainer"]
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="Window/WindowPanel/VBoxContainer/PanelContainer/AspectRatioContainer" unique_id=1450127204]
 texture_filter = 1
 custom_minimum_size = Vector2(213, 120)
 layout_mode = 2
 stream = ExtResource("2_agk2i")
 expand = true
 
-[node name="Controls" type="MarginContainer" parent="Window/WindowPanel/VBoxContainer"]
+[node name="Controls" type="MarginContainer" parent="Window/WindowPanel/VBoxContainer" unique_id=70488983]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/margin_left = 8
@@ -179,11 +179,11 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls" unique_id=1103454536]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="seekSlider" type="HSlider" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer"]
+[node name="seekSlider" type="HSlider" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer" unique_id=24823689]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("3_rhyf6")
@@ -195,24 +195,24 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qhdn3")
 step = 0.1
 scrollable = false
 
-[node name="ControlButtons" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer"]
+[node name="ControlButtons" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer" unique_id=394591417]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="PPS" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+[node name="PPS" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons" unique_id=1656087602]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 theme_override_styles/panel = ExtResource("6_tqbdp")
 
-[node name="PPSContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS"]
+[node name="PPSContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS" unique_id=617339414]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+[node name="PlayButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer" unique_id=592385728]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -227,7 +227,7 @@ icon = ExtResource("9_6xdpb")
 icon_alignment = 1
 expand_icon = true
 
-[node name="PauseButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+[node name="PauseButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer" unique_id=2057768763]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -242,7 +242,7 @@ icon = ExtResource("10_koxm3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="StopButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer"]
+[node name="StopButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/PPS/PPSContainer" unique_id=850816330]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -257,19 +257,19 @@ icon = ExtResource("11_ejjfo")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SEEK" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+[node name="SEEK" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons" unique_id=1765648171]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 theme_override_styles/panel = ExtResource("13_mq3oo")
 
-[node name="SeekContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK"]
+[node name="SeekContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK" unique_id=2067173716]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="PrevTrack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+[node name="PrevTrack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer" unique_id=378120190]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -285,7 +285,7 @@ icon = ExtResource("12_2yk8m")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekBack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+[node name="SeekBack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer" unique_id=1104617478]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -301,7 +301,7 @@ icon = ExtResource("13_h2wnx")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SeekForward" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+[node name="SeekForward" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer" unique_id=875139991]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -317,7 +317,7 @@ icon = ExtResource("14_dgjwm")
 icon_alignment = 1
 expand_icon = true
 
-[node name="NextTrack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer"]
+[node name="NextTrack" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/SEEK/SeekContainer" unique_id=1419496145]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -333,17 +333,17 @@ icon = ExtResource("15_iobfv")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Volume" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons"]
+[node name="Volume" type="PanelContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons" unique_id=725288047]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_styles/panel = ExtResource("22_2hawr")
 
-[node name="VolumeContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume"]
+[node name="VolumeContainer" type="HBoxContainer" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume" unique_id=1666182091]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MuteButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer"]
+[node name="MuteButton" type="Button" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer" unique_id=607067121]
 texture_filter = 1
 custom_minimum_size = Vector2(20, 32)
 layout_mode = 2
@@ -360,7 +360,7 @@ icon = ExtResource("17_ieqqa")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VolumeSlider" type="HSlider" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer"]
+[node name="VolumeSlider" type="HSlider" parent="Window/WindowPanel/VBoxContainer/Controls/VBoxContainer/ControlButtons/Volume/VolumeContainer" unique_id=90980753]
 custom_minimum_size = Vector2(48, 32)
 layout_mode = 2
 size_flags_horizontal = 3

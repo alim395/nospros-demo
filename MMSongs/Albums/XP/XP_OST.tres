@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=8 format=3 uid="uid://bimj5fu4x7gh3"]
+[gd_resource type="Resource" script_class="MusicPlaylist" format=3 uid="uid://bimj5fu4x7gh3"]
 
 [ext_resource type="Script" uid="uid://c8lu2riejct4e" path="res://addons/MusicManager/music_playlist.gd" id="1_himpo"]
 [ext_resource type="Script" uid="uid://b4gw7svnn4fxu" path="res://addons/MusicManager/music_track.gd" id="2_h4nsa"]

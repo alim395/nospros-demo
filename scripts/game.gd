@@ -27,11 +27,13 @@ var shutdownSong : MusicTrack
 # Error Window
 @export var dialogueWindowNode : Control
 @onready var errorWindow = preload("res://scenes/dialogs/errorWindow.tscn")
-@onready var ynWindow = preload("res://scenes/dialogs/YNWindow.tscn")
+#@onready var ynWindow = preload("res://scenes/dialogs/YNWindow.tscn")
+@onready var ynWindow = preload("res://scenes/dialogs/customYN.tscn")
 #var currentError : Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	globalParameters.gameNode = self
 	# Connect Signal
 	globalParameters.CloseAppSignal.connect(closeApp)
 	globalParameters.unlockWMP.connect(_on_secret_3_button_pressed)
@@ -55,6 +57,7 @@ func _ready() -> void:
 		Task_Bar.visible = true;
 		Task_Bar.visibility_changed.emit()
 		iconManager.visible = true;
+	WebDirectory.AppManager = appManager
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -123,6 +126,7 @@ func spawnError(msg : String = "This feature is not available yet.", eType : int
 	if dialogueWindowNode.get_children():
 		if dialogueWindowNode.get_child_count() > 1:
 			d.myWindow.position += Vector2i(randi_range(10,40), randi_range(10,40))
+	dialogueWindowNode.move_to_front()
 
 func spawnYN(msg:String = "YES or No?", title:String = "Untitled", isCool : bool = false):
 	var d = ynWindow.instantiate()
@@ -134,6 +138,7 @@ func spawnYN(msg:String = "YES or No?", title:String = "Untitled", isCool : bool
 	if dialogueWindowNode.get_children():
 		if dialogueWindowNode.get_child_count() > 1:
 			d.myWindow.position += Vector2i(randi_range(10,40), randi_range(10,40))
+	dialogueWindowNode.move_to_front()
 	return d
 
 func _on_secret_2_button_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxo1kibgddwr3"]
+[gd_scene format=3 uid="uid://cxo1kibgddwr3"]
 
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="1_0bpdh"]
 [ext_resource type="Script" uid="uid://crthd7bi2jwti" path="res://scripts/credits.gd" id="1_2ckv8"]
@@ -62,7 +62,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextLabels/Testers/BodyMargin/BodyContainer/TesterLabel:visible_ratio")
+tracks/4/path = NodePath("TextLabels/Testers/BodyMargin/TesterLabel:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -98,7 +98,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextLabels/Assets/BodyMargin/BodyContainer/AssetsLabel:visible_ratio")
+tracks/7/path = NodePath("TextLabels/Assets/BodyMargin/AssetsLabel:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -305,7 +305,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextLabels/Testers/BodyMargin/BodyContainer/TesterLabel:visible_ratio")
+tracks/4/path = NodePath("TextLabels/Testers/BodyMargin/TesterLabel:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -341,7 +341,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextLabels/Assets/BodyMargin/BodyContainer/AssetsLabel:visible_ratio")
+tracks/7/path = NodePath("TextLabels/Assets/BodyMargin/AssetsLabel:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -501,7 +501,7 @@ _data = {
 &"RESET": SubResource("Animation_2fbfq")
 }
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" unique_id=1168894620]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -512,7 +512,7 @@ script = ExtResource("1_2ckv8")
 creditsSong = ExtResource("2_kyhnv")
 goBackSong = ExtResource("2_mah5v")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1637662993]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -521,7 +521,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0bpdh")
 
-[node name="TextLabels" type="Control" parent="."]
+[node name="TextLabels" type="Control" parent="." unique_id=474154331]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -529,7 +529,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleText" type="RichTextLabel" parent="TextLabels"]
+[node name="TitleText" type="RichTextLabel" parent="TextLabels" unique_id=7823225]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -544,7 +544,7 @@ text = "[pulse freq=0.125 color=#ffffff00]Nostalgia Process[/pulse]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SubTitleText" type="RichTextLabel" parent="TextLabels"]
+[node name="SubTitleText" type="RichTextLabel" parent="TextLabels" unique_id=1851377226]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -560,7 +560,7 @@ text = "[pulse freq=0.125 color=#ffffff00]A Solo Project by ZenkoZGames[/pulse]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Testers" type="VBoxContainer" parent="TextLabels"]
+[node name="Testers" type="VBoxContainer" parent="TextLabels" unique_id=1644567538]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -568,12 +568,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -8
 alignment = 1
 
-[node name="TesterHeader" type="RichTextLabel" parent="TextLabels/Testers"]
+[node name="TesterHeader" type="RichTextLabel" parent="TextLabels/Testers" unique_id=357804172]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_constants/line_separation = -12
 theme_override_fonts/normal_font = ExtResource("3_0ctdu")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -582,18 +584,14 @@ text = "Volunteer Testers
 fit_content = true
 horizontal_alignment = 1
 
-[node name="BodyMargin" type="MarginContainer" parent="TextLabels/Testers"]
+[node name="BodyMargin" type="MarginContainer" parent="TextLabels/Testers" unique_id=1345915960]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="BodyContainer" type="VBoxContainer" parent="TextLabels/Testers/BodyMargin"]
-layout_mode = 2
-alignment = 1
-
-[node name="TesterLabel" type="RichTextLabel" parent="TextLabels/Testers/BodyMargin/BodyContainer"]
+[node name="TesterLabel" type="RichTextLabel" parent="TextLabels/Testers/BodyMargin" unique_id=1135347467]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
 theme_override_fonts/normal_font = ExtResource("4_2fbfq")
@@ -606,19 +604,21 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Assets" type="VBoxContainer" parent="TextLabels"]
+[node name="Assets" type="VBoxContainer" parent="TextLabels" unique_id=381921117]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -8
 alignment = 1
 
-[node name="AssetsHeader" type="RichTextLabel" parent="TextLabels/Assets"]
+[node name="AssetsHeader" type="RichTextLabel" parent="TextLabels/Assets" unique_id=678144370]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_constants/line_separation = -12
 theme_override_fonts/normal_font = ExtResource("3_0ctdu")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -627,18 +627,14 @@ text = "Assets and References
 fit_content = true
 horizontal_alignment = 1
 
-[node name="BodyMargin" type="MarginContainer" parent="TextLabels/Assets"]
+[node name="BodyMargin" type="MarginContainer" parent="TextLabels/Assets" unique_id=1359410621]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="BodyContainer" type="VBoxContainer" parent="TextLabels/Assets/BodyMargin"]
-layout_mode = 2
-alignment = 1
-
-[node name="AssetsLabel" type="RichTextLabel" parent="TextLabels/Assets/BodyMargin/BodyContainer"]
+[node name="AssetsLabel" type="RichTextLabel" parent="TextLabels/Assets/BodyMargin" unique_id=250734216]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
 theme_override_fonts/normal_font = ExtResource("4_2fbfq")
@@ -652,19 +648,24 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP_Container" type="VBoxContainer" parent="TextLabels"]
+[node name="SCPP_Container" type="VBoxContainer" parent="TextLabels" unique_id=1644755880]
 visible = false
+custom_maximum_size = Vector2(640, 360)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -14.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
-[node name="SCPP00" type="RichTextLabel" parent="TextLabels/SCPP_Container"]
+[node name="SCPP00" type="RichTextLabel" parent="TextLabels/SCPP_Container" unique_id=731761235]
 modulate = Color(1, 1, 1, 0.015724182)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
+theme_override_constants/line_separation = -12
 theme_override_fonts/normal_font = ExtResource("3_0ctdu")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -673,21 +674,21 @@ text = "Class of 2026
 fit_content = true
 horizontal_alignment = 1
 
-[node name="BodyMargin" type="MarginContainer" parent="TextLabels/SCPP_Container"]
+[node name="BodyMargin" type="MarginContainer" parent="TextLabels/SCPP_Container" unique_id=1648377987]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="BodyContainer" type="HFlowContainer" parent="TextLabels/SCPP_Container/BodyMargin"]
+[node name="BodyContainer" type="HFlowContainer" parent="TextLabels/SCPP_Container/BodyMargin" unique_id=919136957]
 layout_mode = 2
-theme_override_constants/v_separation = 24
+theme_override_constants/v_separation = 12
 alignment = 1
 
-[node name="SCPP01" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP01" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=1430894955]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -702,9 +703,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP02" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP02" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=1699375230]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -721,9 +722,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP03" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP03" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=1577242064]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -739,9 +740,9 @@ custom_effects = [ExtResource("5_8gwij")]
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP04" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP04" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=1717879478]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -756,9 +757,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP05" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP05" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=1802663805]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -774,9 +775,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP06" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP06" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=830738120]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -792,9 +793,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP07" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP07" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=319072620]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -807,9 +808,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP08" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP08" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=1941585377]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -822,9 +823,9 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SCPP09" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer"]
-clip_contents = false
+[node name="SCPP09" type="RichTextLabel" parent="TextLabels/SCPP_Container/BodyMargin/BodyContainer" unique_id=840276959]
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
@@ -837,7 +838,7 @@ horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="End_Container" type="VBoxContainer" parent="TextLabels"]
+[node name="End_Container" type="VBoxContainer" parent="TextLabels" unique_id=979562202]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = 14
@@ -847,7 +848,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndText" type="RichTextLabel" parent="TextLabels/End_Container"]
+[node name="EndText" type="RichTextLabel" parent="TextLabels/End_Container" unique_id=1109950732]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
 theme_override_fonts/normal_font = ExtResource("3_0ctdu")
@@ -858,7 +859,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EndLabel" type="RichTextLabel" parent="TextLabels/End_Container"]
+[node name="EndLabel" type="RichTextLabel" parent="TextLabels/End_Container" unique_id=2006598570]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.101960786, 0.21176471, 0.53333336, 1)
 theme_override_fonts/normal_font = ExtResource("4_2fbfq")
@@ -869,10 +870,8 @@ text = "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="CreditsAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8gwij")
-}
-autoplay = "Credits Transitions"
+[node name="CreditsAnimation" type="AnimationPlayer" parent="." unique_id=838585037]
+libraries/ = SubResource("AnimationLibrary_8gwij")
+autoplay = &"Credits Transitions"
 
 [connection signal="meta_clicked" from="TextLabels/End_Container/EndLabel" to="." method="_on_end_label_meta_clicked"]

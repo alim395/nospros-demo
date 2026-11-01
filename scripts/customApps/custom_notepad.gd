@@ -1,6 +1,6 @@
 extends customWindow
 
-@export var myTaskButton : taskbarButton
+#@export var myTaskButton : taskbarButton
 var isMinimize : bool = false
 
 @export var textPanel : TextEdit
@@ -28,8 +28,10 @@ signal openNote
 # Dialogs
 var openSubMenu : PopupMenu
 
-@onready var YNDialog = preload("res://scenes/dialogs/YNWindow.tscn")
-@onready var FormDialog = preload("res://scenes/dialogs/FormWindow.tscn")
+#@onready var YNDialog = preload("res://scenes/dialogs/YNWindow.tscn")
+@onready var YNDialogC = preload("res://scenes/dialogs/customYN.tscn")
+#@onready var FormDialog = preload("res://scenes/dialogs/FormWindow.tscn")
+@onready var FormDialogC = preload("res://scenes/dialogs/customForm.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,7 +57,7 @@ func _ready() -> void:
 
 func closeWindow() -> void:
 	closeNote.emit(fileName)
-	myTaskButton.queue_free()
+	myTaskButton.close_task()
 	queue_free()
 
 func updateStatusBar() -> void:
@@ -117,11 +119,13 @@ func _on_word_wrap_toggle() -> void:
 		textPanel.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
 
 func saveNotepad(isExit : bool = false) -> void:
-	var yn = YNDialog.instantiate()
+	var yn = YNDialogC.instantiate()
+	yn.setTitle("Notepad")
 	yn.setMessage("Do you want to save changes to " + fileName + ".txt?")
 	yn.yesPress.connect(yesSaveNotepad.bind(isExit))
 	yn.noPress.connect(cancelSaveNotepad.bind(isExit))
 	add_child(yn)
+	
 
 func yesSaveNotepad(isExit : bool = false) -> void:
 	saveNote.emit(fileName, textPanel.text)
@@ -129,14 +133,20 @@ func yesSaveNotepad(isExit : bool = false) -> void:
 		_on_close_button_button_up()
 
 func saveNotepadAs(isExit : bool = false) -> void:
-	var yn = YNDialog.instantiate()
+	var yn = YNDialogC.instantiate()
+	yn.setTitle("Notepad")
 	yn.setMessage("Do you want to save this file?")
 	yn.yesPress.connect(yesSaveNotepadAs.bind(isExit))
 	yn.noPress.connect(cancelSaveNotepad.bind(isExit))
 	add_child(yn)
 
 func yesSaveNotepadAs(isExit : bool = false) -> void:
-	var fD = FormDialog.instantiate()
+	#var fD = FormDialog.instantiate()
+	#add_child(fD)
+	#fD.savePress.connect(confirmSaveNotepadAs.bind(isExit))
+	#fD.cancelPress.connect(cancelSaveNotepad.bind(isExit))
+	var fD = FormDialogC.instantiate()
+	fD.setTitle("Save as...")
 	add_child(fD)
 	fD.savePress.connect(confirmSaveNotepadAs.bind(isExit))
 	fD.cancelPress.connect(cancelSaveNotepad.bind(isExit))
@@ -144,6 +154,7 @@ func yesSaveNotepadAs(isExit : bool = false) -> void:
 func confirmSaveNotepadAs(fName : String, isExit : bool = false) -> void:
 	setFileName(fName)
 	myTaskButton.set_task(fName + " - Notepad")
+	#myTaskButton.updateTask()
 	yesSaveNotepad(isExit)
 
 func cancelSaveNotepad(isExit) -> void:
@@ -222,4 +233,5 @@ func updateProgramIcon() -> void:
 
 func _on_window_container_focus_entered() -> void:
 	super._on_window_container_focus_entered()
-	get_parent().get_parent().move_child(get_parent(), -1)
+	if get_parent().get_parent():
+		get_parent().get_parent().move_child(get_parent(), -1)

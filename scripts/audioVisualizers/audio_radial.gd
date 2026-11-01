@@ -3,7 +3,7 @@ extends Control
 const FREQ_MAX = 2750.0
 const SAMPLE_COUNT = 32
 
-const WIDTH = 136
+const WIDTH = 142
 const HEIGHT = 76
 
 const MIN_DB = 60

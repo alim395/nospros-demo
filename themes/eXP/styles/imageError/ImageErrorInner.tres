@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://cgragplha7elt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fd01d"]
+load_path = "res://.godot/imported/imageError.png-4ea6564d762df2913daa0168f36db3c2.ctex"
+
+[resource]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = SubResource("CompressedTexture2D_fd01d")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

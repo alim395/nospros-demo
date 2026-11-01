@@ -1,6 +1,6 @@
 extends customWindow
 
-@export var myTaskButton : taskbarButton
+#@export var myTaskButton : taskbarButton
 var isMinimize : bool = false
 
 @export var isShuffle := false

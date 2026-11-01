@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://g0hfxho8l0ty"]
+[gd_scene format=3 uid="uid://g0hfxho8l0ty"]
 
 [ext_resource type="Script" uid="uid://ff2m73ec4hcg" path="res://scripts/volume.gd" id="1_8ty1d"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_bml30"]
@@ -41,7 +41,7 @@ width = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7oq1j"]
 
-[node name="Volume" type="Control" node_paths=PackedStringArray("myWindow", "masterBalance", "masterVol", "musicBalance", "musicVol", "sfxBalance", "sfxVol", "masterMute", "musicMute", "sfxMute", "testMaster", "testMusic", "testSFX", "audioDeviceLabel")]
+[node name="Volume" type="Control" unique_id=2018697306 node_paths=PackedStringArray("myWindow", "masterBalance", "masterVol", "musicBalance", "musicVol", "sfxBalance", "sfxVol", "masterMute", "musicMute", "sfxMute", "testMaster", "testMusic", "testSFX", "audioDeviceLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,7 +64,7 @@ testMusic = NodePath("testMusic")
 testSFX = NodePath("testSFX")
 audioDeviceLabel = NodePath("Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer/OutputDevice")
 
-[node name="Window" type="Window" parent="."]
+[node name="Window" type="Window" parent="." unique_id=120459356]
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 title = "Volume Control"
@@ -72,14 +72,14 @@ initial_position = 1
 size = Vector2i(360, 240)
 theme = ExtResource("1_bml30")
 
-[node name="Panel" type="Panel" parent="Window"]
+[node name="Panel" type="Panel" parent="Window" unique_id=257359558]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel" unique_id=1108286969]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,76 +88,76 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 2
 
-[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer" unique_id=221002473]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Button4" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer"]
+[node name="Button4" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer" unique_id=78784028]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xvi8a")
 disabled = true
 text = "Options"
 flat = true
 
-[node name="Button5" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer"]
+[node name="Button5" type="Button" parent="Window/Panel/VBoxContainer/TitleBarContainer" unique_id=548129963]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xvi8a")
 disabled = true
 text = "Help"
 flat = true
 
-[node name="BodyContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer"]
+[node name="BodyContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer" unique_id=754064362]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Master" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer"]
+[node name="Master" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer" unique_id=1898524839]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 theme_override_styles/panel = ExtResource("3_yduor")
 
-[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master"]
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master" unique_id=1419534785]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer" unique_id=609828287]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer" unique_id=22825318]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
 
-[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/PanelContainer" unique_id=463412675]
 layout_mode = 2
 text = "Volume Control"
 
-[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer" unique_id=326100252]
 layout_mode = 2
 text = "Balance:"
 
-[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer" unique_id=940879736]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer" unique_id=533192396]
 layout_mode = 2
 
-[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=2056154873]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_wv35w")
 expand_mode = 1
 
-[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=1246585744]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -172,23 +172,23 @@ step = 0.01
 tick_count = 3
 ticks_on_borders = true
 
-[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=413519627]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("8_1ohds")
 expand_mode = 1
 
-[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer" unique_id=1296363185]
 layout_mode = 2
 text = "Volume:"
 
-[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer" unique_id=2099029017]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer"]
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer/VolumeContainer" unique_id=1628442937]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/tick_offset = 11
@@ -201,71 +201,71 @@ tick_count = 7
 ticks_on_borders = true
 ticks_position = 2
 
-[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Master/MarginContainer/VBoxContainer" unique_id=1379630749]
 layout_mode = 2
 text = "Mute all"
 
-[node name="Others" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer"]
+[node name="Others" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer" unique_id=1677489361]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 theme_override_styles/panel = ExtResource("10_hjk02")
 
-[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others"]
+[node name="MarginContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others" unique_id=865928858]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer" unique_id=1251134990]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="MusicContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer"]
+[node name="MusicContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer" unique_id=540505910]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer" unique_id=1668617774]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
 
-[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer"]
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer" unique_id=1157692283]
 layout_mode = 2
 text = "Music"
 
-[node name="PanelContainer2" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer" unique_id=296090407]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_wvjlw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2" unique_id=656743808]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer" unique_id=1804598382]
 layout_mode = 2
 text = "Balance:"
 
-[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer" unique_id=1098364957]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer" unique_id=269198621]
 layout_mode = 2
 
-[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=2075067165]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_wv35w")
 expand_mode = 1
 
-[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=1778976263]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -280,23 +280,23 @@ step = 0.01
 tick_count = 3
 ticks_on_borders = true
 
-[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=1844433172]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("8_1ohds")
 expand_mode = 1
 
-[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer" unique_id=951696639]
 layout_mode = 2
 text = "Volume:"
 
-[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer" unique_id=176533053]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer"]
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer/VolumeContainer" unique_id=239706602]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/tick_offset = 11
@@ -309,52 +309,52 @@ tick_count = 7
 ticks_on_borders = true
 ticks_position = 2
 
-[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/MusicContainer/PanelContainer2/VBoxContainer" unique_id=254977543]
 layout_mode = 2
 text = "Mute"
 
-[node name="SFXContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer"]
+[node name="SFXContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer" unique_id=825103901]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer" unique_id=697867495]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_w60lv")
 
-[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer"]
+[node name="Label" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer" unique_id=320105395]
 layout_mode = 2
 text = "SFX"
 
-[node name="PanelContainer2" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer" unique_id=24591507]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("13_yduor")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2" unique_id=1715264596]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+[node name="BalanceLabel" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer" unique_id=1436581585]
 layout_mode = 2
 text = "Balance:"
 
-[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+[node name="BalanceContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer" unique_id=604477569]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer" unique_id=1125844455]
 layout_mode = 2
 
-[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="LSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=820667715]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_wv35w")
 expand_mode = 1
 
-[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="BalSlider" type="HSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=419204906]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -369,23 +369,23 @@ step = 0.01
 tick_count = 3
 ticks_on_borders = true
 
-[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer"]
+[node name="RSpeak" type="TextureRect" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/BalanceContainer/HBoxContainer" unique_id=362373652]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("8_1ohds")
 expand_mode = 1
 
-[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+[node name="Volume" type="Label" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer" unique_id=1588914322]
 layout_mode = 2
 text = "Volume:"
 
-[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+[node name="VolumeContainer" type="MarginContainer" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer" unique_id=619565103]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer"]
+[node name="VolSlider" type="VSlider" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer/VolumeContainer" unique_id=1576393446]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/tick_offset = 11
@@ -398,16 +398,16 @@ tick_count = 7
 ticks_on_borders = true
 ticks_position = 2
 
-[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="Window/Panel/VBoxContainer/BodyContainer/Others/MarginContainer/HBoxContainer/SFXContainer/PanelContainer2/VBoxContainer" unique_id=993529463]
 layout_mode = 2
 text = "Mute"
 
-[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VBoxContainer"]
+[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VBoxContainer" unique_id=790002295]
 custom_minimum_size = Vector2(0, 18.5)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_mch7p")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/StatusBarPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VBoxContainer/StatusBarPanel" unique_id=758519050]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 1
 anchors_preset = 15
@@ -417,7 +417,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="OutputDevice" type="Label" parent="Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer"]
+[node name="OutputDevice" type="Label" parent="Window/Panel/VBoxContainer/StatusBarPanel/HBoxContainer" unique_id=963953030]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("2_wvjlw")
@@ -425,16 +425,16 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7oq1j")
 text = "Ln 1"
 vertical_alignment = 1
 
-[node name="testMaster" type="AudioStreamPlayer" parent="."]
+[node name="testMaster" type="AudioStreamPlayer" parent="." unique_id=1579070110]
 stream = ExtResource("14_fqi84")
 playback_type = 1
 
-[node name="testMusic" type="AudioStreamPlayer" parent="."]
+[node name="testMusic" type="AudioStreamPlayer" parent="." unique_id=1215056631]
 stream = ExtResource("15_yduor")
 bus = &"Music"
 playback_type = 1
 
-[node name="testSFX" type="AudioStreamPlayer" parent="."]
+[node name="testSFX" type="AudioStreamPlayer" parent="." unique_id=326842703]
 stream = ExtResource("16_hjk02")
 bus = &"SFX"
 playback_type = 1

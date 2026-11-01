@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb0lj145achmt"]
+[gd_scene format=3 uid="uid://cb0lj145achmt"]
 
 [ext_resource type="Script" uid="uid://ddf2u76pxmdy2" path="res://scripts/options.gd" id="1_1sggn"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="1_c2u1v"]
@@ -17,14 +17,14 @@ shader_parameter/G = 0.0
 shader_parameter/B = 0.0
 shader_parameter/blur_strength = 1.0
 
-[node name="Options" type="Node2D"]
+[node name="Options" type="Node2D" unique_id=1547786111]
 script = ExtResource("1_1sggn")
 
-[node name="XpWelcome" type="Sprite2D" parent="."]
+[node name="XpWelcome" type="Sprite2D" parent="." unique_id=1793706626]
 position = Vector2(320, 180)
 texture = ExtResource("1_c2u1v")
 
-[node name="settingScreen" type="Control" parent="." node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter", "fullScreen", "masterVol", "musicVol", "sfxVol")]
+[node name="settingScreen" type="Control" parent="." unique_id=856882762 node_paths=PackedStringArray("softBlur", "highFidelity", "crtFilter", "fullScreen", "masterVol", "musicVol", "sfxVol")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +42,7 @@ masterVol = NodePath("VBoxContainer/Panel1/MarginContainer/settings2/Master/mast
 musicVol = NodePath("VBoxContainer/Panel1/MarginContainer/settings2/Music/musicSlider")
 sfxVol = NodePath("VBoxContainer/Panel1/MarginContainer/settings2/SFX/sfxSlider")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="settingScreen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="settingScreen" unique_id=1488511731]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,12 +57,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Panel0" type="Panel" parent="settingScreen/VBoxContainer"]
+[node name="Panel0" type="Panel" parent="settingScreen/VBoxContainer" unique_id=454401272]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="settings" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel0"]
+[node name="settings" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel0" unique_id=1912287460]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,27 +70,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HFButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings"]
+[node name="HFButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings" unique_id=1359566279]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Disable Soft Filter"
 
-[node name="CRTButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings"]
+[node name="CRTButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings" unique_id=507768246]
 layout_mode = 2
 tooltip_text = "Default: False"
 text = "Enable CRT Filter"
 
-[node name="FullScreenButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings"]
+[node name="FullScreenButton" type="CheckButton" parent="settingScreen/VBoxContainer/Panel0/settings" unique_id=97504805]
 layout_mode = 2
 button_pressed = true
 text = "Enable Fullscreen"
 
-[node name="Panel1" type="Panel" parent="settingScreen/VBoxContainer"]
+[node name="Panel1" type="Panel" parent="settingScreen/VBoxContainer" unique_id=809045046]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="settingScreen/VBoxContainer/Panel1"]
+[node name="MarginContainer" type="MarginContainer" parent="settingScreen/VBoxContainer/Panel1" unique_id=1342131056]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,18 +102,18 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="settings2" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer"]
+[node name="settings2" type="VBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer" unique_id=1047701614]
 layout_mode = 2
 alignment = 1
 
-[node name="Master" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2"]
+[node name="Master" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2" unique_id=157125077]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master"]
+[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master" unique_id=2129017621]
 layout_mode = 2
 text = "Master :"
 
-[node name="masterSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master"]
+[node name="masterSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Master" unique_id=1905249337]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -121,14 +121,14 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="Music" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2"]
+[node name="Music" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2" unique_id=1451010963]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music"]
+[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music" unique_id=334708194]
 layout_mode = 2
 text = "Music   :"
 
-[node name="musicSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music"]
+[node name="musicSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/Music" unique_id=446614494]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -136,14 +136,14 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="SFX" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2"]
+[node name="SFX" type="HBoxContainer" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2" unique_id=1753671730]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX"]
+[node name="Label" type="Label" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX" unique_id=536660882]
 layout_mode = 2
 text = "SFX       :"
 
-[node name="sfxSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX"]
+[node name="sfxSlider" type="HSlider" parent="settingScreen/VBoxContainer/Panel1/MarginContainer/settings2/SFX" unique_id=1274602048]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -151,21 +151,21 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="settingScreen/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="settingScreen/VBoxContainer" unique_id=1599268279]
 layout_mode = 2
 alignment = 1
 
-[node name="PreviewButton" type="Button" parent="settingScreen/VBoxContainer/HBoxContainer"]
+[node name="PreviewButton" type="Button" parent="settingScreen/VBoxContainer/HBoxContainer" unique_id=258797517]
 layout_mode = 2
 text = "Preview"
 
-[node name="BackButton" type="Button" parent="settingScreen/VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="settingScreen/VBoxContainer/HBoxContainer" unique_id=168600809]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Back to Menu"
 
-[node name="Preview" type="Control" parent="." node_paths=PackedStringArray("crtNode", "softBlur")]
+[node name="Preview" type="Control" parent="." unique_id=1024972164 node_paths=PackedStringArray("crtNode", "softBlur")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -181,7 +181,7 @@ script = ExtResource("4_o7i7e")
 crtNode = NodePath("CRT")
 softBlur = NodePath("ScreenFilters/BackBufferCopy1/SoftBlur")
 
-[node name="TextureRect" type="TextureRect" parent="Preview"]
+[node name="TextureRect" type="TextureRect" parent="Preview" unique_id=205592263]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,7 +191,7 @@ grow_vertical = 2
 texture = ExtResource("5_uon5e")
 expand_mode = 1
 
-[node name="ExitPreview" type="Button" parent="Preview"]
+[node name="ExitPreview" type="Button" parent="Preview" unique_id=6922880]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -206,15 +206,15 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Click to Exit Preview"
 
-[node name="ScreenFilters" type="Node2D" parent="Preview"]
+[node name="ScreenFilters" type="Node2D" parent="Preview" unique_id=809313629]
 
-[node name="BackBufferCopy1" type="BackBufferCopy" parent="Preview/ScreenFilters"]
+[node name="BackBufferCopy1" type="BackBufferCopy" parent="Preview/ScreenFilters" unique_id=1953422555]
 z_index = 1
 scale = Vector2(3.2, 1.8)
 copy_mode = 2
 rect = Rect2(0, 0, 200, 200)
 
-[node name="SoftBlur" type="ColorRect" parent="Preview/ScreenFilters/BackBufferCopy1"]
+[node name="SoftBlur" type="ColorRect" parent="Preview/ScreenFilters/BackBufferCopy1" unique_id=148349500]
 material = SubResource("ShaderMaterial_o7i7e")
 anchors_preset = 15
 anchor_right = 1.0
@@ -225,7 +225,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="CRT" type="CanvasLayer" parent="Preview"]
+[node name="CRT" type="CanvasLayer" parent="Preview" unique_id=652953623]
 layer = 9001
 visible = false
 script = ExtResource("4_e6vpq")

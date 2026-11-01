@@ -1,9 +1,9 @@
-[gd_resource type="Theme" load_steps=100 format=3 uid="uid://ck4ke6iweo4ss"]
+[gd_resource type="Theme" format=3 uid="uid://ck4ke6iweo4ss"]
 
-[ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_iqoho"]
+[ext_resource type="FontFile" uid="uid://dnq1b7g5qfkfb" path="res://fonts/tahoma8.otf" id="1_rdcf2"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_rkieb"]
 [ext_resource type="StyleBox" uid="uid://bibr1bpmpriui" path="res://themes/eXP/styles/button/buttonStack-focus.tres" id="3_33nn2"]
-[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="3_ldvai"]
+[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://scripts/StyleboxStack.gd" id="3_ldvai"]
 [ext_resource type="StyleBox" uid="uid://dt5hr60b1dhkd" path="res://themes/eXP/styles/button/button-border.tres" id="4_yidss"]
 [ext_resource type="StyleBox" uid="uid://b1pqq85k5u6r5" path="res://themes/eXP/styles/button/button-active.tres" id="5_fxlm7"]
 [ext_resource type="StyleBox" uid="uid://cw2xsb62k3uuu" path="res://themes/eXP/styles/button/button-hover.tres" id="7_6mvy2"]
@@ -38,11 +38,12 @@
 [ext_resource type="StyleBox" uid="uid://c1tmjgq8578tw" path="res://themes/eXP/styles/custom/range/Hslider_Simple.tres" id="33_esigb"]
 [ext_resource type="StyleBox" uid="uid://cweuun60dxv7i" path="res://themes/eXP/styles/tree/treePanel.tres" id="33_sxg7s"]
 [ext_resource type="StyleBox" uid="uid://dyokwfml61sl2" path="res://themes/eXP/styles/progressBar/progressBarBackground.tres" id="34_km730"]
-[ext_resource type="Texture2D" uid="uid://bopcbmv4mci08" path="res://themes/eXP/styles/progressBar/ProgressFill.png" id="35_rdcf2"]
 [ext_resource type="StyleBox" uid="uid://bju6svei8tqxe" path="res://themes/eXP/styles/tab/tabPanel.tres" id="36_igvlm"]
 [ext_resource type="StyleBox" uid="uid://c26opnmlf6qyq" path="res://themes/eXP/styles/tab/tabButtonStack.tres" id="37_3en0o"]
+[ext_resource type="StyleBox" uid="uid://dq36gh8j3er3q" path="res://themes/eXP/styles/option/optionItemHover.tres" id="38_i80ew"]
 [ext_resource type="StyleBox" uid="uid://bipqob58lv82q" path="res://themes/eXP/styles/tab/tabButtonUnselectedStack.tres" id="38_xc2pt"]
 [ext_resource type="Texture2D" uid="uid://cdatmybntrnw4" path="res://themes/eXP/styles/scroll/embedded/top-stepper.png" id="41_bnbxk"]
+[ext_resource type="StyleBox" uid="uid://br5jxxah020t5" path="res://themes/eXP/styles/progressBar/progressBarFill.tres" id="41_km730"]
 [ext_resource type="Texture2D" uid="uid://c0a2xe1wad2eu" path="res://themes/eXP/styles/scroll/embedded/top-stepper-prelight.png" id="42_esigb"]
 [ext_resource type="Texture2D" uid="uid://c024xpf0448i7" path="res://themes/eXP/styles/scroll/embedded/top-stepper-active.png" id="43_33nn2"]
 [ext_resource type="StyleBox" uid="uid://c65mwbae6q2v7" path="res://themes/eXP/styles/scroll/scroll.tres" id="43_ajl8v"]
@@ -53,6 +54,7 @@
 [ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="46_kuxup"]
 [ext_resource type="Texture2D" uid="uid://5pnhlngqq2p3" path="res://themes/eXP/styles/scroll/embedded/bottom-stepper-active.png" id="46_yww1x"]
 [ext_resource type="Texture2D" uid="uid://dba1uyd2rdg2t" path="res://themes/eXP/styles/scroll/embedded/slider-vert.png" id="47_70wnv"]
+[ext_resource type="StyleBox" uid="uid://c0bev2tablha3" path="res://themes/eXP/styles/tooltips/tooltip.tres" id="47_gdtwb"]
 [ext_resource type="Texture2D" uid="uid://dowutv4vqgcpi" path="res://themes/eXP/styles/scroll/embedded/slider-vert-prelight.png" id="48_0l1g5"]
 [ext_resource type="StyleBox" uid="uid://c7hjl1mh22fxs" path="res://themes/eXP/styles/window/WindowEmbeddedStack.tres" id="49_e80c4"]
 [ext_resource type="Texture2D" uid="uid://cpofq2cn56m58" path="res://themes/eXP/styles/scroll/embedded/slider-vert-active.png" id="49_ok4fo"]
@@ -69,12 +71,18 @@
 [ext_resource type="StyleBox" uid="uid://5gdiqm3dpsy4" path="res://themes/eXP/styles/window/customWindow/Embedded/customWindowEmbeddedUnfocused.tres" id="65_r4cd7"]
 [ext_resource type="Texture2D" uid="uid://bc7ju35ww11um" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-hover.png" id="66_i80ew"]
 [ext_resource type="Texture2D" uid="uid://b8q47n3qnbi1r" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-active.png" id="67_gdtwb"]
+[ext_resource type="Texture2D" uid="uid://cijhm57vqmiiq" path="res://themes/eXP/styles/window/customWindow/Embedded/close-backdrop-hover.png" id="67_km730"]
 [ext_resource type="Texture2D" uid="uid://h5lmn3ojsq6h" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-normal.png" id="68_bf556"]
+[ext_resource type="Texture2D" uid="uid://drfaxcpaqj31v" path="res://themes/eXP/styles/window/customWindow/Embedded/close-backdrop.png" id="68_rdcf2"]
 [ext_resource type="Texture2D" uid="uid://brge1b4yx0dat" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-hover.png" id="69_6pytt"]
 [ext_resource type="Texture2D" uid="uid://w6v86jp5gfyo" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-active.png" id="70_lnxfs"]
 [ext_resource type="Texture2D" uid="uid://k83ynwhxaja8" path="res://themes/eXP/styles/window/customWindow/Embedded/restore-normal.png" id="71_bhs1g"]
+[ext_resource type="Texture2D" uid="uid://vrwclm5a01sl" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-backdrop-hover.png" id="71_igvlm"]
 [ext_resource type="Texture2D" uid="uid://d1rip67sbqmn7" path="res://themes/eXP/styles/window/customWindow/Embedded/restore-hover.png" id="72_sxg7s"]
+[ext_resource type="Texture2D" uid="uid://dp4ygpwcqrair" path="res://themes/eXP/styles/window/customWindow/Embedded/maximize-backdrop.png" id="73_3en0o"]
 [ext_resource type="Texture2D" uid="uid://bw7hfdwbyfbj0" path="res://themes/eXP/styles/window/customWindow/Embedded/restore-active.png" id="73_km730"]
+[ext_resource type="Texture2D" uid="uid://p3dh556hrmbe" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-backdrop-hover.png" id="76_xc2pt"]
+[ext_resource type="Texture2D" uid="uid://b5bkc85ljgqyw" path="res://themes/eXP/styles/window/customWindow/Embedded/minimize-backdrop.png" id="78_5milu"]
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -156,10 +164,6 @@ texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rntlu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ynya"]
-texture = ExtResource("35_rdcf2")
-axis_stretch_horizontal = 2
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojsxy"]
 content_margin_left = 2.0
 content_margin_top = 2.0
@@ -190,14 +194,15 @@ texture_margin_bottom = 2.0
 
 [resource]
 resource_name = "Embedded"
+default_font = ExtResource("1_rdcf2")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.5137255, 0.5137255, 0.5137255, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 11
-Button/fonts/font = ExtResource("1_iqoho")
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_rdcf2")
 Button/styles/disabled = ExtResource("2_rkieb")
 Button/styles/focus = ExtResource("3_33nn2")
 Button/styles/hover = SubResource("StyleBox_f2ya5")
@@ -244,13 +249,13 @@ HSlider/icons/grabber_disabled = ExtResource("31_ok4fo")
 HSlider/icons/grabber_highlight = ExtResource("32_3wvw6")
 HSlider/styles/slider = ExtResource("33_esigb")
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 11
-Label/fonts/font = ExtResource("1_iqoho")
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_rdcf2")
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.4)
-LineEdit/font_sizes/font_size = 11
-LineEdit/fonts/font = ExtResource("1_iqoho")
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = ExtResource("1_rdcf2")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_rntlu")
 LineEdit/styles/normal = ExtResource("29_bf556")
 MarginContainer/constants/margin_bottom = 8
@@ -258,8 +263,8 @@ MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
 OptionButton/constants/arrow_margin = 2
-OptionButton/font_sizes/font_size = 11
-OptionButton/fonts/font = ExtResource("1_iqoho")
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = ExtResource("1_rdcf2")
 OptionButton/icons/arrow = ExtResource("44_kp54r")
 OptionButton/styles/hover = ExtResource("29_bf556")
 OptionButton/styles/hover_pressed = ExtResource("31_lnxfs")
@@ -267,9 +272,7 @@ OptionButton/styles/normal = ExtResource("29_bf556")
 OptionButton/styles/pressed = ExtResource("31_lnxfs")
 Panel/styles/panel = ExtResource("32_bhs1g")
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
-PopupMenu/font_sizes/font_size = 11
-PopupMenu/fonts/font = ExtResource("1_iqoho")
-PopupMenu/fonts/font_separator = ExtResource("1_iqoho")
+PopupMenu/font_sizes/font_size = 16
 PopupMenu/icons/checked = ExtResource("10_hp5iw")
 PopupMenu/icons/checked_disabled = ExtResource("11_hkef0")
 PopupMenu/icons/radio_checked = ExtResource("12_j0pp8")
@@ -278,16 +281,16 @@ PopupMenu/icons/radio_unchecked = ExtResource("14_esigb")
 PopupMenu/icons/radio_unchecked_disabled = ExtResource("15_33nn2")
 PopupMenu/icons/unchecked = ExtResource("16_kp54r")
 PopupMenu/icons/unchecked_disabled = ExtResource("17_r4cd7")
+PopupMenu/styles/hover = ExtResource("38_i80ew")
 PopupMenu/styles/panel = ExtResource("33_sxg7s")
 ProgressBar/font_sizes/font_size = 8
-ProgressBar/fonts/font = ExtResource("1_iqoho")
 ProgressBar/styles/background = ExtResource("34_km730")
-ProgressBar/styles/fill = SubResource("StyleBoxTexture_8ynya")
+ProgressBar/styles/fill = ExtResource("41_km730")
 TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
-TabContainer/font_sizes/font_size = 11
-TabContainer/fonts/font = ExtResource("1_iqoho")
+TabContainer/font_sizes/font_size = 16
+TabContainer/fonts/font = ExtResource("1_rdcf2")
 TabContainer/styles/panel = ExtResource("36_igvlm")
 TabContainer/styles/tab_focus = ExtResource("44_r4cd7")
 TabContainer/styles/tab_hovered = ExtResource("37_3en0o")
@@ -295,16 +298,18 @@ TabContainer/styles/tab_selected = ExtResource("46_kp54r")
 TabContainer/styles/tab_unselected = ExtResource("38_xc2pt")
 TextEdit/colors/caret_color = Color(0, 0, 0, 1)
 TextEdit/colors/font_color = Color(0, 0, 0, 1)
-TextEdit/font_sizes/font_size = 11
-TextEdit/fonts/font = ExtResource("1_iqoho")
+TextEdit/font_sizes/font_size = 16
+TextEdit/fonts/font = ExtResource("1_rdcf2")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_ojsxy")
+TooltipPanel/font_sizes/title_font_size = 12
+TooltipPanel/styles/panel = ExtResource("47_gdtwb")
 Tree/colors/font_color = Color(0, 0, 0, 1)
 Tree/colors/font_hovered_color = Color(0, 0, 0, 1)
 Tree/colors/font_hovered_selected_color = Color(0, 0, 0, 1)
 Tree/colors/font_selected_color = Color(0, 0, 0, 1)
-Tree/font_sizes/font_size = 11
-Tree/fonts/font = ExtResource("1_iqoho")
-Tree/fonts/title_button_font = ExtResource("1_iqoho")
+Tree/font_sizes/font_size = 16
+Tree/fonts/font = ExtResource("1_rdcf2")
+Tree/fonts/title_button_font = ExtResource("1_rdcf2")
 Tree/icons/checked = ExtResource("10_hp5iw")
 Tree/icons/checked_disabled = ExtResource("11_hkef0")
 Tree/icons/unchecked = ExtResource("16_kp54r")
@@ -330,19 +335,27 @@ Window/colors/title_outline_modulate = Color(0.003921569, 0.18431373, 0.32941177
 Window/constants/close_h_offset = 24
 Window/constants/title_height = 28
 Window/constants/title_outline_size = 1
-Window/font_sizes/title_font_size = 13
+Window/font_sizes/title_font_size = 12
 Window/fonts/title_font = ExtResource("46_kuxup")
 Window/icons/close = ExtResource("60_r4cd7")
 Window/icons/close_hover = ExtResource("61_ak8t1")
 Window/icons/close_pressed = ExtResource("62_70wnv")
 Window/styles/embedded_border = ExtResource("49_e80c4")
 Window/styles/embedded_unfocused_border = ExtResource("62_yww1x")
+customWindow/icons/close = ExtResource("60_r4cd7")
+customWindow/icons/close_hover = ExtResource("61_ak8t1")
+customWindow/icons/close_hover_unfocused = ExtResource("67_km730")
+customWindow/icons/close_unfocused = ExtResource("68_rdcf2")
 customWindow/icons/maximize = ExtResource("65_c8vdm")
 customWindow/icons/maximize_hover = ExtResource("66_i80ew")
+customWindow/icons/maximize_hover_unfocused = ExtResource("71_igvlm")
 customWindow/icons/maximize_pressed = ExtResource("67_gdtwb")
+customWindow/icons/maximize_unfocused = ExtResource("73_3en0o")
 customWindow/icons/minimize = ExtResource("68_bf556")
 customWindow/icons/minimize_hover = ExtResource("69_6pytt")
+customWindow/icons/minimize_hover_unfocused = ExtResource("76_xc2pt")
 customWindow/icons/minimize_pressed = ExtResource("70_lnxfs")
+customWindow/icons/minimize_unfocused = ExtResource("78_5milu")
 customWindow/icons/restore = ExtResource("71_bhs1g")
 customWindow/icons/restore_hover = ExtResource("72_sxg7s")
 customWindow/icons/restore_pressed = ExtResource("73_km730")

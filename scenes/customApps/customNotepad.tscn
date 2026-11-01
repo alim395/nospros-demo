@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://8syr24y01uyw"]
+[gd_scene format=3 uid="uid://8syr24y01uyw"]
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_wyi12"]
 [ext_resource type="Script" uid="uid://dw16lfrba2wls" path="res://scripts/customApps/custom_notepad.gd" id="2_wyi12"]
-[ext_resource type="Texture2D" uid="uid://dnhy2aob6kpqw" path="res://icon.svg" id="3_vdat7"]
+[ext_resource type="Texture2D" uid="uid://btmx7ucaj3ujt" path="res://icon.png" id="3_iv685"]
 [ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="4_q5x6c"]
 [ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="5_62328"]
 [ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="6_iv685"]
@@ -29,7 +29,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_71xpq"]
 
-[node name="CustomNotepad" type="Control" node_paths=PackedStringArray("textPanel", "LineNum", "ColNum", "CharCount", "titleLabel")]
+[node name="CustomNotepad" type="Control" unique_id=605680664 node_paths=PackedStringArray("textPanel", "LineNum", "ColNum", "CharCount", "titleLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +46,7 @@ CharCount = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/Status
 title = "Untitled - Notepad"
 titleLabel = NodePath("WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/TitleLabel")
 
-[node name="WindowContainer" type="Control" parent="."]
+[node name="WindowContainer" type="Control" parent="." unique_id=915118587]
 custom_minimum_size = Vector2(340, 240)
 layout_mode = 1
 anchors_preset = 8
@@ -62,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 
-[node name="Border" type="PanelContainer" parent="WindowContainer"]
+[node name="Border" type="PanelContainer" parent="WindowContainer" unique_id=1695403228]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,7 +70,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Layout" type="VBoxContainer" parent="WindowContainer"]
+[node name="Layout" type="VBoxContainer" parent="WindowContainer" unique_id=1834160775]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,12 +79,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout"]
+[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout" unique_id=978866480]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 mouse_default_cursor_shape = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer" unique_id=1287917404]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,18 +94,18 @@ grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 
-[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer"]
+[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer" unique_id=1686533179]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1944438861]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture = ExtResource("3_vdat7")
+texture = ExtResource("3_iv685")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1662994296]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_q5x6c")
@@ -115,14 +115,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 3
 
-[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1307455945]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_7vdpk")
 
-[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1927856897]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -132,7 +132,7 @@ texture_hover = ExtResource("7_bmfqa")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=932708838]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -142,7 +142,7 @@ texture_hover = ExtResource("10_egbuv")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=308052808]
 visible = false
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -153,7 +153,7 @@ texture_hover = ExtResource("13_4hqsu")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1099209431]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -163,7 +163,7 @@ texture_hover = ExtResource("16_j47wc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout"]
+[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout" unique_id=1384262215]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 4
@@ -171,10 +171,10 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin"]
+[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin" unique_id=1354283629]
 layout_mode = 2
 
-[node name="VContainer" type="VBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel"]
+[node name="VContainer" type="VBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel" unique_id=1915138538]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -183,11 +183,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 2
 
-[node name="TopBarContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer"]
+[node name="TopBarContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=226272851]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="File" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer"]
+[node name="File" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer" unique_id=1363399568]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8bp3r")
 text = "File"
@@ -205,14 +205,14 @@ popup/item_4/separator = true
 popup/item_5/text = "Exit"
 popup/item_5/id = 4
 
-[node name="Button2" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer"]
+[node name="Button2" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer" unique_id=1486995164]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8bp3r")
 disabled = true
 text = "Edit"
 flat = true
 
-[node name="Format" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer"]
+[node name="Format" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer" unique_id=375529134]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8bp3r")
 text = "Format"
@@ -221,21 +221,21 @@ popup/item_0/text = "Word Wrap"
 popup/item_0/checkable = 1
 popup/item_0/id = 0
 
-[node name="Button4" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer"]
+[node name="Button4" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer" unique_id=1809789529]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8bp3r")
 disabled = true
 text = "View"
 flat = true
 
-[node name="Button5" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer"]
+[node name="Button5" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TopBarContainer" unique_id=1116442648]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8bp3r")
 disabled = true
 text = "Help"
 flat = true
 
-[node name="TextEdit" type="TextEdit" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer"]
+[node name="TextEdit" type="TextEdit" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=948277028]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -245,12 +245,12 @@ theme_override_styles/read_only = ExtResource("17_iv685")
 text = "Hello World!"
 caret_blink = true
 
-[node name="StatusBarPanel" type="Panel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer"]
+[node name="StatusBarPanel" type="Panel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=975675342]
 custom_minimum_size = Vector2(0, 18.5)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("18_bmfqa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel" unique_id=615760317]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 1
 anchors_preset = 15
@@ -260,7 +260,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="LineNum" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="LineNum" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1493386333]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("19_qdc24")
@@ -268,7 +268,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_71xpq")
 text = "Ln 1"
 vertical_alignment = 1
 
-[node name="ColNum" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="ColNum" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=723531381]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("20_2kf71")
@@ -276,7 +276,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_71xpq")
 text = "Col 1"
 vertical_alignment = 1
 
-[node name="CharCount" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="CharCount" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1247566315]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("21_egbuv")
@@ -284,7 +284,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_71xpq")
 text = "123 Characters"
 vertical_alignment = 1
 
-[node name="Handles" type="Control" parent="WindowContainer"]
+[node name="Handles" type="Control" parent="WindowContainer" unique_id=2049246367]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -294,7 +294,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("17_xbl5g")
 
-[node name="Top" type="Control" parent="WindowContainer/Handles"]
+[node name="Top" type="Control" parent="WindowContainer/Handles" unique_id=1809055410]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 10
@@ -302,7 +302,7 @@ anchor_right = 1.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 9
 
-[node name="Bottom" type="Control" parent="WindowContainer/Handles"]
+[node name="Bottom" type="Control" parent="WindowContainer/Handles" unique_id=860519207]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 12
@@ -313,7 +313,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 9
 
-[node name="Left" type="Control" parent="WindowContainer/Handles"]
+[node name="Left" type="Control" parent="WindowContainer/Handles" unique_id=320367334]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 9
@@ -321,7 +321,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 mouse_default_cursor_shape = 10
 
-[node name="Right" type="Control" parent="WindowContainer/Handles"]
+[node name="Right" type="Control" parent="WindowContainer/Handles" unique_id=986498752]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 11
@@ -332,7 +332,7 @@ grow_horizontal = 0
 grow_vertical = 2
 mouse_default_cursor_shape = 10
 
-[node name="TLCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="TLCorner" type="Control" parent="WindowContainer/Handles" unique_id=1689565386]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 0
@@ -340,7 +340,7 @@ offset_right = 5.0
 offset_bottom = 5.0
 mouse_default_cursor_shape = 12
 
-[node name="BLCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="BLCorner" type="Control" parent="WindowContainer/Handles" unique_id=659041985]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 2
@@ -351,7 +351,7 @@ offset_right = 5.0
 grow_vertical = 0
 mouse_default_cursor_shape = 11
 
-[node name="TRCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="TRCorner" type="Control" parent="WindowContainer/Handles" unique_id=456006048]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 1
@@ -362,7 +362,7 @@ offset_bottom = 5.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 11
 
-[node name="BRCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="BRCorner" type="Control" parent="WindowContainer/Handles" unique_id=120562782]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 3

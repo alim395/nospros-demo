@@ -42,7 +42,8 @@ func _on_window_close_requested() -> void:
 	myWindow.visible = false
 	#MusicManager.stop_music.emit()
 	videoPlayer.stop()
-	%AppManager.taskBar.closeTask("Troll")
+	if myTaskButton:
+		myTaskButton.close_task()
 	trollButton.disabled = true
 
 func setTaskButton(tB : taskbarButton) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://p3fcftbqut5j"]
+[gd_scene format=3 uid="uid://p3fcftbqut5j"]
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_qrhmk"]
 [ext_resource type="Script" uid="uid://bu3qfxchjklil" path="res://scripts/customApps/custom_meme_folder.gd" id="2_dlbtt"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://yqragrtffyd1" path="res://sprites/memes/calmpanic.jpg" id="6_88yr4"]
 [ext_resource type="Texture2D" uid="uid://cmwhnparokkeo" path="res://sprites/memes/philosoraptor.jpg" id="7_250fu"]
 [ext_resource type="VideoStream" uid="uid://dukoms7a2sd46" path="res://video/memes/RickRoll.ogv" id="9_01u7g"]
-[ext_resource type="Texture2D" uid="uid://dnhy2aob6kpqw" path="res://icon.svg" id="9_7trc4"]
+[ext_resource type="Texture2D" uid="uid://btmx7ucaj3ujt" path="res://icon.png" id="10_fvffy"]
 [ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="10_y7mlb"]
 [ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="11_8gfo3"]
 [ext_resource type="Texture2D" uid="uid://c3eunioyc3ehh" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-hover.png" id="12_w5u3y"]
@@ -28,7 +28,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vdpk"]
 
-[node name="customMemeFolder" type="Control" node_paths=PackedStringArray("subWindowNode", "folderRows", "titleLabel")]
+[node name="customMemeFolder" type="Control" unique_id=1771816132 node_paths=PackedStringArray("subWindowNode", "folderRows", "titleLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +52,7 @@ folderRows = NodePath("WindowContainer/Layout/PanelMargin/Panel/ScrollContainer/
 title = "Memes"
 titleLabel = NodePath("WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/TitleLabel")
 
-[node name="WindowContainer" type="Control" parent="."]
+[node name="WindowContainer" type="Control" parent="." unique_id=817652445]
 custom_minimum_size = Vector2(340, 240)
 layout_mode = 1
 anchors_preset = 8
@@ -68,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 
-[node name="Border" type="PanelContainer" parent="WindowContainer"]
+[node name="Border" type="PanelContainer" parent="WindowContainer" unique_id=883969124]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Layout" type="VBoxContainer" parent="WindowContainer"]
+[node name="Layout" type="VBoxContainer" parent="WindowContainer" unique_id=1521404665]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,11 +85,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout"]
+[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout" unique_id=1844842679]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer" unique_id=598830550]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,18 +99,18 @@ grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 
-[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer"]
+[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer" unique_id=565035983]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1048141928]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture = ExtResource("9_7trc4")
+texture = ExtResource("10_fvffy")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1806117274]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("22_3er80")
@@ -120,14 +120,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 3
 
-[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=2011433098]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_7vdpk")
 
-[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=567501326]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture_normal = ExtResource("10_y7mlb")
@@ -136,7 +136,7 @@ texture_hover = ExtResource("12_w5u3y")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1393710484]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture_normal = ExtResource("13_c60a2")
@@ -145,7 +145,7 @@ texture_hover = ExtResource("15_qfaek")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=596403161]
 visible = false
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -155,7 +155,7 @@ texture_hover = ExtResource("18_u0bxc")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1270046848]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture_normal = ExtResource("19_eu0jb")
@@ -164,7 +164,7 @@ texture_hover = ExtResource("21_rpw84")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout"]
+[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout" unique_id=15333900]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 4
@@ -172,10 +172,10 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin"]
+[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin" unique_id=2011866161]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="WindowContainer/Layout/PanelMargin/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="WindowContainer/Layout/PanelMargin/Panel" unique_id=808702692]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -183,12 +183,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FolderRows" type="HFlowContainer" parent="WindowContainer/Layout/PanelMargin/Panel/ScrollContainer"]
+[node name="FolderRows" type="HFlowContainer" parent="WindowContainer/Layout/PanelMargin/Panel/ScrollContainer" unique_id=2087044881]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Handles" type="Control" parent="WindowContainer"]
+[node name="Handles" type="Control" parent="WindowContainer" unique_id=859461703]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,7 +198,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("23_vuqwe")
 
-[node name="Top" type="Control" parent="WindowContainer/Handles"]
+[node name="Top" type="Control" parent="WindowContainer/Handles" unique_id=735422712]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 10
@@ -206,7 +206,7 @@ anchor_right = 1.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 9
 
-[node name="Bottom" type="Control" parent="WindowContainer/Handles"]
+[node name="Bottom" type="Control" parent="WindowContainer/Handles" unique_id=1750562154]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 12
@@ -217,7 +217,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 9
 
-[node name="Left" type="Control" parent="WindowContainer/Handles"]
+[node name="Left" type="Control" parent="WindowContainer/Handles" unique_id=1661033084]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 9
@@ -225,7 +225,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 mouse_default_cursor_shape = 10
 
-[node name="Right" type="Control" parent="WindowContainer/Handles"]
+[node name="Right" type="Control" parent="WindowContainer/Handles" unique_id=1330831409]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 11
@@ -236,7 +236,7 @@ grow_horizontal = 0
 grow_vertical = 2
 mouse_default_cursor_shape = 10
 
-[node name="TLCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="TLCorner" type="Control" parent="WindowContainer/Handles" unique_id=1497828431]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 0
@@ -244,7 +244,7 @@ offset_right = 5.0
 offset_bottom = 5.0
 mouse_default_cursor_shape = 12
 
-[node name="BLCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="BLCorner" type="Control" parent="WindowContainer/Handles" unique_id=401275609]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 2
@@ -255,7 +255,7 @@ offset_right = 5.0
 grow_vertical = 0
 mouse_default_cursor_shape = 11
 
-[node name="TRCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="TRCorner" type="Control" parent="WindowContainer/Handles" unique_id=1830439732]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 1
@@ -266,7 +266,7 @@ offset_bottom = 5.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 11
 
-[node name="BRCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="BRCorner" type="Control" parent="WindowContainer/Handles" unique_id=402362608]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 3
@@ -280,7 +280,7 @@ grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 12
 
-[node name="CustomSubWindow" parent="." instance=ExtResource("25_fvffy")]
+[node name="CustomSubWindow" parent="." unique_id=196961267 instance=ExtResource("25_fvffy")]
 visible = false
 layout_mode = 1
 title = "Untitled.xyz"

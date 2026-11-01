@@ -1,4 +1,5 @@
 class_name notepadInstance
+extends Resource
 
 # Properties
 @export var fileName : String

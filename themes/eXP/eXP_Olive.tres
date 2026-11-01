@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=101 format=3 uid="uid://yquhykuwmafe"]
+[gd_resource type="Theme" format=3 uid="uid://yquhykuwmafe"]
 
-[ext_resource type="FontFile" uid="uid://dhsjug0gnmqg5" path="res://themes/eXP/styles/fonts/MS Sans Serif.ttf" id="1_486pf"]
+[ext_resource type="FontFile" uid="uid://dnq1b7g5qfkfb" path="res://fonts/tahoma8.otf" id="1_0sncn"]
+[ext_resource type="FontFile" uid="uid://qg1jp48qfeqs" path="res://themes/eXP/styles/fonts/tahoma8.otf" id="1_486pf"]
 [ext_resource type="StyleBox" uid="uid://dmt4rpqynea14" path="res://themes/eXP/styles/button/buttonStack-disabled.tres" id="2_bcvcg"]
-[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="3_dg4nf"]
+[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://scripts/StyleboxStack.gd" id="3_dg4nf"]
 [ext_resource type="StyleBox" uid="uid://bibr1bpmpriui" path="res://themes/eXP/styles/button/buttonStack-focus.tres" id="3_fltgk"]
 [ext_resource type="StyleBox" uid="uid://dt5hr60b1dhkd" path="res://themes/eXP/styles/button/button-border.tres" id="4_5hdqt"]
 [ext_resource type="StyleBox" uid="uid://b1pqq85k5u6r5" path="res://themes/eXP/styles/button/button-active.tres" id="5_ugbee"]
@@ -37,13 +38,14 @@
 [ext_resource type="Texture2D" uid="uid://c56xg2w52rka4" path="res://themes/eXP/styles/scroll/slider-horz-insensitive.png" id="31_k6g04"]
 [ext_resource type="Texture2D" uid="uid://cmtmknse87jc" path="res://themes/eXP/styles/scroll/slider-horz-hover.png" id="32_fltgk"]
 [ext_resource type="StyleBox" uid="uid://dyokwfml61sl2" path="res://themes/eXP/styles/progressBar/progressBarBackground.tres" id="32_tmx5b"]
-[ext_resource type="Texture2D" uid="uid://bopcbmv4mci08" path="res://themes/eXP/styles/progressBar/ProgressFill.png" id="33_6qxsv"]
 [ext_resource type="StyleBox" uid="uid://c1tmjgq8578tw" path="res://themes/eXP/styles/custom/range/Hslider_Simple.tres" id="33_k6g04"]
 [ext_resource type="StyleBox" uid="uid://bju6svei8tqxe" path="res://themes/eXP/styles/tab/tabPanel.tres" id="34_qjc84"]
 [ext_resource type="StyleBox" uid="uid://c26opnmlf6qyq" path="res://themes/eXP/styles/tab/tabButtonStack.tres" id="35_0sc8l"]
 [ext_resource type="StyleBox" uid="uid://bipqob58lv82q" path="res://themes/eXP/styles/tab/tabButtonUnselectedStack.tres" id="36_e7bah"]
 [ext_resource type="Texture2D" uid="uid://bt26wb5ax4fwi" path="res://themes/eXP/styles/scroll/olive/bottom-stepper.png" id="36_q0r4g"]
+[ext_resource type="StyleBox" uid="uid://dq36gh8j3er3q" path="res://themes/eXP/styles/option/optionItemHover.tres" id="38_tmx5b"]
 [ext_resource type="StyleBox" uid="uid://c65mwbae6q2v7" path="res://themes/eXP/styles/scroll/scroll.tres" id="39_x51wf"]
+[ext_resource type="StyleBox" uid="uid://br5jxxah020t5" path="res://themes/eXP/styles/progressBar/progressBarFill.tres" id="42_0sncn"]
 [ext_resource type="Texture2D" uid="uid://b6w4bdrjdbxga" path="res://themes/eXP/styles/scroll/olive/grabberV-olive.png" id="42_fltgk"]
 [ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="42_xtlxq"]
 [ext_resource type="Texture2D" uid="uid://17fnxwiurn5g" path="res://themes/eXP/styles/scroll/olive/grabberV-Highlight-olive.png" id="43_cy3pj"]
@@ -53,6 +55,7 @@
 [ext_resource type="StyleBox" uid="uid://brsphd6ta6wni" path="res://themes/eXP/styles/tab/tabFocused.tres" id="44_cy3pj"]
 [ext_resource type="StyleBox" uid="uid://cradxmtx5djdt" path="res://themes/eXP/styles/window/WindowOlive.tres" id="45_dg4nf"]
 [ext_resource type="StyleBox" uid="uid://ci8ik5ib32llv" path="res://themes/eXP/styles/tab/tabButtonSelectedStack.tres" id="46_csyaa"]
+[ext_resource type="StyleBox" uid="uid://c0bev2tablha3" path="res://themes/eXP/styles/tooltips/tooltip.tres" id="47_6qxsv"]
 [ext_resource type="Texture2D" uid="uid://dtxdigwhyoj4d" path="res://themes/eXP/styles/scroll/olive/top-stepper.png" id="47_m5f1l"]
 [ext_resource type="Texture2D" uid="uid://d2lhw3hxyy7dv" path="res://themes/eXP/styles/scroll/olive/top-stepper-prelight.png" id="48_4hyjb"]
 [ext_resource type="Texture2D" uid="uid://bi0oe2wa76wus" path="res://themes/eXP/styles/scroll/olive/top-stepper-active.png" id="49_qcclb"]
@@ -67,14 +70,25 @@
 [ext_resource type="Texture2D" uid="uid://irmclxmuwvbn" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-normal.png" id="65_1w0r7"]
 [ext_resource type="Texture2D" uid="uid://dhbilbhnwtmrj" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-hover.png" id="66_tmx5b"]
 [ext_resource type="Texture2D" uid="uid://xrqsixelb7f" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-active.png" id="67_6qxsv"]
+[ext_resource type="Texture2D" uid="uid://cexn277h5cbep" path="res://themes/eXP/styles/window/customWindow/Olive/close-normal.png" id="67_ccoxa"]
+[ext_resource type="Texture2D" uid="uid://cmeulcs1c4qtp" path="res://themes/eXP/styles/window/customWindow/Olive/close-hover.png" id="68_0sncn"]
 [ext_resource type="Texture2D" uid="uid://l5kggdp5xn8d" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-normal.png" id="68_qjc84"]
 [ext_resource type="Texture2D" uid="uid://bsfvc3fdtolsm" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-hover.png" id="69_0sc8l"]
+[ext_resource type="Texture2D" uid="uid://dyi6gvlmpi8av" path="res://themes/eXP/styles/window/customWindow/Olive/close-backdrop-hover.png" id="69_85brd"]
 [ext_resource type="Texture2D" uid="uid://d4556jmffw1h" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-active.png" id="70_e7bah"]
+[ext_resource type="Texture2D" uid="uid://dnm00vfrt5fow" path="res://themes/eXP/styles/window/customWindow/Olive/close-active.png" id="70_pdf7n"]
 [ext_resource type="Texture2D" uid="uid://bv087q615lbvq" path="res://themes/eXP/styles/window/customWindow/Olive/restore-normal.png" id="71_18p08"]
+[ext_resource type="Texture2D" uid="uid://ciobv7uwhly1n" path="res://themes/eXP/styles/window/customWindow/Olive/close-backdrop.png" id="71_41r8g"]
 [ext_resource type="Texture2D" uid="uid://wreiy0kjly8d" path="res://themes/eXP/styles/window/customWindow/Olive/restore-hover.png" id="72_ejpgg"]
 [ext_resource type="Texture2D" uid="uid://da8s2h2arp0ac" path="res://themes/eXP/styles/window/customWindow/Olive/restore-active.png" id="73_x51wf"]
+[ext_resource type="Texture2D" uid="uid://s4kdnr4auh3j" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-backdrop-hover.png" id="74_nwmb2"]
 [ext_resource type="StyleBox" uid="uid://b2hla310xn62n" path="res://themes/eXP/styles/window/customWindow/Olive/customWindowOlive.tres" id="74_sgtuc"]
 [ext_resource type="StyleBox" uid="uid://cya1iv0pwo7wt" path="res://themes/eXP/styles/window/customWindow/Olive/customWindowOliveUnfocused.tres" id="75_sr7fc"]
+[ext_resource type="Texture2D" uid="uid://hxsal6fwp5hs" path="res://themes/eXP/styles/window/customWindow/Olive/maximize-backdrop.png" id="76_k55l4"]
+[ext_resource type="Texture2D" uid="uid://0wk4bs8lnkod" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-backdrop-hover.png" id="79_0ghkt"]
+[ext_resource type="Texture2D" uid="uid://bn7y02ahuof3v" path="res://themes/eXP/styles/window/customWindow/Olive/minimize-backdrop.png" id="81_uey8a"]
+[ext_resource type="Texture2D" uid="uid://c20gprvbyc7je" path="res://themes/eXP/styles/window/customWindow/Olive/restore-backdrop-hover.png" id="84_3brt6"]
+[ext_resource type="Texture2D" uid="uid://dh6vifxxsuse8" path="res://themes/eXP/styles/window/customWindow/Olive/restore-backdrop.png" id="86_oyfoi"]
 
 [sub_resource type="StyleBox" id="StyleBox_f2ya5"]
 resource_local_to_scene = false
@@ -156,10 +170,6 @@ texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rntlu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ynya"]
-texture = ExtResource("33_6qxsv")
-axis_stretch_horizontal = 2
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojsxy"]
 content_margin_left = 2.0
 content_margin_top = 2.0
@@ -201,14 +211,15 @@ metadata/_custom_type_script = "uid://bpobhv17fo8i"
 
 [resource]
 resource_name = "Olive"
+default_font = ExtResource("1_0sncn")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.5137255, 0.5137255, 0.5137255, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 11
-Button/fonts/font = ExtResource("1_486pf")
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_0sncn")
 Button/styles/disabled = ExtResource("2_bcvcg")
 Button/styles/focus = ExtResource("3_fltgk")
 Button/styles/hover = SubResource("StyleBox_f2ya5")
@@ -255,13 +266,13 @@ HSlider/icons/grabber_disabled = ExtResource("31_k6g04")
 HSlider/icons/grabber_highlight = ExtResource("32_fltgk")
 HSlider/styles/slider = ExtResource("33_k6g04")
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 11
-Label/fonts/font = ExtResource("1_486pf")
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_0sncn")
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.4)
-LineEdit/font_sizes/font_size = 11
-LineEdit/fonts/font = ExtResource("1_486pf")
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = ExtResource("1_0sncn")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_rntlu")
 LineEdit/styles/normal = ExtResource("27_q0r4g")
 MarginContainer/constants/margin_bottom = 8
@@ -269,7 +280,7 @@ MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
 OptionButton/constants/arrow_margin = 2
-OptionButton/font_sizes/font_size = 11
+OptionButton/font_sizes/font_size = 16
 OptionButton/fonts/font = ExtResource("1_486pf")
 OptionButton/icons/arrow = ExtResource("36_q0r4g")
 OptionButton/styles/hover = ExtResource("27_q0r4g")
@@ -278,9 +289,7 @@ OptionButton/styles/normal = ExtResource("27_q0r4g")
 OptionButton/styles/pressed = ExtResource("29_4hyjb")
 Panel/styles/panel = ExtResource("30_qcclb")
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
-PopupMenu/font_sizes/font_size = 11
-PopupMenu/fonts/font = ExtResource("1_486pf")
-PopupMenu/fonts/font_separator = ExtResource("1_486pf")
+PopupMenu/font_sizes/font_size = 16
 PopupMenu/icons/checked = ExtResource("10_i0fi4")
 PopupMenu/icons/checked_disabled = ExtResource("11_bv2vn")
 PopupMenu/icons/radio_checked = ExtResource("12_upowm")
@@ -289,16 +298,16 @@ PopupMenu/icons/radio_unchecked = ExtResource("14_5xwig")
 PopupMenu/icons/radio_unchecked_disabled = ExtResource("15_xwpnm")
 PopupMenu/icons/unchecked = ExtResource("16_ok5ma")
 PopupMenu/icons/unchecked_disabled = ExtResource("17_2rae0")
+PopupMenu/styles/hover = ExtResource("38_tmx5b")
 PopupMenu/styles/panel = ExtResource("31_1w0r7")
 ProgressBar/font_sizes/font_size = 8
-ProgressBar/fonts/font = ExtResource("1_486pf")
 ProgressBar/styles/background = ExtResource("32_tmx5b")
-ProgressBar/styles/fill = SubResource("StyleBoxTexture_8ynya")
+ProgressBar/styles/fill = ExtResource("42_0sncn")
 TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
-TabContainer/font_sizes/font_size = 11
-TabContainer/fonts/font = ExtResource("1_486pf")
+TabContainer/font_sizes/font_size = 16
+TabContainer/fonts/font = ExtResource("1_0sncn")
 TabContainer/styles/panel = ExtResource("34_qjc84")
 TabContainer/styles/tab_focus = ExtResource("44_cy3pj")
 TabContainer/styles/tab_hovered = ExtResource("35_0sc8l")
@@ -306,16 +315,18 @@ TabContainer/styles/tab_selected = ExtResource("46_csyaa")
 TabContainer/styles/tab_unselected = ExtResource("36_e7bah")
 TextEdit/colors/caret_color = Color(0, 0, 0, 1)
 TextEdit/colors/font_color = Color(0, 0, 0, 1)
-TextEdit/font_sizes/font_size = 11
-TextEdit/fonts/font = ExtResource("1_486pf")
+TextEdit/font_sizes/font_size = 16
+TextEdit/fonts/font = ExtResource("1_0sncn")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_ojsxy")
+TooltipPanel/font_sizes/title_font_size = 11
+TooltipPanel/styles/panel = ExtResource("47_6qxsv")
 Tree/colors/font_color = Color(0, 0, 0, 1)
 Tree/colors/font_hovered_color = Color(0, 0, 0, 1)
 Tree/colors/font_hovered_selected_color = Color(0, 0, 0, 1)
 Tree/colors/font_selected_color = Color(0, 0, 0, 1)
-Tree/font_sizes/font_size = 11
-Tree/fonts/font = ExtResource("1_486pf")
-Tree/fonts/title_button_font = ExtResource("1_486pf")
+Tree/font_sizes/font_size = 16
+Tree/fonts/font = ExtResource("1_0sncn")
+Tree/fonts/title_button_font = ExtResource("1_0sncn")
 Tree/icons/checked = ExtResource("10_i0fi4")
 Tree/icons/checked_disabled = ExtResource("11_bv2vn")
 Tree/icons/unchecked = ExtResource("16_ok5ma")
@@ -348,14 +359,25 @@ Window/icons/close_hover = ExtResource("61_fltgk")
 Window/icons/close_pressed = ExtResource("44_ccoxa")
 Window/styles/embedded_border = ExtResource("45_dg4nf")
 Window/styles/embedded_unfocused_border = SubResource("StyleBox_ly1vu")
+customWindow/icons/close = ExtResource("67_ccoxa")
+customWindow/icons/close_hover = ExtResource("68_0sncn")
+customWindow/icons/close_hover_unfocused = ExtResource("69_85brd")
+customWindow/icons/close_pressed = ExtResource("70_pdf7n")
+customWindow/icons/close_unfocused = ExtResource("71_41r8g")
 customWindow/icons/maximize = ExtResource("65_1w0r7")
 customWindow/icons/maximize_hover = ExtResource("66_tmx5b")
+customWindow/icons/maximize_hover_unfocused = ExtResource("74_nwmb2")
 customWindow/icons/maximize_pressed = ExtResource("67_6qxsv")
+customWindow/icons/maximize_unfocused = ExtResource("76_k55l4")
 customWindow/icons/minimize = ExtResource("68_qjc84")
 customWindow/icons/minimize_hover = ExtResource("69_0sc8l")
+customWindow/icons/minimize_hover_unfocused = ExtResource("79_0ghkt")
 customWindow/icons/minimize_pressed = ExtResource("70_e7bah")
+customWindow/icons/minimize_unfocused = ExtResource("81_uey8a")
 customWindow/icons/restore = ExtResource("71_18p08")
 customWindow/icons/restore_hover = ExtResource("72_ejpgg")
+customWindow/icons/restore_hover_unfocused = ExtResource("84_3brt6")
 customWindow/icons/restore_pressed = ExtResource("73_x51wf")
+customWindow/icons/restore_unfocused = ExtResource("86_oyfoi")
 customWindow/styles/border = ExtResource("74_sgtuc")
 customWindow/styles/borderUnfocused = ExtResource("75_sr7fc")

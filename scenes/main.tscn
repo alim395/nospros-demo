@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c7pbugsh5ew6t"]
+[gd_scene format=3 uid="uid://c7pbugsh5ew6t"]
 
 [ext_resource type="Script" uid="uid://bcftsay7b1tfs" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="2_0wfyh"]
@@ -49,31 +49,31 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("shutdownButton")]
+[node name="TitleScene" type="Node2D" unique_id=2132310794 node_paths=PackedStringArray("shutdownButton")]
 script = ExtResource("1_o5qli")
 backgroundSong = ExtResource("2_tipki")
 shutdownButton = NodePath("ButtonManager/PowerContainer/Quit")
 
-[node name="XpWelcome" type="Sprite2D" parent="."]
+[node name="XpWelcome" type="Sprite2D" parent="." unique_id=571113323]
 position = Vector2(320, 180)
 scale = Vector2(1, 0.75)
 texture = ExtResource("2_0wfyh")
 
-[node name="TOP" type="Line2D" parent="."]
+[node name="TOP" type="Line2D" parent="." unique_id=1950448590]
 position = Vector2(0, 33.730087)
 scale = Vector2(1, 0.46460176)
 points = PackedVector2Array(320, 64, 319.99997, 291.15237)
 width = 1.0
 gradient = SubResource("Gradient_85g3d")
 
-[node name="BOTTOM" type="Line2D" parent="."]
+[node name="BOTTOM" type="Line2D" parent="." unique_id=1062584847]
 position = Vector2(0, 134.26991)
 scale = Vector2(1, 0.53539824)
 points = PackedVector2Array(320, 64, 320, 288)
 width = 1.0
 gradient = SubResource("Gradient_tipki")
 
-[node name="User Form" type="Control" parent="." node_paths=PackedStringArray("PFP", "playerNameInput", "userNameInput")]
+[node name="User Form" type="Control" parent="." unique_id=1401221890 node_paths=PackedStringArray("PFP", "playerNameInput", "userNameInput")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 352.0
@@ -86,26 +86,26 @@ PFP = NodePath("FormContainer/PFP_Container/PFP_Panel/PFP")
 playerNameInput = NodePath("FormContainer/NameContainer/NameInput")
 userNameInput = NodePath("FormContainer/UsernameContainer/UserInput")
 
-[node name="FormContainer" type="VBoxContainer" parent="User Form"]
+[node name="FormContainer" type="VBoxContainer" parent="User Form" unique_id=1469779820]
 layout_mode = 0
 offset_right = 252.0
 offset_bottom = 133.0
 
-[node name="PFP_Container" type="HBoxContainer" parent="User Form/FormContainer"]
+[node name="PFP_Container" type="HBoxContainer" parent="User Form/FormContainer" unique_id=170021639]
 layout_mode = 2
 alignment = 1
 
-[node name="PFP_Prev" type="Button" parent="User Form/FormContainer/PFP_Container"]
+[node name="PFP_Prev" type="Button" parent="User Form/FormContainer/PFP_Container" unique_id=954907335]
 layout_mode = 2
 text = "<"
 
-[node name="PFP_Panel" type="PanelContainer" parent="User Form/FormContainer/PFP_Container"]
+[node name="PFP_Panel" type="PanelContainer" parent="User Form/FormContainer/PFP_Container" unique_id=1504082481]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_jkv2x")
 
-[node name="PFP" type="TextureRect" parent="User Form/FormContainer/PFP_Container/PFP_Panel"]
+[node name="PFP" type="TextureRect" parent="User Form/FormContainer/PFP_Container/PFP_Panel" unique_id=76914039]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -113,49 +113,49 @@ size_flags_vertical = 4
 texture = ExtResource("4_a8y0u")
 expand_mode = 4
 
-[node name="PFP_Next" type="Button" parent="User Form/FormContainer/PFP_Container"]
+[node name="PFP_Next" type="Button" parent="User Form/FormContainer/PFP_Container" unique_id=971234023]
 layout_mode = 2
 text = ">"
 
-[node name="NameContainer" type="HBoxContainer" parent="User Form/FormContainer"]
+[node name="NameContainer" type="HBoxContainer" parent="User Form/FormContainer" unique_id=150710125]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="User Form/FormContainer/NameContainer"]
+[node name="Label" type="Label" parent="User Form/FormContainer/NameContainer" unique_id=1528809781]
 layout_mode = 2
 text = "Name:        "
 
-[node name="NameInput" type="LineEdit" parent="User Form/FormContainer/NameContainer"]
+[node name="NameInput" type="LineEdit" parent="User Form/FormContainer/NameContainer" unique_id=2018184950]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Name"
 max_length = 16
 
-[node name="UsernameContainer" type="HBoxContainer" parent="User Form/FormContainer"]
+[node name="UsernameContainer" type="HBoxContainer" parent="User Form/FormContainer" unique_id=408223241]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="User Form/FormContainer/UsernameContainer"]
+[node name="Label" type="Label" parent="User Form/FormContainer/UsernameContainer" unique_id=836208121]
 layout_mode = 2
 text = "Username:"
 
-[node name="UserInput" type="LineEdit" parent="User Form/FormContainer/UsernameContainer"]
+[node name="UserInput" type="LineEdit" parent="User Form/FormContainer/UsernameContainer" unique_id=218276806]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Name"
 max_length = 16
 
-[node name="Start" type="Button" parent="User Form/FormContainer"]
+[node name="Start" type="Button" parent="User Form/FormContainer" unique_id=1591372232]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Start"
 
-[node name="ButtonManager" type="Control" parent="."]
+[node name="ButtonManager" type="Control" parent="." unique_id=1745743287]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PowerContainer" type="HBoxContainer" parent="ButtonManager"]
+[node name="PowerContainer" type="HBoxContainer" parent="ButtonManager" unique_id=701635897]
 custom_minimum_size = Vector2(207, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -166,7 +166,7 @@ offset_right = 207.0
 offset_bottom = 320.0
 grow_vertical = 0
 
-[node name="Quit" type="TextureButton" parent="ButtonManager/PowerContainer"]
+[node name="Quit" type="TextureButton" parent="ButtonManager/PowerContainer" unique_id=1213161393]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 texture_normal = ExtResource("7_o6xl0")
@@ -176,7 +176,7 @@ texture_disabled = ExtResource("11_a8y0u")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager/PowerContainer"]
+[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager/PowerContainer" unique_id=1590797860]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/bold_font = ExtResource("8_tipki")
@@ -185,7 +185,7 @@ text = "Turn off your Computer"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="OptionsContainer" type="HBoxContainer" parent="ButtonManager"]
+[node name="OptionsContainer" type="HBoxContainer" parent="ButtonManager" unique_id=401670332]
 custom_minimum_size = Vector2(207, 0)
 layout_mode = 1
 anchors_preset = 3
@@ -200,7 +200,7 @@ offset_bottom = 320.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Options" type="TextureButton" parent="ButtonManager/OptionsContainer"]
+[node name="Options" type="TextureButton" parent="ButtonManager/OptionsContainer" unique_id=397228892]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 texture_normal = ExtResource("4_eb6dy")
@@ -210,7 +210,7 @@ texture_disabled = ExtResource("7_trceg")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="SettingsLabel" type="RichTextLabel" parent="ButtonManager/OptionsContainer"]
+[node name="SettingsLabel" type="RichTextLabel" parent="ButtonManager/OptionsContainer" unique_id=1091155514]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/bold_font = ExtResource("8_tipki")
@@ -219,7 +219,7 @@ text = "Adjust user Settings"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="TitleText" type="RichTextLabel" parent="."]
+[node name="TitleText" type="RichTextLabel" parent="." unique_id=776967183]
 offset_left = 160.0
 offset_top = 144.0
 offset_right = 320.0
@@ -231,7 +231,7 @@ text = "Nostalgia
 Process
 "
 
-[node name="SubtitleText" type="Label" parent="."]
+[node name="SubtitleText" type="Label" parent="." unique_id=1339455975]
 offset_left = 160.0
 offset_top = 208.0
 offset_right = 320.0

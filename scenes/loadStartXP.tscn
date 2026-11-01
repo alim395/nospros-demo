@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf2l1t7spb5bd"]
+[gd_scene format=3 uid="uid://cf2l1t7spb5bd"]
 
 [ext_resource type="Texture2D" uid="uid://bljdv7mfkuqoh" path="res://sprites/backgrounds/XP_Welcome.png" id="1_e04e5"]
 [ext_resource type="Script" uid="uid://cn3mg30j35m3d" path="res://scripts/load_start_xp.gd" id="1_i0c2x"]
 
-[node name="LoadStartXp" type="Control"]
+[node name="LoadStartXp" type="Control" unique_id=431630044]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,12 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i0c2x")
 
-[node name="XpWelcome" type="Sprite2D" parent="."]
+[node name="XpWelcome" type="Sprite2D" parent="." unique_id=2051920741]
 position = Vector2(320, 180)
 scale = Vector2(1, 0.75)
 texture = ExtResource("1_e04e5")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=470299913]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://do2ya3oa7quue"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_rd5ko"]
+[ext_resource type="Script" uid="uid://bso82jm0bra6v" path="res://scenes/webPages/web_page.gd" id="2_5f7tm"]
+[ext_resource type="Shader" uid="uid://yk2au8cg8c3a" path="res://shaders/imageReveal.gdshader" id="3_g7hht"]
+[ext_resource type="Texture2D" uid="uid://cdtgnkarq8ef1" path="res://sprites/logos/Boggle00.png" id="4_1ico6"]
+[ext_resource type="Script" uid="uid://c6grbmcf8ovke" path="res://scripts/webImage.gd" id="5_loxxq"]
+[ext_resource type="FontFile" uid="uid://dwso31wgh6gem" path="res://fonts/webPageFonts/times.ttf" id="6_rd5ko"]
+[ext_resource type="FontFile" uid="uid://lokje8ugwij3" path="res://fonts/webPageFonts/timesbd.ttf" id="7_5f7tm"]
+[ext_resource type="FontFile" uid="uid://chkdynm446r67" path="res://fonts/webPageFonts/timesbi.ttf" id="8_g7hht"]
+[ext_resource type="FontFile" uid="uid://bulmcj52p2vpn" path="res://fonts/webPageFonts/timesi.ttf" id="9_1ico6"]
+[ext_resource type="FontFile" uid="uid://cc01fd3bgpqdw" path="res://fonts/webPageFonts/Courier New (Mono).ttf" id="10_cbotf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_674ex"]
+bg_color = Color(0, 0.54509807, 0.54509807, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5w3vl"]
+shader = ExtResource("3_g7hht")
+shader_parameter/progress = 1.0
+shader_parameter/line_count = 60
+shader_parameter/show_scan_edge = true
+
+[node name="webPagePanel" type="Panel" unique_id=1705289115]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rd5ko")
+theme_override_styles/panel = SubResource("StyleBoxFlat_674ex")
+script = ExtResource("2_5f7tm")
+backgroundColor = Color(0, 0.54509807, 0.54509807, 1)
+websiteName = "Example"
+address = "http://www.example.com/index.php"
+defaultTheme = ExtResource("1_rd5ko")
+skip = false
+metadata/_edit_pinned_properties_ = [&"address", &"websiteName", &"skip"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2117270934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=992333694]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="webPageContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=759698384]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="exampleImage" type="TextureRect" parent="ScrollContainer/MarginContainer/webPageContainer" unique_id=931486169]
+material = SubResource("ShaderMaterial_5w3vl")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_1ico6")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("5_loxxq")
+altText = "Boggle Example Image"
+metadata/_edit_pinned_properties_ = [&"altText"]
+
+[node name="bodyText" type="RichTextLabel" parent="ScrollContainer/MarginContainer/webPageContainer" unique_id=767894522]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("6_rd5ko")
+theme_override_fonts/bold_font = ExtResource("7_5f7tm")
+theme_override_fonts/bold_italics_font = ExtResource("8_g7hht")
+theme_override_fonts/italics_font = ExtResource("9_1ico6")
+theme_override_fonts/mono_font = ExtResource("10_cbotf")
+bbcode_enabled = true
+text = "[center][font_size=24][b]Godot 4 RichTextLabel Showroom[/b][/font_size][/center]
+
+[b]1. Basic Formatting:[/b]
+This is [b]bold text[/b], this is [i]italic text[/i], this is [u]underlined[/u], and this is [s]strikethrough[/s].
+
+[b]1.1 CODE Formatting:[/b]
+
+[code]print(\"Hello World\")[/code]
+
+[b]2. Colors & Styling:[/b]
+You can use [color=red]named colors[/color] or [color=#123456]hex codes[/color].
+You can also change the [bgcolor=yellow][color=black]background color[/color][/bgcolor] of text.
+[outline_size=4][outline_color=blue][color=yellow]Yellow text with a blue outline![/color][/outline_color][/outline_size]
+
+[b]3. Alignment & Layout Showcase:[/b]
+
+[b]Alignment Variations:[/b]
+[left]• This text is forced to [b]Left-Aligned[/b]. This is the standard default configuration for Western languages.[/left]
+
+[center]• This text is [b]Center-Aligned[/b]. Perfect for game titles, major announcements, or item pickup notifications.[/center]
+
+[right]• This text is forced to [b]Right-Aligned[/b]. Often used for timestamps, UI counters, or specific character dialogues.[/right]
+
+[fill]• This text is [b]Justified (Filled)[/b]. Godot will automatically adjust the spacing between words so that both the left and right edges align perfectly with the boundaries of your control box. It looks neat in long lore paragraphs.[/fill]
+
+[b]Unordered Lists (ul):[/b]
+[ul]
+Bullet Item 1
+Bullet Item 2
+[ul]Nested Bullet Item A
+Nested Bullet Item B[/ul]
+Bullet Item 3
+[/ul]
+
+[b]Ordered Lists (ol):[/b]
+[ol type=1]
+First sequential step
+Second sequential step
+Third sequential step
+[/ol]
+
+[b]Ordered Lists with Roman Numerals (ol type=I):[/b]
+[ol type=I]
+Introduction Chapter
+Core Gameplay Mechanics
+Credits & Licensing
+[/ol]
+
+[b]4. Interactive Elements:[/b]
+Hover over this to see a [hint=This is a built-in tooltip!]tooltip hint[/hint].
+Clickable links look like this: [url=Boggle]Visit Boggle Website[/url].
+[url=download:TEST DOWNLOAD]Try downloading the test file![/url]
+
+[b]5. Built-in Animation Effects:[/b]
+• [wave amp=50.0 freq=5.0 connected=1]The wave animation makes text drift up and down.[/wave]
+• [tornado radius=5.0 freq=2.0]The tornado animation spins characters around.[/tornado]
+• [shake rate=20.0 level=5]The shake animation adds chaotic vibration.[/shake]
+• [fade start=4 length=14]The fade effect fades out characters linearly.[/fade]
+• [rainbow freq=1.0 sat=0.8 val=0.8]The rainbow effect cycles beautifully through colors.[/rainbow]
+"
+fit_content = true
+
+[connection signal="meta_clicked" from="ScrollContainer/MarginContainer/webPageContainer/bodyText" to="." method="_on_body_text_meta_clicked"]

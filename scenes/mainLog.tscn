@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bpb3lcfhbttjn"]
+[gd_scene format=3 uid="uid://bpb3lcfhbttjn"]
 
 [ext_resource type="Script" uid="uid://ysvx6tfrjahy" path="res://scripts/main_log.gd" id="1_b4ej1"]
 [ext_resource type="Resource" uid="uid://dv5ej0sf8dx8v" path="res://MMSongs/XPLogin.tres" id="2_ti1w0"]
@@ -44,7 +44,7 @@ shader_parameter/G = 0.0
 shader_parameter/B = 0.0
 shader_parameter/blur_strength = 1.0
 
-[node name="TitleScene" type="Node2D" node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "creditsButtonContainer", "softBlur", "crtNode")]
+[node name="TitleScene" type="Node2D" unique_id=882485561 node_paths=PackedStringArray("buttonManager", "shutdownButton", "startButton", "startLabel", "creditsButtonContainer", "softBlur", "crtNode")]
 script = ExtResource("1_b4ej1")
 logOnSong = ExtResource("2_ti1w0")
 buttonManager = NodePath("ButtonManager")
@@ -55,26 +55,26 @@ creditsButtonContainer = NodePath("ButtonManager/BottomContainer/CreditsContaine
 softBlur = NodePath("ScreenFilters/BackBufferCopy1")
 crtNode = NodePath("CRT")
 
-[node name="XpWelcome" type="Sprite2D" parent="."]
+[node name="XpWelcome" type="Sprite2D" parent="." unique_id=1687561640]
 position = Vector2(320, 180)
 scale = Vector2(1, 0.75)
 texture = ExtResource("3_icvme")
 
-[node name="TOP" type="Line2D" parent="."]
+[node name="TOP" type="Line2D" parent="." unique_id=750515425]
 position = Vector2(0, 33.730087)
 scale = Vector2(1, 0.46460176)
 points = PackedVector2Array(320, 64, 319.99997, 291.15237)
 width = 1.0
 gradient = SubResource("Gradient_85g3d")
 
-[node name="BOTTOM" type="Line2D" parent="."]
+[node name="BOTTOM" type="Line2D" parent="." unique_id=1334549351]
 position = Vector2(0, 134.26991)
 scale = Vector2(1, 0.53539824)
 points = PackedVector2Array(320, 64, 320, 288)
 width = 1.0
 gradient = SubResource("Gradient_tipki")
 
-[node name="ButtonManager" type="Control" parent="."]
+[node name="ButtonManager" type="Control" parent="." unique_id=1165499315]
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
 anchors_preset = 15
@@ -85,7 +85,7 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="ButtonManager"]
+[node name="Start" type="Button" parent="ButtonManager" unique_id=586574403]
 layout_mode = 0
 offset_left = 353.0
 offset_top = 154.0
@@ -99,16 +99,16 @@ icon = ExtResource("4_icvme")
 alignment = 0
 expand_icon = true
 
-[node name="StartLabel" type="Label" parent="ButtonManager/Start"]
+[node name="StartLabel" type="Label" parent="ButtonManager/Start" unique_id=1711662773]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 31.0
-offset_right = 144.0
-offset_bottom = 53.333336
+offset_left = 65.0
+offset_top = 41.0
+offset_right = 145.0
+offset_bottom = 63.333336
 theme_override_font_sizes/font_size = 8
 text = "Logged on"
 
-[node name="RichTextLabel" type="Label" parent="ButtonManager"]
+[node name="RichTextLabel" type="Label" parent="ButtonManager" unique_id=1748568960]
 layout_mode = 0
 offset_left = 160.0
 offset_top = 208.0
@@ -119,7 +119,7 @@ theme_override_font_sizes/font_size = 16
 text = "To begin, click user
 "
 
-[node name="Options" type="TextureButton" parent="ButtonManager"]
+[node name="Options" type="TextureButton" parent="ButtonManager" unique_id=1456276981]
 visible = false
 layout_mode = 0
 offset_left = 433.0
@@ -135,7 +135,7 @@ texture_hover = ExtResource("6_jb8uv")
 texture_disabled = ExtResource("7_aqspi")
 stretch_mode = 4
 
-[node name="SettingsLabel" type="RichTextLabel" parent="ButtonManager"]
+[node name="SettingsLabel" type="RichTextLabel" parent="ButtonManager" unique_id=1910732891]
 visible = false
 layout_mode = 0
 offset_left = 480.00003
@@ -147,7 +147,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Adjust user Settings"
 scroll_active = false
 
-[node name="BottomContainer" type="HBoxContainer" parent="ButtonManager"]
+[node name="BottomContainer" type="HBoxContainer" parent="ButtonManager" unique_id=1400905990]
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 1
 anchors_preset = 12
@@ -159,12 +159,12 @@ offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ShutdownContainer" type="HBoxContainer" parent="ButtonManager/BottomContainer"]
+[node name="ShutdownContainer" type="HBoxContainer" parent="ButtonManager/BottomContainer" unique_id=2081276967]
 custom_minimum_size = Vector2(320, 44)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Quit" type="TextureButton" parent="ButtonManager/BottomContainer/ShutdownContainer"]
+[node name="Quit" type="TextureButton" parent="ButtonManager/BottomContainer/ShutdownContainer" unique_id=1028706206]
 custom_minimum_size = Vector2(44, 0)
 layout_mode = 2
 texture_normal = ExtResource("8_tc1es")
@@ -174,7 +174,7 @@ texture_disabled = ExtResource("11_tuanb")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager/BottomContainer/ShutdownContainer"]
+[node name="ShutdownLabel" type="RichTextLabel" parent="ButtonManager/BottomContainer/ShutdownContainer" unique_id=858890864]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -184,12 +184,12 @@ text = "Turn off your Computer"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="CreditsContainer" type="HBoxContainer" parent="ButtonManager/BottomContainer"]
+[node name="CreditsContainer" type="HBoxContainer" parent="ButtonManager/BottomContainer" unique_id=1345823302]
 custom_minimum_size = Vector2(320, 44)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Credits" type="TextureButton" parent="ButtonManager/BottomContainer/CreditsContainer"]
+[node name="Credits" type="TextureButton" parent="ButtonManager/BottomContainer/CreditsContainer" unique_id=1382332367]
 custom_minimum_size = Vector2(44, 0)
 layout_mode = 2
 texture_normal = ExtResource("16_aqspi")
@@ -199,7 +199,7 @@ texture_disabled = ExtResource("11_tuanb")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="CreditsLabel" type="RichTextLabel" parent="ButtonManager/BottomContainer/CreditsContainer"]
+[node name="CreditsLabel" type="RichTextLabel" parent="ButtonManager/BottomContainer/CreditsContainer" unique_id=245428048]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -210,7 +210,7 @@ text = "Credits"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="WelcomeText" type="RichTextLabel" parent="."]
+[node name="WelcomeText" type="RichTextLabel" parent="." unique_id=825490268]
 offset_left = 160.0
 offset_top = 144.0
 offset_right = 320.0
@@ -221,15 +221,15 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Nostalgia
 Process"
 
-[node name="ScreenFilters" type="Node2D" parent="."]
+[node name="ScreenFilters" type="Node2D" parent="." unique_id=238739760]
 visible = false
 
-[node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters"]
+[node name="BackBufferCopy1" type="BackBufferCopy" parent="ScreenFilters" unique_id=330262962]
 z_index = 1
 copy_mode = 2
 rect = Rect2(0, 0, 200, 200)
 
-[node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1"]
+[node name="SoftBlur" type="ColorRect" parent="ScreenFilters/BackBufferCopy1" unique_id=1150423901]
 material = SubResource("ShaderMaterial_hin8t")
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,7 +243,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CRT" type="CanvasLayer" parent="."]
+[node name="CRT" type="CanvasLayer" parent="." unique_id=2022270048]
 layer = 9001
 visible = false
 script = ExtResource("16_icvme")

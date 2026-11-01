@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dnublgoxq8kqy"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dnublgoxq8kqy"]
 
 [ext_resource type="Texture2D" uid="uid://cq0xh4ynvo4ua" path="res://themes/eXP/styles/custom/classic/button/Pressed.png" id="1_hulhw"]
 

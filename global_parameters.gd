@@ -2,6 +2,16 @@ extends Node
 
 enum TaskThemes {Luna, OliveGreen, Embedded, Metallic, Royale, RoyaleDark, Zune}
 enum buttonStyle {Classic, Y2K}
+enum filesize_unit {
+	## Bytes
+	Bytes, 
+	## KiloBytes
+	KB, 
+	## MegaBytes
+	MB, 
+	## GigaBytes
+	GB
+}
 
 # Window Themes
 var LunaTheme : Theme = load("res://themes/eXP/eXP_Luna.tres")
@@ -56,6 +66,8 @@ signal unlockWMP
 @export var secret3 : bool = false
 var secret3Array : Array[String]
 @export var creditsBool : bool = false
+
+@export var gameNode : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

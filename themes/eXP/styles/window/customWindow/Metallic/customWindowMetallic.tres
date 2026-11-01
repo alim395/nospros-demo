@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://d3spaoen2j3uf"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://d3spaoen2j3uf"]
 
 [ext_resource type="Texture2D" uid="uid://c74l8bo6jakl2" path="res://themes/eXP/styles/window/WindowsTitleMetallicUnfocused.png" id="1_7vulf"]
 

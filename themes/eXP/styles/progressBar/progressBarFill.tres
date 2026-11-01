@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://br5jxxah020t5"]
+
+[ext_resource type="Texture2D" uid="uid://bopcbmv4mci08" path="res://themes/eXP/styles/progressBar/ProgressFill.png" id="1_87fjl"]
+
+[resource]
+texture = ExtResource("1_87fjl")
+axis_stretch_horizontal = 1

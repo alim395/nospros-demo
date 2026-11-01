@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ba0io60mkmkro"]
+[gd_scene format=3 uid="uid://ba0io60mkmkro"]
 
 [ext_resource type="VideoStream" uid="uid://djvvyk0u5icam" path="res://video/web/Placeholder.ogv" id="2_c76g1"]
 [ext_resource type="Script" uid="uid://b0qsuo8bt6knt" path="res://scripts/apps/globe_trotter.gd" id="2_k8gp5"]
@@ -6,10 +6,10 @@
 [ext_resource type="StyleBox" uid="uid://wt4yiury1j25" path="res://themes/eXP/styles/custom/statusbar/StatusBarPanel.tres" id="5_2atd7"]
 [ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="6_a5ddo"]
 [ext_resource type="Texture2D" uid="uid://hq1pingouhjc" path="res://sprites/icons/GT_6.png" id="6_fhiv1"]
-[ext_resource type="Texture2D" uid="uid://dnhy2aob6kpqw" path="res://icon.svg" id="6_neo7y"]
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="6_ormeo"]
 [ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="7_neo7y"]
 [ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="8_fhiv1"]
+[ext_resource type="Texture2D" uid="uid://btmx7ucaj3ujt" path="res://icon.png" id="10_neo7y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dxks"]
 
@@ -38,7 +38,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olu2b"]
 
-[node name="GlobeTrotter" type="Control" node_paths=PackedStringArray("myWindow", "webGIFPlayer", "addressInput")]
+[node name="GlobeTrotter" type="Control" unique_id=1862794546 node_paths=PackedStringArray("myWindow", "webGIFPlayer", "addressInput")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +51,7 @@ myWindow = NodePath("Window")
 webGIFPlayer = NodePath("Window/Panel/VContainer/PanelContainer/VideoStreamPlayer")
 addressInput = NodePath("Window/Panel/VContainer/AddressBarContainer/AddressBarInput")
 
-[node name="Window" type="Window" parent="."]
+[node name="Window" type="Window" parent="." unique_id=258348343]
 snap_2d_vertices_to_pixel = true
 oversampling_override = 1.0
 title = "Globe Trotter"
@@ -60,7 +60,7 @@ size = Vector2i(480, 302)
 min_size = Vector2i(240, 152)
 theme = ExtResource("6_ormeo")
 
-[node name="Panel" type="Panel" parent="Window"]
+[node name="Panel" type="Panel" parent="Window" unique_id=846477968]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,7 +69,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VContainer" type="VBoxContainer" parent="Window/Panel"]
+[node name="VContainer" type="VBoxContainer" parent="Window/Panel" unique_id=1741408797]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,75 +78,75 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 2
 
-[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VContainer"]
+[node name="TitleBarContainer" type="HBoxContainer" parent="Window/Panel/VContainer" unique_id=275817097]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Button1" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Button1" type="Button" parent="Window/Panel/VContainer/TitleBarContainer" unique_id=1498999753]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dxks")
 disabled = true
 text = "File"
 flat = true
 
-[node name="Button2" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Button2" type="Button" parent="Window/Panel/VContainer/TitleBarContainer" unique_id=682313086]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dxks")
 disabled = true
 text = "Edit"
 flat = true
 
-[node name="Button3" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Button3" type="Button" parent="Window/Panel/VContainer/TitleBarContainer" unique_id=2091855563]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dxks")
 disabled = true
 text = "View"
 flat = true
 
-[node name="Button4" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Button4" type="Button" parent="Window/Panel/VContainer/TitleBarContainer" unique_id=899851891]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dxks")
 disabled = true
 text = "Favorites"
 flat = true
 
-[node name="Button5" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Button5" type="Button" parent="Window/Panel/VContainer/TitleBarContainer" unique_id=50402348]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dxks")
 disabled = true
 text = "Tools"
 flat = true
 
-[node name="Button6" type="Button" parent="Window/Panel/VContainer/TitleBarContainer"]
+[node name="Button6" type="Button" parent="Window/Panel/VContainer/TitleBarContainer" unique_id=1621242185]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6dxks")
 disabled = true
 text = "Help"
 flat = true
 
-[node name="AddressBarContainer" type="HBoxContainer" parent="Window/Panel/VContainer"]
+[node name="AddressBarContainer" type="HBoxContainer" parent="Window/Panel/VContainer" unique_id=1412135162]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Home" type="Button" parent="Window/Panel/VContainer/AddressBarContainer"]
+[node name="Home" type="Button" parent="Window/Panel/VContainer/AddressBarContainer" unique_id=1154667759]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 icon = ExtResource("2_qf2wf")
 icon_alignment = 2
 expand_icon = true
 
-[node name="AddressBarInput" type="LineEdit" parent="Window/Panel/VContainer/AddressBarContainer"]
+[node name="AddressBarInput" type="LineEdit" parent="Window/Panel/VContainer/AddressBarContainer" unique_id=621646908]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "https://www.example.com/index.php"
 
-[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Window/Panel/VContainer" unique_id=1362816668]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_xyqr7")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Window/Panel/VContainer/PanelContainer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Window/Panel/VContainer/PanelContainer" unique_id=1571545633]
 layout_mode = 2
 size_flags_vertical = 3
 stream = ExtResource("2_c76g1")
@@ -154,12 +154,12 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VContainer"]
+[node name="StatusBarPanel" type="Panel" parent="Window/Panel/VContainer" unique_id=140717423]
 custom_minimum_size = Vector2(0, 18.5)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("5_2atd7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VContainer/StatusBarPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/Panel/VContainer/StatusBarPanel" unique_id=148689489]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 1
 anchors_preset = 15
@@ -169,7 +169,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="FirstLabel" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="FirstLabel" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=411067049]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -178,7 +178,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_d1bho")
 text = "Ln 1"
 vertical_alignment = 1
 
-[node name="SiteTitle" type="Button" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="SiteTitle" type="Button" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1813224840]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -195,7 +195,7 @@ flat = true
 alignment = 0
 expand_icon = true
 
-[node name="Padding" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="Padding" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1629612227]
 visible = false
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -203,7 +203,7 @@ theme_override_styles/normal = ExtResource("7_neo7y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1bho")
 vertical_alignment = 1
 
-[node name="Padding2" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="Padding2" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1210954281]
 visible = false
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -211,7 +211,7 @@ theme_override_styles/normal = ExtResource("7_neo7y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1bho")
 vertical_alignment = 1
 
-[node name="Padding3" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="Padding3" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1029518688]
 visible = false
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -219,7 +219,7 @@ theme_override_styles/normal = ExtResource("7_neo7y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1bho")
 vertical_alignment = 1
 
-[node name="Padding4" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="Padding4" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=545594902]
 visible = false
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -227,7 +227,7 @@ theme_override_styles/normal = ExtResource("7_neo7y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1bho")
 vertical_alignment = 1
 
-[node name="Padding5" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="Padding5" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1582987675]
 visible = false
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -235,7 +235,7 @@ theme_override_styles/normal = ExtResource("7_neo7y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1bho")
 vertical_alignment = 1
 
-[node name="ConnectionStatus" type="Button" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="ConnectionStatus" type="Button" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=845351814]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -247,12 +247,12 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y2efh")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ug0j5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_olu2b")
 text = "Internet"
-icon = ExtResource("6_neo7y")
+icon = ExtResource("10_neo7y")
 flat = true
 alignment = 0
 expand_icon = true
 
-[node name="FinaLabel" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer"]
+[node name="FinaLabel" type="Label" parent="Window/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=204136525]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 2

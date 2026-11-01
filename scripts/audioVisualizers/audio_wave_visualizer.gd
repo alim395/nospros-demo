@@ -1,9 +1,9 @@
 extends Control
 
-const VU_COUNT = 46
+const VU_COUNT = 48
 const FREQ_MAX = 11050.0
 
-const WIDTH = 160
+const WIDTH = 170
 const HEIGHT = 76/2
 const HEIGHT_SCALE = 8.0
 const MIN_DB = 60

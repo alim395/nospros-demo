@@ -17,7 +17,8 @@ func _ready() -> void:
 
 func _on_window_close_requested() -> void:
 	myWindow.visible = false
-	%AppManager.taskBar.closeTask("Computer")
+	if myTaskButton:
+		myTaskButton.close_task()
 
 func openWindow() -> void:
 	myWindow.visible = true

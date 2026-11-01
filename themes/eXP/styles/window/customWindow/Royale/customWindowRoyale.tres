@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dnd7r5i7nai6k"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dnd7r5i7nai6k"]
 
 [ext_resource type="Texture2D" uid="uid://c33hucd6m6sbh" path="res://themes/eXP/styles/window/WindowsTitleRoyale.png" id="1_511m5"]
 

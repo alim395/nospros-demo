@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://du0hynwy7v360"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://du0hynwy7v360"]
 
 [sub_resource type="Gradient" id="Gradient_gid0c"]
 offsets = PackedFloat32Array(0, 0.18181819)

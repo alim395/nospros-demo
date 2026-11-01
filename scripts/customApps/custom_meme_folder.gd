@@ -2,7 +2,7 @@ extends customWindow
 
 @export var subWindowNode : customWindow
 var subWindow : Control
-@export var myTaskButton : taskbarButton
+#@export var myTaskButton : taskbarButton
 @export var subTaskButton : taskbarButton = null
 var isMinimize : bool = false
 var isSubMinimize : bool = false
@@ -23,6 +23,9 @@ func _ready() -> void:
 	generateMemeButtons()
 	subWindowNode.imageDisplay.visible = false
 	subWindowNode.videoPlayer.visible = false
+	#subWindowNode.imageDisplay.expand_mode = TextureRect.EXPAND_KEEP_SIZE
+	#subWindowNode.videoPlayer.expand = false
+	subWindowNode.handles.toggleUnresziable()
 
 func setTaskButton(tB : taskbarButton) -> void:
 	myTaskButton = tB
@@ -70,16 +73,20 @@ func _on_close_button_button_up() -> void:
 
 func closeWindow() -> void:
 	myWindow.visible = false
-	if get_parent():
-		%AppManager.taskBar.closeTask("Memes")
+	if myTaskButton:
+		myTaskButton.close_task()
 		#_on_sub_window_close_requested()
 
 func closeSubWindow() -> void:
 	subWindow.visible = false
 	if subWindowNode.videoPlayer:
 		subWindowNode.videoPlayer.stop()
-	if get_parent():
-		%AppManager.taskBar.closeTask("memePlayer")
+	if subTaskButton:
+		subTaskButton.close_task()
+
+func closeEverything() -> void:
+	closeWindow()
+	closeSubWindow()
 
 func displayImage(mediaKey : String) -> void:
 	subWindowNode.visible = true
@@ -158,26 +165,30 @@ func generateMemeButtons() -> void:
 func _on_meme_image_button_pressed(imageKey: String) -> void:
 	subWindow.visible = false
 	subWindowNode.videoPlayer.stop()
-	%AppManager.taskBar.closeTask("memePlayer")
+	if get_parent().get_parent():
+		%AppManager.taskBar.closeTask("memePlayer")
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	displayImage(imageKey)
 	subWindowNode.setTitle(imageKey)
 	subWindow.visible = true
 	# Sub Task Button
-	var tB = %Taskbar.openTask("memePlayer")
-	setSubTaskButton(tB)
+	if get_parent().get_parent():
+		var tB = %Taskbar.openTask("memePlayer")
+		setSubTaskButton(tB)
 
 func _on_meme_video_button_pressed(videoKey: String) -> void:
 	subWindow.visible = false
 	subWindowNode.videoPlayer.stop()
-	%AppManager.taskBar.closeTask("memePlayer")
+	if get_parent().get_parent():
+		%AppManager.taskBar.closeTask("memePlayer")
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 	playVideo(videoKey)
 	subWindowNode.setTitle(videoKey)
 	subWindow.visible = true
 	# Sub Task Button
-	var tB = %Taskbar.openTask("memePlayer")
-	setSubTaskButton(tB)
+	if get_parent().get_parent():
+		var tB = %Taskbar.openTask("memePlayer")
+		setSubTaskButton(tB)
 
 func updateTheme() -> void:
 	super.updateTheme()

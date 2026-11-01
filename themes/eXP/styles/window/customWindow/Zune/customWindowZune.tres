@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://exrx8nw25f67"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://exrx8nw25f67"]
 
 [ext_resource type="Texture2D" uid="uid://cm2ho8skdnbam" path="res://themes/eXP/styles/window/WindowsTitleZune.png" id="1_llnfg"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AudioLibrary" load_steps=21 format=3 uid="uid://dj4rikuf24amr"]
+[gd_resource type="Resource" script_class="AudioLibrary" format=3 uid="uid://dj4rikuf24amr"]
 
 [ext_resource type="Script" uid="uid://exl37ft8rypp" path="res://audio/sfx/AudioLibrary.gd" id="1_3pm3p"]
 [ext_resource type="Script" uid="uid://crhp0kg7otq8a" path="res://audio/sfx/SFX.gd" id="2_uxa5k"]

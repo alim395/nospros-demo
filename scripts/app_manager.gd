@@ -26,7 +26,7 @@ var taskCount : int = 0
 
 # Apps
 @onready var musicPlayerApp = preload("res://scenes/customApps/customMusicPlayer.tscn")
-@onready var browserApp = preload("res://scenes/apps/globeTrotter.tscn")
+@onready var browserApp = preload("res://scenes/customApps/customBrowser.tscn")
 @onready var notepadApp = preload("res://scenes/customApps/customNotepad.tscn")
 @onready var wmpApp = preload("res://scenes/customApps/customMediaPlayer.tscn")
 
@@ -45,7 +45,7 @@ func _ready() -> void:
 	webInstance = null
 	musicInstance = null
 	wmpInstance = null
-	#closeCoreApps()
+	closeCoreApps()
 	globalParameters.GetTrolled.connect(_on_troll_button_pressed)
 	theme = globalParameters.defaultWindowTheme
 	visible = true
@@ -77,8 +77,8 @@ func closeActiveInstance() -> void:
 
 func closeWebInstance() -> void:
 	taskBar.closeTask("Browser")
-	if webInstance != null:
-		webInstance.queue_free()
+	if webInstance:
+		webInstance.closeWindow()
 		webInstance = null
 	updateTaskCount()
 
@@ -93,8 +93,8 @@ func closeCoreApps() -> void:
 	#taskBar.closeTask("Picture")
 	settingApp._on_window_close_requested()
 	taskBar.closeTask("Setting")
-	pcApp._on_window_close_requested()
-	taskBar.closeTask("Computer")
+	#pcApp._on_window_close_requested()
+	#taskBar.closeTask("Computer")
 
 #func openMusicApp() -> void:
 	#if musicInstance == null:
@@ -171,10 +171,11 @@ func openWebApp() -> void:
 		webInstance = browserApp.instantiate()
 		add_child(webInstance)
 		if taskCount > 0:
-			webInstance.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+			webInstance.myWindow.position += Vector2(randf_range(10,20), randf_range(10,20))
 		var tB = taskBar.openTask("Browser")
 		webInstance.setTaskButton(tB)
 		updateTaskCount()
+		webInstance.tree_exiting.connect(closeWebInstance)
 	else:
 		print("BROWSER ALREADY OPEN!")
 		webInstance.myTaskButton.set_pressed_no_signal(true)
@@ -194,12 +195,15 @@ func _on_settings_button_pressed() -> void:
 	MusicManager.sfx_player.play_SFX_from_library_poly("click")
 
 func openTrollApp() -> void:
-	trollApp._on_window_close_requested()
+	#trollApp._on_window_close_requested()
+	trollApp._on_close_button_button_up()
 	trollApp.openWindow()
 	isTrolling = true
 	activeTaskName = "Troll"
 	var tB = taskBar.openTask(activeTaskName)
 	trollApp.setTaskButton(tB)
+	trollApp.visible = false
+	trollApp.visible = true
 
 func _on_troll_button_pressed() -> void:
 	openTrollApp()
@@ -215,6 +219,7 @@ func closeAllTasks() -> void:
 	closeMusicInstance()
 	closeTextInstance()
 	closeCoreApps()
+	closePCApp()
 	closeTroll()
 	closeCustomPictureApp()
 	closeCustomMemeFolder()
@@ -224,17 +229,17 @@ func closeAllTasks() -> void:
 
 func closeTroll() -> void:
 	if isTrolling:
-		trollApp._on_window_close_requested()
+		trollApp._on_close_button_button_up()
 		taskBar.closeTask("Troll")
 		isTrolling = false
 
 func updateTaskCount() -> void:
 	taskCount = 0
-	if activeInstance != null:
+	if activeInstance:
 		taskCount +=1
-	if webInstance != null:
+	if webInstance:
 		taskCount +=1
-	if musicInstance != null:
+	if musicInstance:
 		taskCount +=1
 	print(taskCount)
 
@@ -291,7 +296,7 @@ func openCustomMemeFolder() -> void:
 	customMemeFolder.setTaskButton(tB)
 
 func closeCustomMemeFolder() -> void:
-	customMemeFolder.closeWindow()
+	customMemeFolder.closeEverything()
 	taskBar.closeTask("Memes")
 	updateTaskCount()
 
@@ -314,13 +319,15 @@ func closeTextInstance() -> void:
 	updateTaskCount()
 
 func openPCApp() -> void:
-	closeCoreApps()
+	closePCApp()
 	pcApp.openWindow()
 	if taskCount > 0:
-			pcApp.myWindow.position += Vector2i(randi_range(10,20), randi_range(10,20))
+			pcApp.myWindow.position += Vector2(randf_range(10,20), randf_range(10,20))
 	activeTaskName = "Computer"
 	var tB = taskBar.openTask(activeTaskName)
 	pcApp.setTaskButton(tB)
+	pcApp.visible = false
+	pcApp.visible = true
 
 func _on_pc_button_pressed() -> void:
 	openPCApp()
@@ -360,6 +367,11 @@ func closeCustomMediaPlayer() -> void:
 	if wmpInstance != null:
 		wmpInstance.closeWindow()
 	#taskBar.closeTask("WMP")
+	updateTaskCount()
+
+func closePCApp() -> void:
+	pcApp.closeWindow()
+	taskBar.closeTask("Picture")
 	updateTaskCount()
 
 func _on_wmp_button_pressed() -> void:

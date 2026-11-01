@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dmy4yf2nhqagb"]
+
+[ext_resource type="StyleBox" uid="uid://ddtv7otsfdegy" path="res://themes/eXP/styles/imageError/ImageErrorOuter.tres" id="1_5hn8b"]
+[ext_resource type="Script" uid="uid://b2lge8pnrkn7d" path="res://scenes/webPages/image_error.gd" id="2_86mgi"]
+[ext_resource type="StyleBox" uid="uid://cgragplha7elt" path="res://themes/eXP/styles/imageError/ImageErrorInner.tres" id="2_l4gau"]
+[ext_resource type="FontFile" uid="uid://qg1jp48qfeqs" path="res://themes/eXP/styles/fonts/tahoma8.otf" id="3_86mgi"]
+[ext_resource type="Texture2D" uid="uid://cfbvd1hnd5laj" path="res://sprites/UI/XP/panels/imageErrorIcon.png" id="3_l4gau"]
+
+[node name="ImageError" type="PanelContainer" unique_id=1543565347 node_paths=PackedStringArray("imageLabel")]
+custom_minimum_size = Vector2(100, 50)
+offset_right = 100.0
+offset_bottom = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_styles/panel = ExtResource("1_5hn8b")
+script = ExtResource("2_86mgi")
+imageLabel = NodePath("Panel/HBoxContainer/ImageLabel")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1135878671]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_l4gau")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=904536049]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer" unique_id=635331400]
+layout_mode = 2
+texture = ExtResource("3_l4gau")
+stretch_mode = 4
+
+[node name="ImageLabel" type="RichTextLabel" parent="Panel/HBoxContainer" unique_id=809001900]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_86mgi")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "Image not found."
+fit_content = true

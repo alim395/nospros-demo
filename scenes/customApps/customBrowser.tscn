@@ -1,0 +1,714 @@
+[gd_scene format=3 uid="uid://c17o6vj1yen2q"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_pya7y"]
+[ext_resource type="Script" uid="uid://dsean5lc5lp7c" path="res://scripts/customApps/custom_browser.gd" id="2_pya7y"]
+[ext_resource type="Texture2D" uid="uid://btmx7ucaj3ujt" path="res://icon.png" id="3_70776"]
+[ext_resource type="PackedScene" uid="uid://bfc5fiimh2ejy" path="res://scenes/dialogs/download.tscn" id="3_yf3wm"]
+[ext_resource type="PackedScene" uid="uid://o4a3sp1j7s4l" path="res://scenes/dialogs/errorWindow.tscn" id="4_4mxt5"]
+[ext_resource type="FontFile" uid="uid://clh8vo8b0pbmx" path="res://themes/eXP/styles/fonts/trebucbd.ttf" id="4_ebvkg"]
+[ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="5_e7naf"]
+[ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="6_xfoi7"]
+[ext_resource type="Texture2D" uid="uid://c3eunioyc3ehh" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-hover.png" id="7_4fy6d"]
+[ext_resource type="Texture2D" uid="uid://ch1oxpv356kry" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-normal.png" id="8_674ex"]
+[ext_resource type="Texture2D" uid="uid://jnhygni0hweq" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-active.png" id="9_pqdrt"]
+[ext_resource type="Texture2D" uid="uid://w5vihtd8i6fk" path="res://themes/eXP/styles/window/customWindow/Luna/maximize-hover.png" id="10_ttpwe"]
+[ext_resource type="Texture2D" uid="uid://b2k2olnf00fyf" path="res://themes/eXP/styles/window/customWindow/Luna/restore-normal.png" id="11_5w3vl"]
+[ext_resource type="Texture2D" uid="uid://cy5xsx1r7q31s" path="res://themes/eXP/styles/window/customWindow/Luna/restore-active.png" id="12_x52r4"]
+[ext_resource type="Texture2D" uid="uid://ca3rik34ti44a" path="res://themes/eXP/styles/window/customWindow/Luna/restore-hover.png" id="13_i4u6b"]
+[ext_resource type="Texture2D" uid="uid://c4q6gal0qcnxg" path="res://themes/eXP/styles/window/close.svg" id="14_egxyx"]
+[ext_resource type="Texture2D" uid="uid://cggs3fhqd7nmb" path="res://themes/eXP/styles/window/close-active.svg" id="15_30mat"]
+[ext_resource type="Texture2D" uid="uid://mpkkm415hxqw" path="res://themes/eXP/styles/window/close-hover.svg" id="16_f6b4p"]
+[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://scripts/StyleboxStack.gd" id="17_x52r4"]
+[ext_resource type="Script" uid="uid://bwv74ljx4xnh7" path="res://scripts/handlesCustom.gd" id="17_yf3wm"]
+[ext_resource type="Texture2D" uid="uid://5trb02wdmplw" path="res://sprites/UI/XP/panels/RightArrowSquare.png" id="18_5w3vl"]
+[ext_resource type="Texture2D" uid="uid://2vbifkfrqdkn" path="res://sprites/UI/XP/panels/LeftArrowCircle.png" id="18_egxyx"]
+[ext_resource type="Texture2D" uid="uid://1lbl4bqln517" path="res://sprites/UI/XP/panels/RightArrowCircle.png" id="19_30mat"]
+[ext_resource type="StyleBox" uid="uid://dda2cskmn0t6p" path="res://themes/eXP/styles/button/barButton-Pressed.tres" id="19_qi0xu"]
+[ext_resource type="StyleBox" uid="uid://wt4yiury1j25" path="res://themes/eXP/styles/custom/statusbar/StatusBarPanel.tres" id="19_ttpwe"]
+[ext_resource type="StyleBox" uid="uid://qjkyaffojyep" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_First.tres" id="20_5w3vl"]
+[ext_resource type="Texture2D" uid="uid://br0nn1ua0l1es" path="res://sprites/UI/XP/panels/PaperStop.png" id="20_f6b4p"]
+[ext_resource type="Texture2D" uid="uid://b0irg1hekvybj" path="res://sprites/UI/XP/panels/PaperRefresh.png" id="21_yf3wm"]
+[ext_resource type="StyleBox" uid="uid://b7rv7ifftsbm" path="res://themes/eXP/styles/custom/statusbar/StatusBorderStack.tres" id="22_i4u6b"]
+[ext_resource type="StyleBox" uid="uid://dqiwhhn8gdjhg" path="res://themes/eXP/styles/button/barButton-Normal.tres" id="23_4mxt5"]
+[ext_resource type="StyleBox" uid="uid://dbfg8c65ul42t" path="res://themes/eXP/styles/custom/statusbar/StatusBorder_Last.tres" id="23_egxyx"]
+[ext_resource type="StyleBox" uid="uid://bfo124qkitmv8" path="res://themes/eXP/styles/button/barButton-Hover.tres" id="24_qi0xu"]
+[ext_resource type="Texture2D" uid="uid://c3mjy41n7x3hs" path="res://sprites/UI/XP/panels/Home.png" id="25_70776"]
+[ext_resource type="PackedScene" uid="uid://do2ya3oa7quue" path="res://scenes/webPages/exampleWebPage.tscn" id="27_yf3wm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vdpk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30mat"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_i4u6b"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_egxyx"]
+color = Color(0.84313726, 0.8352941, 0.77254903, 1)
+grow_begin = 0.0
+grow_end = 0.0
+
+[sub_resource type="StyleBox" id="StyleBox_30mat"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("17_x52r4")
+style_boxes = Array[StyleBox]([SubResource("StyleBoxLine_i4u6b"), SubResource("StyleBoxLine_egxyx")])
+metadata/_custom_type_script = "uid://bpobhv17fo8i"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mxt5"]
+
+[sub_resource type="Gradient" id="Gradient_f6b4p"]
+offsets = PackedFloat32Array(0, 0.18181819)
+colors = PackedColorArray(0.5019608, 0.5019608, 0.5019608, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 11
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yf3wm"]
+gradient = SubResource("Gradient_f6b4p")
+width = 4
+height = 11
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mxt5"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 3.0
+content_margin_bottom = 0.0
+texture = SubResource("GradientTexture2D_yf3wm")
+texture_margin_bottom = 2.0
+expand_margin_bottom = 2.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(0, 0, 4, 11)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70776"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf3wm"]
+
+[node name="CustomBrowser" type="Control" unique_id=1976394770 node_paths=PackedStringArray("webPage", "addressBar", "progressBar", "bodyContainer", "nextButton", "prevButton", "nextNavButton", "prevNavButton", "titleLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_pya7y")
+script = ExtResource("2_pya7y")
+webPage = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/BodyContainer/webPage")
+addressBar = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin/AddressBarContainer/AddressInput")
+progressBar = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer/ProgressPadding/MarginContainer/ProgressBar")
+bodyContainer = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/BodyContainer")
+nextButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Forward")
+prevButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Back")
+nextNavButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/ForNav")
+prevNavButton = NodePath("WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/BackNav")
+downloadScene = ExtResource("3_yf3wm")
+errorScene = ExtResource("4_4mxt5")
+title = "Untitled"
+titleLabel = NodePath("WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/TitleLabel")
+
+[node name="WindowContainer" type="Control" parent="." unique_id=521974364]
+custom_minimum_size = Vector2(360, 270)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -120.0
+offset_right = 170.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="Border" type="PanelContainer" parent="WindowContainer" unique_id=768247705]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="WindowContainer" unique_id=794838737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout" unique_id=434093164]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+mouse_default_cursor_shape = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer" unique_id=1062561157]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer" unique_id=466401750]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=2060204681]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_70776")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=2010382158]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_ebvkg")
+theme_override_font_sizes/font_size = 13
+text = "Custom Window :D"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1002801063]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7vdpk")
+
+[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=166187331]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_e7naf")
+texture_pressed = ExtResource("6_xfoi7")
+texture_hover = ExtResource("7_4fy6d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=557088044]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_674ex")
+texture_pressed = ExtResource("9_pqdrt")
+texture_hover = ExtResource("10_ttpwe")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1862040615]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_5w3vl")
+texture_pressed = ExtResource("12_x52r4")
+texture_hover = ExtResource("13_i4u6b")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=883189494]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_egxyx")
+texture_pressed = ExtResource("15_30mat")
+texture_hover = ExtResource("16_f6b4p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout" unique_id=1099510844]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin" unique_id=2024075927]
+layout_mode = 2
+
+[node name="VContainer" type="VBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel" unique_id=478449860]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="TitleBarContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=687858916]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button1" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TitleBarContainer" unique_id=1532108580]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30mat")
+disabled = true
+text = "File"
+flat = true
+
+[node name="Button2" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TitleBarContainer" unique_id=1570531772]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30mat")
+disabled = true
+text = "Edit"
+flat = true
+
+[node name="Button3" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TitleBarContainer" unique_id=530418375]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30mat")
+disabled = true
+text = "View"
+flat = true
+
+[node name="Button4" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TitleBarContainer" unique_id=969059977]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30mat")
+disabled = true
+text = "Favorites"
+flat = true
+
+[node name="Button5" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TitleBarContainer" unique_id=2129274710]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30mat")
+disabled = true
+text = "Tools"
+flat = true
+
+[node name="Button6" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/TitleBarContainer" unique_id=1056323422]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_30mat")
+disabled = true
+text = "Help"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=1276103512]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBox_30mat")
+
+[node name="NavigationBarPanel" type="Panel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=1855596633]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BarMargin" type="MarginContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel" unique_id=1590619578]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 0
+
+[node name="NavigationBarContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin" unique_id=218157053]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+
+[node name="Back" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=1298270323]
+custom_minimum_size = Vector2(52, 34)
+layout_mode = 2
+tooltip_text = "Previous Page"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+text = "Back"
+icon = ExtResource("18_egxyx")
+expand_icon = true
+
+[node name="BackNav" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=785206490]
+custom_minimum_size = Vector2(0, 34)
+custom_maximum_size = Vector2(15, -1)
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Previous Page(s)"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+text = "⏷"
+expand_icon = true
+item_count = 1
+popup/item_0/text = "-DISABLED-"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+
+[node name="Forward" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=1271062211]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Next Page"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+icon = ExtResource("19_30mat")
+expand_icon = true
+
+[node name="ForNav" type="MenuButton" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=1482545354]
+custom_minimum_size = Vector2(0, 34)
+custom_maximum_size = Vector2(15, -1)
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Next Page(s)"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+text = "⏷"
+flat = false
+expand_icon = true
+item_count = 1
+popup/item_0/text = "-DISABLED-"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+
+[node name="Stop" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=1504151489]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Stop Page"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+icon = ExtResource("20_f6b4p")
+expand_icon = true
+
+[node name="Refresh" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=1543919684]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Refresh"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+icon = ExtResource("21_yf3wm")
+expand_icon = true
+
+[node name="Home" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer" unique_id=2070135150]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+tooltip_text = "Home Page"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4mxt5")
+icon = ExtResource("25_70776")
+expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=665445579]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBox_30mat")
+
+[node name="AddressBarPanel3" type="Panel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=1734767803]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mxt5")
+
+[node name="BarMargin" type="MarginContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3" unique_id=1043845486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 0
+
+[node name="AddressBarContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin" unique_id=1654121102]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+
+[node name="AddressLabel" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin/AddressBarContainer" unique_id=1384702191]
+layout_mode = 2
+text = "Address"
+
+[node name="AddressInput" type="LineEdit" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin/AddressBarContainer" unique_id=1367557889]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "http://www.example.com/index.php"
+placeholder_text = "about:blank"
+caret_blink = true
+
+[node name="Go" type="Button" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin/AddressBarContainer" unique_id=702786289]
+layout_mode = 2
+tooltip_text = "Go to URL"
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_styles/normal = ExtResource("23_4mxt5")
+theme_override_styles/pressed = ExtResource("19_qi0xu")
+theme_override_styles/hover = ExtResource("24_qi0xu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_70776")
+text = "Go"
+icon = ExtResource("18_5w3vl")
+expand_icon = true
+
+[node name="BodyContainer" type="PanelContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=624439275]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="webPage" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/BodyContainer" unique_id=1705289115 instance=ExtResource("27_yf3wm")]
+layout_mode = 2
+
+[node name="StatusBarPanel" type="Panel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer" unique_id=1577420328]
+custom_minimum_size = Vector2(0, 18.5)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = ExtResource("19_ttpwe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel" unique_id=853262400]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.75
+offset_bottom = 4.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="SiteLabel" type="RichTextLabel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=358635658]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("20_5w3vl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yf3wm")
+bbcode_enabled = true
+text = "[img=12]res://sprites/icons/GT_6.png[/img] Home"
+fit_content = true
+scroll_active = false
+vertical_alignment = 3
+
+[node name="ProgressPadding" type="PanelContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=952578758]
+custom_minimum_size = Vector2(24, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("22_i4u6b")
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer/ProgressPadding" unique_id=1609167283]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer/ProgressPadding/MarginContainer" unique_id=315733929]
+visible = false
+custom_minimum_size = Vector2(60, 8)
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = false
+
+[node name="Padding2" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=773288692]
+visible = false
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("22_i4u6b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yf3wm")
+vertical_alignment = 1
+
+[node name="Padding3" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=553630990]
+visible = false
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("22_i4u6b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yf3wm")
+vertical_alignment = 1
+
+[node name="Padding4" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=2090774017]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("22_i4u6b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yf3wm")
+vertical_alignment = 1
+
+[node name="Padding5" type="Label" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=556010693]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("22_i4u6b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yf3wm")
+vertical_alignment = 1
+
+[node name="ConnectionLabel" type="RichTextLabel" parent="WindowContainer/Layout/PanelMargin/Panel/VContainer/StatusBarPanel/HBoxContainer" unique_id=1271573525]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("23_egxyx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yf3wm")
+bbcode_enabled = true
+text = "[img=12]res://icon.png[/img] Internet"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Handles" type="Control" parent="WindowContainer" unique_id=1517952365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("17_yf3wm")
+
+[node name="Top" type="Control" parent="WindowContainer/Handles" unique_id=1408138979]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 9
+
+[node name="Bottom" type="Control" parent="WindowContainer/Handles" unique_id=459323690]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 9
+
+[node name="Left" type="Control" parent="WindowContainer/Handles" unique_id=1675550672]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="Right" type="Control" parent="WindowContainer/Handles" unique_id=2130347340]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+
+[node name="TLCorner" type="Control" parent="WindowContainer/Handles" unique_id=1589185337]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 0
+offset_right = 5.0
+offset_bottom = 5.0
+mouse_default_cursor_shape = 12
+
+[node name="BLCorner" type="Control" parent="WindowContainer/Handles" unique_id=1580963840]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_right = 5.0
+grow_vertical = 0
+mouse_default_cursor_shape = 11
+
+[node name="TRCorner" type="Control" parent="WindowContainer/Handles" unique_id=38665070]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 11
+
+[node name="BRCorner" type="Control" parent="WindowContainer/Handles" unique_id=379411889]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 12
+
+[connection signal="theme_changed" from="." to="." method="_on_theme_changed"]
+[connection signal="focus_entered" from="WindowContainer" to="." method="_on_window_container_focus_entered"]
+[connection signal="focus_exited" from="WindowContainer" to="." method="_on_window_container_focus_exited"]
+[connection signal="gui_input" from="WindowContainer" to="." method="_on_window_container_gui_input"]
+[connection signal="resized" from="WindowContainer" to="." method="_on_window_container_resized"]
+[connection signal="gui_input" from="WindowContainer/Layout/TitleBarContainer" to="." method="_on_title_bar_container_gui_input"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/MinimizeButton" to="." method="_on_minimize_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/MaximizeButton" to="." method="_on_maximize_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/RestoreButton" to="." method="_on_restore_button_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="gui_input" from="WindowContainer/Layout/PanelMargin/Panel" to="." method="_on_panel_gui_input"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Back" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Forward" to="." method="_on_forward_button_up"]
+[connection signal="pressed" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Stop" to="." method="_on_stop_pressed"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Refresh" to="." method="_on_refresh_button_up"]
+[connection signal="button_up" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/NavigationBarPanel/BarMargin/NavigationBarContainer/Home" to="." method="_on_home_button_up"]
+[connection signal="text_submitted" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin/AddressBarContainer/AddressInput" to="." method="_on_address_input_text_submitted"]
+[connection signal="pressed" from="WindowContainer/Layout/PanelMargin/Panel/VContainer/AddressBarPanel3/BarMargin/AddressBarContainer/Go" to="." method="_on_go_pressed"]

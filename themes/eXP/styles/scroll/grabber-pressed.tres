@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bbedsvkncach1"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bbedsvkncach1"]
 
 [ext_resource type="Texture2D" uid="uid://byybur6kqwb5" path="res://themes/eXP/styles/scroll/grabber-pressed.png" id="1_wfq5j"]
 

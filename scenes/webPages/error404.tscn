@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dfc1yawrfimir"]
+
+[ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_7xwns"]
+[ext_resource type="Script" uid="uid://bso82jm0bra6v" path="res://scenes/webPages/web_page.gd" id="2_h8ojt"]
+[ext_resource type="FontFile" uid="uid://dwso31wgh6gem" path="res://fonts/webPageFonts/times.ttf" id="3_8hcnu"]
+[ext_resource type="FontFile" uid="uid://lokje8ugwij3" path="res://fonts/webPageFonts/timesbd.ttf" id="4_7jsrk"]
+[ext_resource type="FontFile" uid="uid://chkdynm446r67" path="res://fonts/webPageFonts/timesbi.ttf" id="5_0nagf"]
+[ext_resource type="FontFile" uid="uid://bulmcj52p2vpn" path="res://fonts/webPageFonts/timesi.ttf" id="6_7xwns"]
+[ext_resource type="FontFile" uid="uid://cc01fd3bgpqdw" path="res://fonts/webPageFonts/Courier New (Mono).ttf" id="10_taouy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_674ex"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="webPagePanel" type="Panel" unique_id=1705289115]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7xwns")
+theme_override_styles/panel = SubResource("StyleBoxFlat_674ex")
+script = ExtResource("2_h8ojt")
+websiteName = "error404"
+address = "error404"
+imageDelay = 0.0
+defaultTheme = ExtResource("1_7xwns")
+skip = true
+metadata/_edit_pinned_properties_ = [&"websiteName", &"address", &"skip"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2117270934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=992333694]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="webPageContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=759698384]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="bodyText" type="RichTextLabel" parent="ScrollContainer/MarginContainer/webPageContainer" unique_id=767894522]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("3_8hcnu")
+theme_override_fonts/bold_font = ExtResource("4_7jsrk")
+theme_override_fonts/bold_italics_font = ExtResource("5_0nagf")
+theme_override_fonts/italics_font = ExtResource("6_7xwns")
+theme_override_fonts/mono_font = ExtResource("10_taouy")
+bbcode_enabled = true
+text = "[font_size=32]HTTP Error 404[/font_size]
+
+[b]404 Not Found[/b]
+
+The Web server cannot find the file or script you asked for. Please check the URL to ensure that the path is correct.
+
+Please contact the server's administrator if this problem persists."
+fit_content = true

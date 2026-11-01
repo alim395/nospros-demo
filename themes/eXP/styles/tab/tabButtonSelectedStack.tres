@@ -1,6 +1,6 @@
-[gd_resource type="StyleBox" script_class="StyleboxStack" load_steps=5 format=3 uid="uid://ci8ik5ib32llv"]
+[gd_resource type="StyleBox" script_class="StyleboxStack" format=3 uid="uid://ci8ik5ib32llv"]
 
-[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://addons/Elementum/Downloads/Class/StyleboxStack.gd" id="1_puda0"]
+[ext_resource type="Script" uid="uid://bpobhv17fo8i" path="res://scripts/StyleboxStack.gd" id="1_puda0"]
 [ext_resource type="StyleBox" uid="uid://cgc85t4cub3xd" path="res://themes/eXP/styles/tab/tabBorder2.tres" id="2_svrgj"]
 [ext_resource type="StyleBox" uid="uid://dybfueas405ml" path="res://themes/eXP/styles/tab/tabButtonSelected.tres" id="2_tdlr8"]
 [ext_resource type="StyleBox" uid="uid://r8so5he0e08m" path="res://themes/eXP/styles/tab/tabBorder1.tres" id="3_tdlr8"]

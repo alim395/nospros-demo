@@ -48,6 +48,7 @@ func _input(event):
 
 func toggleUnresziable():
 	unresizable = not unresizable
+	updateHandleIcons()
 
 func updateHandleIcons():
 	var handles : Array[Control] = [$Top, $Bottom, $Left, $Right, $TLCorner, $BLCorner, $TRCorner, $BRCorner]

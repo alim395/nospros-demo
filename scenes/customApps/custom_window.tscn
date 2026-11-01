@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bx4eaolqyk5iy"]
+[gd_scene format=3 uid="uid://bx4eaolqyk5iy"]
 
 [ext_resource type="Theme" uid="uid://diofr3kthuaw" path="res://themes/eXP/eXP_Luna.tres" id="1_rxvmy"]
 [ext_resource type="Script" uid="uid://b58ib3185b8ma" path="res://scripts/custom_window.gd" id="2_hbxq3"]
-[ext_resource type="Texture2D" uid="uid://dnhy2aob6kpqw" path="res://icon.svg" id="9_i4ylo"]
+[ext_resource type="Texture2D" uid="uid://btmx7ucaj3ujt" path="res://icon.png" id="3_hhfy4"]
 [ext_resource type="Texture2D" uid="uid://cubl7kvq1j6g8" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-normal.png" id="10_rv11a"]
 [ext_resource type="Texture2D" uid="uid://pfnj3firs26b" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-active.png" id="11_u6kg3"]
 [ext_resource type="Texture2D" uid="uid://c3eunioyc3ehh" path="res://themes/eXP/styles/window/customWindow/Luna/minimize-hover.png" id="12_cq0dw"]
@@ -20,7 +20,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vdpk"]
 
-[node name="CustomWindow" type="Control" node_paths=PackedStringArray("titleLabel")]
+[node name="CustomWindow" type="Control" unique_id=1390077837 node_paths=PackedStringArray("titleLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ script = ExtResource("2_hbxq3")
 title = "Custom Window"
 titleLabel = NodePath("WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar/TitleLabel")
 
-[node name="WindowContainer" type="Control" parent="."]
+[node name="WindowContainer" type="Control" parent="." unique_id=2007095362]
 custom_minimum_size = Vector2(340, 240)
 layout_mode = 1
 anchors_preset = 8
@@ -49,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 
-[node name="Border" type="PanelContainer" parent="WindowContainer"]
+[node name="Border" type="PanelContainer" parent="WindowContainer" unique_id=583055943]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Layout" type="VBoxContainer" parent="WindowContainer"]
+[node name="Layout" type="VBoxContainer" parent="WindowContainer" unique_id=336770003]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,12 +66,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout"]
+[node name="TitleBarContainer" type="Control" parent="WindowContainer/Layout" unique_id=1357322577]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 mouse_default_cursor_shape = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="WindowContainer/Layout/TitleBarContainer" unique_id=640022631]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,18 +81,18 @@ grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
 
-[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer"]
+[node name="TitleBar" type="HBoxContainer" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer" unique_id=1176945118]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="Icon" type="TextureRect" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1448077818]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture = ExtResource("9_i4ylo")
+texture = ExtResource("3_hhfy4")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="TitleLabel" type="Label" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=2114648779]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("22_fnyra")
@@ -102,14 +102,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 3
 
-[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="VSeparator" type="VSeparator" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1511376864]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_7vdpk")
 
-[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="MinimizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=104410074]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -119,7 +119,7 @@ texture_hover = ExtResource("12_cq0dw")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="MaximizeButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1439735719]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -129,7 +129,7 @@ texture_hover = ExtResource("15_uja8l")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="RestoreButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1160795012]
 visible = false
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -140,7 +140,7 @@ texture_hover = ExtResource("18_0t0h0")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar"]
+[node name="CloseButton" type="TextureButton" parent="WindowContainer/Layout/TitleBarContainer/MarginContainer/TitleBar" unique_id=1532410749]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -150,7 +150,7 @@ texture_hover = ExtResource("21_7bp81")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout"]
+[node name="PanelMargin" type="MarginContainer" parent="WindowContainer/Layout" unique_id=506734693]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 4
@@ -158,10 +158,10 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin"]
+[node name="Panel" type="Panel" parent="WindowContainer/Layout/PanelMargin" unique_id=1661381906]
 layout_mode = 2
 
-[node name="Handles" type="Control" parent="WindowContainer"]
+[node name="Handles" type="Control" parent="WindowContainer" unique_id=54481969]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,7 +171,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("23_qlyl6")
 
-[node name="Top" type="Control" parent="WindowContainer/Handles"]
+[node name="Top" type="Control" parent="WindowContainer/Handles" unique_id=1800397986]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 10
@@ -179,7 +179,7 @@ anchor_right = 1.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 9
 
-[node name="Bottom" type="Control" parent="WindowContainer/Handles"]
+[node name="Bottom" type="Control" parent="WindowContainer/Handles" unique_id=1490038205]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 12
@@ -190,7 +190,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 9
 
-[node name="Left" type="Control" parent="WindowContainer/Handles"]
+[node name="Left" type="Control" parent="WindowContainer/Handles" unique_id=1877047883]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 9
@@ -198,7 +198,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 mouse_default_cursor_shape = 10
 
-[node name="Right" type="Control" parent="WindowContainer/Handles"]
+[node name="Right" type="Control" parent="WindowContainer/Handles" unique_id=1064361949]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 11
@@ -209,7 +209,7 @@ grow_horizontal = 0
 grow_vertical = 2
 mouse_default_cursor_shape = 10
 
-[node name="TLCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="TLCorner" type="Control" parent="WindowContainer/Handles" unique_id=1414307121]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 0
@@ -217,7 +217,7 @@ offset_right = 5.0
 offset_bottom = 5.0
 mouse_default_cursor_shape = 12
 
-[node name="BLCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="BLCorner" type="Control" parent="WindowContainer/Handles" unique_id=581304032]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 2
@@ -228,7 +228,7 @@ offset_right = 5.0
 grow_vertical = 0
 mouse_default_cursor_shape = 11
 
-[node name="TRCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="TRCorner" type="Control" parent="WindowContainer/Handles" unique_id=1002280027]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 1
@@ -239,7 +239,7 @@ offset_bottom = 5.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 11
 
-[node name="BRCorner" type="Control" parent="WindowContainer/Handles"]
+[node name="BRCorner" type="Control" parent="WindowContainer/Handles" unique_id=805441644]
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 3
